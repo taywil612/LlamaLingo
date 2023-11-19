@@ -145,6 +145,10 @@
       "PackagePath": "staticwebassets\\images\\BG\\menu_blank.png"
     },
     {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\ToggleButton.png",
+      "PackagePath": "staticwebassets\\images\\ToggleButton.png"
+    },
+    {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\Panel_Commit.png",
       "PackagePath": "staticwebassets\\images\\UIpanels\\Panel_Commit.png"
     },

@@ -1,74 +1,59 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">LlamaLingo</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
+﻿<div>
+    <ul class="nav flex-column">
+        <li title="Home" class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+                <span class="oi oi-home"  aria-hidden="true"></span> <span class="displayText">Home</span>
             </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Administration?pod=2&pid=4">
-                <span class="oi oi-plus" aria-hidden="true"></span> Administration
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Engineer?pod=1&pid=4">
-                <span class="oi oi-plus" aria-hidden="true"></span> Engineer
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Expert?pod=2&pid=4">
-                <span class="oi oi-plus" aria-hidden="true"></span> Domain Expert
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="User?pod=3&pid=5">
-                <span class="oi oi-plus" aria-hidden="true"></span> End User
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Academy?pod=2&pid=1">
-                <span class="oi oi-plus" aria-hidden="true"></span> Academy
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Nnet?pod=2&pid=1">
-                <span class="oi oi-plus" aria-hidden="true"></span> Neural Net
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Interview?pod=2&pid=1">
-                <span class="oi oi-plus" aria-hidden="true"></span> Interview
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Audio?pod=2&pid=1">
-                <span class="oi oi-plus" aria-hidden="true"></span> Audio
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Video?pod=2&pid=1">
-                <span class="oi oi-plus" aria-hidden="true"></span> Video
-            </NavLink>
-        </div>
-
-
-    </nav>
+        </li>
+    </ul>
+ <div class="separator"></div>
+    <div class="sidebar-scroller">
+       <ul class="nav flex-column">
+           <li title="Administration" class="nav-item px-3">
+               <NavLink class="nav-link" href="Administration?pod=2&pid=4">
+                   <span class="oi oi-person" aria-hidden="true"></span><span class="displayText">Administration</span>
+               </NavLink>
+           </li>
+           <li title="Engineer" class="nav-item px-3">
+               <NavLink class="nav-link" href="Engineer?pod=1&pid=4">
+                   <span class="oi oi-person" aria-hidden="true"></span><span class="displayText">Engineer</span>
+               </NavLink>
+           </li>
+           <li title="Expert" class="nav-item px-3">
+               <NavLink class="nav-link" href="Expert?pod=2&pid=4">
+                   <span class="oi oi-person" aria-hidden="true"></span><span class="displayText">Domain Expert</span>
+               </NavLink>
+           </li>
+           <li title="User" class="nav-item px-3">
+               <NavLink class="nav-link" href="User?pod=3&pid=5">
+                   <span class="oi oi-person" aria-hidden="true"></span><span class="displayText">End User</span>
+               </NavLink>
+           </li>
+           <li title="Academy" class="nav-item px-3">
+               <NavLink class="nav-link" href="Academy?pod=2&pid=1">
+                   <span class="oi oi-book" aria-hidden="true"></span><span class="displayText">Academy</span>
+               </NavLink>
+           </li>
+           <li title="Nnet" class="nav-item px-3">
+               <NavLink class="nav-link" href="Nnet?pod=2&pid=1">
+                   <span class="oi oi-monitor" aria-hidden="true"></span><span class="displayText">Neural Net</span>
+               </NavLink>
+           </li>
+           <li title="Interview" class="nav-item px-3">
+               <NavLink class="nav-link" href="Interview?pod=2&pid=1">
+                   <span class="oi oi-puzzle-piece" aria-hidden="true"></span><span class="displayText">Interview</span>
+               </NavLink>
+           </li>
+           <li title="Audio" class="nav-item px-3">
+               <NavLink class="nav-link" href="Audio?pod=2&pid=1">
+                   <span class="oi oi-musical-note" aria-hidden="true"></span><span class="displayText">Audio</span>
+               </NavLink>
+           </li>
+           <li title="Video" class="nav-item px-3">
+               <NavLink class="nav-link" href="Video?pod=2&pid=1">
+                   <span class="oi oi-video" aria-hidden="true"></span><span class="displayText">Video</span>
+               </NavLink>
+           </li>
+       </ul>
+    </div>
 </div>

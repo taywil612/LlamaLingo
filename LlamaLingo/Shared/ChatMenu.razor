@@ -1,0 +1,51 @@
+﻿@inject NavigationManager NavigationManager
+@implements IAsyncDisposable
+
+<div class="chat-menu">
+    <div class="container rounded" style="margin: 10px auto; height: 75%; width: 90%;">
+        <div class="scroller">
+        @* Print default message if the are no user messages. *@
+        @if (!userMessages.Any())
+        {
+                <div class="message d-flex">
+                    <div class="message-content">
+                        <div class="dialogContent">
+                            <div class="username text-align-left">
+                                LlamaLingo
+                            </div>
+                            <span class="dialogText text-align-left border-radius-left">No messages yet, start chatting!</span>
+                            <div class="date text-align-left">@DateTime.Now.ToString("h:mmtt | MMM dd")</div>
+                        </div>
+                    </div>
+                </div>
+        }
+        else
+        {
+            @* Print the list of user messages. *@
+            @foreach (var userMessage in userMessages)
+            {
+                <div class="message d-flex @(userMessage.CurrentUser ? "justify-content-end" : "" )">
+                    <div class="message-content">
+                        <div class="dialogContent">
+                            <div class="username @(userMessage.CurrentUser ? "text-align-right" : "text-align-left" )">
+                                @(userMessage.CurrentUser ? "You" : userMessage.Username)
+                            </div>
+                            <span class="dialogText @(userMessage.CurrentUser ? "border-radius-right text-align-right" : "border-radius-left text-align-left" )">@userMessage.Message</span>
+                            <div class="date text-align-right">@userMessage.DataSent.ToString("h:mmtt | MMM dd")</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        </div>
+         <div class="footer">
+             <div class="input-container">
+                 <div class="form">
+                     <input title="Username Input" @bind="usernameInput" type="text" class="form-control" placeholder="Enter a username" readonly="@isUserReadonly"/>
+                     <textarea title="Message Input" @bind="messageInput" class="message-input form-control" placeholder="Start typing..." rows="1"></textarea>
+                     <button title="Send Message Button" type="button" @onclick="Send" disabled="@(!IsConnected)" class="btn btn-primary send-button">Send</button>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>

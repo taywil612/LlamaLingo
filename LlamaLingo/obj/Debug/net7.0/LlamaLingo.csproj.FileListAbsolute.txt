@@ -284,3 +284,4 @@ C:\Users\JXEli\Documents\GitHub\LlamaLingo\LlamaLingo\bin\Debug\net7.0\Syncfusio
 C:\Users\JXEli\Documents\GitHub\LlamaLingo\LlamaLingo\bin\Debug\net7.0\Syncfusion.Blazor.RichTextEditor.dll
 C:\Users\JXEli\Documents\GitHub\LlamaLingo\LlamaLingo\bin\Debug\net7.0\Syncfusion.Blazor.TreeGrid.dll
 C:\Users\JXEli\Documents\GitHub\LlamaLingo\LlamaLingo\bin\Debug\net7.0\Syncfusion.ExcelExport.Net.dll
+C:\Users\JXEli\Documents\GitHub\LlamaLingo\LlamaLingo\obj\Debug\net7.0\scopedcss\Shared\ChatMenu.razor.rz.scp.css
