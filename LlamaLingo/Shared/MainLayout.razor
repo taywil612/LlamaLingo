@@ -4,7 +4,7 @@
 
 <PageTitle>LlamaLingo</PageTitle>
 
-@* Create the side bar for the chat. *@
+@* Create the sidebar for the chat. *@
 <SfSidebar ID="Chatbar" Type="SidebarType.Push" Position="SidebarPosition.Right" Width="520px" CloseOnDocumentClick="true" @ref="Chat" @bind-IsOpen="ChatbarToggle">
     <ChildContent>
         <div id="chatbar" class="sidebar" style="position:fixed;z-index:1200; width: 520px; min-width: 520px;">
@@ -27,7 +27,7 @@
         </SfFab>
 }
 
-@* Create the side bar for the navigation menu. *@
+@* Create the sidebar for the navigation menu. *@
 <SfSidebar ID="Sidebar" Type="SidebarType.Push" Width="300px" DockSize="65px" EnableDock="true" @ref="Sidebar" @bind-IsOpen="SidebarToggle">
     <ChildContent>
         <div class="sidebar" style="position:fixed;z-index:1199">
@@ -99,8 +99,8 @@
     .e-sidebar.e-right .expand::before {
         content: '\e10e';
     }
-
     /* end of dockbar icon Style */
+
     .e-sidebar.e-dock.e-close span.e-text {
         display: none;
     }
