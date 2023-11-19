@@ -32,6 +32,7 @@ namespace LlamaLingo.Shared
 
         private async System.Threading.Tasks.Task Send()
         {
+            // Verify that the user entered a username and a message.
             if (!string.IsNullOrEmpty(usernameInput) && !string.IsNullOrEmpty(messageInput))
             {
                 await hubConnection.SendAsync("SendMessage", usernameInput, messageInput);
