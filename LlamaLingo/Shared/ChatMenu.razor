@@ -13,7 +13,7 @@
                             <div class="username text-align-left">
                                 LlamaLingo
                             </div>
-                            <span class="dialogText text-align-left border-radius-left receiver-msg-color">No messages yet, start chatting!</span>
+                            <span class="dialogText text-align-left border-radius-left default-color">No messages yet, start chatting!</span>
                             <div class="date text-align-left">@DateTime.Now.ToString("h:mmtt | MMM dd")</div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                             <div class="username @(userMessage.CurrentUser ? "text-align-right" : "text-align-left" )">
                                 @(userMessage.CurrentUser ? "You" : userMessage.Username)
                             </div>
-                            <span class="dialogText @(userMessage.CurrentUser ? "border-radius-right sender-msg-color" : "border-radius-left receiver-msg-color" )">@userMessage.Message</span>
+                            <span class="dialogText @(userMessage.CurrentUser ? "border-radius-right main-color" : "border-radius-left default-color" )">@userMessage.Message</span>
                             <div class="date text-align-right">@userMessage.DataSent.ToString("h:mmtt | MMM dd")</div>
                         </div>
                     </div>
