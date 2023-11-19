@@ -1,18 +1,32 @@
 /* Styling the messages */
-.border-radius-left[b-w1qp062h67] {
-	border-radius: 25px 25px 25px 0px;
-}
+	/* Styling receiver messages */
+	.border-radius-left[b-w1qp062h67] {
+		border-radius: 25px 25px 25px 0px;
+	}
 
-.border-radius-right[b-w1qp062h67] {
-	border-radius: 25px 25px 0px 25px;
-}
+	.text-align-left[b-w1qp062h67] {
+		text-align: left;
+	}
 
-.text-align-right[b-w1qp062h67] {
-	text-align: right;
-}
+	.receiver-msg-color[b-w1qp062h67] {
+		background-color: #ffffff33;
+	}
 
-.text-align-left[b-w1qp062h67] {
-	text-align: left;
+	/* Styling sender messages */
+	.border-radius-right[b-w1qp062h67] {
+		border-radius: 25px 25px 0px 25px;
+	}
+
+	.text-align-right[b-w1qp062h67] {
+		text-align: right;
+	}
+
+	.sender-msg-color[b-w1qp062h67] {
+		background-color: #09143be6;
+	}
+
+.text-align-left[b-w1qp062h67], .text-align-right[b-w1qp062h67] {
+	font-size: 0.90rem;
 }
 
 .dialogContent[b-w1qp062h67] {
@@ -37,7 +51,7 @@
 		font-style: initial;
 		display: block;
 		color: white;
-		background-color: rgba(255,255,255,0.20);
+		text-align: left;
 	}
 
 /* Styling the footer */
@@ -54,7 +68,7 @@
 	border-radius: 25px;
 	padding: 0.15em;
 	color: white;
-	background-color: rgba(255,255,255,0.20);
+	background-color: #ffffff33;
 }
 
 	.username-input[b-w1qp062h67], textarea[b-w1qp062h67] {
@@ -67,6 +81,7 @@
 	.username-input[b-w1qp062h67] {
 		padding: 0.375rem 0.75rem;
 		flex: 1;
+		margin-top: 1%;
 	}
 
 .input-container textarea[b-w1qp062h67] {
@@ -89,15 +104,15 @@
 	border-radius: 25px;
 	cursor: pointer;
 	color: #ffffff;
-	background-color: #1b6ec2;
-	border-color: #1861ac;
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
 	border: 1px solid transparent;
 	padding: 0.375rem 0.75rem;
 	font-size: 1rem;
-	line-height: 1.5;
+	line-height: 1.5;	
+	background-color: #1b6ec2;
+	border-color: #1861ac;
 }
 
 	.send-button:hover[b-w1qp062h67] {

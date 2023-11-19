@@ -22,11 +22,10 @@
         width: 28px;
     }
 
-/* Styling the separator*/
+/* Styling the separator on the navigation sidebar when it is opended */
 .separator[b-fcj46uwyos] {
     border: 1px solid #FFFFFF;
     opacity: 0.14;
     width: 80%;
-    margin: auto;
-    margin-top: 0px;
+    margin: 0px 1rem 5px 0.5rem;
 }
