@@ -1,5 +1,5 @@
-using global::System.Collections.Generic;
-using global::Microsoft.AspNetCore.Components;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Components;
 using LlamaLingo.Models;
 using Microsoft.Data.SqlClient;
 using System.Data;

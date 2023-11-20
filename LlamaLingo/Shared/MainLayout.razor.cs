@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor.Navigations;
+using System.Linq;
 
 namespace LlamaLingo.Shared
 {
@@ -6,12 +8,12 @@ namespace LlamaLingo.Shared
     {
         #nullable enable
         #if NETCOREAPP3_1 || NETSTANDARD2_1
-            SfSidebar Sidebar;
-            SfSidebar Chat; 
+                    SfSidebar Sidebar;
+                    SfSidebar Chat; 
         #else
-        SfSidebar? Sidebar;
-        SfSidebar? Chat;
-        #endif
+                SfSidebar? Sidebar;
+                SfSidebar? Chat;
+                #endif
 
         private bool SidebarToggle { get; set; } = false;
         private bool ChatbarToggle { get; set; } = false;
