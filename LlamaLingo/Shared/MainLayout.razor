@@ -21,7 +21,7 @@
 @* Hide the chat button if chat bar is on the screen. *@
 @if (!this.ChatbarToggle)
 { 
-        <SfFab class="chat-fab" Position="FabPosition.BottomRight" title="Chat" OnClick="ToggleChatMenu">    
+        <SfFab Position="FabPosition.BottomRight" title="Chat" OnClick="ToggleChatMenu">    
             <div class="oi oi-chat"></div>
             <span class="e-badge e-badge-success e-badge-overlap e-badge-dot"></span>
         </SfFab>
@@ -48,12 +48,14 @@
     </ChildContent>
 </SfSidebar>
 
-@* The content below will be pushed by sidebar. *@
+@* 
+    The content below will be pushed by sidebar. 
+*@
 
 @* Create the page content. *@
 <div class="page-content">
     <div class="main">
-        <div class="content" style="height: 100vh;">
+        <div class="content">
             @* Display the content from other pages. *@
             @Body
         </div>
@@ -65,6 +67,14 @@
     /* Content area styles */
     .title {
         font-size: 20px;
+    }
+
+    .chat-fab {
+        z-index: 1198;
+    }
+
+    .page-content {
+        height: 100%;
     }
 
     /* Sidebar styles */
@@ -133,6 +143,10 @@
     /* Styling the chat sidebar */
     .e-sidebar.e-left {
         border-radius: 0 25px 0 0;
+    }
+
+    .e-sidebar.e-right, .e-sidebar.e-left{
+        height: 100vh;
     }
 
 

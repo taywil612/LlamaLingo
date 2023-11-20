@@ -13,7 +13,7 @@ namespace LlamaLingo.Shared
         #else
                 SfSidebar? Sidebar;
                 SfSidebar? Chat;
-                #endif
+#endif
 
         private bool SidebarToggle { get; set; } = false;
         private bool ChatbarToggle { get; set; } = false;

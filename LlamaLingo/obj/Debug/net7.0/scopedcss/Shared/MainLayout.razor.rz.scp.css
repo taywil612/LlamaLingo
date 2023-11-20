@@ -74,25 +74,6 @@
         margin-left: 1.5rem;
     }
 
-    .top-row a:first-child[b-ev0ybvepx7] {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-@media (max-width: 640.98px) {
-    .top-row:not(.auth)[b-ev0ybvepx7] {
-        display: none;
-    }
-
-    .top-row.auth[b-ev0ybvepx7] {
-        justify-content: space-between;
-    }
-
-    .top-row a[b-ev0ybvepx7], .top-row .btn-link[b-ev0ybvepx7] {
-        margin-left: 0;
-    }
-}
-
 @media (min-width: 0px) {
     .page[b-ev0ybvepx7] {
         flex-direction: row;
@@ -111,8 +92,8 @@
         z-index: 1;
     }
 
-    .main > div[b-ev0ybvepx7] {
+/*    .main > div {
         padding-left: 1rem !important;
         padding-right: 1.5rem !important;
-    }
+    }*/
 }

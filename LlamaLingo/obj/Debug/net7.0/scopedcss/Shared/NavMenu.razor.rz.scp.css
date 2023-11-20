@@ -1,4 +1,4 @@
-/* Styling the scroller for the navigation menu sidebar*/
+/* Styling the scroller for the navigation menu sidebar */
 .sidebar-scroller[b-fcj46uwyos] {
     height: calc(100vh - 160px) !important;
     overflow-y: auto;
