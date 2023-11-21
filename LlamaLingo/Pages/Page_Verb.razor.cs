@@ -331,7 +331,7 @@ namespace LlamaLingo.Pages
         {
             Read();
             PypeRead();
-            DeleteRead();
+            //DeleteRead();
         }
     }
 }
