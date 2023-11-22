@@ -27,13 +27,6 @@
         </SfFab>
 }
 
-@* Create the top-row navigation bar. *@
-<div class="top-row px-4" style="z-index:1111;">
-    <a href="/RadarChart">RadarChart</a>
-    <a href="/GanttChart">GanttChart</a>
-    <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-</div>
-
 @* Create the sidebar for the navigation menu. *@
 <SfSidebar ID="Sidebar" Type="SidebarType.Auto" Width="300px" DockSize="65px" EnableDock="true" @ref="Sidebar" @bind-IsOpen="SidebarToggle" ZIndex="1199">
     <ChildContent>
@@ -55,6 +48,12 @@
 @* Create the page content. *@
 <div class="page-content">
     <div class="main">
+        @* Create the top-row navigation bar. *@
+        <div class="shadow top-row px-4" style="z-index: 1111; overflow: auto;">
+            <a href="/RadarChart">RadarChart</a>
+            <a href="/GanttChart">GanttChart</a>
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        </div>
         <div class="content">
             @* Display the content from other pages. *@
             @Body
@@ -77,6 +76,12 @@
 	.e-fab.e-btn.e-fab-bottom {
 		z-index: 1198;
 	}
+
+    .e-btn.e-primary, .e-css.e-btn.e-primary {
+        background: #09143b;
+        border-color: #09143b;
+        color: #fff;
+    }
 
     /* Sidebar styles */
     .e-sidebar .e-icons::before {
@@ -138,22 +143,17 @@
     
     /* Styling the chat sidebar */
     .e-sidebar.e-right {
-        border-radius: 25px 0 0 25px;
         max-width: 520px;
     }
     
     /* Styling the sidebar */
-    .e-sidebar.e-left {
-        border-radius: 0 25px 25px 0;
-    }
-
     .e-sidebar.e-right, .e-sidebar.e-left{
-        height: 100vh;
-    }
+		border: 0px;
+		height: 100%;
+	}
 
     /* Styling the separator*/
     .e-sidebar.e-dock.e-close .separator {
-        border: 1px solid #FFFFFF;
         opacity: 0.14;
         width: 45px;
         margin: 0px 1rem 5px 0.5rem;

@@ -42,7 +42,7 @@
         </div>
         @* Structure for user input form. *@
          <div class="footer">
-             <div class="input-container">
+             <div class="input-container" style="width: 100%">
                  <input @bind="usernameInput" type="text" style="width: 85%; @(isUserReadonly ? "" : "background-color: rgba(255,255,255,0.20); border-radius: 25px;")" class="username-input" placeholder="Enter a username..." required autofocus maxlength="15" readonly="@isUserReadonly"/>
                  <div class="form">
                      <textarea class="message-input" @bind="messageInput" placeholder="Start typing..." rows="1"></textarea>

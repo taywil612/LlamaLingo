@@ -12,7 +12,8 @@
     <Content Include="Shared\ChatMenu.razor.css" />
   </ItemGroup>
 
-  <ItemGroup>    <PackageReference Include="Syncfusion.Blazor.Gantt" Version="23.1.43" />
+  <ItemGroup>    <PackageReference Include="Syncfusion.Blazor.Layouts" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.Blazor.Gantt" Version="23.1.43" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.13">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

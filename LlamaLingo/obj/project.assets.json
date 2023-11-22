@@ -4584,6 +4584,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.13",
       "Syncfusion.Blazor.Charts >= 23.1.43",
       "Syncfusion.Blazor.Gantt >= 23.1.43",
+      "Syncfusion.Blazor.Layouts >= 23.1.43",
       "Syncfusion.Blazor.Navigations >= 23.1.43",
       "Syncfusion.Blazor.Themes >= 23.1.43"
     ]
@@ -4655,6 +4656,10 @@
             "target": "Package",
             "version": "[23.1.43, )"
           },
+          "Syncfusion.Blazor.Layouts": {
+            "target": "Package",
+            "version": "[23.1.43, )"
+          },
           "Syncfusion.Blazor.Navigations": {
             "target": "Package",
             "version": "[23.1.43, )"
@@ -4683,7 +4688,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
