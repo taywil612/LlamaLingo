@@ -30,10 +30,10 @@
 @* Create the sidebar for the navigation menu. *@
 <SfSidebar ID="Sidebar" Type="SidebarType.Auto" Width="300px" DockSize="65px" EnableDock="true" @ref="Sidebar" @bind-IsOpen="SidebarToggle" ZIndex="1199">
     <ChildContent>
-        <div class="sidebar" style="position:fixed;z-index:1200">
+        <div class="sidebar" style="position:fixed;z-index:1200;">
             <div class="topnav navbar navbar-dark">
-                <button class="navbar-toggler" @onclick="ToggleNavMenu"></button>
-                <a class="navbar-brand" href=""><span class="displayText" style="margin-left:15px">LlamaLingo</span></a>
+				<button class="navbar-toggler" @onclick="ToggleNavMenu"></button>
+				<a class="navbar-brand" href=""><span class="displayText" style="margin-left:15px">Navigation</span></a>
             </div>
             @* Add the navigation menu into the sidebar. *@                
             <NavMenu />
@@ -47,13 +47,13 @@
 
 @* Create the page content. *@
 <div class="page-content">
-    <div class="main">
+	<div class="main">
         @* Create the top-row navigation bar. *@
-        <div class="shadow top-row px-4" style="z-index: 1111; overflow: auto;">
+        <div class="shadow top-row px-4" style="z-index: 1111; overflow-x: auto; overflow-y: hidden;">
             <a href="/RadarChart">RadarChart</a>
             <a href="/GanttChart">GanttChart</a>
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
+		</div>
         <div class="content">
             @* Display the content from other pages. *@
             @Body
@@ -78,8 +78,8 @@
 	}
 
     .e-btn.e-primary, .e-css.e-btn.e-primary {
-        background: #09143b;
-        border-color: #09143b;
+        background: #251354;
+        border-color: #251354;
         color: #fff;
     }
 

@@ -62,7 +62,7 @@
 /* Styling the top row */
 .top-row[b-ev0ybvepx7] {
     background-color: #ffffff;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 3.5rem;
     display: flex;
     padding: 0.5rem 0rem;
@@ -80,7 +80,7 @@
 
     .sidebar[b-ev0ybvepx7] {
         width: 250px;
-        height: 100vh;
+        height: 100%;
         position: sticky;
         top: 0;
     }

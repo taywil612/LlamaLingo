@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using LlamaLingo.Shared; 
 
 namespace LlamaLingo.Pages
 {
-    public partial class GanttChart
+	public partial class GanttChart
     {
         IEnumerable<LlamaLingo.Models.Task> TaskList;
 

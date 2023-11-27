@@ -1,6 +1,6 @@
 /* Styling the scroller for the navigation menu sidebar */
 .sidebar-scroller[b-fcj46uwyos] {
-    height: calc(100vh - 160px) !important;
+    height: calc(90% - 160px) !important;
     overflow-y: auto;
     width: 287px;
 }
