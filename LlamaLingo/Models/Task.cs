@@ -21,13 +21,9 @@ public partial class Task
 
     public DateTime TaskEntryDate { get; set; }
 
-    public short TaskLevel { get; set; }
+    public int TaskAfter { get; set; }
 
-    public string TaskDuration { get; set; }
-
-    public int TaskProgress { get; set; }
-
-    public int ParentIdFk { get; set; }
+    public int PhaseIdFk { get; set; }
 
     public int NovaIdFk { get; set; }
 
