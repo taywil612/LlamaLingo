@@ -18,7 +18,7 @@
     </ChildContent>
 </SfSidebar>   
 
-@* Hide the chat button if chat bar is on the screen. *@
+@* Hide the chat button if chat sidebar is on the screen. *@
 @if (!this.ChatbarToggle)
 { 
         <SfFab Position="FabPosition.BottomRight" title="Chat" OnClick="ToggleChatMenu">    
@@ -62,7 +62,6 @@
 </div>
 
 <style>
-
     /* Content area styles */
     .title {
         font-size: 20px;
@@ -209,6 +208,6 @@
         background: #2d323e;
         overflow: hidden;
     }
-
     /* end of sidebar styles */
+
 </style>
