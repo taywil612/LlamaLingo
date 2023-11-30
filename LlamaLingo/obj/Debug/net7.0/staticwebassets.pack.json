@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\Blobs\\Video\\Starry_Night.mp4"
     },
     {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\css\\Nnet.css",
+      "PackagePath": "staticwebassets\\css\\Nnet.css"
+    },
+    {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },

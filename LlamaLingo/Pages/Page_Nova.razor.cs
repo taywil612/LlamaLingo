@@ -57,7 +57,7 @@ namespace LlamaLingo.Pages
 				if (_actionFilter != value)
 				{
 					_actionFilter = value;
-					Read("VerbCRUD", "Action");
+					Read("CRUD_Verb", "Action");
 				}
 			}
 		}

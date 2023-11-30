@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "21u0+rwsK6TFbIbZUCDChAjsRBqLt7yaIp9FC72BzYA=",
+  "Hash": "V2xYfdOS1Dks3aPZ8sZT7ebrV6Ps0qECl7dMDAOf1uM=",
   "Source": "LlamaLingo",
   "BasePath": "_content/LlamaLingo",
   "Mode": "Default",
@@ -1649,6 +1649,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\fonts\\syncfusion\\icons.woff"
+    },
+    {
+      "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\css\\Nnet.css",
+      "SourceId": "LlamaLingo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\",
+      "BasePath": "_content/LlamaLingo",
+      "RelativePath": "css/Nnet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Nnet.css"
     },
     {
       "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
