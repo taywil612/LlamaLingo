@@ -4,108 +4,284 @@
 @layout MainLayout
 
 <div class="component-page">
+	<h3>
+		<br <br <br <br <br />
+		<p>Pod#: @pod</p>
+		<p>Person#:@pid</p>
+	</h3>
 
-<h3>
-	<br <br <br <br <br />
-	<p>Pod#: @pod</p>
-	<p>Person#:@pid</p>
-</h3>
+	<!-- ************************************************************************************ -->
+	<!-- ******************************** DISPLAY PANELS ************************************ -->
+	<!-- ************************************************************************************ -->
+	<div class="button-container">
+		<div>
+				<img src="images/UIpanels/Panel_Marque.png"
+				 style="position:absolute; top:90px; left:600px; width:580px;border-radius:0px;background-size: cover;">
+		</div>
+
+		<div>
+				<img src="images/buttons/Btn_Luster_Verb.png"
+				 style="position:absolute; top:85px; left:820px; width:140px;border-radius:8px;background-size: cover;">
+		</div>
+
+		<div>
+				<img src="images/UIpanels/Panel_Fluer.png"
+				 style="position:absolute; top:80px; left:1250px; width:188px;border-radius:8px;background-size: cover;">
+		</div>
+
+		<!-- ************************************************************************************ -->
+		<!-- *********************** DISPLAY PANEL CRUD BUTTONS ********************************* -->
+		<!-- ************************************************************************************ -->
+
+		<anythingyouwant>
+			<div class="boxButton">
+				<form @onsubmit="ShowList">
+					<button class="buttonList" style="	left:10px;	">
+						@table
+					</button>
+				</form>
+
+				<form @onsubmit="ShowCreate">
+					<button class="buttonAdd" style="	left: 202px;">
+						@table
+					</button>
+				</form>
+
+				<form @onsubmit="ShowModify">
+					<button class="buttonChange" style="	left:394px;	">
+						@table
+					</button>
+				</form>
+
+				<form @onsubmit="ShowDelete">
+					<button class="buttonDelete" style=" top: 210px; left:650px; opacity:50%; 	">
+						@table
+					</button>
+				</form>
+			</div>
+		</anythingyouwant>
+
+		<!-- ************************************************************************************ -->
+		<!-- ************************************* VERB LIST  *********************************** -->
+		<!-- ************************************************************************************ -->
+
+		@if (showList)
+		{
+			<div class="ShadowText">
+				<img src="images/UIpanels/shadow_black.png"
+				 style="border-radius: 12px;background-size: cover;">
+			</div>
+
+			<div class="exhibitPanel">
+				<table id="listTable">
+					@*A "table" (really a list) of all records of the same type as selected table crud value*@
+					<tr>
+						<th>@table POD ID# Status Type Label Description</th>
+					</tr>
+					@foreach (var verb in verbs)
+					{   // Loop through each label of the currently selected table
+						<tr>
+							<td>@verb.PodIdFk     @verb.VerbId     @verb.VerbStatus     @verb.VerbType  @verb.VerbLabel @verb.VerbDescription </td>
+						</tr>
+						// Display only the goal's description
+					}
+				</table>
+			</div>
+		}
+
+		<!-- ************************************************************************************ -->
+		<!-- ************************************* VERB CREATE ********************************** -->
+		<!-- ************************************************************************************ --> 
+
+		@if (showCreate)
+		{
+			<br>
+			<div style="font-size:x-large; ">
+				<form @onsubmit="OnCreate">
+
+					<div class="ShadowText">
+						<img src="images/UIpanels/shadow_black.png"
+						 style="border-radius: 12px;background-size: cover;">
+					</div>
+
+					<div class="boxFilter">
+							<img src="images/UIpanels/Panel_Commit_add.png"
+							 style="border-radius: 12px;background-size: cover;">
+							<button class="commitCreate" type="submit"></button>
+					</div>
+
+					<div class="exhibitInfo">
+
+						<label>
+							New @table:  Verb Label 16:
+							<input class="form-control" @bind="currentVerb.VerbLabel" maxlength="16" required />
+						</label><br><br>
+
+						<label>
+							Description:
+							<input class="form-control" @bind="currentVerb.VerbDescription" maxlength="255" required />
+						</label><br><br>
+
+						<label>
+							Type:
+							<select @bind="currentVerb.VerbType" required>
+								@foreach (var pype in pypes)
+								{
+									<option value="@pype.PypeType">@pype.PypeType</option>
+								}
+							</select>
+						</label><br><br>
+					</div>
+				</form>
+			</div>
+		}
+
+		<!-- ************************************************************************************ -->
+		<!-- ************************************* VERB CHANGE ********************************** -->
+		<!-- ************************************************************************************ -->
+
+		@if (showModify)
+		{
+			<div class="ShadowText">
+				<img src="images/UIpanels/shadow_black.png"
+				 style="border-radius: 12px;background-size: cover;">
+			</div>
+
+			<div style="font-size:x-large; display: inline-block;">
+				<form @onsubmit="OnChange">		
+					
+					<div class="boxFilter">
+
+						<div class="PypeTypeFilter">
+							<label>
+								<select @bind="selectedFilter">
+								<option value="****">****</option>
+								@foreach (var pype in pypes)
+								{
+									if (pype.PypeId == "VERB")
+									{
+										<option value="@pype.PypeType">@pype.PypeType</option>
+									}
+								}
+								</select>
+							</label><br><br>
+						</div>
+
+						<div class="PypeType">
+							<label>
+								@table 
+								<select class="form-control" @bind="selectedVerb">
+								@foreach (var verb in verbs)
+								{
+									<option value="@verb.VerbId"> @verb.VerbLabel</option>
+								}
+								</select>
+							</label>
+						</div>
+							<img src="images/UIpanels/Panel_Commit.png"
+							 style="border-radius: 12px;background-size: cover;">
+							<button class="commitChange" type="submit"></button>
+						</div>
+
+
+					<div class="exhibitInfo">
+						<label>
+							label:
+							<input class="form-control" @bind="currentVerb.VerbLabel" maxlength="16" required />
+						</label><br><br>
+
+						<label>
+							description:
+							<input class="form-control" @bind="currentVerb.VerbDescription" maxlength="255" required />
+						</label><br><br><label>
+
+							type:
+							<select @bind="currentVerb.VerbType" required>
+								@foreach (var pype in pypes)
+								{
+									if (pype.PypeId == "VERB")
+									{
+										<option value="@pype.PypeType">@pype.PypeType</option>
+									}
+								}
+							</select>
+						</label><br><br>
+
+						<label>
+							status:
+							<input class="form-control" @bind="currentVerb.VerbStatus" maxlength="1" required />
+						</label><br><br>
+
+						<label>
+							image:
+							<input class="form-control" @bind="currentVerb.UrlIdPk" type="number" required />
+						</label>
+					</div>
+				</form>
+			</div>
+		}
+
+		<!-- ************************************************************************************ -->
+		<!-- ************************************* VERB DELETE ********************************** -->
+		<!-- ************************************************************************************ -->
+
+		@if (showDelete)
+		{
+			<div style="font-size:x-large; display: inline-block;">
+				<form @onsubmit="OnDelete">
+
+					<div class="ShadowText">
+						<img src="images/UIpanels/shadow_black.png"
+						 style="border-radius: 12px;background-size: cover;">
+					</div>
+
+					<div class="exhibitInfo">
+						<label>
+							@table to delete:
+							<select class="form-control" @bind="currentVerb.VerbId">
+								@foreach (var verb in verbsDelete)
+								{
+									<option value="@verb.VerbId"> @verb.VerbLabel</option>
+								}
+							</select>
+						</label>
+
+						<label>
+							filter:
+							<select @bind="selectedFilter">
+								<option value="****">****</option>
+								@foreach (var pype in pypes)
+								{
+									if (pype.PypeId == "VERB")
+									{
+										<option value="@pype.PypeType">@pype.PypeType</option>
+									}
+								}
+							</select>
+						</label><br><br>
+						<button type="submit">Delete</button>
+					</div>
+
+					<div class="exhibitInfo">
+						Only if the Status = D
+					</div>
+				</form>
+			</div>
+		}
+
+		@*<jukebox>
+			<div>
+				<audio controls="controls">
+					<source src="/images/Audio/curatorintrojazz.mp3" />
+				</audio>
+			</div>
+		</jukebox>*@
+	</div>
+</div>
 
 <style>
-	body {
-		/*background: url(images/BG/filename.png)no-repeat;*/
-		background: url(images/BG/Cave_Verb.png)no-repeat;
-		background-size: 1920px 1080px;
-		background-position: left 0px top 0px;
-		color: white;
-		opacity: 100%;
-		width: 1920px;
-		height: 1080px;
-	}
-
-	.boxButton {
-		padding: 0;
-		margin: 0;
-		width: 1000px;
-		height: 100px;
-		text-align: right;
-		top: 90px;
-		left: 600px;
-		color: #FF0000;
-		position: absolute;
-		opacity: 100%;
-		background-image: url("Images/GUI/DC_GUI_user_Direction.png");
-		background-size: cover;
-	}
-
-	button {
-		padding: 0;
-		margin: 0;
-		position: absolute;
-		width: 180px;
-		height: 90px;
-		top: 76px;
-		left: 0px;
-		border-radius: 8px;
-		transition-duration: .60s;
-		color: black;
-		background-color: limegreen;
-		text-align: center;
-		opacity: 100%;
-	}
-
-	.buttonList {
-		left: 660px;
-		opacity: 90%;
-		background-image: url("images/buttons/Button_L.png");
-		box-shadow: 0 30px 60px rgba(0,0,0,.5);
-	}
-
-		.buttonList:hover {
-			box-shadow: 0 5px 10px rgba(0,0,0,.5);
-			transform: scale(.85);
-		}
-
-	.buttonAdd {
-		background-image: url("Images/buttons/Button_A.png");
-		background-size: cover;
-		box-shadow: 0 30px 60px rgba(0,0,0,.5);
-	}
-
-		.buttonAdd:hover {
-			box-shadow: 0 5px 10px rgba(0,0,0,.5);
-			transform: scale(.85);
-		}
-
-	.buttonChange {
-		background-image: url("Images/buttons/Button_C.png");
-		background-size: cover;
-		box-shadow: 0 30px 60px rgba(0,0,0,.5);
-	}
-
-		.buttonChange:hover {
-			box-shadow: 0 5px 10px rgba(0,0,0,.5);
-			transform: scale(.85);
-		}
-
-	.buttonDelete {
-		background-image: url("Images/buttons/Button_D.png");
-		background-size: cover;
-		box-shadow: 0 30px 60px rgba(0,0,0,.5);
-	}
-
-		.buttonDelete:hover {
-			box-shadow: 0 5px 10px rgba(0,0,0,.5);
-			transform: scale(.85);
-		}
-
-
-	jukebox {
-		position: absolute;
-		left: 90%;
-		top: 95%;
-		border-radius: 0px;
-		opacity: 40%;
+	.component-page {
+		background: url(images/BG/Lascaux_verb.png)no-repeat;
 	}
 
 	boxCRUD {
@@ -119,440 +295,7 @@
 		color: #FF0000;
 		position: absolute;
 		opacity: 75%;
-		background-image: url("Images/GUI/DC_GUI_user_Direction.png");
+		background-image: url("images/GUI/DC_GUI_user_Direction.png");
 		background-size: cover;
 	}
-
-
-
-
-
-
-
-
-	.exhibitPanel {
-		position: absolute;
-		top: 370px;
-		left: 420px;
-		color: blanchedalmond;
-		width: 540px;
-		font-size: x-large;
-		text-overflow: ellipsis;
-		/* Required for text-overflow to do anything */
-		white-space: nowrap;
-		overflow: hidden;
-	}
-
-	.exhibitInfo {
-		position: absolute;
-		top: 370px;
-		left: 420px;
-		color: blanchedalmond;
-		width: 540px;
-		height: 700px;
-		font-size: x-large;
-		text-overflow: ellipsis;
-		/* Required for text-overflow to do anything */
-		white-space: nowrap;
-		overflow: hidden;
-	}
-
-	.Shadow {
-		position: absolute;
-		top: 120px;
-		left: 1520px;
-		width: 250px;
-		height: 920px;
-		background-color: grey background-size: cover;
-		border-radius: 12px;
-		opacity: 95%;
-	}
-
-	.ShadowText {
-		position: absolute;
-		top: 360px;
-		left: 390px;
-		width: 500px;
-		height: 920px;
-		background-color: grey background-size: cover;
-		border-radius: 12px;
-		opacity: 95%;
-	}
-
-	.boxFilter {
-		margin: 10;
-		position: absolute;
-		top: 360px;
-		left: 1020px;
-		background-color: bisque border-radius: 12px;
-		opacity: 85%;
-		width: 200px;
-		height: 360px;
-	}
-
-	.PypeTypeFilter {
-		margin: 0;
-		position: absolute;
-		top: 60px;
-		left: 60px;
-		color: blanchedalmond;
-		background-color: bisque border-radius: 12px;
-		opacity: 55%;
-		width: 160px;
-		height: 200px;
-		font-size: x-large;
-		text-overflow: ellipsis;
-		/* Required for text-overflow to do anything */
-		white-space: nowrap;
-		overflow: hidden;
-	}
-
-	.PypeType {
-		margin: 0;
-		position: absolute;
-		top: 143px;
-		left: 20px;
-		color: blanchedalmond;
-		background-color: bisque border-radius: 12px;
-		opacity: 55%;
-		width: 440px;
-		font-size: x-large;
-		text-overflow: ellipsis;
-		/* Required for text-overflow to do anything */
-		white-space: nowrap;
-		overflow: hidden;
-	}
-
-	.commitChange {
-		position: absolute;
-		top: 285px;
-		left: 40px;
-		width: 120px;
-		height: 50px;
-		background-image: url("Images/buttons/btn_change.png");
-		background-size: cover;
-		box-shadow: 0 30px 60px rgba(0,0,0,.5);
-	}
-		.commitChange:hover {
-			box-shadow: 0 5px 10px rgba(0,0,0,.5);
-			transform: scale(.85);
-		}
-
-	.commitDelete {
-		position: absolute;
-		top: 285px;
-		left: 40px;
-		width: 120px;
-		height: 50px;
-		background-image: url("Images/buttons/btn_delete.png");
-		background-size: cover;
-		box-shadow: 0 30px 60px rgba(0,0,0,.5);
-	}
-		.commitDelete:hover {
-			box-shadow: 0 5px 10px rgba(0,0,0,.5);
-			transform: scale(.85);
-		}
-
-	.commitCreate {
-		position: absolute;
-		top: 285px;
-		left: 40px;
-		width: 120px;
-		height: 50px;
-		background-image: url("Images/buttons/btn_add.png");
-		background-size: cover;
-		box-shadow: 0 30px 60px rgba(0,0,0,.5);
-	}
-		.commitCreate:hover {
-			box-shadow: 0 5px 10px rgba(0,0,0,.5);
-			transform: scale(.85);
-		}
-
 </style>
-
-<!-- ************************************************************************************ -->
-<!-- ******************************** DISPLAY PANELS ************************************ -->
-<!-- ************************************************************************************ -->
-
-<div
-		<img src="images/UIpanels/Panel_Marque.png"
-		 style="position:absolute; top:90px; left:600px; width:580px;border-radius:0px;background-size: cover;">
-</div>
-
-<div
-		<img src="images/buttons/Btn_Luster_Verb.png"
-		 style="position:absolute; top:85px; left:820px; width:140px;border-radius:8px;background-size: cover;">
-</div>
-
-<div
-		<img src="images/UIpanels/Panel_Fluer.png"
-		 style="position:absolute; top:80px; left:1250px; width:188px;border-radius:8px;background-size: cover;">
-</div>
-
-<!-- ************************************************************************************ -->
-<!-- *********************** DISPLAY PANEL CRUD BUTTONS ********************************* -->
-<!-- ************************************************************************************ -->
-
-<anythingyouwant>
-	<div class="boxButton">
-		<form @onsubmit="ShowList">
-			<button class="buttonList" style="	left:10px;	">
-				@table
-			</button>
-		</form>
-
-		<form @onsubmit="ShowCreate">
-			<button class="buttonAdd" style="	left: 202px;">
-				@table
-			</button>
-		</form>
-
-		<form @onsubmit="ShowModify">
-			<button class="buttonChange" style="	left:394px;	">
-				@table
-			</button>
-		</form>
-
-		<form @onsubmit="ShowDelete">
-			<button class="buttonDelete" style=" top: 210px; left:650px; opacity:50%; 	">
-				@table
-			</button>
-		</form>
-	</div>
-</anythingyouwant>
-
-<!-- ************************************************************************************ -->
-<!-- ************************************* VERB LIST  *********************************** -->
-<!-- ************************************************************************************ -->
-
-@if (showList)
-{
-	<div class="ShadowText">
-		<img src="images/UIpanels/shadow_black.png"
-		 style="border-radius: 12px;background-size: cover;">
-	</div>
-
-	<div class="exhibitPanel">
-		<table id="listTable">
-			@*A "table" (really a list) of all records of the same type as selected table crud value*@
-			<tr>
-				<th>@table POD ID# Status Type Label Description</th>
-			</tr>
-			@foreach (var verb in verbs)
-			{   // Loop through each label of the currently selected table
-				<tr>
-					<td>@verb.PodIdFk     @verb.VerbId     @verb.VerbStatus     @verb.VerbType  @verb.VerbLabel @verb.VerbDescription </td>
-				</tr>
-				// Display only the goal's description
-			}
-		</table>
-	</div>
-}
-
-<!-- ************************************************************************************ -->
-<!-- ************************************* VERB CREATE ********************************** -->
-<!-- ************************************************************************************ --> 
-
-@if (showCreate)
-{
-	<br>
-	<div style="font-size:x-large; ">
-		<form @onsubmit="OnCreate">
-
-			<div class="ShadowText">
-				<img src="images/UIpanels/shadow_black.png"
-				 style="border-radius: 12px;background-size: cover;">
-			</div>
-
-			<div class="boxFilter">
-					<img src="images/UIpanels/Panel_Commit_add.png"
-					 style="border-radius: 12px;background-size: cover;">
-					<button class="commitCreate" type="submit"></button>
-			</div>
-
-			<div class="exhibitInfo">
-
-				<label>
-					New @table:  Verb Label 16:
-					<input class="form-control" @bind="currentVerb.VerbLabel" maxlength="16" required />
-				</label><br><br>
-
-				<label>
-					Description:
-					<input class="form-control" @bind="currentVerb.VerbDescription" maxlength="255" required />
-				</label><br><br>
-
-				<label>
-					Type:
-					<select @bind="currentVerb.VerbType" required>
-						@foreach (var pype in pypes)
-						{
-							<option value="@pype.PypeType">@pype.PypeType</option>
-						}
-					</select>
-				</label><br><br>
-
-			</div>
-		</form>
-	</div>
-}
-
-<!-- ************************************************************************************ -->
-<!-- ************************************* VERB CHANGE ********************************** -->
-<!-- ************************************************************************************ -->
-
-@if (showModify)
-{
-	<div class="ShadowText">
-		<img src="images/UIpanels/shadow_black.png"
-		 style="border-radius: 12px;background-size: cover;">
-	</div>
-
-	<div style="font-size:x-large; display: inline-block;">
-		<form @onsubmit="OnChange">
-			@**@
-			
-			<div class="boxFilter">
-
-				<div class="PypeTypeFilter">
-					<label>
-						<select @bind="selectedFilter">
-						<option value="****">****</option>
-						@foreach (var pype in pypes)
-						{
-							if (pype.PypeId == "VERB")
-							{
-								<option value="@pype.PypeType">@pype.PypeType</option>
-							}
-						}
-						</select>
-					</label><br><br>
-				</div>
-
-				<div class="PypeType">
-					<label>
-						@table 
-						<select class="form-control" @bind="selectedVerb">
-						@foreach (var verb in verbs)
-						{
-							<option value="@verb.VerbId"> @verb.VerbLabel</option>
-						}
-						</select>
-					</label>
-				</div>
-
-					<img src="images/UIpanels/Panel_Commit.png"
-					 style="border-radius: 12px;background-size: cover;">
-					<button class="commitChange" type="submit"></button>
-				</div>
-
-
-			<div class="exhibitInfo">
-				<label>
-					label:
-					<input class="form-control" @bind="currentVerb.VerbLabel" maxlength="16" required />
-				</label><br><br>
-
-				<label>
-					description:
-					<input class="form-control" @bind="currentVerb.VerbDescription" maxlength="255" required />
-				</label><br><br><label>
-
-					type:
-					<select @bind="currentVerb.VerbType" required>
-						@foreach (var pype in pypes)
-						{
-							if (pype.PypeId == "VERB")
-							{
-								<option value="@pype.PypeType">@pype.PypeType</option>
-							}
-						}
-					</select>
-				</label><br><br>
-
-				<label>
-					status:
-					<input class="form-control" @bind="currentVerb.VerbStatus" maxlength="1" required />
-				</label><br><br>
-
-				<label>
-					image:
-					<input class="form-control" @bind="currentVerb.UrlIdPk" type="number" required />
-				</label>
-
-
-			</div>
-		</form>
-	</div>
-
-}
-
-<!-- ************************************************************************************ -->
-<!-- ************************************* VERB DELETE ********************************** -->
-<!-- ************************************************************************************ -->
-
-@if (showDelete)
-
-{
-	<div style="font-size:x-large; display: inline-block;">
-		<form @onsubmit="OnDelete">
-
-			<div class="ShadowText">
-				<img src="images/UIpanels/shadow_black.png"
-				 style="border-radius: 12px;background-size: cover;">
-			</div>
-
-
-
-
-			<div class="exhibitInfo">
-				<label>
-					@table to delete:
-					<select class="form-control" @bind="currentVerb.VerbId">
-						@foreach (var verb in verbsDelete)
-						{
-							<option value="@verb.VerbId"> @verb.VerbLabel</option>
-						}
-					</select>
-				</label>
-
-				<label>
-					filter:
-					<select @bind="selectedFilter">
-						<option value="****">****</option>
-						@foreach (var pype in pypes)
-						{
-							if (pype.PypeId == "VERB")
-							{
-								<option value="@pype.PypeType">@pype.PypeType</option>
-							}
-						}
-
-					</select>
-				</label><br><br>
-				<button type="submit">Delete</button>
-			</div>
-
-
-
-
-
-			<div class="exhibitInfo">
-				Only if the Status = D
-			</div>
-		</form>
-	</div>
-}
-
-
-@*<jukebox>
-	<div>
-
-		<audio controls="controls">
-			<source src="/images/Audio/curatorintrojazz.mp3" />
-		</audio>
-
-	</div>
-</jukebox>*@
-
-</div>
