@@ -1,4 +1,3 @@
-using LlamaLingo.Data;
 using LlamaLingo.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,7 +30,6 @@ namespace LlamaLingo
             // Register Syncfusion services
             services.AddSyncfusionBlazor();
 
-            services.AddSingleton<WeatherForecastService>();
             services.AddResponseCompression(opts =>
             {
                 opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "application/octet-stream" });
