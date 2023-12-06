@@ -16,4 +16,12 @@ public partial class Gantt
     public DateTime GanttStartDate { get; set; }
 
     public DateTime GanttFinishDate { get; set; }
+
+    public int GanttId { get; set; }
+
+    public string GanttDuration { get; set; }
+
+    public int GanttProgress { get; set; }
+
+    public int ParentIdFk { get; set; }
 }

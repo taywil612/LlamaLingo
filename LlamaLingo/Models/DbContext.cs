@@ -6,7 +6,6 @@ namespace LlamaLingo.Models;
 
 public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 {
-
     public DbContext()
     {
     }
@@ -95,16 +94,22 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
                 .HasMaxLength(255)
                 .HasDefaultValueSql("('description of task')")
                 .HasColumnName("Gantt_description");
+            entity.Property(e => e.GanttDuration)
+                .IsRequired()
+                .HasMaxLength(64)
+                .HasColumnName("Gantt_duration");
             entity.Property(e => e.GanttFinishDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("Gantt_finish_date");
+            entity.Property(e => e.GanttId).HasColumnName("Gantt_ID");
             entity.Property(e => e.GanttLabel)
                 .IsRequired()
                 .HasMaxLength(16)
                 .HasDefaultValueSql("('label16 task')")
                 .IsFixedLength()
                 .HasColumnName("Gantt_label");
+            entity.Property(e => e.GanttProgress).HasColumnName("Gantt_progress");
             entity.Property(e => e.GanttStartDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
@@ -121,6 +126,9 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
                 .HasDefaultValueSql("(N'task')")
                 .IsFixedLength()
                 .HasColumnName("Gantt_type");
+            entity.Property(e => e.ParentIdFk)
+                .HasDefaultValueSql("((1))")
+                .HasColumnName("Parent_ID_FK");
         });
 
         modelBuilder.Entity<LingoListNoun>(entity =>
