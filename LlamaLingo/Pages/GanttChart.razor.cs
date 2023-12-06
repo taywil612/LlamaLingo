@@ -5,22 +5,22 @@ namespace LlamaLingo.Pages
 {
 	public partial class GanttChart
     {
-        IEnumerable<LlamaLingo.Models.Task> TaskList;
+        IEnumerable<LlamaLingo.Models.Gantt> GanttList;
 
         protected override void OnInitialized()
         {
-            TaskList = db.Set<LlamaLingo.Models.Task>().ToList();
+            GanttList = db.Set<LlamaLingo.Models.Gantt>().ToList();
         }
 
-        public string[] Searchfields = new string[]
-        {
-            "TaskId",
-            "TaskLabel",
-            "TaskStartDate",
-            "TaskFinishDate",
-            "TaskDuration",
-            "TaskProgress",
-            "ParentIdFk"
+        public string[] Searchfields = new string[] { 
+            "GanttId", 
+            "GanttLabel", 
+            "GanttStartDate", 
+            "GanttFinishDate", 
+            "GanttDuration", 
+            "GanttProgress", 
+            "ParentIdFk" 
         };
+
     }
 }
