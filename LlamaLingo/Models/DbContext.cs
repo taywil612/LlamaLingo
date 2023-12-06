@@ -6,11 +6,12 @@ namespace LlamaLingo.Models;
 
 public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 {
+
     public DbContext()
     {
     }
 
-    public DbContext(DbContextOptions<Microsoft.EntityFrameworkCore.DbContext> options)
+    public DbContext(DbContextOptions<DbContext> options)
         : base(options)
     {
     }
@@ -48,11 +49,10 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
     public virtual DbSet<Work> Works { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-	{
-		optionsBuilder.UseSqlServer("\nServer=llamalingo.database.windows.net;Database=LlamaLingoDB;User=LlamaLingoLogin;Password=UMDLlamaLingo4444");
-	}
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=llamalingo.database.windows.net;Database=LlamaLingoDB;User=LlamaLingoLogin;Password=UMDLlamaLingo4444");
 
-	protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Fragment>(entity =>
         {
