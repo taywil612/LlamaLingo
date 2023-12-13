@@ -1,0 +1,152 @@
+/* Styling the messages */
+	/* Styling receiver messages */
+	.border-radius-left[b-w1qp062h67] {
+		border-radius: 25px 25px 25px 0px;
+	}
+
+	.text-align-left[b-w1qp062h67] {
+		text-align: left;
+	}
+
+	.default-color[b-w1qp062h67] {
+		background-color: #ffffff33;
+	}
+
+	/* Styling sender messages */
+	.border-radius-right[b-w1qp062h67] {
+		border-radius: 25px 25px 0px 25px;
+	}
+
+	.text-align-right[b-w1qp062h67] {
+		text-align: right;
+	}
+
+	.main-color[b-w1qp062h67] {
+		background-color: #ffffff33;
+		/*background-color: #09143be6;*/
+	}
+
+.text-align-left[b-w1qp062h67], .text-align-right[b-w1qp062h67] {
+	font-size: 0.90rem;
+}
+
+.dialogContent[b-w1qp062h67] {
+	display: block;
+	font-size: 1.1rem;
+	word-wrap: break-word;
+	text-align: center;
+	font-style: italic;
+	border-radius: 6px;
+	padding: 3%;
+	position: relative;
+	top: 25px;
+	color: white;
+	max-width: 200px;
+	min-width: 200px;
+}
+
+	.dialogContent .dialogText[b-w1qp062h67] {
+		font-size: 1.1rem;
+		padding: 0.75em;
+		word-wrap: break-word;
+		font-style: initial;
+		display: block;
+		color: white;
+		text-align: left;
+	}
+
+/* Styling the footer */
+.footer[b-w1qp062h67] {
+	font-size: 16px;
+	width: 90%;
+	margin: 0px auto auto auto;
+}
+
+.form[b-w1qp062h67] {
+	display: flex;
+	position: relative;
+	margin-top: 1%;
+	border-radius: 25px;
+	padding: 0.15em;
+	color: white;
+	background-color: #ffffff33;
+}
+
+	.username-input[b-w1qp062h67], .message-input[b-w1qp062h67] {
+		color: #ffffff;
+		border: none;
+		background-color: transparent;
+		outline: none;
+	}
+
+	.username-input[b-w1qp062h67] {
+		padding: 0.375rem 1.50rem; /* Left and right padding should be double the size of the textarea padding */
+		flex: 1;
+		margin-top: 1%;
+	}
+
+.message-input[b-w1qp062h67] {
+	resize: none;
+	border-radius: 0px;
+	margin: 0px 10px;
+	flex: 4;
+	overflow-x: hidden;
+	padding: 0.375rem 0.75rem;
+	width: 100%;
+}
+
+	.message-input[b-w1qp062h67]::placeholder, .username-input[b-w1qp062h67]::placeholder {
+		color: #ffffff; /* Specify the color you want for the placeholder text */
+	}
+
+/* Styling the send button */
+.send-button[b-w1qp062h67] {
+	flex: 1;
+	border-radius: 25px;
+	cursor: pointer;
+	color: #ffffff;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid transparent;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	background-color: #251354;
+	border-color: #251354;
+}
+
+	.send-button:hover[b-w1qp062h67] {
+		background-color: #251354cc; /* Lighter color when hovered */
+	}
+
+	.send-button:active[b-w1qp062h67] {
+		background-color: #25135499; /* Darker color when clicked */
+	}
+
+/* Styling the scroller for the message input and chat menu*/
+	.scroller[b-w1qp062h67] {
+	height: calc(100vh - 160px) !important;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+	.scroller[b-w1qp062h67]::-webkit-scrollbar, scrollbar-thumb
+	.scroller[b-w1qp062h67]::-webkit-scrollbar-thumb, 
+	.message-input[b-w1qp062h67]::-webkit-scrollbar, scrollbar-thumb .message-input[b-w1qp062h67]::-webkit-scrollbar-thumb {
+		width: 8px;
+		height: 110px;
+		border-radius: 4px;
+		position: center;
+	}
+
+	.scroller[b-w1qp062h67]::-webkit-scrollbar-thumb,
+	.message-input[b-w1qp062h67]::-webkit-scrollbar-thumb {
+		box-shadow: inset 0 0 0 10px #313C75;
+		border-radius: 4px;
+	}
+
+	.scroller::-webkit-scrollbar-track 
+	.message-input[b-w1qp062h67]::-webkit-scrollbar-track {
+		width: 28px;
+	}

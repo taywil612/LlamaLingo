@@ -1,0 +1,54 @@
+﻿@inject NavigationManager NavigationManager
+@implements IAsyncDisposable
+
+@* Structure for the chat menu that appears inside the chat sidebar. *@
+<div class="chat-menu">
+    <div class="container rounded" style="margin: 10px auto; height: 75%; width: 90%;">
+        <div class="scroller">
+        @* Print default message if the are no user messages. *@
+        @if (!userMessages.Any())
+        {
+                <div class="message d-flex">
+                    <div class="message-content">
+                        <div class="dialogContent">
+                            <div class="username text-align-left">
+                                LlamaLingo
+                            </div>
+                            <span class="dialogText text-align-left border-radius-left default-color">No new messages yet, start chatting!</span>
+                            <div class="date text-align-left">@DateTime.Now.ToString("h:mmtt | MMM dd")</div>
+                        </div>
+                    </div>
+                </div>
+        }
+        else
+        {
+            @* Print the list of user messages. *@
+            @foreach (var userMessage in userMessages)
+            {
+                @* Structure for message bubbles. *@
+                <div class="message d-flex @(userMessage.CurrentUser ? "justify-content-end" : "" )">
+                    <div class="message-content">
+                        <div class="dialogContent">
+                            <div class="username @(userMessage.CurrentUser ? "text-align-right" : "text-align-left" )">
+                                @(userMessage.CurrentUser ? "You" : userMessage.Username)
+                            </div>
+                            <span class="dialogText @(userMessage.CurrentUser ? "border-radius-right main-color" : "border-radius-left default-color" )">@userMessage.Message</span>
+                            <div class="date text-align-right">@userMessage.DataSent.ToString("h:mmtt | MMM dd")</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        </div>
+        @* Structure for user input form. *@
+         <div class="footer">
+             <div class="input-container" style="width: 100%">
+                 <input @bind="usernameInput" type="text" style="width: 85%; @(isUserReadonly ? "" : "background-color: rgba(255,255,255,0.20); border-radius: 25px;")" class="username-input" placeholder="Enter a username..." required autofocus maxlength="15" readonly="@isUserReadonly"/>
+                 <div class="form">
+                     <textarea class="message-input" @bind="messageInput" placeholder="Start typing..." rows="1"></textarea>
+                     <button type="button" @onclick="Send" disabled="@(!IsConnected)" class="send-button">Send</button>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>

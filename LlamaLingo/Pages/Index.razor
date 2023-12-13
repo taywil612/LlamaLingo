@@ -1,5 +1,9 @@
 ﻿@page "/"
-@inject NavigationManager NavigationManager
+
+@* Commented everything out for now because chat can now be accessed through the chat sidebar. *@
+@* This could turn into a homepage in the future.*@
+
+@* @inject NavigationManager NavigationManager
 @implements IAsyncDisposable
 
 <div class="container overflow-auto shadow-sm p-3 mb-3 bg-white rounded" style="height: 75vh;">
@@ -38,5 +42,6 @@
             <button type="button" @onclick="Send" disabled="@(!IsConnected)" class="btn btn-primary">Send</button>
         </div>
     </div>
-</div>
+</div> *@
+
 

@@ -1,0 +1,302 @@
+/* Styling use case menus */
+.menu-page, .component-page {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background: url(../images/BG/Role_BG.png)no-repeat;
+    background-position: left 0px top 0px;
+    opacity: 100%;
+    color: blanchedalmond;
+}
+
+.button-container button {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 280px;
+    height: 120px;
+    text-align: center;
+    color: black;
+    background-color: pink;
+    border-radius: 24px;
+    position: absolute;
+    opacity: 100%;
+    border-radius: 8px;
+    transition-duration: .60s;
+}
+
+.buttonMenu01 {
+    top: 375px;
+    left: 320px;
+    background-image: url("../images/buttons/btn_luster_Person.png");
+    background-size: cover;
+    margin: 10px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .buttonMenu01:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+.buttonMenu02 {
+    top: 545px;
+    left: 320px;
+    background-image: url("../images/buttons/btn_luster_Report.png");
+    background-size: cover;
+    margin: 10px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .buttonMenu02:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+.buttonMenu03 {
+    top: 715px;
+    left: 320px;
+    background-image: url("../images/buttons/btn_luster_NOVA.png");
+    background-size: cover;
+    margin: 10px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .buttonMenu03:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+.exhibitPanel {
+    position: absolute;
+    top: 370px;
+    left: 420px;
+    color: blanchedalmond;
+    width: 540px;
+    font-size: x-large;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.exhibitInfo {
+    position: absolute;
+    top: 350px;
+    left: 400px;
+    color: blanchedalmond;
+    width: 540px;
+    height: 700px;
+    margin: 44px;
+    font-size: x-large;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.titlebanner {
+    position: absolute;
+    top: 125px;
+    left: 660px;
+    background-image: url("../images/buttons/UseCase_admn.png");
+    color: black;
+    border-radius: 24px;
+}
+
+/* Styling component pages */
+.component-page {
+    color: white;
+}
+
+.component-page jukebox {
+    position: absolute;
+    left: 90%;
+    top: 95%;
+    border-radius: 0px;
+    opacity: 40%;
+}
+
+.component-page .boxButton {
+    padding: 0;
+    margin: 0;
+    width: 1000px;
+    height: 100px;
+    text-align: right;
+    top: 90px;
+    left: 600px;
+    color: #FF0000;
+    position: absolute;
+    opacity: 100%;
+    background-image: url("../images/GUI/DC_GUI_user_Direction.png");
+    background-size: cover;
+}
+
+.component-page .button-container button {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 180px;
+    height: 90px;
+    top: 76px;
+    left: 0px;
+    border-radius: 8px;
+    transition-duration: .60s;
+    color: black;
+    background-color: limegreen;
+    text-align: center;
+    opacity: 100%;
+}
+
+.component-page .buttonList {
+    left: 660px;
+    opacity: 90%;
+    background-image: url("../images/buttons/Button_L.png");
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .component-page .buttonList:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+.component-page .buttonAdd {
+    background-image: url("../images/buttons/Button_A.png");
+    background-size: cover;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .component-page.buttonAdd:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+.component-page .buttonChange {
+    background-image: url("../images/buttons/Button_C.png");
+    background-size: cover;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .component-page .buttonChange:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+.component-page .buttonDelete {
+    background-image: url("../images/buttons/Button_D.png");
+    background-size: cover;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .component-page .buttonDelete:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+.component-page .Shadow {
+    position: absolute;
+    top: 120px;
+    left: 1520px;
+    width: 250px;
+    height: 920px;
+    border-radius: 12px;
+    opacity: 95%;
+}
+
+.component-page .ShadowText {
+    position: absolute;
+    top: 360px;
+    left: 390px;
+    width: 500px;
+    height: 920px;
+    border-radius: 12px;
+    opacity: 95%;
+}
+
+.component-page .boxFilter {
+    position: absolute;
+    top: 360px;
+    left: 1020px;
+    opacity: 85%;
+    width: 200px;
+    height: 360px;
+}
+
+.component-page .PypeTypeFilter {
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    color: blanchedalmond;
+    opacity: 55%;
+    width: 160px;
+    height: 200px;
+    font-size: x-large;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.component-page .PypeType {
+    margin: 0;
+    position: absolute;
+    top: 143px;
+    left: 20px;
+    color: blanchedalmond;
+    opacity: 55%;
+    width: 440px;
+    font-size: x-large;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.component-page .button-container .commitChange {
+    position: absolute;
+    top: 285px;
+    left: 40px;
+    width: 120px;
+    height: 50px;
+    background-image: url("../images/buttons/btn_change.png");
+    background-size: cover;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .component-page .button-container .commitChange:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+.component-page .commitDelete {
+    position: absolute;
+    top: 285px;
+    left: 40px;
+    width: 120px;
+    height: 50px;
+    background-image: url("../images/buttons/btn_delete.png");
+    background-size: cover;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .component-page .commitDelete:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+.component-page .button-container .commitCreate {
+    position: absolute;
+    top: 285px;
+    left: 40px;
+    width: 120px;
+    height: 50px;
+    background-image: url("../images/buttons/btn_add.png");
+    background-size: cover;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .component-page .button-container .commitCreate:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }

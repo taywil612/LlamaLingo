@@ -1,21 +1,213 @@
 ﻿@inherits LayoutComponentBase
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Navigations
 
 <PageTitle>LlamaLingo</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+@* Create the sidebar for the chat. *@
+<SfSidebar ID="Chatbar" Type="SidebarType.Auto" Position="SidebarPosition.Right" Width="100%" @ref="Chat" @bind-IsOpen="ChatbarToggle" ZIndex="1200">
+    <ChildContent>
+        <div class="sidebar" style="position:fixed;z-index:1200; width: 100%;">
+            <div class="shadow topnav navbar navbar-dark">
+                <a class="navbar-brand" href=""><span class="displayText" style="margin-left: 15px;">Chat</span></a>
+                <button class="navbar-toggler" title="Close Chat" style="margin-right: 10px;" @onclick="ToggleChatMenu"></button>
+            </div>
+            @* Add the chat menu into the chat sidebar. *@                
+            <ChatMenu />
+        </div>
+    </ChildContent>
+</SfSidebar>   
 
-    <div class="main">
-        <div class="top-row px-4">
+@* Hide the chat button if chat sidebar is on the screen. *@
+@if (!this.ChatbarToggle)
+{ 
+        <SfFab Position="FabPosition.BottomRight" title="Chat" OnClick="ToggleChatMenu">    
+            <div class="oi oi-chat"></div>
+            <span class="e-badge e-badge-success e-badge-overlap e-badge-dot"></span>
+        </SfFab>
+}
+
+@* Create the sidebar for the navigation menu. *@
+<SfSidebar ID="Sidebar" Type="SidebarType.Auto" Width="300px" DockSize="65px" Position="SidebarPosition.Left" EnableDock="true" @ref="Sidebar" @bind-IsOpen="SidebarToggle" ZIndex="1199">
+    <ChildContent>
+        <div class="sidebar" style="position:fixed;z-index:1200;">
+            <div class="shadow topnav navbar navbar-dark">
+				<button class="navbar-toggler" @onclick="ToggleNavMenu"></button>
+				<a class="navbar-brand" href=""><span class="displayText" style="margin-left:15px">Navigation</span></a>
+            </div>
+            @* Add the navigation menu into the sidebar. *@                
+            <NavMenu />
+        </div>
+    </ChildContent>
+</SfSidebar>
+
+@* 
+    The content below will be pushed by sidebar. 
+*@
+
+@* Create the page content. *@
+<div class="page-content e-main-content">
+	<div class="main">
+        @* Create the top-row navigation bar. *@
+        <div class="shadow top-row px-4" style="z-index: 1111; overflow-x: auto; overflow-y: hidden;">
             <a href="/RadarChart">RadarChart</a>
             <a href="/GanttChart">GanttChart</a>
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <div class="content px-4">
+		</div>
+        <div class="content">
+            @* Display the content from other pages. *@
             @Body
         </div>
     </div>
 </div>
+
+<style>
+    /* Content area styles */
+    .title {
+        font-size: 20px;
+    }
+
+    .page-content {
+        height: 100%;
+    }
+
+    /* Styling the chat button */
+	.e-fab.e-btn.e-fab-bottom {
+		z-index: 1198;
+	}
+
+    .e-btn.e-primary, .e-css.e-btn.e-primary {
+        background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+        border-color: #251354;
+        color: #fff;
+    }
+
+    /* Sidebar styles */
+    .e-sidebar .e-icons::before {
+        font-size: 25px;
+    }
+    .e-sidebar:hover .e-open{
+         display:inline-block;
+    }
+    .e-sidebar:hover .e-close {
+        display: none;
+    }
+
+    /* dockbar icon Style */
+    .e-sidebar .home::before {
+        content: '\e102';
+    }
+
+    .e-sidebar .profile::before {
+        content: '\e10c';
+    }
+    .e-sidebar .info::before {
+        content: '\e11b';
+    }
+
+    .e-sidebar .settings::before {
+        content: '\e10b';
+    }
+
+    .e-sidebar .expand::before,
+    .e-sidebar.e-right.e-open .expand::before {
+        content: '\e10f';
+    }
+
+    .e-sidebar.e-open .expand::before,
+    .e-sidebar.e-right .expand::before {
+        content: '\e10e';
+    }
+    /* end of dockbar icon Style */
+
+    .e-sidebar.e-dock.e-close span.e-text {
+        display: none;
+    }
+
+    .e-sidebar.e-dock.e-close .navbar-toggler {
+        margin-left: 21px;
+    }
+
+    .e-sidebar.e-dock.e-close .nav.flex-column {
+        margin-left: -8px;
+    }
+
+    .e-sidebar.e-dock.e-close .displayText {
+        display: none;
+    }
+
+    .e-sidebar.e-dock.e-close .nav-item.px-3 {
+        width: 80px;
+    }
+    
+    /* Styling the chat sidebar */
+    .e-sidebar.e-right {
+        max-width: 520px;
+    }
+    
+    /* Styling the sidebar */
+    .e-sidebar.e-right, .e-sidebar.e-left{
+		border: 0px;
+		height: 100%;
+	}
+
+    /* Styling the separator*/
+    .e-sidebar.e-dock.e-close .separator {
+        opacity: 0.14;
+        width: 45px;
+        margin: 0px 1rem 5px 0.5rem;
+    }
+
+    .e-sidebar.e-dock.e-close .oi.oi-home {
+        margin-left: -1px;
+    }
+
+    .e-sidebar.e-dock.e-close .syncfusion-blazor-icons {
+        margin-left: -1px;
+    }
+
+    .e-sidebar.e-dock.e-open span.e-text {
+        display: inline-block;
+    }
+
+    .e-sidebar li {
+        list-style-type: none;
+        cursor: pointer;
+    }
+
+    .e-sidebar ul {
+        padding: 0px;
+    }
+
+    .e-sidebar span.e-icons {
+        color: #c0c2c5;
+        line-height: 2
+    }
+
+    .e-open .e-icons {
+        margin-right: 16px;
+    }
+
+    .e-open .e-text {
+        overflow: hidden;
+        font-size: 15px;
+    }
+
+    .sidebar-item {
+        text-align: center;
+        border-bottom: 1px #e5e5e58a solid;
+    }
+
+    .e-sidebar.e-open .sidebar-item {
+        text-align: left;
+        padding-left: 15px;
+        color: #c0c2c5;
+    }
+
+    .e-sidebar {
+        background: #2d323e;
+        overflow: hidden;
+    }
+    /* end of sidebar styles */
+
+</style>

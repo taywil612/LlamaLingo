@@ -1,3 +1,156 @@
+/* _content/LlamaLingo/Shared/ChatMenu.razor.rz.scp.css */
+/* Styling the messages */
+	/* Styling receiver messages */
+	.border-radius-left[b-w1qp062h67] {
+		border-radius: 25px 25px 25px 0px;
+	}
+
+	.text-align-left[b-w1qp062h67] {
+		text-align: left;
+	}
+
+	.default-color[b-w1qp062h67] {
+		background-color: #ffffff33;
+	}
+
+	/* Styling sender messages */
+	.border-radius-right[b-w1qp062h67] {
+		border-radius: 25px 25px 0px 25px;
+	}
+
+	.text-align-right[b-w1qp062h67] {
+		text-align: right;
+	}
+
+	.main-color[b-w1qp062h67] {
+		background-color: #ffffff33;
+		/*background-color: #09143be6;*/
+	}
+
+.text-align-left[b-w1qp062h67], .text-align-right[b-w1qp062h67] {
+	font-size: 0.90rem;
+}
+
+.dialogContent[b-w1qp062h67] {
+	display: block;
+	font-size: 1.1rem;
+	word-wrap: break-word;
+	text-align: center;
+	font-style: italic;
+	border-radius: 6px;
+	padding: 3%;
+	position: relative;
+	top: 25px;
+	color: white;
+	max-width: 200px;
+	min-width: 200px;
+}
+
+	.dialogContent .dialogText[b-w1qp062h67] {
+		font-size: 1.1rem;
+		padding: 0.75em;
+		word-wrap: break-word;
+		font-style: initial;
+		display: block;
+		color: white;
+		text-align: left;
+	}
+
+/* Styling the footer */
+.footer[b-w1qp062h67] {
+	font-size: 16px;
+	width: 90%;
+	margin: 0px auto auto auto;
+}
+
+.form[b-w1qp062h67] {
+	display: flex;
+	position: relative;
+	margin-top: 1%;
+	border-radius: 25px;
+	padding: 0.15em;
+	color: white;
+	background-color: #ffffff33;
+}
+
+	.username-input[b-w1qp062h67], .message-input[b-w1qp062h67] {
+		color: #ffffff;
+		border: none;
+		background-color: transparent;
+		outline: none;
+	}
+
+	.username-input[b-w1qp062h67] {
+		padding: 0.375rem 1.50rem; /* Left and right padding should be double the size of the textarea padding */
+		flex: 1;
+		margin-top: 1%;
+	}
+
+.message-input[b-w1qp062h67] {
+	resize: none;
+	border-radius: 0px;
+	margin: 0px 10px;
+	flex: 4;
+	overflow-x: hidden;
+	padding: 0.375rem 0.75rem;
+	width: 100%;
+}
+
+	.message-input[b-w1qp062h67]::placeholder, .username-input[b-w1qp062h67]::placeholder {
+		color: #ffffff; /* Specify the color you want for the placeholder text */
+	}
+
+/* Styling the send button */
+.send-button[b-w1qp062h67] {
+	flex: 1;
+	border-radius: 25px;
+	cursor: pointer;
+	color: #ffffff;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid transparent;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	background-color: #251354;
+	border-color: #251354;
+}
+
+	.send-button:hover[b-w1qp062h67] {
+		background-color: #251354cc; /* Lighter color when hovered */
+	}
+
+	.send-button:active[b-w1qp062h67] {
+		background-color: #25135499; /* Darker color when clicked */
+	}
+
+/* Styling the scroller for the message input and chat menu*/
+	.scroller[b-w1qp062h67] {
+	height: calc(100vh - 160px) !important;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+	.scroller[b-w1qp062h67]::-webkit-scrollbar, scrollbar-thumb
+	.scroller[b-w1qp062h67]::-webkit-scrollbar-thumb, 
+	.message-input[b-w1qp062h67]::-webkit-scrollbar, scrollbar-thumb .message-input[b-w1qp062h67]::-webkit-scrollbar-thumb {
+		width: 8px;
+		height: 110px;
+		border-radius: 4px;
+		position: center;
+	}
+
+	.scroller[b-w1qp062h67]::-webkit-scrollbar-thumb,
+	.message-input[b-w1qp062h67]::-webkit-scrollbar-thumb {
+		box-shadow: inset 0 0 0 10px #313C75;
+		border-radius: 4px;
+	}
+
+	.scroller::-webkit-scrollbar-track 
+	.message-input[b-w1qp062h67]::-webkit-scrollbar-track {
+		width: 28px;
+	}
 /* _content/LlamaLingo/Shared/MainLayout.razor.rz.scp.css */
 .page[b-ev0ybvepx7] {
     position: relative;
@@ -5,21 +158,68 @@
     flex-direction: column;
 }
 
-.main[b-ev0ybvepx7] {
-    flex: 1;
+/* Styling the sidebar */
+.topnav[b-ev0ybvepx7] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#Sidebar .navbar[b-ev0ybvepx7] {
+    justify-content: flex-start;
+    padding: 0.5rem 0rem;
+}
+
+.navbar-toggler[b-ev0ybvepx7] {
+    display: inline-block;
+    border: none;
+    width: 24px;
+    height: 24px;
+    margin-left: 30px;
+    background-image: url('images/ToggleButton.png');
+    background-color: #05163C;
+    transform: scale(0.75);
+    transform-origin: left;
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-toggler[b-ev0ybvepx7] {
+    color: transparent;
+    border-color: transparent;
+}
+
+.navbar-brand[b-ev0ybvepx7] {
+    font-size: 1.1rem;
+    margin-right: 24px;
 }
 
 .sidebar[b-ev0ybvepx7] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    width: 300px;
+    min-width: 300px;
 }
 
+@media (min-width: 641px) {
+    .navbar-toggler[b-ev0ybvepx7] {
+        display: block;
+    }
+
+    .collapse[b-ev0ybvepx7] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
+
+.main[b-ev0ybvepx7] {
+    flex: 1;
+}
+
+/* Styling the top row */
 .top-row[b-ev0ybvepx7] {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
+    background-color: #ffffff;
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;
-    align-items: center;
+    padding: 0.5rem 0rem;
 }
 
     .top-row[b-ev0ybvepx7]  a, .top-row .btn-link[b-ev0ybvepx7] {
@@ -27,108 +227,53 @@
         margin-left: 1.5rem;
     }
 
-    .top-row a:first-child[b-ev0ybvepx7] {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-@media (max-width: 640.98px) {
-    .top-row:not(.auth)[b-ev0ybvepx7] {
-        display: none;
-    }
-
-    .top-row.auth[b-ev0ybvepx7] {
-        justify-content: space-between;
-    }
-
-    .top-row a[b-ev0ybvepx7], .top-row .btn-link[b-ev0ybvepx7] {
-        margin-left: 0;
-    }
-}
-
-@media (min-width: 641px) {
+@media (min-width: 0px) {
     .page[b-ev0ybvepx7] {
         flex-direction: row;
     }
 
     .sidebar[b-ev0ybvepx7] {
         width: 250px;
-        height: 100vh;
+        height: 100%;
         position: sticky;
         top: 0;
     }
 
     .top-row[b-ev0ybvepx7] {
-        position: sticky;
+        position: sticky; 
         top: 0;
         z-index: 1;
     }
-
-    .main > div[b-ev0ybvepx7] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
-    }
 }
 /* _content/LlamaLingo/Shared/NavMenu.razor.rz.scp.css */
-.navbar-toggler[b-fcj46uwyos] {
-    background-color: rgba(255, 255, 255, 0.1);
+/* Styling the scroller for the navigation menu sidebar */
+.sidebar-scroller[b-fcj46uwyos] {
+    height: calc(90% - 160px) !important;
+    overflow-y: auto;
+    width: 287px;
 }
 
-.top-row[b-fcj46uwyos] {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.navbar-brand[b-fcj46uwyos] {
-    font-size: 1.1rem;
-}
-
-.oi[b-fcj46uwyos] {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-}
-
-.nav-item[b-fcj46uwyos] {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
-}
-
-    .nav-item:first-of-type[b-fcj46uwyos] {
-        padding-top: 1rem;
-    }
-
-    .nav-item:last-of-type[b-fcj46uwyos] {
-        padding-bottom: 1rem;
-    }
-
-    .nav-item[b-fcj46uwyos]  a {
-        color: #d7d7d7;
+    .sidebar-scroller[b-fcj46uwyos]::-webkit-scrollbar, scrollbar-thumb
+    .sidebar-scroller[b-fcj46uwyos]::-webkit-scrollbar-thumb {
+        width: 8px;
+        height: 110px;
         border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
+        position: center;
     }
 
-.nav-item[b-fcj46uwyos]  a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
-}
-
-.nav-item[b-fcj46uwyos]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
-
-@media (min-width: 641px) {
-    .navbar-toggler[b-fcj46uwyos] {
-        display: none;
+    .sidebar-scroller[b-fcj46uwyos]::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 0 10px #313C75;
+        border-radius: 4px;
     }
 
-    .collapse[b-fcj46uwyos] {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
+    .sidebar-scroller[b-fcj46uwyos]::-webkit-scrollbar-track {
+        width: 28px;
     }
+
+/* Styling the separator on the navigation sidebar when it is opended */
+.separator[b-fcj46uwyos] {
+    border: 1px solid #FFFFFF;
+    opacity: 0.14;
+    width: 80%;
+    margin: 0px 1rem 5px 0.5rem;
 }
