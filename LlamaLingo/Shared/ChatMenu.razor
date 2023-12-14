@@ -33,7 +33,7 @@
                                 @(userMessage.CurrentUser ? "You" : userMessage.Username)
                             </div>
                             <span class="dialogText @(userMessage.CurrentUser ? "border-radius-right main-color" : "border-radius-left default-color" )">@userMessage.Message</span>
-                            <div class="date text-align-right">@userMessage.DataSent.ToString("h:mmtt | MMM dd")</div>
+                            <div class="date text-align-right">@userMessage.DateSent.ToString("h:mmtt | MMM dd")</div>
                         </div>
                     </div>
                 </div>
