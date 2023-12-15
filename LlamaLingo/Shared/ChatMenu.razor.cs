@@ -23,7 +23,7 @@ namespace LlamaLingo.Shared
             {
                 InvokeAsync(() =>
                 {
-                    userMessages.Add(new UserMessage { Username = user, Message = message, CurrentUser = user == usernameInput, DataSent = DateTime.Now });
+                    userMessages.Add(new UserMessage { Username = user, Message = message, CurrentUser = user == usernameInput, DateSent = DateTime.Now });
                     StateHasChanged();
                 });
             });
