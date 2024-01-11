@@ -235,31 +235,39 @@
 						 style="border-radius: 12px;background-size: cover;">
 					</div>
 
-					<div class="exhibitInfo">
-						<label>
-							@table to delete:
-							<select class="form-control" @bind="currentVerb.VerbId">
-								@foreach (var verb in verbsDelete)
-								{
-									<option value="@verb.VerbId"> @verb.VerbLabel</option>
-								}
-							</select>
-						</label>
+					<div class="boxFilter">
 
-						<label>
-							filter:
-							<select @bind="selectedFilter">
-								<option value="****">****</option>
-								@foreach (var pype in pypes)
-								{
-									if (pype.PypeId == "VERB")
+						<div class="PypeTypeFilter">
+							<label>
+								<select @bind="selectedFilter">
+									<option value="****">****</option>
+									@foreach (var pype in pypes)
 									{
-										<option value="@pype.PypeType">@pype.PypeType</option>
+										if (pype.PypeId == "VERB")
+										{
+											<option value="@pype.PypeType">@pype.PypeType</option>
+										}
 									}
-								}
-							</select>
-						</label><br><br>
-						<button type="submit">Delete</button>
+								</select>
+							</label>
+						 </div>
+
+						<div class="PypeType">
+							<label>
+								@table
+								<select class="form-control" @bind="currentVerb.VerbId">
+									@foreach (var verb in verbsDelete)
+									{
+										<option value="@verb.VerbId"> @verb.VerbLabel</option>
+									}
+								</select>
+							</label>
+						</div>
+
+						<img src="images/UIpanels/Panel_Commit.png"
+							 style="border-radius: 12px;background-size: cover;">
+						<button class="commitDelete" type="submit">Delete</button>
+
 					</div>
 
 					<div class="exhibitInfo">
