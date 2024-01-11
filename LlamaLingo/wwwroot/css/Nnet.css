@@ -269,7 +269,7 @@
         transform: scale(.85);
     }
 
-.component-page .commitDelete {
+.component-page .button-container .commitDelete {
     position: absolute;
     top: 285px;
     left: 40px;
@@ -280,7 +280,7 @@
     box-shadow: 0 30px 60px rgba(0,0,0,.5);
 }
 
-    .component-page .commitDelete:hover {
+    .component-page .button-container .commitDelete:hover {
         box-shadow: 0 5px 10px rgba(0,0,0,.5);
         transform: scale(.85);
     }
