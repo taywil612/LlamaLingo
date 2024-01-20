@@ -72,12 +72,13 @@
     top: 370px;
     left: 420px;
     color: blanchedalmond;
-    width: 540px;
+    width: 570px;
+    height: 880px;
     font-size: x-large;
     text-overflow: ellipsis;
     /* Required for text-overflow to do anything */
     white-space: nowrap;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .exhibitInfo {

@@ -29,5 +29,5 @@ namespace LlamaLingo.Shared
         {
             ChatbarToggle = !ChatbarToggle;
         }
-    }
+	}
 }

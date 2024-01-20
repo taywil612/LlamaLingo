@@ -31,7 +31,6 @@ namespace LlamaLingo.Pages
 		private readonly string sqlServerconnectionString = "Server=tcp:llamalingo.database.windows.net,1433;Initial Catalog=LlamaLingoDB;Persist Security Info=False;User ID=LlamaLingoLogin;Password=UMDLlamaLingo4444;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
 
-
 		private int _selectedId = 1; // user filter selection
 
 
@@ -85,7 +84,7 @@ namespace LlamaLingo.Pages
 		private void Read()
 		{
 			SqlConnection connection = new SqlConnection(sqlServerconnectionString);
-			SqlCommand cmd = new SqlCommand("[dbo].[NovaLascauxRead]", connection);
+			SqlCommand cmd = new SqlCommand("[dbo].[Nova_Lascaux_Read]", connection);
 
 			SqlParameter param1 = new SqlParameter();
 			param1.ParameterName = "@pod";
@@ -134,7 +133,7 @@ namespace LlamaLingo.Pages
 		private void SingleNovaRead()
 		{
 			SqlConnection connection = new SqlConnection(sqlServerconnectionString);
-			SqlCommand cmd = new SqlCommand("[dbo].[NovaLascauxRead]", connection);
+			SqlCommand cmd = new SqlCommand("[dbo].[Nova_Lascaux_Read]", connection);
 
 			SqlParameter param1 = new SqlParameter();
 			param1.ParameterName = "@pod";
@@ -195,7 +194,7 @@ namespace LlamaLingo.Pages
 			}
 		}
 	}
-
+	//testing
 	public class NovaLascaux
 	{
 		public int NovaId { get; set; }

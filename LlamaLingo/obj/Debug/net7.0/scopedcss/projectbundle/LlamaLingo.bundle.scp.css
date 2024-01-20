@@ -24,7 +24,6 @@
 
 	.main-color[b-w1qp062h67] {
 		background-color: #ffffff33;
-		/*background-color: #09143be6;*/
 	}
 
 .text-align-left[b-w1qp062h67], .text-align-right[b-w1qp062h67] {
@@ -161,7 +160,7 @@
 /* Styling the sidebar */
 .topnav[b-ev0ybvepx7] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #09143b;
 }
 
 #Sidebar .navbar[b-ev0ybvepx7] {
@@ -215,7 +214,7 @@
 
 /* Styling the top row */
 .top-row[b-ev0ybvepx7] {
-    background-color: #ffffff;
+    background-color: #09143b;
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;
