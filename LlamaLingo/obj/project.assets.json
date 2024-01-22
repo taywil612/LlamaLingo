@@ -4590,19 +4590,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JXEli\\.nuget\\packages\\": {}
+    "C:\\Users\\Jamie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
+      "projectUniqueName": "C:\\Users\\Jamie\\Documents\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
       "projectName": "LlamaLingo",
-      "projectPath": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
-      "packagesPath": "C:\\Users\\JXEli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\obj\\",
+      "projectPath": "C:\\Users\\Jamie\\Documents\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
+      "packagesPath": "C:\\Users\\Jamie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jamie\\Documents\\LlamaLingo\\LlamaLingo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\JXEli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jamie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4688,7 +4688,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
