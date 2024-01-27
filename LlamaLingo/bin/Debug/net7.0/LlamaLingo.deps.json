@@ -14,8 +14,11 @@
           "Microsoft.EntityFrameworkCore.Tools": "7.0.13",
           "Syncfusion.Blazor.Charts": "23.1.43",
           "Syncfusion.Blazor.Gantt": "23.1.43",
+          "Syncfusion.Blazor.Grid": "23.1.43",
           "Syncfusion.Blazor.Layouts": "23.1.43",
           "Syncfusion.Blazor.Navigations": "23.1.43",
+          "Syncfusion.Blazor.Notifications": "23.1.43",
+          "Syncfusion.Blazor.Spinner": "23.1.43",
           "Syncfusion.Blazor.Themes": "23.1.43"
         },
         "runtime": {

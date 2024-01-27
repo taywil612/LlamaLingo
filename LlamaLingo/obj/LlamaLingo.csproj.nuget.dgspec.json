@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jamie\\Documents\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj": {}
+    "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jamie\\Documents\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj": {
+    "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jamie\\Documents\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
+        "projectUniqueName": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
         "projectName": "LlamaLingo",
-        "projectPath": "C:\\Users\\Jamie\\Documents\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
-        "packagesPath": "C:\\Users\\Jamie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jamie\\Documents\\LlamaLingo\\LlamaLingo\\obj\\",
+        "projectPath": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
+        "packagesPath": "C:\\Users\\JXEli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jamie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JXEli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,11 +68,23 @@
               "target": "Package",
               "version": "[23.1.43, )"
             },
+            "Syncfusion.Blazor.Grid": {
+              "target": "Package",
+              "version": "[23.1.43, )"
+            },
             "Syncfusion.Blazor.Layouts": {
               "target": "Package",
               "version": "[23.1.43, )"
             },
             "Syncfusion.Blazor.Navigations": {
+              "target": "Package",
+              "version": "[23.1.43, )"
+            },
+            "Syncfusion.Blazor.Notifications": {
+              "target": "Package",
+              "version": "[23.1.43, )"
+            },
+            "Syncfusion.Blazor.Spinner": {
               "target": "Package",
               "version": "[23.1.43, )"
             },
@@ -100,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

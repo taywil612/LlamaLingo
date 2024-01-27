@@ -7,7 +7,7 @@
 /* Styling the sidebar */
 .topnav[b-ev0ybvepx7] {
     height: 3.5rem;
-    background-color: #09143b;
+    background-color: var(--top-navbar-color);
 }
 
 #Sidebar .navbar[b-ev0ybvepx7] {
@@ -22,7 +22,6 @@
     height: 24px;
     margin-left: 30px;
     background-image: url('images/ToggleButton.png');
-    background-color: #05163C;
     transform: scale(0.75);
     transform-origin: left;
     color: #ffffff;
@@ -39,7 +38,7 @@
 }
 
 .sidebar[b-ev0ybvepx7] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-image: var(--background-gradient);
     width: 300px;
     min-width: 300px;
 }
@@ -61,7 +60,7 @@
 
 /* Styling the top row */
 .top-row[b-ev0ybvepx7] {
-    background-color: #09143b;
+    background-color: var(--top-navbar-color);
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;

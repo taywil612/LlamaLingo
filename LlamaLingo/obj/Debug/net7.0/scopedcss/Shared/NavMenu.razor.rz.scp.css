@@ -2,7 +2,7 @@
 .sidebar-scroller[b-fcj46uwyos] {
     height: calc(90% - 160px) !important;
     overflow-y: auto;
-    width: 287px;
+    margin-top: 5px;
 }
 
     .sidebar-scroller[b-fcj46uwyos]::-webkit-scrollbar, scrollbar-thumb
@@ -26,6 +26,5 @@
 .separator[b-fcj46uwyos] {
     border: 1px solid #FFFFFF;
     opacity: 0.14;
-    width: 80%;
-    margin: 0px 1rem 5px 0.5rem;
+    width: 100%;
 }
