@@ -10,7 +10,7 @@
 	}
 
 	.default-color[b-w1qp062h67] {
-		background-color: #ffffff33;
+		background-color: var(--chat-bubble-color);
 	}
 
 	/* Styling sender messages */
@@ -22,9 +22,9 @@
 		text-align: right;
 	}
 
-	.main-color[b-w1qp062h67] {
-		background-color: #ffffff33;
-	}
+.main-color[b-w1qp062h67] {
+	background-color: var(--chat-bubble-color);
+}
 
 .text-align-left[b-w1qp062h67], .text-align-right[b-w1qp062h67] {
 	font-size: 0.90rem;
@@ -40,7 +40,7 @@
 	padding: 3%;
 	position: relative;
 	top: 25px;
-	color: white;
+	color: var(--chat-text-color);
 	max-width: 200px;
 	min-width: 200px;
 }
@@ -51,7 +51,7 @@
 		word-wrap: break-word;
 		font-style: initial;
 		display: block;
-		color: white;
+		color: var(--chat-text-color);
 		text-align: left;
 	}
 
