@@ -10,6 +10,13 @@ namespace LlamaLingo.Pages
 {
     public partial class Page_Element
     {
+		//[Parameter]
+		//[SupplyParameterFromQuery]
+		//public int? pod { get; set; }
+
+		//[Parameter]
+		//[SupplyParameterFromQuery]
+		//public int? pid { get; set; }
 
 		private readonly string sqlServerconnectionString = "Server=tcp:llamalingo.database.windows.net,1433;Initial Catalog=LlamaLingoDB;Persist Security Info=False;User ID=LlamaLingoLogin;Password=UMDLlamaLingo4444;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public bool showCreate = false;
