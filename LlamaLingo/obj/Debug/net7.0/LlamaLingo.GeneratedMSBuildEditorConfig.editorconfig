@@ -70,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudV94cHJ0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Page_Element.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZV9FbGVtZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Page_Lascaux.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZV9MYXNjYXV4LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

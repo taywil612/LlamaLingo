@@ -1,13 +1,16 @@
 ﻿@page "/"
 @using Syncfusion.Blazor
+@using Syncfusion.Blazor.Data
 @using Syncfusion.Blazor.Layouts
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Charts
 @using Syncfusion.Blazor.Grids
+@using System.Collections
 @inject NavigationManager NavigationManager
 
 <div class="main-content">
-	@if (false)
+   
+	@if (true)
 	{
 	<div class="control-section">
 		<div class="header">
@@ -277,7 +280,8 @@
 	<br>
 	<br>
 
-	@code {
+	@code {  
+ 
 		SfDashboardLayout dashboardObject;
 		private Theme Theme { get; set; }
 		private double[] Spacing = new double[] { 15, 15 };
