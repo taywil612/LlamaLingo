@@ -44,7 +44,7 @@ Your current ID is @currentId
 	{
 		if (!ColorManage.setCurrentId(id)) return;
 		currentId = ColorManage.getCurrentId();
-		NavManager.NavigateTo("/color-chart");
+		NavManager.NavigateTo(StoredChartType.getType());
 	}
 
 	private void ValueChangeHandler(Syncfusion.Blazor.Inputs.ChangeEventArgs<int?> args)

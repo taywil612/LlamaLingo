@@ -22,8 +22,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jamie/Documents/LlamaLingo/LlamaLingo/Pages/ColorChart.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sb3JDaGFydC5yYXpvcg==
+[C:/Users/Jamie/Documents/LlamaLingo/LlamaLingo/Pages/Charts/BarChart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcnRzXEJhckNoYXJ0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jamie/Documents/LlamaLingo/LlamaLingo/Pages/Charts/ColorChart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcnRzXENvbG9yQ2hhcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jamie/Documents/LlamaLingo/LlamaLingo/Pages/Charts/Funnel.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcnRzXEZ1bm5lbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jamie/Documents/LlamaLingo/LlamaLingo/Pages/Charts/PieChart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcnRzXFBpZUNoYXJ0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jamie/Documents/LlamaLingo/LlamaLingo/Pages/Charts/Pyramid.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcnRzXFB5cmFtaWQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jamie/Documents/LlamaLingo/LlamaLingo/Pages/ColorTable.razor]

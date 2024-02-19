@@ -14,57 +14,102 @@ namespace LlamaLingo.Pages
         private static List<string> componentNames = new List<string>() { "Red Strength", "Green Strength", "Blue Strength" };
         public static List<int> getComponents()
         {
-            connect();
+            //        connect();
 
+            //        List<int> output;
+            //        String sql = "SELECT redStr, grnStr, bluStr from dbo.ColorTest\n" +
+            //            "WHERE id=" + currentID + ";";
+            //        using (SqlCommand cmd = new SqlCommand(sql, conn))
+            //        {
+            //            using (SqlDataReader reader = cmd.ExecuteReader())
+            //            {
+            //                if (reader.Read()) {
+            //                    output = new List<int>
+            //                    {
+            //                        reader.GetInt32(0),
+            //                        reader.GetInt32(1),
+            //                        reader.GetInt32(2),
+            //                    };
+            //                } else
+            //                {
+            //                    output = new List<int>
+            //                    {
+            //                        0, 0, 0
+            //                    };
+            //                }
+            //}
+            //        }
+            //        return output;
+
+            
             List<int> output;
             String sql = "SELECT redStr, grnStr, bluStr from dbo.ColorTest\n" +
                 "WHERE id=" + currentID + ";";
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (ServerIntermediary reader = new ServerIntermediary(sql))
             {
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    if (reader.Read()) {
-                        output = new List<int>
-                        {
-                            reader.GetInt32(0),
-                            reader.GetInt32(1),
-                            reader.GetInt32(2),
-                        };
-                    } else
+                if (reader.Read()) {
+                    output = new List<int>
                     {
-                        output = new List<int>
-                        {
-                            0, 0, 0
-                        };
-                    }
-				}
+                        reader.GetInt32(0),
+                        reader.GetInt32(1),
+                        reader.GetInt32(2),
+                    };
+                } else
+                {
+                    output = new List<int>
+                    {
+                        0, 0, 0
+                    };
+                }
             }
             return output;
         }
 
         public static bool setCurrentId(int id)
         {
-            connect();
-
 			String sql = "SELECT * from dbo.ColorTest\n" +
 				"WHERE id=" + id + ";";
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
-			{
-				using (SqlDataReader reader = cmd.ExecuteReader())
+            using (ServerIntermediary reader = new ServerIntermediary(sql))
+            {
+                if (reader.Read())
 				{
-					if (reader.Read())
-					{
-                        currentID = id;
-                        return true;
-					}
-					else
-					{
-                        return false;
-					}
+                    currentID = id;
+                    return true;
+				}
+				else
+				{
+                    return false;
 				}
 			}
         }
 
+        public static bool incrementId()
+        {
+            String sql = "Select id from dbo.ColorTest\n" +
+                "WHERE id > " + currentID + "\n" +
+                "ORDER BY id;";
+            using (ServerIntermediary reader = new ServerIntermediary(sql))
+            {
+                if (reader.Read())
+                {
+                    currentID = reader.GetInt32(0);
+                    return true;
+                }
+            }
+            sql = "Select id from dbo.ColorTest\n" +
+                "ORDER BY id;";
+            using (ServerIntermediary reader = new ServerIntermediary(sql))
+            {
+                if (reader.Read())
+                {
+                    currentID = reader.GetInt32(0);
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            }
+        }
         public static int getCurrentId()
 		{
 			return currentID;
@@ -72,19 +117,14 @@ namespace LlamaLingo.Pages
 
         public static List<int> getIDs()
         {
-            connect();
-
 			List<int> output = new List<int>();
             String sql = "SELECT id from dbo.ColorTest";
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
-			{
-				using (SqlDataReader reader = cmd.ExecuteReader())
-				{
-					while (reader.Read())
-                    {
-                        output.Add(reader.GetInt32(0));
-                    }
-				}
+            using (ServerIntermediary reader = new ServerIntermediary(sql))
+            {
+				while (reader.Read())
+                {
+                    output.Add(reader.GetInt32(0));
+                }
 			}
             return output;
 		}
@@ -93,18 +133,13 @@ namespace LlamaLingo.Pages
 
         public static List<string> getColors()
         {
-			connect();
-
-			List<string> output = new List<string>();
+            List<string> output = new List<string>();
 			String sql = "SELECT color from dbo.ColorTest";
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
-			{
-				using (SqlDataReader reader = cmd.ExecuteReader())
+            using (ServerIntermediary reader = new ServerIntermediary(sql))
+            {
+                while (reader.Read())
 				{
-					while (reader.Read())
-					{
-						output.Add(reader.GetString(0));
-					}
+					output.Add(reader.GetString(0));
 				}
 			}
 			return output;
@@ -112,18 +147,13 @@ namespace LlamaLingo.Pages
 
         public static string getThisColor()
         {
-            connect();
-
-			String sql = "SELECT color from dbo.ColorTest\n"
+            String sql = "SELECT color from dbo.ColorTest\n"
                 + "WHERE id=" + currentID + ";";
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
-			{
-				using (SqlDataReader reader = cmd.ExecuteReader())
+            using (ServerIntermediary reader = new ServerIntermediary(sql))
+            {
+                while (reader.Read())
 				{
-					while (reader.Read())
-					{
-						return reader.GetString(0);
-					}
+					return reader.GetString(0);
 				}
 			}
             return "";
