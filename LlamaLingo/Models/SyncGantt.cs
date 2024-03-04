@@ -34,4 +34,6 @@ public partial class SyncGantt
     public string ProjectId { get; set; }
 
     public string IsExpand { get; set; }
+
+    public List<SyncGantt> SubTasks { get; set; }
 }
