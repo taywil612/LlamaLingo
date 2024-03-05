@@ -18,7 +18,18 @@ namespace LlamaLingo.Pages
         //    "ParentIdFk" 
         //};
 
-        IEnumerable<SyncGantt> SyncGanttList;
+        //IEnumerable<SyncGantt> SyncGanttList;
+        //public string[] Searchfields = new string[] {
+        //    "Id",
+        //    "String",
+        //    "Sdate",
+        //    "Edate",
+        //    "Duration",
+        //    "Progress",
+        //    "ParentId"
+        //};
+
+        IEnumerable<GanttTaskLoad> GanttTaskList;
         public string[] Searchfields = new string[] {
             "Id",
             "String",
@@ -26,28 +37,37 @@ namespace LlamaLingo.Pages
             "Edate",
             "Duration",
             "Progress",
-            "ParentId"
+            "Parentid"
         };
+
         protected override void OnInitialized()
         {
             //GanttList = db.Set<LlamaLingo.Models.Gantt>().ToList();
 
-            SyncGanttList = BuildGanttTree();           
+            //SyncGanttList = BuildGanttTree();
+
+            GanttTaskList = BuildGanttTree();
         }
 
-        public List<SyncGantt> BuildGanttTree()
+        public List<GanttTaskLoad> BuildGanttTree()
         {
             //Create a list containing all of the data in the SyncGantt Table.
-            List<SyncGantt> allTasks = db.Set<SyncGantt>().ToList();
-
+            List<GanttTaskLoad> allTasks = db.Set<GanttTaskLoad>().ToList();
+            
             //Add a list of subtasks to each tasks.
-            foreach(var task in allTasks)
+            foreach (var task in allTasks)
             {
-                task.SubTasks = allTasks.Where(s => s.ParentId == task.Id).ToList();
+                task.SubTasks = allTasks.Where(s => s.Parentid == task.Id && s.Id != s.Parentid).ToList();
+                
+                 //Set random values for testing purposes.
+                 // {
+                    task.Duration = "1";
+                    task.Progress = "1";
+                 // }
             }
 
             //Create a list of only parent tasks.
-            List<SyncGantt> ParentTasks = allTasks.Where(s => s.ParentId == null).ToList();
+            List<GanttTaskLoad> ParentTasks = allTasks.Where(s => s.Id == s.Parentid).ToList();
 
             return ParentTasks;
         }
