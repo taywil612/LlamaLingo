@@ -1,5 +1,4 @@
 using LlamaLingo.Models;
-using Microsoft.IdentityModel.Tokens;
 using Syncfusion.Blazor.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +18,7 @@ namespace LlamaLingo.Pages
         //    "ParentIdFk" 
         //};
 
-        IEnumerable<LlamaLingo.Models.SyncGantt> SyncGanttList;
+        IEnumerable<SyncGantt> SyncGanttList;
         public string[] Searchfields = new string[] {
             "Id",
             "String",
