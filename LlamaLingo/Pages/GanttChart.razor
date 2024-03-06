@@ -1,26 +1,27 @@
 ﻿@page "/GanttChart"
+@using Syncfusion.Blazor.Notifications
 @inject DbContext db;
 
-<h2>GanttChart</h2>
 
-@* 
-<SfGantt DataSource="@GanttList" Height="90%" Width="100%" AllowSorting="true" AllowFiltering="true" EnableContextMenu="true" Toolbar="@(new List<string>() { "Search","Add", "Cancel", "Delete", "Edit", "Update","ZoomIn","ZoomOut","ZoomToFit"  })">
-    <GanttTaskFields Id="GanttId" Name="GanttLabel" StartDate="GanttStartDate" EndDate="GanttFinishDate" Duration="GanttDuration" Progress="GanttProgress" ParentID="ParentIdFk" Child="SubTasks"></GanttTaskFields>
-    <GanttSelectionSettings Mode="Syncfusion.Blazor.Grids.SelectionMode.Both"></GanttSelectionSettings>
-    <GanttEditSettings AllowEditing="true" AllowTaskbarEditing="true" AllowAdding="true" AllowDeleting="true" ShowDeleteConfirmDialog="true"></GanttEditSettings>
-    <GanttSearchSettings Fields="@Searchfields"></GanttSearchSettings>
-</SfGantt> *@
 
-@* <SfGantt DataSource="@SyncGanttList" Height="90%" Width="100%" AllowSorting="true" AllowFiltering="true" EnableContextMenu="true" Toolbar="@(new List<string>() { "Search","Add", "Cancel", "Delete", "Edit", "Update","ZoomIn","ZoomOut","ZoomToFit"  })">
-    <GanttTaskFields Id="Id" Name="String" StartDate="Sdate" EndDate="Edate" Duration="Duration" Progress="Progress" ParentID="ParentId" Child="SubTasks"></GanttTaskFields>
-    <GanttSelectionSettings Mode="Syncfusion.Blazor.Grids.SelectionMode.Both"></GanttSelectionSettings>
-    <GanttEditSettings AllowEditing="true" AllowTaskbarEditing="true" AllowAdding="true" AllowDeleting="true" ShowDeleteConfirmDialog="true"></GanttEditSettings>
-    <GanttSearchSettings Fields="@Searchfields"></GanttSearchSettings>
-</SfGantt> *@
+<div class="page-heading">
+	<h3 class="header">Project: @(IsLoading ? "" : GanttTaskList.First().ProjectName)</h3>
+	<p class="subtitle">Gantt Chart</p>
+</div>
 
-<SfGantt DataSource="@GanttTaskList" Height="90%" Width="100%" AllowSorting="true" AllowFiltering="true" EnableContextMenu="true" Toolbar="@(new List<string>() { "Search", "ZoomIn","ZoomOut","ZoomToFit"  })">
-    <GanttTaskFields Id="Id" Name="String" StartDate="Sdate" EndDate="Edate" Duration="Duration" Progress="Progress" ParentID="Parentid" Child="SubTasks"></GanttTaskFields>
-    <GanttSelectionSettings Mode="Syncfusion.Blazor.Grids.SelectionMode.Both"></GanttSelectionSettings>
-    <GanttEditSettings AllowEditing="true" AllowTaskbarEditing="true" AllowAdding="true" AllowDeleting="true" ShowDeleteConfirmDialog="true"></GanttEditSettings>
-    <GanttSearchSettings Fields="@Searchfields"></GanttSearchSettings>
-</SfGantt>
+<div class="content-box shadow">
+	@if (IsLoading)
+	{
+		<SfSkeleton Shape="Syncfusion.Blazor.Notifications.SkeletonType.Rectangle" Width="100%" Height="7%"></SfSkeleton>
+		<SfSkeleton Shape="Syncfusion.Blazor.Notifications.SkeletonType.Rectangle" Width="100%" Height="90%"></SfSkeleton>
+	}
+	else
+	{
+		<SfGantt DataSource="@GanttTaskList" Height="100%" Width="100%" AllowSorting="true" AllowFiltering="true" Toolbar="@(new List<string>() { "Search", "ZoomIn","ZoomOut","ZoomToFit"})">
+			<GanttTaskFields Id="Id" Name="String" StartDate="Sdate" EndDate="Edate" Duration="Duration" Progress="Progress" ParentID="Parentid" Child="SubTasks"></GanttTaskFields>
+			<GanttSelectionSettings Mode="Syncfusion.Blazor.Grids.SelectionMode.Both"></GanttSelectionSettings>
+			<GanttEditSettings AllowEditing="false"></GanttEditSettings>
+			<GanttSearchSettings Fields="@Searchfields"></GanttSearchSettings>
+		</SfGantt>
+	}
+</div>
