@@ -3,10 +3,9 @@
 @inject DbContext db;
 
 
-
 <div class="page-heading">
-	<h3 class="header">Project: @(IsLoading ? "" : GanttTaskList.First().ProjectName)</h3>
-	<p class="subtitle">Gantt Chart</p>
+	<h3 class="header">Project: @projectName</h3>
+	<strong><p class="subtitle"><a href="">Home</a> / Gantt Chart</p></strong>
 </div>
 
 <div class="content-box shadow">
@@ -25,3 +24,14 @@
 		</SfGantt>
 	}
 </div>
+
+<style>
+	.e-timeline-header-container {
+		width: 100% !important;
+	}
+
+	.subtitle a:active, .subtitle a:hover, .subtitle a {
+		color: var(--top-navbar-color);
+		text-decoration: none;
+	}
+</style>

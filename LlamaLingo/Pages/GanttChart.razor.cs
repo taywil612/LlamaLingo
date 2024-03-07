@@ -11,6 +11,7 @@ namespace LlamaLingo.Pages
 	public partial class GanttChart
     {
         public bool IsLoading { get; set; } = true;
+        public string projectName { get; set; } = "";
 
         IEnumerable<GanttTaskLoad> GanttTaskList;
         public string[] Searchfields = new string[] {
@@ -28,6 +29,8 @@ namespace LlamaLingo.Pages
             try
             {
                 GanttTaskList = await BuildGanttTree();
+
+                projectName = GanttTaskList.First().ProjectName;
             }
             catch(Exception ex)
             {
