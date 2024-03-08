@@ -15,8 +15,6 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
     {
     }
 
-    public virtual DbSet<ColorTest> ColorTests { get; set; }
-
     public virtual DbSet<Element> Elements { get; set; }
 
     public virtual DbSet<Fragment> Fragments { get; set; }
@@ -82,22 +80,6 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<ColorTest>(entity =>
-        {
-            entity.ToTable("ColorTest");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.BluStr).HasColumnName("bluStr");
-            entity.Property(e => e.Color)
-                .IsRequired()
-                .HasMaxLength(10)
-                .IsFixedLength()
-                .HasColumnName("color");
-            entity.Property(e => e.GrnStr).HasColumnName("grnStr");
-            entity.Property(e => e.RedStr).HasColumnName("redStr");
-            entity.Property(e => e.YlwStr).HasColumnName("ylwStr");
-        });
-
         modelBuilder.Entity<Element>(entity =>
         {
             entity.ToTable("Element");
