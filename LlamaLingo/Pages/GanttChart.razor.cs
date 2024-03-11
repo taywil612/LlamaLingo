@@ -1,25 +1,19 @@
 using LlamaLingo.Models;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore;
 using Syncfusion.Blazor.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace LlamaLingo.Pages
 {
 	public partial class GanttChart
     {
-        //IEnumerable<LlamaLingo.Models.Gantt> GanttList;
-        //public string[] Searchfields = new string[] { 
-        //    "GanttId", 
-        //    "GanttLabel", 
-        //    "GanttStartDate", 
-        //    "GanttFinishDate", 
-        //    "GanttDuration", 
-        //    "GanttProgress", 
-        //    "ParentIdFk" 
-        //};
+        public bool IsLoading { get; set; } = true;
+        public string projectName { get; set; } = "";
 
-        IEnumerable<LlamaLingo.Models.SyncGantt> SyncGanttList;
+        IEnumerable<GanttTaskLoad> GanttTaskList;
         public string[] Searchfields = new string[] {
             "Id",
             "String",
@@ -27,28 +21,44 @@ namespace LlamaLingo.Pages
             "Edate",
             "Duration",
             "Progress",
-            "ParentId"
+            "Parentid"
         };
-        protected override void OnInitialized()
-        {
-            //GanttList = db.Set<LlamaLingo.Models.Gantt>().ToList();
 
-            SyncGanttList = BuildGanttTree();           
-        }
+		protected override async System.Threading.Tasks.Task OnInitializedAsync()
+		{
+            try
+            {
+                GanttTaskList = await BuildGanttTree();
 
-        public List<SyncGantt> BuildGanttTree()
+                projectName = GanttTaskList.First().ProjectName;
+            }
+            catch(Exception ex)
+            {
+				Console.WriteLine($"Error: {ex.Message}");
+			}
+
+            IsLoading = false;
+		}
+
+		public async System.Threading.Tasks.Task <List<GanttTaskLoad>> BuildGanttTree()
         {
             //Create a list containing all of the data in the SyncGantt Table.
-            List<SyncGantt> allTasks = db.Set<SyncGantt>().ToList();
-
+            List<GanttTaskLoad> allTasks = await db.Set<GanttTaskLoad>().ToListAsync();
+            
             //Add a list of subtasks to each tasks.
-            foreach(var task in allTasks)
+            foreach (var task in allTasks)
             {
-                task.SubTasks = allTasks.Where(s => s.ParentId == task.Id).ToList();
+                task.SubTasks =  allTasks.Where(s => s.Parentid == task.Id && s.Id != s.Parentid).ToList();
+
+				//Set random values for testing purposes.
+				// {
+				task.Duration = "1";
+                task.Progress = "1";
+                // }
             }
 
             //Create a list of only parent tasks.
-            List<SyncGantt> ParentTasks = allTasks.Where(s => s.ParentId == null).ToList();
+            List<GanttTaskLoad> ParentTasks = allTasks.Where(s => s.Id == s.Parentid).ToList();
 
             return ParentTasks;
         }

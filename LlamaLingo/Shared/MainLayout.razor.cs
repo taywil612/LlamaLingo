@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using Syncfusion.Blazor.Navigations;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace LlamaLingo.Shared
 {
@@ -28,6 +28,15 @@ namespace LlamaLingo.Shared
         public void ToggleChatMenu()
         {
             ChatbarToggle = !ChatbarToggle;
+            _ = refreshPageLayout();
+            
         }
-	}
+
+        private async Task refreshPageLayout()
+        {
+            await Task.Delay(500);
+
+            await JSRuntime.InvokeVoidAsync("triggerResizeEvent");
+        }
+    }
 }

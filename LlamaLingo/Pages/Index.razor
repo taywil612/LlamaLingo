@@ -8,186 +8,168 @@
 @using System.Collections
 @inject NavigationManager NavigationManager
 
-<div class="main-content">
-   
+
+<div class="page-heading">
+	<h3 class="header">Home</h3>
+	<p class="subtitle">Home / Dashboard</p>
+</div>
+
+<div class="content-box shadow" style="overflow: hidden !important">
+	<div class="content-box">
 	@if (true)
 	{
-	<div class="control-section">
-		<div class="header">
-			@* <div class="menu"><span class="oi oi-home"></span></div> *@
-			<div class="searchContent">
-				<div class="analysis">Home</div>
-			</div>
-			<div class="right-content">
-				<div class="information">
-@* 					<span class="e-avatar e-avatar-medium e-avatar-circle image"></span>
-					<div class="text-content">Test</div> *@
-				</div>
-			</div>
-		</div>
-		<SfDashboardLayout @ref="dashboardObject" Columns="8" CellSpacing="@Spacing" CellAspectRatio="@Ratio" AllowFloating="true" AllowDragging="false" MediaQuery="max-width: 980px" AllowResizing="false">
-			<DashboardLayoutPanels>
-				<DashboardLayoutPanel Column="0" Row="0" SizeX="2" SizeY="1">
-					<ContentTemplate>
-						<div class="root-container">
-							<div class="item-container income">
-								<p>$43,300</p>
-								<div class="auto-left">
-									<span class="income-icon e-icon"></span>
+		<div class="control-section">
+			<SfDashboardLayout @ref="dashboardObject" Columns="8" CellSpacing="@Spacing" CellAspectRatio="@Ratio" AllowFloating="true" AllowDragging="false" MediaQuery="max-width: 980px" AllowResizing="false">
+				<DashboardLayoutPanels>
+					<DashboardLayoutPanel Column="0" Row="0" SizeX="2" SizeY="1">
+						<ContentTemplate>
+							<div class="root-container">
+								<div class="item-container income">
+									<p>$43,300</p>
+									<div class="auto-left">
+										<span class="income-icon e-icon"></span>
+									</div>
+								</div>
+								<div class="bottom-container">
+									<p>Income</p>
 								</div>
 							</div>
-							<div class="bottom-container">
-								<p>Income</p>
-							</div>
-						</div>
-					</ContentTemplate>
-				</DashboardLayoutPanel>
-				<DashboardLayoutPanel Column="2" Row="0" SizeX="2" SizeY="1">
-					<ContentTemplate>
-						<div class="root-container">
-							<div class="item-container expense">
-								<p>$38,060</p>
-								<div class="auto-left">
-									<span class="expense-icon e-icon"></span>
+						</ContentTemplate>
+					</DashboardLayoutPanel>
+					<DashboardLayoutPanel Column="2" Row="0" SizeX="2" SizeY="1">
+						<ContentTemplate>
+							<div class="root-container">
+								<div class="item-container expense">
+									<p>$38,060</p>
+									<div class="auto-left">
+										<span class="expense-icon e-icon"></span>
+									</div>
+								</div>
+								<div class="bottom-container">
+									<p>Expenses</p>
 								</div>
 							</div>
-							<div class="bottom-container">
-								<p>Expenses</p>
-							</div>
-						</div>
-					</ContentTemplate>
-				</DashboardLayoutPanel>
-				<DashboardLayoutPanel Column="4" Row="0" SizeX="2" SizeY="1">
-					<ContentTemplate>
-						<div class="root-container">
-							<div class="item-container balance">
-								<p>$38,060</p>
-								<div class="auto-left">
-									<span class="balance-icon e-icon"></span>
+						</ContentTemplate>
+					</DashboardLayoutPanel>
+					<DashboardLayoutPanel Column="4" Row="0" SizeX="2" SizeY="1">
+						<ContentTemplate>
+							<div class="root-container">
+								<div class="item-container balance">
+									<p>$38,060</p>
+									<div class="auto-left">
+										<span class="balance-icon e-icon"></span>
+									</div>
+								</div>
+								<div class="bottom-container">
+									<p>Balance</p>
 								</div>
 							</div>
-							<div class="bottom-container">
-								<p>Balance</p>
-							</div>
-						</div>
-					</ContentTemplate>
-				</DashboardLayoutPanel>
-				<DashboardLayoutPanel Column="6" Row="0" SizeX="2" SizeY="1">
-					<ContentTemplate>
-						<div class="root-container">
-							<div class="item-container transaction">
-								<p>$38,060</p>
-								<div class="auto-left">
-									<span class="transaction-icon e-icon"></span>
+						</ContentTemplate>
+					</DashboardLayoutPanel>
+					<DashboardLayoutPanel Column="6" Row="0" SizeX="2" SizeY="1">
+						<ContentTemplate>
+							<div class="root-container">
+								<div class="item-container transaction">
+									<p>$38,060</p>
+									<div class="auto-left">
+										<span class="transaction-icon e-icon"></span>
+									</div>
+								</div>
+								<div class="bottom-container">
+									<p>Transactions</p>
 								</div>
 							</div>
-							<div class="bottom-container">
-								<p>Transactions</p>
-							</div>
-						</div>
-					</ContentTemplate>
-				</DashboardLayoutPanel>
-				<DashboardLayoutPanel Column="0" Row="1" SizeX="4" SizeY="3">
-					<HeaderTemplate>
-						<span class="title">Income - Expense</span>
-					</HeaderTemplate>
-					<ContentTemplate>
-						<SfChart Height="100%" Width="100%" Theme="@Theme">
-							<ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
-							<ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTimeCategory" LabelFormat="MMM" IntervalType="IntervalType.Months" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
-								<ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
-							</ChartPrimaryXAxis>
-							<ChartPrimaryYAxis LabelFormat="${value}" Minimum="1000" Maximum="9000" Interval="2000">
-								<ChartAxisLineStyle Width="0"></ChartAxisLineStyle>
-								<ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
-							</ChartPrimaryYAxis>
-							<ChartTooltipSettings Enable="true"></ChartTooltipSettings>
-							<ChartSeriesCollection>
-								<ChartSeries DataSource="@IncomeExpenseData" Name="Income" XName="Period" Width="2"
-											 Opacity="0.5" YName="Income" Type="ChartSeriesType.SplineArea" Fill="#00BCD7">
-								</ChartSeries>
-								<ChartSeries DataSource="@IncomeExpenseData" Name="Expense" XName="Period" Width="2"
-											 Opacity="0.5" YName="Expense" Type="ChartSeriesType.SplineArea" Fill="#CDDE1F">
-								</ChartSeries>
-							</ChartSeriesCollection>
-						</SfChart>
-					</ContentTemplate>
-				</DashboardLayoutPanel>
-				<DashboardLayoutPanel Column="4" Row="1" SizeX="4" SizeY="3">
-					<HeaderTemplate>
-						<span class="title">Total Expenses</span>
-					</HeaderTemplate>
-					<ContentTemplate>
-						<SfAccumulationChart Height="100%" Width="100%" EnableAnimation="false" EnableSmartLabels="true" Theme="@Theme">
-							<AccumulationChartSeriesCollection>
-								<AccumulationChartSeries DataSource="@PieRenderingData" XName="Text" YName="Y" Radius="83%" StartAngle="0" EndAngle="360" InnerRadius="50%" Palettes="@palettes">
-									<AccumulationDataLabelSettings Visible="true" Name="X" Position="AccumulationLabelPosition.Outside">
-										<AccumulationChartConnector Length="10%"></AccumulationChartConnector>
-										<AccumulationChartDataLabelFont Size="14px" FontFamily="Roboto"></AccumulationChartDataLabelFont>
-									</AccumulationDataLabelSettings>
-								</AccumulationChartSeries>
-							</AccumulationChartSeriesCollection>
-							<AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
-							<AccumulationChartLegendSettings Visible="false"></AccumulationChartLegendSettings>
-						</SfAccumulationChart>
-					</ContentTemplate>
-				</DashboardLayoutPanel>
-				<DashboardLayoutPanel Column="0" Row="4" SizeX="8" SizeY="3">
-					<HeaderTemplate>
-						<span class="title">Recent Transactions</span>
-					</HeaderTemplate>
-					<ContentTemplate>
-						<SfGrid TValue="TransactionData" DataSource="@TransactData" Width="100%" Height="100%" AllowSorting="true" EnableHover="false" AllowPaging="false">
-							<GridColumns>
-								<GridColumn Field="@nameof(TransactionData.TransactoinId)" HeaderText="Transaction ID" Width="120" TextAlign="@TextAlign.Center"></GridColumn>
-								<GridColumn Field="@nameof(TransactionData.Category)" HeaderText="Category" Width="120">
-									<Template>
-										@{
-											var expense = (context as TransactionData);
-											<div class="normalRes">
-												<div class="category-icon @expense.IconCss"></div>
-												<div class='category-text'>@expense.Category</div>
-											</div>
-										}
-									</Template>
-								</GridColumn>
-								<GridColumn Field="@nameof(TransactionData.PaymentMode)" HeaderText="Payment Mode" Width="160" TextAlign="@TextAlign.Center"></GridColumn>
-								<GridColumn Field="@nameof(TransactionData.Description)" HeaderText="Description" Width="160" TextAlign="@TextAlign.Center"></GridColumn>
-								<GridColumn Field="@nameof(TransactionData.Amount)" HeaderText="Amount" Width="120" TextAlign="@TextAlign.Center">
-									<Template>
-										@{
-											var expense = (context as TransactionData);
-											<div class="normalRes">
-												<div class='amt-payment @(expense.IsExpense ? "expense-payment" : "income-payment")'>
-													<span>$</span><span>@expense.Amount</span>
+						</ContentTemplate>
+					</DashboardLayoutPanel>
+					<DashboardLayoutPanel Column="0" Row="1" SizeX="4" SizeY="3">
+						<HeaderTemplate>
+							<span class="title">Income - Expense</span>
+						</HeaderTemplate>
+						<ContentTemplate>
+							<SfChart Height="100%" Width="100%" Theme="@Theme">
+								<ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
+								<ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTimeCategory" LabelFormat="MMM" IntervalType="IntervalType.Months" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
+									<ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+								</ChartPrimaryXAxis>
+								<ChartPrimaryYAxis LabelFormat="${value}" Minimum="1000" Maximum="9000" Interval="2000">
+									<ChartAxisLineStyle Width="0"></ChartAxisLineStyle>
+									<ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
+								</ChartPrimaryYAxis>
+								<ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+								<ChartSeriesCollection>
+									<ChartSeries DataSource="@IncomeExpenseData" Name="Income" XName="Period" Width="2"
+												 Opacity="0.5" YName="Income" Type="ChartSeriesType.SplineArea" Fill="#00BCD7">
+									</ChartSeries>
+									<ChartSeries DataSource="@IncomeExpenseData" Name="Expense" XName="Period" Width="2"
+												 Opacity="0.5" YName="Expense" Type="ChartSeriesType.SplineArea" Fill="#CDDE1F">
+									</ChartSeries>
+								</ChartSeriesCollection>
+							</SfChart>
+						</ContentTemplate>
+					</DashboardLayoutPanel>
+					<DashboardLayoutPanel Column="4" Row="1" SizeX="4" SizeY="3">
+						<HeaderTemplate>
+							<span class="title">Total Expenses</span>
+						</HeaderTemplate>
+						<ContentTemplate>
+							<SfAccumulationChart Height="100%" Width="100%" EnableAnimation="false" EnableSmartLabels="true" Theme="@Theme">
+								<AccumulationChartSeriesCollection>
+									<AccumulationChartSeries DataSource="@PieRenderingData" XName="Text" YName="Y" Radius="83%" StartAngle="0" EndAngle="360" InnerRadius="50%" Palettes="@palettes">
+										<AccumulationDataLabelSettings Visible="true" Name="X" Position="AccumulationLabelPosition.Outside">
+											<AccumulationChartConnector Length="10%"></AccumulationChartConnector>
+											<AccumulationChartDataLabelFont Size="14px" FontFamily="Roboto"></AccumulationChartDataLabelFont>
+										</AccumulationDataLabelSettings>
+									</AccumulationChartSeries>
+								</AccumulationChartSeriesCollection>
+								<AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+								<AccumulationChartLegendSettings Visible="false"></AccumulationChartLegendSettings>
+							</SfAccumulationChart>
+						</ContentTemplate>
+					</DashboardLayoutPanel>
+					<DashboardLayoutPanel Column="0" Row="4" SizeX="8" SizeY="3">
+						<HeaderTemplate>
+							<span class="title">Recent Transactions</span>
+						</HeaderTemplate>
+						<ContentTemplate>
+							<SfGrid TValue="TransactionData" DataSource="@TransactData" Width="100%" Height="100%" AllowSorting="true" EnableHover="false" AllowPaging="false">
+								<GridColumns>
+									<GridColumn Field="@nameof(TransactionData.TransactoinId)" HeaderText="Transaction ID" Width="120" TextAlign="@TextAlign.Center"></GridColumn>
+									<GridColumn Field="@nameof(TransactionData.Category)" HeaderText="Category" Width="120">
+										<Template>
+											@{
+												var expense = (context as TransactionData);
+												<div class="normalRes">
+													<div class="category-icon @expense.IconCss"></div>
+													<div class='category-text'>@expense.Category</div>
 												</div>
-											</div>
-										}
-									</Template>
-								</GridColumn>
-							</GridColumns>
-						</SfGrid>
-					</ContentTemplate>
-				</DashboardLayoutPanel>
-			</DashboardLayoutPanels>
-		</SfDashboardLayout>
-	</div>
+											}
+										</Template>
+									</GridColumn>
+									<GridColumn Field="@nameof(TransactionData.PaymentMode)" HeaderText="Payment Mode" Width="160" TextAlign="@TextAlign.Center"></GridColumn>
+									<GridColumn Field="@nameof(TransactionData.Description)" HeaderText="Description" Width="160" TextAlign="@TextAlign.Center"></GridColumn>
+									<GridColumn Field="@nameof(TransactionData.Amount)" HeaderText="Amount" Width="120" TextAlign="@TextAlign.Center">
+										<Template>
+											@{
+												var expense = (context as TransactionData);
+												<div class="normalRes">
+													<div class='amt-payment @(expense.IsExpense ? "expense-payment" : "income-payment")'>
+														<span>$</span><span>@expense.Amount</span>
+													</div>
+												</div>
+											}
+										</Template>
+									</GridColumn>
+								</GridColumns>
+							</SfGrid>
+						</ContentTemplate>
+					</DashboardLayoutPanel>
+				</DashboardLayoutPanels>
+			</SfDashboardLayout>
+		</div>
 	}
 	else
 	{
 		<div class="control-section">
-			<div class="header">
-				@* <div class="menu"><span class="oi oi-home"></span></div> *@
-				<div class="searchContent">
-					<div class="analysis">Home</div>
-				</div>
-				<div class="right-content">
-					<div class="information">
-						@* 					<span class="e-avatar e-avatar-medium e-avatar-circle image"></span>
-					<div class="text-content">Test</div> *@
-					</div>
-				</div>
-			</div>
 			<SfDashboardLayout @ref="dashboardObject" Columns="8" CellSpacing="@Spacing" CellAspectRatio="@Ratio" AllowFloating="true" AllowDragging="false" MediaQuery="max-width: 980px" AllowResizing="false">
 				<DashboardLayoutPanels>
 					<DashboardLayoutPanel Column="0" Row="0" SizeX="2" SizeY="1">
@@ -273,12 +255,24 @@
 				</DashboardLayoutPanels>
 			</SfDashboardLayout>
 		</div>
+		}
+	</div>
+</div>
+
+<style>
+	.e-timeline-header-container {
+		width: 100% !important;
 	}
 
-	<br>
-	<br>
-	<br>
-	<br>
+	.subtitle a:active, .subtitle a:hover, .subtitle a {
+		color: var(--top-navbar-color);
+		text-decoration: none;
+	}
+</style>
+
+@* <div class="main-content">
+</div> *@
+
 
 	@code {  
  
@@ -583,13 +577,6 @@
 		#pie, #colChart, #visitorsChart, #pieChart {
 			width: 100%;
 			height: 100%;
-		}
-
-		.header {
-			border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-			height: 55px;
-			position: relative;
-			margin-bottom: 15px;
 		}
 
 		.e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
@@ -929,4 +916,3 @@
 			z-index: 99;
 		}
 	</style>
-</div>
