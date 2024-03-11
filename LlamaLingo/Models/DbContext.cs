@@ -15,13 +15,13 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
     {
     }
 
+    public virtual DbSet<ColorTest> ColorTests { get; set; }
+
     public virtual DbSet<Element> Elements { get; set; }
 
     public virtual DbSet<Fragment> Fragments { get; set; }
 
     public virtual DbSet<Gantt> Gantts { get; set; }
-
-    public virtual DbSet<GanttTaskLoad> GanttTaskLoads { get; set; }
 
     public virtual DbSet<GridDatum> GridData { get; set; }
 
@@ -49,23 +49,11 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 
     public virtual DbSet<Pod> Pods { get; set; }
 
-    public virtual DbSet<PodGanttDetail> PodGanttDetails { get; set; }
-
     public virtual DbSet<Pype> Pypes { get; set; }
-
-    public virtual DbSet<RuleNv> RuleNvs { get; set; }
-
-    public virtual DbSet<RuleNvConcat> RuleNvConcats { get; set; }
-
-    public virtual DbSet<RuleVn> RuleVns { get; set; }
-
-    public virtual DbSet<RuleVnConcat> RuleVnConcats { get; set; }
 
     public virtual DbSet<SyncGantt> SyncGantts { get; set; }
 
     public virtual DbSet<Task> Tasks { get; set; }
-
-    public virtual DbSet<TaskLl> TaskLls { get; set; }
 
     public virtual DbSet<Verb> Verbs { get; set; }
 
@@ -80,6 +68,21 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<ColorTest>(entity =>
+        {
+            entity.ToTable("ColorTest");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.BluStr).HasColumnName("bluStr");
+            entity.Property(e => e.Color)
+                .IsRequired()
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .HasColumnName("color");
+            entity.Property(e => e.GrnStr).HasColumnName("grnStr");
+            entity.Property(e => e.RedStr).HasColumnName("redStr");
+        });
+
         modelBuilder.Entity<Element>(entity =>
         {
             entity.ToTable("Element");
@@ -186,52 +189,6 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
             entity.Property(e => e.ParentIdFk)
                 .HasDefaultValueSql("((1))")
                 .HasColumnName("Parent_ID_FK");
-        });
-
-        modelBuilder.Entity<GanttTaskLoad>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("Gantt_Task_load");
-
-            entity.Property(e => e.Duration)
-                .IsRequired()
-                .HasMaxLength(20)
-                .IsUnicode(false);
-            entity.Property(e => e.IsExpand)
-                .IsRequired()
-                .HasMaxLength(1)
-                .IsUnicode(false);
-            entity.Property(e => e.Notes)
-                .IsRequired()
-                .HasMaxLength(16)
-                .IsUnicode(false);
-            entity.Property(e => e.Predecessor)
-                .IsRequired()
-                .HasMaxLength(32)
-                .IsFixedLength();
-            entity.Property(e => e.Progress)
-                .IsRequired()
-                .HasMaxLength(16)
-                .IsUnicode(false)
-                .HasColumnName("progress");
-            entity.Property(e => e.ProjectId)
-                .IsRequired()
-                .HasMaxLength(12)
-                .IsUnicode(false);
-            entity.Property(e => e.ProjectName)
-                .IsRequired()
-                .HasMaxLength(32)
-                .IsFixedLength();
-            entity.Property(e => e.String)
-                .IsRequired()
-                .HasMaxLength(32)
-                .IsFixedLength()
-                .HasColumnName("string");
-            entity.Property(e => e.TaskType)
-                .IsRequired()
-                .HasMaxLength(4)
-                .IsFixedLength();
         });
 
         modelBuilder.Entity<GridDatum>(entity =>
@@ -747,48 +704,6 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
                 .HasColumnName("POD_URL_base");
         });
 
-        modelBuilder.Entity<PodGanttDetail>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("POD_Gantt_detail");
-
-            entity.Property(e => e.Edate).HasColumnType("datetime");
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
-            entity.Property(e => e.NovaIdFk).HasColumnName("NOVA_ID_FK");
-            entity.Property(e => e.PersonIdFk).HasColumnName("Person_ID_FK");
-            entity.Property(e => e.PhaseIdFk).HasColumnName("Phase_ID_FK");
-            entity.Property(e => e.Progress)
-                .IsRequired()
-                .HasMaxLength(16)
-                .IsUnicode(false)
-                .HasColumnName("progress");
-            entity.Property(e => e.Sdate).HasColumnType("datetime");
-            entity.Property(e => e.String)
-                .IsRequired()
-                .HasMaxLength(16)
-                .IsFixedLength()
-                .HasColumnName("string");
-            entity.Property(e => e.TaskAfter).HasColumnName("Task_after");
-            entity.Property(e => e.TaskDescription)
-                .IsRequired()
-                .HasMaxLength(255)
-                .HasColumnName("Task_description");
-            entity.Property(e => e.TaskEntryDate)
-                .HasColumnType("datetime")
-                .HasColumnName("Task_entry_date");
-            entity.Property(e => e.TaskStatus)
-                .IsRequired()
-                .HasMaxLength(1)
-                .IsFixedLength()
-                .HasColumnName("Task_status");
-            entity.Property(e => e.TaskType)
-                .IsRequired()
-                .HasMaxLength(4)
-                .IsFixedLength()
-                .HasColumnName("Task_type");
-        });
-
         modelBuilder.Entity<Pype>(entity =>
         {
             entity.HasKey(e => new { e.PypeId, e.PypeType });
@@ -831,94 +746,6 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
                 .HasDefaultValueSql("('A')")
                 .IsFixedLength()
                 .HasColumnName("Pype_status");
-        });
-
-        modelBuilder.Entity<RuleNv>(entity =>
-        {
-            entity.HasKey(e => new { e.PodFk, e.NounFk, e.VerbFk });
-
-            entity.ToTable("Rule_NV");
-
-            entity.Property(e => e.PodFk)
-                .HasDefaultValueSql("((4))")
-                .HasColumnName("POD_FK");
-            entity.Property(e => e.NounFk)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("Noun_FK");
-            entity.Property(e => e.VerbFk)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("Verb_FK");
-        });
-
-        modelBuilder.Entity<RuleNvConcat>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("Rule_NV_Concat");
-
-            entity.Property(e => e.ConNv)
-                .IsRequired()
-                .HasMaxLength(32)
-                .IsFixedLength()
-                .HasColumnName("CON_NV");
-            entity.Property(e => e.NounLabel)
-                .IsRequired()
-                .HasMaxLength(16)
-                .IsFixedLength()
-                .HasColumnName("Noun_label");
-            entity.Property(e => e.PodFk).HasColumnName("POD_FK");
-            entity.Property(e => e.Trim)
-                .HasMaxLength(32)
-                .HasColumnName("trim");
-            entity.Property(e => e.VerbLabel)
-                .IsRequired()
-                .HasMaxLength(16)
-                .IsFixedLength()
-                .HasColumnName("Verb_label");
-        });
-
-        modelBuilder.Entity<RuleVn>(entity =>
-        {
-            entity.HasKey(e => new { e.PodFk, e.VerbFk, e.NounFk });
-
-            entity.ToTable("Rule_VN");
-
-            entity.Property(e => e.PodFk)
-                .HasDefaultValueSql("((4))")
-                .HasColumnName("POD_FK");
-            entity.Property(e => e.VerbFk)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("Verb_FK");
-            entity.Property(e => e.NounFk)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("Noun_FK");
-        });
-
-        modelBuilder.Entity<RuleVnConcat>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("Rule_VN_Concat");
-
-            entity.Property(e => e.ConVn)
-                .IsRequired()
-                .HasMaxLength(32)
-                .IsFixedLength()
-                .HasColumnName("CON_VN");
-            entity.Property(e => e.Nn)
-                .IsRequired()
-                .HasMaxLength(16)
-                .IsFixedLength()
-                .HasColumnName("NN");
-            entity.Property(e => e.PodFk).HasColumnName("POD_FK");
-            entity.Property(e => e.Trim)
-                .HasMaxLength(32)
-                .HasColumnName("trim");
-            entity.Property(e => e.Vv)
-                .IsRequired()
-                .HasMaxLength(16)
-                .IsFixedLength()
-                .HasColumnName("VV");
         });
 
         modelBuilder.Entity<SyncGantt>(entity =>
@@ -964,75 +791,7 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 
         modelBuilder.Entity<Task>(entity =>
         {
-            entity.HasKey(e => e.TaskId).HasName("PK_Task_import");
-
             entity.ToTable("Task");
-
-            entity.Property(e => e.TaskId).HasColumnName("Task_ID");
-            entity.Property(e => e.NounIdFk)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("Noun_ID_FK");
-            entity.Property(e => e.NovaIdFk)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("NOVA_ID_FK");
-            entity.Property(e => e.PersonIdFk)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("Person_ID_FK");
-            entity.Property(e => e.PodIdFk)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("POD_ID_FK");
-            entity.Property(e => e.TaskDescription)
-                .IsRequired()
-                .HasMaxLength(255)
-                .HasDefaultValueSql("('description of Task')")
-                .HasColumnName("Task_description");
-            entity.Property(e => e.TaskDuration)
-                .HasDefaultValueSql("((7))")
-                .HasColumnName("Task_duration");
-            entity.Property(e => e.TaskEntryDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnName("Task_entry_date");
-            entity.Property(e => e.TaskFinishDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnName("Task_finish_date");
-            entity.Property(e => e.TaskLabel32)
-                .IsRequired()
-                .HasMaxLength(32)
-                .HasDefaultValueSql("(N'Task label extended32')")
-                .IsFixedLength()
-                .HasColumnName("Task_label32");
-            entity.Property(e => e.TaskLevel)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("Task_level");
-            entity.Property(e => e.TaskParent)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("Task_parent");
-            entity.Property(e => e.TaskPrevious)
-                .HasDefaultValueSql("((1))")
-                .HasColumnName("Task_previous");
-            entity.Property(e => e.TaskSeq).HasColumnName("Task_seq");
-            entity.Property(e => e.TaskStartDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnName("Task_start_date");
-            entity.Property(e => e.TaskStatus)
-                .IsRequired()
-                .HasMaxLength(1)
-                .HasDefaultValueSql("('A')")
-                .IsFixedLength()
-                .HasColumnName("Task_status");
-            entity.Property(e => e.TaskType)
-                .IsRequired()
-                .HasMaxLength(4)
-                .HasDefaultValueSql("(N'task')")
-                .IsFixedLength()
-                .HasColumnName("Task_type");
-        });
-
-        modelBuilder.Entity<TaskLl>(entity =>
-        {
-            entity.HasKey(e => e.TaskId).HasName("PK_Task");
-
-            entity.ToTable("Task_LL");
 
             entity.Property(e => e.TaskId).HasColumnName("Task_ID");
             entity.Property(e => e.NovaIdFk)
