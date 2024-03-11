@@ -1,6 +1,7 @@
 ﻿@inherits LayoutComponentBase
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Navigations
+@inject IJSRuntime JSRuntime
 
 <PageTitle>LlamaLingo</PageTitle>
 
@@ -50,11 +51,11 @@
 	<div class="main">
         @* Create the top-row navigation bar. *@
         <div class="shadow top-row px-4" style="z-index: 1111; overflow-x: auto; overflow-y: hidden;">
-            <a href="/RadarChart">RadarChart</a>
-            <a href="/GanttChart">GanttChart</a>
+            <a href="/RadarChart">Radar Chart</a>
+			<a href="/GanttChart">Gantt Chart</a>
+            <a href="/Pdf_Viewer">PDF Viewer</a>
             <a href="/color-chart">ColorChart</a>
             <a href="/color-table">ColorTable</a>
-            <a href="/Pdf_Viewer">PDF Viewer</a>
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
 		</div>
         <div class="content">

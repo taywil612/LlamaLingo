@@ -2,11 +2,24 @@
 @using Syncfusion.Blazor.PdfViewer
 @using Syncfusion.Blazor.PdfViewerServer
 
-<h3>PDF Viewer</h3>
-
-<div class="control-section">
-    <SfPdfViewerServer DocumentPath=@DocumentPath Height="640px" Width="100%"></SfPdfViewerServer>
+<div class="page-heading">
+	<h3 class="header">PDF Viewer</h3>
+	<p class="subtitle"><a href="">Home</a> / PDF Viewer</p>
 </div>
-@code {
-    private string DocumentPath { get; set; } = "wwwroot/images/pdf/Azure Server Project Audit.pdf";
-}
+
+<div class="content-box shadow">
+	<div class="control-section">
+		<SfPdfViewerServer DocumentPath=@DocumentPath Height="640px" Width="100%"></SfPdfViewerServer>
+	</div>
+</div>
+
+<style>
+	.e-timeline-header-container {
+		width: 100% !important;
+	}
+
+	.subtitle a:active, .subtitle a:hover, .subtitle a {
+		color: var(--top-navbar-color);
+		text-decoration: none;
+	}
+</style>
