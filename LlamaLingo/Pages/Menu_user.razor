@@ -3,36 +3,50 @@
 @inject NavigationManager _nav
 @layout MainLayout
 
-<div class="menu-page">
-	<h3>
-		<p>P.O.D.#:@pod</p>
-		<p>Person#:@pid</p>
-	</h3>
-
-	<!-- ************************************************************************************ -->
-	<!-- ******************************** DISPLAY PANELS ************************************ -->
-	<!-- ************************************************************************************ -->
-	<div class="titlebanner">
-		<img src="images/UIpanels/UseCase_user.png" />
-	</div>
-
-	<!-- ************************************************************************************ -->
-	<!-- *************************** USER INTERVIEW ***************************************** -->
-	<!-- ************************************************************************************ -->
-	<div class="button-container">
-		<button class="buttonMenu01" @onclick="@(()=>_nav.NavigateTo("/EndUser?pod="+pod+"&pid="+pid))">
-			<!-- Goal (place a text button label here) -->
-		</button>
-
-		<button class="buttonMenu02" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
-			<!-- Task (place a text button label here) -->
-		</button>	
-
-		<button class="buttonMenu03" @onclick="@(()=>_nav.NavigateTo("/Nova?pod="+pod+"&pid="+pid))">
-			<!-- NOVA (place a text button label here) -->
-		</button>
+<div class="page-heading">
+	<div class="header-info">
+		<div class="page-info">
+			<h3 class="header">End User</h3>
+			<p class="subtitle"><a href="">Home</a> / End User</p>
+		</div>
+		<div class="pod-info">
+			<p class="subtitle">POD: #@pod | Person: #@pid</p>
+		</div>
 	</div>
 </div>
+
+
+<div class="content-box shadow" style="overflow: hidden !important">
+	<div class="content-box">
+		<div class="menu-page">
+			<!-- ************************************************************************************ -->
+			<!-- ******************************** DISPLAY PANELS ************************************ -->
+			<!-- ************************************************************************************ -->
+			<div class="titlebanner">
+				<img src="images/UIpanels/UseCase_user.png" />
+			</div>
+
+			<!-- ************************************************************************************ -->
+			<!-- *************************** USER INTERVIEW ***************************************** -->
+			<!-- ************************************************************************************ -->
+			<div class="button-container">
+				<button class="buttonMenu01" @onclick="@(()=>_nav.NavigateTo("/EndUser?pod="+pod+"&pid="+pid))">
+					<!-- Goal (place a text button label here) -->
+				</button>
+
+				<button class="buttonMenu02" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
+					<!-- Task (place a text button label here) -->
+				</button>
+
+				<button class="buttonMenu03" @onclick="@(()=>_nav.NavigateTo("/Nova?pod="+pod+"&pid="+pid))">
+					<!-- NOVA (place a text button label here) -->
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 
 <style>
 

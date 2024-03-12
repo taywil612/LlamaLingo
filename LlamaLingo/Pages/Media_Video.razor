@@ -1,32 +1,39 @@
 ﻿@page "/Video"
 
-<div class="media-page">
+<div class="page-heading">
+	<h3 class="header">Sample Video</h3>
+	<p class="subtitle"><a href="">Home</a> / Video</p>
+</div>
 
-<h2>Sample Video</h2>
+<div class="content-box shadow" style="overflow: hidden !important">
+	<div class="content-box">
+		<div class="media-page">
+			<div>
+				<video controls="controls" width="800">
+					<source src="/Blobs/Video/Rain.mp4">
+				</video>
+			</div>
+
+			<div>
+				<video controls="controls" width="800">
+					<source src="Blobs/Video/Starry_Night.mp4">
+				</video>
+			</div>
+		</div>
+	</div>
+</div>
 
 <style>
-	body {
-		background-color:darkred;
-        color:black;
-    }
-	.backimg{
+	.media-page {
+		background-color: darkred;
+		color: black;
+	}
+
+	.backimg {
 		background-image: url(images/BG/BoatParty.png);
-		opacity:50%;
-		width:50%;
-		height:50%;
-		background-repeat:no-repeat;
+		opacity: 50%;
+		width: 50%;
+		height: 50%;
+		background-repeat: no-repeat;
 	}
 </style>
-
-<div> 
-	<video controls="controls" width="800">
-		<source src="/Blobs/Video/Rain.mp4">
-	</video>
-</div>	
-
-<div>
-	<video controls="controls" width="800">
-		<source src="Blobs/Video/Starry_Night.mp4">
-	</video>
-</div>
-</div>

@@ -1,44 +1,21 @@
 ﻿@page "/RadarChart"
 @using Syncfusion.Blazor.Charts
 
-<h2>RadarChart</h2>
-
-<br/>
-<div id = "ControlRegion">
-    <SfChart Theme="Theme.Fluent">
-        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>           
-        <ChartSeriesCollection>
-            <ChartSeries DataSource="@dataSource"  Type="ChartSeriesType.Radar" Name="Germany" XName="xValue" YName="yValue">
-            </ChartSeries>
-            <ChartSeries DataSource="@dataSource" Type="ChartSeriesType.Radar" Name="England" XName="xValue" YName="yValue1">
-            </ChartSeries>
-        </ChartSeriesCollection>
-        <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
-        <ChartZoomSettings EnableSelectionZooming="true"></ChartZoomSettings>
-    </SfChart>
+<div class="page-heading">
+    <h3 class="header">Radar Chart</h3>
+	<p class="subtitle"><a href="">Home</a> / Radar Chart</p>
 </div>
-<br/>
-<div>
-  <h3>Selected Features:</h3>
-    <ul class="ulstyle">
-      <li class="list"> Chart Types - Polar</li>
-      <li class="list"> Zooming</li>
-      <li class="list"> Tooltip</li>
-      <li class="list"> Theme - Fluent</li>
-    </ul>
-</div>
-<br/>
 
-<style>
-    .ulstyle {
-        margin: 0px;
-        padding-left: 20px;
-        display: inline-block;
-    }
-    .list {
-    float: left;
-    line-height: 20px;
-    margin: 10px;
-    min-width: 200px;
-    }
-</style>
+<div class="content-box shadow">
+	<SfChart Theme="Theme.Fluent">
+		<ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+		<ChartSeriesCollection>
+			<ChartSeries DataSource="@dataSource" Type="ChartSeriesType.Radar" Name="Germany" XName="xValue" YName="yValue">
+			</ChartSeries>
+			<ChartSeries DataSource="@dataSource" Type="ChartSeriesType.Radar" Name="England" XName="xValue" YName="yValue1">
+			</ChartSeries>
+		</ChartSeriesCollection>
+		<ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+		<ChartZoomSettings EnableSelectionZooming="true"></ChartZoomSettings>
+	</SfChart>
+</div>

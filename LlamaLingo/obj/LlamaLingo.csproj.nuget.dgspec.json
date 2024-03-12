@@ -92,6 +92,10 @@
               "target": "Package",
               "version": "[23.1.43, )"
             },
+            "Syncfusion.Blazor.SfPdfViewer": {
+              "target": "Package",
+              "version": "[23.1.43, )"
+            },
             "Syncfusion.Blazor.Spinner": {
               "target": "Package",
               "version": "[23.1.43, )"
