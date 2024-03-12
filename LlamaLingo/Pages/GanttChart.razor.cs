@@ -13,7 +13,9 @@ namespace LlamaLingo.Pages
         public bool IsLoading { get; set; } = true;
         public string projectName { get; set; } = "";
 
-        IEnumerable<GanttTaskLoad> GanttTaskList;
+        public string DurationUnit { get; set; } = "minutes";
+
+		IEnumerable<GanttTaskLoad> GanttTaskList;
         public string[] Searchfields = new string[] {
             "Id",
             "String",
@@ -44,7 +46,7 @@ namespace LlamaLingo.Pages
         {
             //Create a list containing all of the data in the SyncGantt Table.
             List<GanttTaskLoad> allTasks = await db.Set<GanttTaskLoad>().ToListAsync();
-            
+
             //Add a list of subtasks to each tasks.
             foreach (var task in allTasks)
             {
@@ -53,6 +55,8 @@ namespace LlamaLingo.Pages
 				//Set random values for testing purposes.
 				// {
 				task.Duration = "1";
+                task.Duration += DurationUnit;
+                
                 task.Progress = "1";
                 // }
             }

@@ -29,7 +29,6 @@ namespace LlamaLingo.Shared
         {
             ChatbarToggle = !ChatbarToggle;
             _ = refreshPageLayout();
-            
         }
 
         private async Task refreshPageLayout()

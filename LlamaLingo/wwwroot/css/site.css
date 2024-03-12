@@ -62,7 +62,6 @@ app {
 
     .main .top-row {
         background-color: #f7f7f7;
-        justify-content: flex-end;
     }
 
         .main .top-row > a, .main .top-row .btn-link {

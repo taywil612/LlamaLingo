@@ -61,7 +61,6 @@
 /* Styling the top row */
 .top-row[b-ev0ybvepx7] {
     background-color: var(--top-navbar-color);
-    justify-content: flex-end;
     height: 3.5rem;
     display: flex;
     padding: 0.5rem 0rem;

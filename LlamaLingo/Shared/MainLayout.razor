@@ -50,13 +50,15 @@
 <div class="page-content e-main-content">
 	<div class="main">
         @* Create the top-row navigation bar. *@
-        <div class="shadow top-row px-4" style="z-index: 1111; overflow-x: auto; overflow-y: hidden;">
-            <a href="/RadarChart">Radar Chart</a>
-			<a href="/GanttChart">Gantt Chart</a>
-            <a href="/Pdf_Viewer">PDF Viewer</a>
-            <a href="/color-chart">ColorChart</a>
-            <a href="/color-table">ColorTable</a>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <div class="shadow top-row px-4" style="z-index: 1111; overflow-x: auto; display: flex; justify-content: flex-end;">
+            <div>
+                <a href="/RadarChart">Radar Chart</a>
+			    <a href="/GanttChart">Gantt Chart</a>
+                <a href="/Pdf_Viewer">PDF Viewer</a>
+                <a href="/color-chart">ColorChart</a>
+                <a href="/color-table">ColorTable</a>
+			    <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+			</div>
 		</div>
         <div class="content">
             @* Display the content from other pages. *@
