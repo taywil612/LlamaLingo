@@ -2,286 +2,295 @@
 @inject DbContext db            // Inject the ServerDbContext service for database access
 @layout MainLayout
 
-<div class="component-page">
-	<h3>
-		<br <br <br <br <br />
-		<p>Pod#: @pod</p>
-		<p>Person#:@pid</p>
-	</h3>
-
-	<!-- ************************************************************************************ -->
-	<!-- ******************************** DISPLAY PANELS ************************************ -->
-	<!-- ************************************************************************************ -->
-	<div class="button-container">
-		<div>
-				<img src="images/UIpanels/Panel_Marque.png"
-				 style="position:absolute; top:90px; left:600px; width:580px;border-radius:0px;background-size: cover;">
+<div class="page-heading">
+	<div class="header-info">
+		<div class="page-info">
+			<h3 class="header">Noun CRUD</h3>
+			<p class="subtitle"><a href="">Home</a> / Noun</p>
 		</div>
-
-		<div>
-				<img src="images/buttons/Btn_Luster_Noun.png"
-				 style="position:absolute; top:85px; left:820px; width:140px;border-radius:8px;background-size: cover;">
+		<div class="pod-info">
+			<p class="subtitle">POD: #@pod | Person: #@pid</p>
 		</div>
-
-		<div>
-				<img src="images/UIpanels/Panel_Fluer.png"
-				 style="position:absolute; top:80px; left:1250px; width:188px;border-radius:8px;background-size: cover;">
-		</div>
-
-		<!-- ************************************************************************************ -->
-		<!-- *********************** DISPLAY PANEL CRUD BUTTONS ********************************* -->
-		<!-- ************************************************************************************ -->
-
-		<anythingyouwant>
-			<div class="boxButton">
-				<form @onsubmit="ShowList">
-					<button class="buttonList" style="	left:10px;	">
-						@table
-					</button>
-				</form>
-
-				<form @onsubmit="ShowCreate">
-					<button class="buttonAdd" style="	left: 202px;">
-						@table
-					</button>
-				</form>
-
-				<form @onsubmit="ShowModify">
-					<button class="buttonChange" style="	left:394px;	">
-						@table
-					</button>
-				</form>
-
-				<form @onsubmit="ShowDelete">
-					<button class="buttonDelete" style=" top: 110px; left:1000px; opacity:100%; 	">
-						@table
-					</button>
-				</form>
-			</div>
-		</anythingyouwant>
-
-		<!-- ************************************************************************************ -->
-		<!-- ************************************* NOUN LIST  *********************************** -->
-		<!-- ************************************************************************************ -->
-
-		@if (showList)
-		{
-			<div class="ShadowText">
-				<img src="images/UIpanels/shadow_black.png"
-				 style="border-radius: 12px;background-size: cover;">
-			</div>
-
-			<div class="exhibitPanel">
-				<table id="listTable">
-					@*A "table" (really a list) of all records of the same type as selected table crud value*@
-					<tr>
-						<th>@table POD ID# Status Type Label Description</th>
-					</tr>
-					@foreach (var noun in nouns)
-					{   // Loop through each label of the currently selected table
-						<tr>
-							<td>@noun.PodIdFk     @noun.NounId     @noun.NounStatus     @noun.NounType  @noun.NounLabel @noun.NounDescription </td>
-						</tr>
-						// Display only the goal's description
-					}
-				</table>
-			</div>
-		}
-
-		<!-- ************************************************************************************ -->
-		<!-- ************************************* NOUN CREATE ********************************** -->
-		<!-- ************************************************************************************ -->
-
-		@if (showCreate)
-		{
-			<br>
-			<div style="font-size:x-large; ">
-				<form @onsubmit="OnCreate">
-
-					<div class="ShadowText">
-						<img src="images/UIpanels/shadow_black.png"
-						 style="border-radius: 12px;background-size: cover;">
-					</div>
-
-					<div class="boxFilter">
-							<img src="images/UIpanels/Panel_Commit_add.png"
-							 style="border-radius: 12px;background-size: cover;">
-							<button class="commitCreate" type="submit"></button>
-					</div>
-
-					<div class="exhibitInfo">
-
-						<label>
-							@table  Noun Label 16:
-							<input class="form-control" @bind="currentNoun.NounLabel" maxlength="16" required />
-						</label><br><br>
-
-						<label>
-							Description:
-							<input class="form-control" @bind="currentNoun.NounDescription" maxlength="255" required />
-						</label><br><br>
-
-						<label>
-							Type:
-							<select @bind="currentNoun.NounType" required>
-								@foreach (var pype in pypes)
-								{
-									<option value="@pype.PypeType">@pype.PypeType</option>
-								}
-							</select>
-						</label><br><br>
-
-					</div>
-				</form>
-			</div>
-		}
-
-		<!-- ************************************************************************************ -->
-		<!-- ************************************* NOUN CHANGE ********************************** -->
-		<!-- ************************************************************************************ -->
-
-		@if (showModify)
-		{
-
-			<div style="font-size:x-large; display: inline-block;">
-				<form @onsubmit="OnChange">
-					@**@
-
-			<div class="ShadowText">
-				<img src="images/UIpanels/shadow_black.png"
-				 style="border-radius: 12px;background-size: cover;">
-			</div>
-
-					<div class="boxFilter">
-
-						<div class="PypeTypeFilter">
-							<label>
-								<select @bind="selectedFilter">
-									<option value="****">****</option>
-									@foreach (var pype in pypes)
-									{
-										if (pype.PypeId == "NOUN")
-										{
-											<option value="@pype.PypeType">@pype.PypeType</option>
-										}
-									}
-								</select>
-							</label>
-						</div>
-
-						<div class="PypeType">
-							<label>
-								@table 
-								<select class="form-control" @bind="selectedNoun">
-									@foreach (var noun in nouns)
-									{
-										<option value="@noun.NounId"> @noun.NounLabel</option>
-									}
-								</select>
-							</label>
-						</div>
-
-						<img src="images/UIpanels/Panel_Commit.png"
-						 style="border-radius: 12px;background-size: cover;">
-						<button class="commitChange" type="submit"></button>
-					</div>
-
-					<div class="exhibitInfo">
-
-						<label>
-							label:
-							<input class="form-control" @bind="currentNoun.NounLabel" maxlength="16" required />
-						</label><br><br>
-
-						<label>
-							description:
-							<input class="form-control" @bind="currentNoun.NounDescription" maxlength="255" required />
-						</label><br><br>
-
-						<label>
-							type:
-							<select @bind="currentNoun.NounType" required>
-								@foreach (var pype in pypes)
-								{
-									if (pype.PypeId == "NOUN")
-									{
-										<option value="@pype.PypeType">@pype.PypeType</option>
-									}
-								}
-							</select>
-						</label><br><br>
-
-						<label>
-							status:
-							<input class="form-control" @bind="currentNoun.NounStatus" maxlength="1" required />
-						</label><br><br>
-
-						<label>
-							image:
-							<input class="form-control" @bind="currentNoun.UrlIdPk" type="number" required />
-						</label><br><br>
-					</div>
-				</form>
-			</div>
-		}
-
-		<!-- ************************************************************************************ -->
-		<!-- ************************************* NOUN DELETE ********************************** -->
-		<!-- ************************************************************************************ -->
-
-		@if (showDelete)
-		{
-			<div style="font-size:x-large; display: inline-block;">
-				<form @onsubmit="OnDelete">
-
-					<div class="ShadowText">
-						<img src="images/UIpanels/shadow_black.png"
-						 style="border-radius: 12px;background-size: cover;">
-					</div>
-
-					<div class="boxFilter">
-
-						<div class="PypeTypeFilter">
-							<label>
-								<select @bind="selectedFilter">
-									<option value="****">****</option>
-									@foreach (var pype in pypes)
-									{
-										if (pype.PypeId == "NOUN")
-										{
-											<option value="@pype.PypeType">@pype.PypeType</option>
-										}
-									}
-								</select>
-							</label>
-						</div>
-
-						<div class="PypeType">
-							<label>
-								@table 
-								<select class="form-control" @bind="currentNoun.NounId">
-									@foreach (var noun in nounsDelete)
-									{
-										<option value="@noun.NounId"> @noun.NounLabel</option>
-									}
-								</select>
-							</label>
-						</div>
-
-						<img src="images/UIpanels/Panel_Commit.png"
-						 style="border-radius: 12px;background-size: cover;">
-						<button class="commitDelete" type="submit"></button>
-
-					</div>
-
-					<div class="exhibitInfo">
-						Only if the Status = D
-					</div>
-				</form>
-			</div>
-		}
 	</div>
 </div>
+
+
+<div class="content-box shadow" style="overflow: hidden !important">
+	<div class="content-box">
+		<div class="component-page">
+			<!-- ************************************************************************************ -->
+			<!-- ******************************** DISPLAY PANELS ************************************ -->
+			<!-- ************************************************************************************ -->
+			<div class="button-container unset-top">
+				<div>
+					<img src="images/UIpanels/Panel_Marque.png"
+						 style="position:absolute; top:90px; left:600px; width:580px;border-radius:0px;background-size: cover;">
+				</div>
+
+				<div>
+					<img src="images/buttons/Btn_Luster_Noun.png"
+						 style="position:absolute; top:85px; left:820px; width:140px;border-radius:8px;background-size: cover;">
+				</div>
+
+				<div>
+					<img src="images/UIpanels/Panel_Fluer.png"
+						 style="position:absolute; top:80px; left:1250px; width:188px;border-radius:8px;background-size: cover;">
+				</div>
+
+				<!-- ************************************************************************************ -->
+				<!-- *********************** DISPLAY PANEL CRUD BUTTONS ********************************* -->
+				<!-- ************************************************************************************ -->
+
+				<div class="boxButton-container">
+					<div class="boxButton">
+						<form @onsubmit="ShowList">
+							<button class="buttonList" style="	left:10px;	">
+								@table
+							</button>
+						</form>
+
+						<form @onsubmit="ShowCreate">
+							<button class="buttonAdd" style="	left: 202px;">
+								@table
+							</button>
+						</form>
+
+						<form @onsubmit="ShowModify">
+							<button class="buttonChange" style="	left:394px;	">
+								@table
+							</button>
+						</form>
+
+						<form @onsubmit="ShowDelete">
+							<button class="buttonDelete" style=" top: 110px; left:1000px; opacity:100%; 	">
+								@table
+							</button>
+						</form>
+					</div>
+				</div>
+
+				<!-- ************************************************************************************ -->
+				<!-- ************************************* NOUN LIST  *********************************** -->
+				<!-- ************************************************************************************ -->
+				@if (showList)
+				{
+					<div class="ShadowText">
+						<img src="images/UIpanels/shadow_black.png"
+							 style="border-radius: 12px;background-size: cover;">
+					</div>
+
+					<div class="exhibitPanel">
+						<table id="listTable">
+							@*A "table" (really a list) of all records of the same type as selected table crud value*@
+							<tr>
+								<th>@table POD ID# Status Type Label Description</th>
+							</tr>
+							@foreach (var noun in nouns)
+							{   // Loop through each label of the currently selected table
+								<tr>
+									<td>@noun.PodIdFk     @noun.NounId     @noun.NounStatus     @noun.NounType  @noun.NounLabel @noun.NounDescription </td>
+								</tr>
+								// Display only the goal's description
+							}
+						</table>
+					</div>
+				}
+
+				<!-- ************************************************************************************ -->
+				<!-- ************************************* NOUN CREATE ********************************** -->
+				<!-- ************************************************************************************ -->
+				@if (showCreate)
+				{
+					<br>
+					<div style="font-size:x-large; ">
+						<form @onsubmit="OnCreate">
+
+							<div class="ShadowText">
+								<img src="images/UIpanels/shadow_black.png"
+									 style="border-radius: 12px;background-size: cover;">
+							</div>
+
+							<div class="boxFilter">
+								<img src="images/UIpanels/Panel_Commit_add.png"
+									 style="border-radius: 12px;background-size: cover;">
+								<button class="commitCreate" type="submit"></button>
+							</div>
+
+							<div class="exhibitInfo">
+
+								<label>
+									@table  Noun Label 16:
+									<input class="form-control" @bind="currentNoun.NounLabel" maxlength="16" required />
+								</label><br><br>
+
+								<label>
+									Description:
+									<input class="form-control" @bind="currentNoun.NounDescription" maxlength="255" required />
+								</label><br><br>
+
+								<label>
+									Type:
+									<select @bind="currentNoun.NounType" required>
+										@foreach (var pype in pypes)
+										{
+											<option value="@pype.PypeType">@pype.PypeType</option>
+										}
+									</select>
+								</label><br><br>
+
+							</div>
+						</form>
+					</div>
+				}
+
+				<!-- ************************************************************************************ -->
+				<!-- ************************************* NOUN CHANGE ********************************** -->
+				<!-- ************************************************************************************ -->
+				@if (showModify)
+				{
+
+					<div style="font-size:x-large; display: inline-block;">
+						<form @onsubmit="OnChange">
+							@**@
+
+							<div class="ShadowText">
+								<img src="images/UIpanels/shadow_black.png"
+									 style="border-radius: 12px;background-size: cover;">
+							</div>
+
+							<div class="boxFilter">
+
+								<div class="PypeTypeFilter">
+									<label>
+										<select @bind="selectedFilter">
+											<option value="****">****</option>
+											@foreach (var pype in pypes)
+											{
+												if (pype.PypeId == "NOUN")
+												{
+													<option value="@pype.PypeType">@pype.PypeType</option>
+												}
+											}
+										</select>
+									</label>
+								</div>
+
+								<div class="PypeType">
+									<label>
+										@table
+										<select class="form-control" @bind="selectedNoun">
+											@foreach (var noun in nouns)
+											{
+												<option value="@noun.NounId"> @noun.NounLabel</option>
+											}
+										</select>
+									</label>
+								</div>
+
+								<img src="images/UIpanels/Panel_Commit.png"
+									 style="border-radius: 12px;background-size: cover;">
+								<button class="commitChange" type="submit"></button>
+							</div>
+
+							<div class="exhibitInfo">
+
+								<label>
+									label:
+									<input class="form-control" @bind="currentNoun.NounLabel" maxlength="16" required />
+								</label><br><br>
+
+								<label>
+									description:
+									<input class="form-control" @bind="currentNoun.NounDescription" maxlength="255" required />
+								</label><br><br>
+
+								<label>
+									type:
+									<select @bind="currentNoun.NounType" required>
+										@foreach (var pype in pypes)
+										{
+											if (pype.PypeId == "NOUN")
+											{
+												<option value="@pype.PypeType">@pype.PypeType</option>
+											}
+										}
+									</select>
+								</label><br><br>
+
+								<label>
+									status:
+									<input class="form-control" @bind="currentNoun.NounStatus" maxlength="1" required />
+								</label><br><br>
+
+								<label>
+									image:
+									<input class="form-control" @bind="currentNoun.UrlIdPk" type="number" required />
+								</label><br><br>
+							</div>
+						</form>
+					</div>
+				}
+
+				<!-- ************************************************************************************ -->
+				<!-- ************************************* NOUN DELETE ********************************** -->
+				<!-- ************************************************************************************ -->
+				@if (showDelete)
+				{
+					<div style="font-size:x-large; display: inline-block;">
+						<form @onsubmit="OnDelete">
+
+							<div class="ShadowText">
+								<img src="images/UIpanels/shadow_black.png"
+									 style="border-radius: 12px;background-size: cover;">
+							</div>
+
+							<div class="boxFilter">
+
+								<div class="PypeTypeFilter">
+									<label>
+										<select @bind="selectedFilter">
+											<option value="****">****</option>
+											@foreach (var pype in pypes)
+											{
+												if (pype.PypeId == "NOUN")
+												{
+													<option value="@pype.PypeType">@pype.PypeType</option>
+												}
+											}
+										</select>
+									</label>
+								</div>
+
+								<div class="PypeType">
+									<label>
+										@table
+										<select class="form-control" @bind="currentNoun.NounId">
+											@foreach (var noun in nounsDelete)
+											{
+												<option value="@noun.NounId"> @noun.NounLabel</option>
+											}
+										</select>
+									</label>
+								</div>
+
+								<img src="images/UIpanels/Panel_Commit.png"
+									 style="border-radius: 12px;background-size: cover;">
+								<button class="commitDelete" type="submit"></button>
+
+							</div>
+
+							<div class="exhibitInfo">
+								Only if the Status = D
+							</div>
+						</form>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</div>
+
+
 
 <style>
 	.component-page {

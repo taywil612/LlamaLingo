@@ -20,6 +20,7 @@
           "Syncfusion.Blazor.Notifications": "23.1.43",
           "Syncfusion.Blazor.PdfViewer": "23.1.43",
           "Syncfusion.Blazor.PdfViewerServer.Windows": "23.1.43",
+          "Syncfusion.Blazor.SfPdfViewer": "23.1.43",
           "Syncfusion.Blazor.Spinner": "23.1.43",
           "Syncfusion.Blazor.Themes": "23.1.43",
           "Syncfusion.PdfViewer.Windows": "23.1.43"
@@ -598,6 +599,33 @@
           }
         }
       },
+      "SkiaSharp.NativeAssets.Linux/2.88.6": {
+        "dependencies": {
+          "SkiaSharp": "2.88.6"
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libSkiaSharp.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libSkiaSharp.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libSkiaSharp.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libSkiaSharp.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "SkiaSharp.NativeAssets.macOS/2.88.6": {
         "runtimeTargets": {
           "runtimes/osx/native/libSkiaSharp.dylib": {
@@ -909,6 +937,28 @@
           }
         }
       },
+      "Syncfusion.Blazor.SfPdfViewer/23.1.43": {
+        "dependencies": {
+          "Syncfusion.Blazor.Buttons": "23.1.43",
+          "Syncfusion.Blazor.Core": "23.1.43",
+          "Syncfusion.Blazor.Data": "23.1.43",
+          "Syncfusion.Blazor.DropDowns": "23.1.43",
+          "Syncfusion.Blazor.InPlaceEditor": "23.1.43",
+          "Syncfusion.Blazor.Inputs": "23.1.43",
+          "Syncfusion.Blazor.Lists": "23.1.43",
+          "Syncfusion.Blazor.Navigations": "23.1.43",
+          "Syncfusion.Blazor.Notifications": "23.1.43",
+          "Syncfusion.Blazor.Popups": "23.1.43",
+          "Syncfusion.Blazor.SplitButtons": "23.1.43",
+          "Syncfusion.SfPdfViewer.AspNet.Core": "23.1.43"
+        },
+        "runtime": {
+          "lib/net7.0/Syncfusion.Blazor.SfPdfViewer.dll": {
+            "assemblyVersion": "23.1.43.0",
+            "fileVersion": "23.1.43.0"
+          }
+        }
+      },
       "Syncfusion.Blazor.Spinner/23.1.43": {
         "dependencies": {
           "Syncfusion.Blazor.Core": "23.1.43"
@@ -1059,6 +1109,23 @@
           "lib/net46/Syncfusion.PdfViewer.Windows.dll": {
             "assemblyVersion": "23.1460.43.0",
             "fileVersion": "23.1460.43.0"
+          }
+        }
+      },
+      "Syncfusion.SfPdfViewer.AspNet.Core/23.1.43": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Memory": "7.0.0",
+          "Newtonsoft.Json": "13.0.2",
+          "SkiaSharp": "2.88.6",
+          "SkiaSharp.NativeAssets.Linux": "2.88.6",
+          "Syncfusion.Compression.Net.Core": "23.1.43",
+          "Syncfusion.Pdf.Net.Core": "23.1.43",
+          "Syncfusion.SkiaSharpHelper.Net.Core": "23.1.43"
+        },
+        "runtime": {
+          "lib/net7.0/Syncfusion.SfPdfViewer.AspNet.Core.dll": {
+            "assemblyVersion": "23.1.43.0",
+            "fileVersion": "23.1.43.0"
           }
         }
       },
@@ -1677,6 +1744,13 @@
       "path": "skiasharp.harfbuzz/2.88.6",
       "hashPath": "skiasharp.harfbuzz.2.88.6.nupkg.sha512"
     },
+    "SkiaSharp.NativeAssets.Linux/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iQcOUE0tPZvBUxOdZaP3LIdAC21H8BEMhDvpCQ/mUUvbKGLd5rF7veJVSZBNu20SuCC0oZpEdGxB+mLVOK8uzw==",
+      "path": "skiasharp.nativeassets.linux/2.88.6",
+      "hashPath": "skiasharp.nativeassets.linux.2.88.6.nupkg.sha512"
+    },
     "SkiaSharp.NativeAssets.macOS/2.88.6": {
       "type": "package",
       "serviceable": true,
@@ -1824,6 +1898,13 @@
       "path": "syncfusion.blazor.richtexteditor/23.1.43",
       "hashPath": "syncfusion.blazor.richtexteditor.23.1.43.nupkg.sha512"
     },
+    "Syncfusion.Blazor.SfPdfViewer/23.1.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b08FK8uLtNrDKIgF9HzxCVatbgarTu+MuG32/xWluPMX794QzcTlSv2NoOH5iYauAJ9/uWnegmxjGYXJSU951g==",
+      "path": "syncfusion.blazor.sfpdfviewer/23.1.43",
+      "hashPath": "syncfusion.blazor.sfpdfviewer.23.1.43.nupkg.sha512"
+    },
     "Syncfusion.Blazor.Spinner/23.1.43": {
       "type": "package",
       "serviceable": true,
@@ -1921,6 +2002,13 @@
       "sha512": "sha512-P+cbYY0vzC04LviDuiSsRt22xUwmLQa4kNjrD6QKmNgPnIyxKDjHLg9y5GO/KFkM7GbVdkUrQf1G4BYO7xd2Gg==",
       "path": "syncfusion.pdfviewer.windows/23.1.43",
       "hashPath": "syncfusion.pdfviewer.windows.23.1.43.nupkg.sha512"
+    },
+    "Syncfusion.SfPdfViewer.AspNet.Core/23.1.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mIXSpaFqkT2LRt1LfJg17wn3h0k63A9M8u+DZFFYhDxeIbov4RO2EUM69q5X8bCqAk2C0BXDk1FfzAgh8TnNeg==",
+      "path": "syncfusion.sfpdfviewer.aspnet.core/23.1.43",
+      "hashPath": "syncfusion.sfpdfviewer.aspnet.core.23.1.43.nupkg.sha512"
     },
     "Syncfusion.Shared.Base/23.1.43": {
       "type": "package",

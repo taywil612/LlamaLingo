@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IO1aWyZuIiMQwj5K1gEMrZDtQJR4N7k8c0SMq4QSeOHMUjFx5FtEYRTv/qR8sAwWTtNXCRLecAJuwvwNlvVjZA==",
+  "dgSpecHash": "Lfv50irqgCo/IONTPh/yeGU3V+dPrL3hDzyBF5lCztQZ2j4qyGyMmaVcSermxTM04nm/p5fsKFFqsHsCgiwIvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
   "expectedPackageFiles": [
@@ -62,6 +62,7 @@
     "C:\\Users\\JXEli\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\skiasharp\\2.88.6\\skiasharp.2.88.6.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\skiasharp.harfbuzz\\2.88.6\\skiasharp.harfbuzz.2.88.6.nupkg.sha512",
+    "C:\\Users\\JXEli\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.6\\skiasharp.nativeassets.linux.2.88.6.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.6\\skiasharp.nativeassets.macos.2.88.6.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.6\\skiasharp.nativeassets.win32.2.88.6.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.buttons\\23.1.43\\syncfusion.blazor.buttons.23.1.43.nupkg.sha512",
@@ -83,6 +84,7 @@
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.pdfviewerserver.windows\\23.1.43\\syncfusion.blazor.pdfviewerserver.windows.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.popups\\23.1.43\\syncfusion.blazor.popups.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.richtexteditor\\23.1.43\\syncfusion.blazor.richtexteditor.23.1.43.nupkg.sha512",
+    "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.sfpdfviewer\\23.1.43\\syncfusion.blazor.sfpdfviewer.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.spinner\\23.1.43\\syncfusion.blazor.spinner.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.splitbuttons\\23.1.43\\syncfusion.blazor.splitbuttons.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.themes\\23.1.43\\syncfusion.blazor.themes.23.1.43.nupkg.sha512",
@@ -97,6 +99,7 @@
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.pdftoimageconverter.winforms\\23.1.43\\syncfusion.pdftoimageconverter.winforms.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.pdfviewer.aspnet.core.windows\\23.1.43\\syncfusion.pdfviewer.aspnet.core.windows.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.pdfviewer.windows\\23.1.43\\syncfusion.pdfviewer.windows.23.1.43.nupkg.sha512",
+    "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.sfpdfviewer.aspnet.core\\23.1.43\\syncfusion.sfpdfviewer.aspnet.core.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.shared.base\\23.1.43\\syncfusion.shared.base.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.skiasharphelper.net.core\\23.1.43\\syncfusion.skiasharphelper.net.core.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",

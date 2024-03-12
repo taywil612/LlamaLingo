@@ -3,260 +3,278 @@
 @inject NavigationManager _nav
 @layout MainLayout
 
-<div class="component-page">
-
-<style>
-	.component-page {
-		background: url(images/BG/Lascaux.png)no-repeat;
-	}
-
-	.component-page button {
-		padding: 0;
-		margin: 0;
-		width: 200px;
-		height: 100px;
-		text-align: center;
-		top: 100px;
-		color: black;
-		background-color: pink;
-		border-radius: 24px;
-		position: absolute;
-		left: 210px;
-		opacity: 100%;
-		transition-duration: .60s;
-	}
-
-	.buttonA {
-		background-image: url("Images/buttons/btnArtifactA.png");
-		background-size: cover;
-		box-shadow: 0 30px 60px rgba(0,0,0,.5);
-	}
-
-		.buttonA:hover {
-			box-shadow: 0 5px 10px rgba(0,0,0,.5);
-			transform: scale(.95);
-		}
-
-
-	jukebox {
-		position: absolute;
-		left: 90%;
-		top: 95%;
-		border-radius: 0px;
-		opacity: 40%;
-	}
-
-	boxCRUD {
-		padding: 0;
-		margin: 0;
-		width: 1000px;
-		height: 100px;
-		text-align: right;
-		top: 90px;
-		left: 820px;
-		color: #FF0000;
-		position: absolute;
-		opacity: 75%;
-		background-image: url("Images/GUI/DC_GUI_user_Direction.png");
-		background-size: cover;
-	}
-
-
-	boxbuttons {
-		padding: 0;
-		margin: 0;
-		width: 900px;
-		height: 240px;
-		text-align: right;
-		top: 75px;
-		left: 630px;
-		color: #FF0000;
-		position: absolute;
-		opacity: 100%;
-		background-image: url("Images/GUI/DC_GUI_user_Question.png");
-		background-size: cover;
-	}
-
-	.exhibitPanel {
-		position: absolute;
-		top: 370px;
-		left: 500px;
-		color: black;
-		width: 540px;
-		font-size: x-large;
-		text-overflow: ellipsis;
-		/* Required for text-overflow to do anything */
-		white-space: nowrap;
-		overflow: hidden;
-	}
-
-	.exhibitInfo {
-		position: absolute;
-		top: 350px;
-		left: 600px;
-		color: blanchedalmond;
-		width: 540px;
-		height: 700px;
-		font-size: x-large;
-		text-overflow: ellipsis;
-		/* Required for text-overflow to do anything */
-		white-space: nowrap;
-		overflow: hidden;
-	}
-
-		.pod_pid {
-		position: absolute;
-		top: 38px;
-		left: 1060px;
-		color: blanchedalmond;
-		width: 100px;
-		height: 80px;
-		font-size: medium;
-		text-overflow: ellipsis;
-		/* Required for text-overflow to do anything */
-		white-space: nowrap;
-		overflow: hidden;
-	}
-
-</style>
-
-
-<h4 style="
-		color: darkgray;
-		top: 36px;
-		left: 1070px;
-		position: absolute">
-	P.O.D.# @pod
-</h4>
-<h4 style="
-		color: darkgray;;
-		top: 67px;
-		left: 1070px;
-		position: absolute">
-	Person ID: @pid
-</h4>
-
-
-
-
-<!-- ************************************************************************************ -->
-<!-- ********************* NOVA Display Subject Action Object label-16 ****************** -->
-<!-- ************************************************************************************ -->
-
-
-@if (filterType != "Nova")
-{
-	<select style="
-		top: 122px;
-		left: 1130px;
-		position: absolute" @bind=selectedId>
-		@foreach (var nova in novas)
-		{
-			<option value="@nova.NovaId"> @nova.NovaId</option>
-		}
-	</select>
-}
-
-<label style="
-		top: 320px;
-		left: 1170px;
-		position: absolute">@novaLasc.NovaSubjectLabel</label>
-<label style="
-		top: 390px;
-		left: 1170px;
-		position: absolute">@novaLasc.NovaActionLabel</label>
-<label style="
-		top: 460px;
-		left: 1170px;
-		position: absolute">@novaLasc.NovaObjectLabel</label>
-
-<!-- ************************************************************************************ -->
-<!-- ******************** Display SUBJECT ACTION OBJECT  ********  Glyphs  ************** -->
-<!-- ************************************************************************************ -->
-
-@if (novaLasc.SubjectURL is not null)
-{
-	<img style="
-		top: 505px;
-		left: 355px;
-		width:200px;
-		opacity:65%;
-		position: absolute" src="@novaLasc.SubjectURL" alt="@novaLasc.NovaSubjectLabel" />
-}
-@if (novaLasc.ActionURL is not null)
-{
-	<img style="
-		top: 505px;
-		left: 608px;
-		width:200px;
-		opacity:65%;
-		position: absolute" src="@novaLasc.ActionURL" alt="@novaLasc.NovaActionLabel" />
-}
-@if (novaLasc.ObjectURL is not null)
-{
-	<img style="
-		top: 505px;
-		left: 860px;
-		width:200px;
-		opacity:65%;
-		position: absolute" src="@novaLasc.ObjectURL" alt="@novaLasc.NovaObjectLabel" />
-}
-
-<!-- ************************************************************************************ -->
-<!-- ************************  NEXT - PREVIOUS - PAGEback (EXIT) ************************ -->
-<!-- ************************************************************************************ -->
-
-<button style="
-		width:150px;
-        height:60px;
-        top:660px;
-		left:40px;
-		background-color:white;
-		opacity: 20%;
-		border-radius:8px;"
-		@onclick="GoToPreviousNova">	
-</button>
-
-<button style="
-		width:150px;
-        height:60px;
-        top:660px;
-		left:1210px;
-		background-color:white;
-		opacity: 20%;
-		border-radius:8px;"
-		@onclick="GoToNextNova">	
-</button>
-
-<button style="
-		width:80px;
-        height:40px;
-        top:580px;
-		left:1180px;
-		background-color:white;
-		opacity: 20%;
-		border-radius:8px;"
-		@onclick="@(() => _nav.NavigateTo("/"+prevPage+"?pod="+pod+"&pid="+pid))">
-	Return
-</button>
-
-
-<!-- ************************************************************************************ -->
-<!-- ***************************  AUDIO CONTROLLER  ************************************* -->
-<!-- ************************************************************************************ -->
-
-@*<img src="https://lifelinkstore.blob.core.windows.net/images/Person.png" alt="Person" />*@
-@*<jukebox>
-	<div>
-		<audio controls="controls">
-			<source src="/images/Audio/curatorintrojazz.mp3" />
-		</audio>
+<div class="page-heading">
+	<div class="header-info">
+		<div class="page-info">
+			<h3 class="header">Lascaux</h3>
+			<p class="subtitle"><a href="">Home</a> / Lascaux</p>
+		</div>
+		<div class="pod-info">
+			<p class="subtitle">POD: #@pod | Person: #@pid</p>
+		</div>
 	</div>
-</jukebox>*@
-
-<!-- ************************************************************************************ -->
-<!-- *****************************  POD NOVA ******************************************** -->
-<!-- ************************************************************************************ -->
-
-
 </div>
+
+
+<div class="content-box shadow" style="overflow: hidden !important">
+	<div class="content-box">
+		<div class="component-page">
+
+		<style>
+			.component-page {
+				background: url(images/BG/Lascaux.png)no-repeat;
+			}
+
+			.component-page button {
+				padding: 0;
+				margin: 0;
+				width: 200px;
+				height: 100px;
+				text-align: center;
+				top: 100px;
+				color: black;
+				background-color: pink;
+				border-radius: 24px;
+				position: absolute;
+				left: 210px;
+				opacity: 100%;
+				transition-duration: .60s;
+			}
+
+			.buttonA {
+				background-image: url("Images/buttons/btnArtifactA.png");
+				background-size: cover;
+				box-shadow: 0 30px 60px rgba(0,0,0,.5);
+			}
+
+				.buttonA:hover {
+					box-shadow: 0 5px 10px rgba(0,0,0,.5);
+					transform: scale(.95);
+				}
+
+
+			jukebox {
+				position: absolute;
+				left: 90%;
+				top: 95%;
+				border-radius: 0px;
+				opacity: 40%;
+			}
+
+			boxCRUD {
+				padding: 0;
+				margin: 0;
+				width: 1000px;
+				height: 100px;
+				text-align: right;
+				top: 90px;
+				left: 820px;
+				color: #FF0000;
+				position: absolute;
+				opacity: 75%;
+				background-image: url("Images/GUI/DC_GUI_user_Direction.png");
+				background-size: cover;
+			}
+
+
+			boxbuttons {
+				padding: 0;
+				margin: 0;
+				width: 900px;
+				height: 240px;
+				text-align: right;
+				top: 75px;
+				left: 630px;
+				color: #FF0000;
+				position: absolute;
+				opacity: 100%;
+				background-image: url("Images/GUI/DC_GUI_user_Question.png");
+				background-size: cover;
+			}
+
+			.exhibitPanel {
+				position: absolute;
+				top: 370px;
+				left: 500px;
+				color: black;
+				width: 540px;
+				font-size: x-large;
+				text-overflow: ellipsis;
+				/* Required for text-overflow to do anything */
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
+			.exhibitInfo {
+				position: absolute;
+				top: 350px;
+				left: 600px;
+				color: blanchedalmond;
+				width: 540px;
+				height: 700px;
+				font-size: x-large;
+				text-overflow: ellipsis;
+				/* Required for text-overflow to do anything */
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
+				.pod_pid {
+				position: absolute;
+				top: 38px;
+				left: 1060px;
+				color: blanchedalmond;
+				width: 100px;
+				height: 80px;
+				font-size: medium;
+				text-overflow: ellipsis;
+				/* Required for text-overflow to do anything */
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
+		</style>
+
+
+		<h4 style="
+				color: darkgray;
+				top: 36px;
+				left: 1070px;
+				position: absolute">
+			P.O.D.# @pod
+		</h4>
+		<h4 style="
+				color: darkgray;;
+				top: 67px;
+				left: 1070px;
+				position: absolute">
+			Person ID: @pid
+		</h4>
+
+
+
+
+		<!-- ************************************************************************************ -->
+		<!-- ********************* NOVA Display Subject Action Object label-16 ****************** -->
+		<!-- ************************************************************************************ -->
+
+
+		@if (filterType != "Nova")
+		{
+			<select style="
+				top: 122px;
+				left: 1130px;
+				position: absolute" @bind=selectedId>
+				@foreach (var nova in novas)
+				{
+					<option value="@nova.NovaId"> @nova.NovaId</option>
+				}
+			</select>
+		}
+
+		<label style="
+				top: 320px;
+				left: 1170px;
+				position: absolute">@novaLasc.NovaSubjectLabel</label>
+		<label style="
+				top: 390px;
+				left: 1170px;
+				position: absolute">@novaLasc.NovaActionLabel</label>
+		<label style="
+				top: 460px;
+				left: 1170px;
+				position: absolute">@novaLasc.NovaObjectLabel</label>
+
+		<!-- ************************************************************************************ -->
+		<!-- ******************** Display SUBJECT ACTION OBJECT  ********  Glyphs  ************** -->
+		<!-- ************************************************************************************ -->
+
+		@if (novaLasc.SubjectURL is not null)
+		{
+			<img style="
+				top: 505px;
+				left: 355px;
+				width:200px;
+				opacity:65%;
+				position: absolute" src="@novaLasc.SubjectURL" alt="@novaLasc.NovaSubjectLabel" />
+		}
+		@if (novaLasc.ActionURL is not null)
+		{
+			<img style="
+				top: 505px;
+				left: 608px;
+				width:200px;
+				opacity:65%;
+				position: absolute" src="@novaLasc.ActionURL" alt="@novaLasc.NovaActionLabel" />
+		}
+		@if (novaLasc.ObjectURL is not null)
+		{
+			<img style="
+				top: 505px;
+				left: 860px;
+				width:200px;
+				opacity:65%;
+				position: absolute" src="@novaLasc.ObjectURL" alt="@novaLasc.NovaObjectLabel" />
+		}
+
+		<!-- ************************************************************************************ -->
+		<!-- ************************  NEXT - PREVIOUS - PAGEback (EXIT) ************************ -->
+		<!-- ************************************************************************************ -->
+
+		<button style="
+				width:150px;
+				height:60px;
+				top:660px;
+				left:40px;
+				background-color:white;
+				opacity: 20%;
+				border-radius:8px;"
+				@onclick="GoToPreviousNova">	
+		</button>
+
+		<button style="
+				width:150px;
+				height:60px;
+				top:660px;
+				left:1210px;
+				background-color:white;
+				opacity: 20%;
+				border-radius:8px;"
+				@onclick="GoToNextNova">	
+		</button>
+
+		<button style="
+				width:80px;
+				height:40px;
+				top:580px;
+				left:1180px;
+				background-color:white;
+				opacity: 20%;
+				border-radius:8px;"
+				@onclick="@(() => _nav.NavigateTo("/"+prevPage+"?pod="+pod+"&pid="+pid))">
+			Return
+		</button>
+
+
+		<!-- ************************************************************************************ -->
+		<!-- ***************************  AUDIO CONTROLLER  ************************************* -->
+		<!-- ************************************************************************************ -->
+
+		@*<img src="https://lifelinkstore.blob.core.windows.net/images/Person.png" alt="Person" />*@
+		@*<jukebox>
+			<div>
+				<audio controls="controls">
+					<source src="/images/Audio/curatorintrojazz.mp3" />
+				</audio>
+			</div>
+		</jukebox>*@
+
+		<!-- ************************************************************************************ -->
+		<!-- *****************************  POD NOVA ******************************************** -->
+		<!-- ************************************************************************************ -->
+
+
+		</div>
+	</div>
+</div>
+

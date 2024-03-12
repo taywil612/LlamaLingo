@@ -1,37 +1,45 @@
 ﻿@page "/Audio"
 
-<div class="media-page">
 
-<h2>Demonstration Jukebox Audio</h2>
-
-<style>
-	body {
-        background: url(images/BG/BG_Audio.png) no-repeat;
-        background-size: 1200px 800px;
-		background-position: left 200px top 56px;
-		opacity: 100%;
-        color: white;
-    }
-</style>
-
-<div>  
-	<audio controls="controls">
-		<source src="/Blobs/Audio/Ripingtons.mp3">
-	</audio>
+<div class="page-heading">
+	<h3 class="header">Demonstration Jukebox Audio</h3>
+	<p class="subtitle"><a href="">Home</a> / Audio</p>
 </div>
 
- <a href="https://radio.garden/listen/heavy1/rH122vcl">
-	<button
-		style="
-		position: absolute;
+<div class="content-box shadow" style="overflow: hidden !important">
+	<div class="content-box">
+		<div class="media-page">
+			<div>
+				<audio controls="controls">
+					<source src="/Blobs/Audio/Ripingtons.mp3">
+				</audio>
+			</div>
+
+			<a href="https://radio.garden/listen/heavy1/rH122vcl">
+				<button style="
+		position: relative;
 		width:200px;
-		height:120PX;
-		left:710px;
-		top:610px;
+		height:120px;
+		left:510px;
+		top:500px;
 		background-color:white;
 		border-radius:0px;
 		opacity:10%;
-		">World Radio
-	</button>
-</a>
+		">
+					World Radio
+				</button>
+			</a>
+		</div>
+	</div>
 </div>
+
+<style>
+	.media-page {
+		background: url(images/BG/BG_Audio.png) no-repeat;
+		background-size: 1200px 800px;
+		opacity: 100%;
+		color: white;
+		height: 800px;
+		width: 1200px;
+	}
+</style>

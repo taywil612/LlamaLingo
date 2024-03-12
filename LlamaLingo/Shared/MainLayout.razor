@@ -6,7 +6,7 @@
 <PageTitle>LlamaLingo</PageTitle>
 
 @* Create the sidebar for the chat. *@
-<SfSidebar ID="Chatbar" Type="SidebarType.Auto" Position="SidebarPosition.Right" Width="100%" @ref="Chat" @bind-IsOpen="ChatbarToggle" ZIndex="1200">
+<SfSidebar ID="Chatbar" CloseOnDocumentClick="false" Type="SidebarType.Auto" Position="SidebarPosition.Right" Width="100%" @ref="Chat" @bind-IsOpen="ChatbarToggle" ZIndex="1200">
     <ChildContent>
         <div class="sidebar" style="position:fixed;z-index:1200; width: 100%;">
             <div class="shadow topnav navbar navbar-dark">
