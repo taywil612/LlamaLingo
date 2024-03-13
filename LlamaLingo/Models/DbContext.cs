@@ -15,6 +15,8 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
     {
     }
 
+    public virtual DbSet<ColorTest> ColorTests { get; set; }
+
     public virtual DbSet<Element> Elements { get; set; }
 
     public virtual DbSet<Fragment> Fragments { get; set; }
@@ -42,6 +44,8 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
     public virtual DbSet<Nova> Novas { get; set; }
 
     public virtual DbSet<Palette> Palettes { get; set; }
+
+    public virtual DbSet<ParseSentence> ParseSentences { get; set; }
 
     public virtual DbSet<Person> People { get; set; }
 
@@ -80,6 +84,22 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<ColorTest>(entity =>
+        {
+            entity.ToTable("ColorTest");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.BluStr).HasColumnName("bluStr");
+            entity.Property(e => e.Color)
+                .IsRequired()
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .HasColumnName("color");
+            entity.Property(e => e.GrnStr).HasColumnName("grnStr");
+            entity.Property(e => e.RedStr).HasColumnName("redStr");
+            entity.Property(e => e.YlwStr).HasColumnName("ylwStr");
+        });
+
         modelBuilder.Entity<Element>(entity =>
         {
             entity.ToTable("Element");
@@ -215,10 +235,6 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
                 .HasMaxLength(16)
                 .IsUnicode(false)
                 .HasColumnName("progress");
-            entity.Property(e => e.ProjectId)
-                .IsRequired()
-                .HasMaxLength(12)
-                .IsUnicode(false);
             entity.Property(e => e.ProjectName)
                 .IsRequired()
                 .HasMaxLength(32)
@@ -597,6 +613,48 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
                 .HasDefaultValueSql("(N'RGB')")
                 .IsFixedLength()
                 .HasColumnName("Palette_type");
+        });
+
+        modelBuilder.Entity<ParseSentence>(entity =>
+        {
+            entity.HasKey(e => e.SentenceId);
+
+            entity.ToTable("Parse_sentence");
+
+            entity.Property(e => e.SentenceId).HasColumnName("Sentence_ID");
+            entity.Property(e => e.RuleObject)
+                .HasMaxLength(32)
+                .HasDefaultValueSql("(N'object')")
+                .HasColumnName("Rule_object");
+            entity.Property(e => e.RuleSubject)
+                .HasMaxLength(32)
+                .HasDefaultValueSql("(N'subject')")
+                .HasColumnName("Rule_subject");
+            entity.Property(e => e.RuleVerb)
+                .HasMaxLength(32)
+                .HasDefaultValueSql("(N'verb')")
+                .HasColumnName("Rule_verb");
+            entity.Property(e => e.SObject)
+                .HasMaxLength(32)
+                .HasDefaultValueSql("(N'object')")
+                .HasColumnName("S_object");
+            entity.Property(e => e.SStatus)
+                .IsRequired()
+                .HasMaxLength(1)
+                .HasDefaultValueSql("(N'S')")
+                .IsFixedLength()
+                .HasColumnName("S_status");
+            entity.Property(e => e.SSubject)
+                .HasMaxLength(32)
+                .HasDefaultValueSql("(N'subject')")
+                .HasColumnName("S_subject");
+            entity.Property(e => e.SVerb)
+                .HasMaxLength(32)
+                .HasDefaultValueSql("(N'verb')")
+                .HasColumnName("S_verb");
+            entity.Property(e => e.SentenceText)
+                .IsRequired()
+                .HasColumnName("Sentence_text");
         });
 
         modelBuilder.Entity<Person>(entity =>

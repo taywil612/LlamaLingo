@@ -17,9 +17,9 @@ public partial class GanttTaskLoad
 
     public int Parentid { get; set; }
 
-	public string Duration { get; set; }
+    public string Duration { get; set; }
 
-	public string ProjectName { get; set; }
+    public string ProjectName { get; set; }
 
     public DateTime BaselineStartDate { get; set; }
 
@@ -31,9 +31,9 @@ public partial class GanttTaskLoad
 
     public string TaskType { get; set; }
 
-    public string ProjectId { get; set; }
+    public int ProjectId { get; set; }
 
     public string IsExpand { get; set; }
 
-    public List<GanttTaskLoad> SubTasks { get; set; }  
+    public List<GanttTaskLoad> SubTasks { get; set; }
 }

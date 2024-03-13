@@ -14,4 +14,6 @@ public partial class ColorTest
     public int GrnStr { get; set; }
 
     public int BluStr { get; set; }
+
+    public int? YlwStr { get; set; }
 }
