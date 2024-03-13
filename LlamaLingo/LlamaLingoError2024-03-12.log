@@ -1,0 +1,20 @@
+
+
+Date:2024-03-12 15:52:53,543
+Thread:[1]
+Level:ERROR
+Logger:InsertBlazorCode.ViewModel                         [(null)]
+Message:System.Runtime.InteropServices.COMException (0x8000FFFF): Catastrophic failure (Exception from HRESULT: 0x8000FFFF (E_UNEXPECTED))
+   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at InsertBlazorCode.ViewModel.OutputString(Guid guidPane, String text) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\ViewModel.cs:line 2576
+   at InsertBlazorCode.ViewModel.InsertControlCode(String context) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\ViewModel.cs:line 1738
+
+
+Date:2024-03-12 15:53:37,232
+Thread:[1]
+Level:ERROR
+Logger:InsertBlazorCode.ViewModel                         [(null)]
+Message:System.Runtime.InteropServices.COMException (0x8000FFFF): Catastrophic failure (Exception from HRESULT: 0x8000FFFF (E_UNEXPECTED))
+   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at InsertBlazorCode.ViewModel.OutputString(Guid guidPane, String text) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\ViewModel.cs:line 2576
+   at InsertBlazorCode.ViewModel.InsertControlCode(String context) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\ViewModel.cs:line 1738

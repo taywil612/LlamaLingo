@@ -4,7 +4,7 @@
 
 
 <div class="page-heading">
-	<h3 class="header">Project: @projectName</h3>
+	<h3 class="header">Project: @ProjectName</h3>
 	<p class="subtitle"><a href="">Home</a> / Gantt Chart</p>
 </div>
 
@@ -16,7 +16,7 @@
 	}
 	else
 	{
-		<SfGantt DataSource="@GanttTaskList" Height="100%" Width="100%" AllowSorting="true" AllowFiltering="true" Toolbar="@(new List<string>() { "Search", "ZoomIn","ZoomOut","ZoomToFit"})">
+		<SfGantt DataSource="@ganttTaskList" Height="100%" Width="100%" AllowSorting="true" AllowFiltering="true" Toolbar="@(new List<string>() { "Search", "ZoomIn","ZoomOut","ZoomToFit"})">
 			<GanttTaskFields Id="Id" Name="String" StartDate="Sdate" EndDate="Edate" Duration="Duration" Dependency="Predecessor" Progress="Progress" ParentID="Parentid" Child="SubTasks"></GanttTaskFields>
 			<GanttSelectionSettings Mode="Syncfusion.Blazor.Grids.SelectionMode.Both"></GanttSelectionSettings>
 			<GanttEditSettings AllowEditing="false"></GanttEditSettings>

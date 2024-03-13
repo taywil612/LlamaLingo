@@ -10,13 +10,14 @@ namespace LlamaLingo.Pages
 {
 	public partial class GanttChart
     {
-        public bool IsLoading { get; set; } = true;
-        public string projectName { get; set; } = "";
+        private bool IsLoading { get; set; } = true;
+        private string ProjectName { get; set; } = "";
 
-        public string DurationUnit { get; set; } = "minutes";
+        private string DurationUnit { get; set; } = "minutes";
 
-		IEnumerable<GanttTaskLoad> GanttTaskList;
-        public string[] Searchfields = new string[] {
+        private List<GanttTaskLoad> ganttTaskList;
+
+        private readonly string[] Searchfields = new string[] {
             "Id",
             "String",
             "Sdate",
@@ -30,9 +31,9 @@ namespace LlamaLingo.Pages
 		{
             try
             {
-                GanttTaskList = await BuildGanttTree();
+                ganttTaskList = await BuildGanttTree();
 
-                projectName = GanttTaskList.First().ProjectName;
+                ProjectName = ganttTaskList.First().ProjectName;
             }
             catch(Exception ex)
             {
@@ -62,9 +63,9 @@ namespace LlamaLingo.Pages
             }
 
             //Create a list of only parent tasks.
-            List<GanttTaskLoad> ParentTasks = allTasks.Where(s => s.Id == s.Parentid).ToList();
+            List<GanttTaskLoad> parentTasks = allTasks.Where(s => s.Id == s.Parentid).ToList();
 
-            return ParentTasks;
+            return parentTasks;
         }
     }
 }
