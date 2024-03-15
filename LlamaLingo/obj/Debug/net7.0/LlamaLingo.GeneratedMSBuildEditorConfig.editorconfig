@@ -30,12 +30,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sb3JUYWJsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/GanttChart.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FudHRDaGFydC5yYXpvcg==
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/GanttChart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FudHRDaGFydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Index.razor]

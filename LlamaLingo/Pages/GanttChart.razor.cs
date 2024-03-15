@@ -29,25 +29,27 @@ namespace LlamaLingo.Pages
 
 		protected override async System.Threading.Tasks.Task OnInitializedAsync()
 		{
-            try
+            if(SelectedPod.CurrentPod != null)
             {
-                ganttTaskList = await BuildGanttTree();
+                try
+                {
+                    ganttTaskList = await BuildGanttTree(SelectedPod.CurrentPod.PodId);
 
-                ProjectName = ganttTaskList.First().ProjectName;
+                    ProjectName = ganttTaskList.First().ProjectName;
+                }
+                catch(Exception ex)
+                {
+				    Console.WriteLine($"Error: {ex.Message}");
+			    }
             }
-            catch(Exception ex)
-            {
-				Console.WriteLine($"Error: {ex.Message}");
-			}
 
             IsLoading = false;
 		}
 
-		public async System.Threading.Tasks.Task <List<GanttTaskLoad>> BuildGanttTree()
+		public async System.Threading.Tasks.Task <List<GanttTaskLoad>> BuildGanttTree(int podID)
         {
-            //Create a list containing all of the data in the SyncGantt Table.
-            List<GanttTaskLoad> allTasks = await db.Set<GanttTaskLoad>().ToListAsync();
-
+            //Create a list containing all of the data to build the Gantt Chart.
+            List<GanttTaskLoad> allTasks = await db.Set<GanttTaskLoad>().Where(s => s.ProjectId == podID).ToListAsync();
             //Add a list of subtasks to each tasks.
             foreach (var task in allTasks)
             {

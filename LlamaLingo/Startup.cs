@@ -1,4 +1,5 @@
 using LlamaLingo.Hubs;
+using LlamaLingo.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -26,6 +27,8 @@ namespace LlamaLingo
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            services.AddScoped<SelectedPod>();
 
             // Register Syncfusion services
             services.AddSyncfusionBlazor();

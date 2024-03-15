@@ -35,5 +35,5 @@ public partial class GanttTaskLoad
 
     public string IsExpand { get; set; }
 
-    public List<GanttTaskLoad> SubTasks { get; set; }
+	public List<GanttTaskLoad> SubTasks { get; set; }
 }

@@ -18,35 +18,56 @@ namespace LlamaLingo.Shared
 
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
-            hubConnection = new HubConnectionBuilder().WithUrl(NavigationManager.ToAbsoluteUri("/chathub")).Build();
-            hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
-            {
-                InvokeAsync(() =>
+            try
+            {            
+                hubConnection = new HubConnectionBuilder().WithUrl(NavigationManager.ToAbsoluteUri("/chathub")).Build();
+                hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
                 {
-                    userMessages.Add(new UserMessage { Username = user, Message = message, CurrentUser = user == usernameInput, DateSent = DateTime.Now });
-                    StateHasChanged();
+                    InvokeAsync(() =>
+                    {
+                        userMessages.Add(new UserMessage { Username = user, Message = message, CurrentUser = user == usernameInput, DateSent = DateTime.Now });
+                        StateHasChanged();
+                    });
                 });
-            });
-            await hubConnection.StartAsync();
-        }
+                await hubConnection.StartAsync();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
+		}
 
         private async System.Threading.Tasks.Task Send()
         {
+            try 
+            { 
             // Verify that the user has entered a username and a message.
-            if (!string.IsNullOrEmpty(usernameInput) && !string.IsNullOrEmpty(messageInput))
-            {
-                await hubConnection.SendAsync("SendMessage", usernameInput, messageInput);
-                isUserReadonly = true;
-                messageInput = string.Empty;
-            }
-        }
+                if (!string.IsNullOrEmpty(usernameInput) && !string.IsNullOrEmpty(messageInput))
+                {
+                    await hubConnection.SendAsync("SendMessage", usernameInput, messageInput);
+                    isUserReadonly = true;
+                    messageInput = string.Empty;
+                }
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
+		}
 
         public async ValueTask DisposeAsync()
         {
-            if (hubConnection is not null)
+            try
             {
-                await hubConnection.DisposeAsync();
-            }
+			    if (hubConnection is not null)
+                {
+                    await hubConnection.DisposeAsync();
+                }
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
         }
     }
 }
