@@ -81,6 +81,10 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 
 	public virtual DbSet<ViewPodBase> ViewPodBases { get; set; }
 
+	public virtual DbSet<WeeklyActivity> WeeklyActivities { get; set; }
+
+	public virtual DbSet<WeeklyPypeDetail> WeeklyPypeDetails { get; set; }
+
 	public virtual DbSet<Work> Works { get; set; }
 
 	public virtual DbSet<WorkLl> WorkLls { get; set; }
@@ -1372,6 +1376,61 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 				.IsRequired()
 				.HasMaxLength(16)
 				.HasColumnName("POD_label");
+		});
+
+		modelBuilder.Entity<WeeklyActivity>(entity =>
+		{
+			entity.HasKey(e => new { e.WeekId, e.PersonIdFk, e.NounIdFk });
+
+			entity.ToTable("Weekly_activity");
+
+			entity.Property(e => e.WeekId).HasColumnName("Week_ID");
+			entity.Property(e => e.PersonIdFk)
+				.HasDefaultValueSql("((1))")
+				.HasColumnName("Person_ID_FK");
+			entity.Property(e => e.NounIdFk)
+				.HasDefaultValueSql("((66))")
+				.HasColumnName("Noun_ID_FK");
+			entity.Property(e => e.Quantity).HasDefaultValueSql("((1))");
+		});
+
+		modelBuilder.Entity<WeeklyPypeDetail>(entity =>
+		{
+			entity
+				.HasNoKey()
+				.ToView("Weekly_Pype_detail");
+
+			entity.Property(e => e.ElementId).HasColumnName("Element_ID");
+			entity.Property(e => e.ElementInt).HasColumnName("Element_int");
+			entity.Property(e => e.ElementLabel)
+				.IsRequired()
+				.HasMaxLength(16)
+				.IsFixedLength()
+				.HasColumnName("Element_label");
+			entity.Property(e => e.ElementType)
+				.IsRequired()
+				.HasMaxLength(4)
+				.IsFixedLength()
+				.HasColumnName("Element_type");
+			entity.Property(e => e.Grp).HasColumnName("grp");
+			entity.Property(e => e.NounLabel)
+				.IsRequired()
+				.HasMaxLength(16)
+				.IsFixedLength()
+				.HasColumnName("Noun_label");
+			entity.Property(e => e.NounType)
+				.IsRequired()
+				.HasMaxLength(4)
+				.IsFixedLength()
+				.HasColumnName("Noun_type");
+			entity.Property(e => e.PersonId).HasColumnName("Person_ID");
+			entity.Property(e => e.PersonLabel)
+				.HasMaxLength(16)
+				.IsFixedLength()
+				.HasColumnName("Person_label");
+			entity.Property(e => e.Scaling).HasColumnName("scaling");
+			entity.Property(e => e.WeekId).HasColumnName("Week_ID");
+			entity.Property(e => e._8wkIntAve).HasColumnName("8WK int ave");
 		});
 
 		modelBuilder.Entity<Work>(entity =>
