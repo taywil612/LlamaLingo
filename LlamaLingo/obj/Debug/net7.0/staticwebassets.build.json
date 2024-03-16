@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QZb9tYrUhYXCM/SdlYHhAa2m20pinXsOR9v2I+ZaFKM=",
+  "Hash": "VkircdC/a5LkqlNMaIGJCDrs41BrNEGoaM6ZK0vI9Q8=",
   "Source": "LlamaLingo",
   "BasePath": "_content/LlamaLingo",
   "Mode": "Default",
@@ -3475,6 +3475,25 @@
       "OriginalItemSpec": "wwwroot\\images\\UIpanels\\UseCase_xprt.png"
     },
     {
+      "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\functions.js",
+      "SourceId": "LlamaLingo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\",
+      "BasePath": "_content/LlamaLingo",
+      "RelativePath": "scripts/functions.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scripts\\functions.js"
+    },
+    {
       "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\lodash.min.js",
       "SourceId": "LlamaLingo",
       "SourceType": "Discovered",
@@ -3492,25 +3511,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scripts\\lodash.min.js"
-    },
-    {
-      "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\resize.js",
-      "SourceId": "LlamaLingo",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\",
-      "BasePath": "_content/LlamaLingo",
-      "RelativePath": "scripts/resize.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\scripts\\resize.js"
     }
   ]
 }

@@ -34,7 +34,7 @@
 
 
 @code {
-#nullable enable
+    #nullable enable
 
     private bool EnablePodDropDown = false;
 
@@ -72,6 +72,8 @@
 
     public async void ChangePerson(Syncfusion.Blazor.DropDowns.ChangeEventArgs<string, Person> args)
     {
+        SelectedPod.CurrentPod = null;
+
         EnablePodDropDown = false;
 
         try

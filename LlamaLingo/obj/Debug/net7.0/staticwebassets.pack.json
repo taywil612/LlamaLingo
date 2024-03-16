@@ -397,12 +397,12 @@
       "PackagePath": "staticwebassets\\images\\pdf\\Gantt Progress Categories.pdf"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\lodash.min.js",
-      "PackagePath": "staticwebassets\\scripts\\lodash.min.js"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\functions.js",
+      "PackagePath": "staticwebassets\\scripts\\functions.js"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\resize.js",
-      "PackagePath": "staticwebassets\\scripts\\resize.js"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\lodash.min.js",
+      "PackagePath": "staticwebassets\\scripts\\lodash.min.js"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.LlamaLingo.Microsoft.AspNetCore.StaticWebAssets.props",

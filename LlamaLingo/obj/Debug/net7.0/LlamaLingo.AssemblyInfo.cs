@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LlamaLingo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4da395377ee51019996d879ac5fd112b7edf7e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d41cc7ae486e83729b05b0a341fc9484126aae5e")]
 [assembly: System.Reflection.AssemblyProductAttribute("LlamaLingo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LlamaLingo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
