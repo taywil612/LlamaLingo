@@ -8,6 +8,8 @@ namespace LlamaLingo.Pages
 {
 	public partial class Page_Lascaux
 	{
+#nullable enable
+
 		[Parameter]
 		[SupplyParameterFromQuery]
 		public int? pod { get; set; }

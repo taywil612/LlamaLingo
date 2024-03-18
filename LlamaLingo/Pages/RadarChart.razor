@@ -18,7 +18,7 @@
 		<SfChart Theme="Theme.Fluent">
 			<ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
 			<ChartSeriesCollection>
-				@foreach(List<WeeklyPypeDetail> item in weeklyPypeDetails)
+				@foreach(var item in weeklyPypeDetails)
 				{
 					<ChartSeries DataSource="@item" Type="ChartSeriesType.Radar" Name="@item.First().NounLabel" XName="ElementLabel" YName="ChartData1"></ChartSeries>
 				}

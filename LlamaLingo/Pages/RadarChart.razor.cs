@@ -30,8 +30,12 @@ namespace LlamaLingo.Pages
                     Console.WriteLine($"Error: {ex.Message}");
                 }
             }
+            else
+            {
+                weeklyPypeDetails = new List<List<WeeklyPypeDetail>>();
+            }
 
-            IsLoading = false;
+			IsLoading = false;
         }
 
         public async System.Threading.Tasks.Task<List<List<WeeklyPypeDetail>>> BuildRadarChart(int podID)

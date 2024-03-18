@@ -397,6 +397,10 @@
       "PackagePath": "staticwebassets\\images\\pdf\\Gantt Progress Categories.pdf"
     },
     {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions Manual.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions Manual.pdf"
+    },
+    {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\functions.js",
       "PackagePath": "staticwebassets\\scripts\\functions.js"
     },
