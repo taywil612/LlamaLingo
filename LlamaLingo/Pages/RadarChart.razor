@@ -1,5 +1,7 @@
 ﻿@page "/RadarChart"
 @using Syncfusion.Blazor.Charts
+@inject DbContext db;
+@inject SelectedPod SelectedPod
 
 <div class="page-heading">
     <h3 class="header">Radar Chart</h3>
@@ -7,15 +9,22 @@
 </div>
 
 <div class="content-box shadow">
-	<SfChart Theme="Theme.Fluent">
-		<ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
-		<ChartSeriesCollection>
-			<ChartSeries DataSource="@dataSource" Type="ChartSeriesType.Radar" Name="Germany" XName="xValue" YName="yValue">
-			</ChartSeries>
-			<ChartSeries DataSource="@dataSource" Type="ChartSeriesType.Radar" Name="England" XName="xValue" YName="yValue1">
-			</ChartSeries>
-		</ChartSeriesCollection>
-		<ChartTooltipSettings Enable="true"></ChartTooltipSettings>
-		<ChartZoomSettings EnableSelectionZooming="true"></ChartZoomSettings>
-	</SfChart>
+	@if (IsLoading)
+	{
+		
+	}
+	else
+	{
+		<SfChart Theme="Theme.Fluent">
+			<ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+			<ChartSeriesCollection>
+				@foreach(List<WeeklyPypeDetail> item in weeklyPypeDetails)
+				{
+					<ChartSeries DataSource="@item" Type="ChartSeriesType.Radar" Name="@item.First().NounLabel" XName="ElementLabel" YName="ChartData1"></ChartSeries>
+				}
+	 		</ChartSeriesCollection>
+			<ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+			<ChartZoomSettings EnableSelectionZooming="true"></ChartZoomSettings>
+		</SfChart>
+	}
 </div>

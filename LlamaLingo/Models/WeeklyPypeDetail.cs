@@ -5,6 +5,8 @@ namespace LlamaLingo.Models;
 
 public partial class WeeklyPypeDetail
 {
+    public int Project { get; set; }
+
     public int WeekId { get; set; }
 
     public int? PersonId { get; set; }

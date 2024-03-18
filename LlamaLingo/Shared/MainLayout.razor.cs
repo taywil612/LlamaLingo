@@ -37,6 +37,7 @@ namespace LlamaLingo.Shared
 
             await JSRuntime.InvokeVoidAsync("triggerResizeEvent");
         }
+
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
