@@ -34,4 +34,6 @@ public partial class CfgGanttTask
     public int ProjectId { get; set; }
 
     public string IsExpand { get; set; }
+
+    public string DurationUnits { get; set; }
 }

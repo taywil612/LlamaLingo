@@ -58,7 +58,6 @@ namespace LlamaLingo.Pages
 				//Set random values for testing purposes.
 				// {
 				task.Duration = "1";
-                task.Duration += DurationUnit;
                 
                 task.Progress = "1";
                 // }
