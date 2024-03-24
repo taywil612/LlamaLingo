@@ -50,6 +50,7 @@ namespace LlamaLingo.Pages
         {
             //Create a list containing all of the data to build the Gantt Chart.
             List<GanttTaskLoad> allTasks = await db.Set<GanttTaskLoad>().Where(s => s.ProjectId == podID).ToListAsync();
+            
             //Add a list of subtasks to each tasks.
             foreach (var task in allTasks)
             {

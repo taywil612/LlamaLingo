@@ -1,5 +1,6 @@
 using LlamaLingo.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Syncfusion.Blazor.Gantt;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,12 @@ namespace LlamaLingo.Pages
 
             foreach(Noun noun in nouns)
             {
-				allChartData.Add(await db.Set<WeeklyPypeDetail>().Where(s => s.NounLabel == noun.NounLabel).ToListAsync());
+                List<WeeklyPypeDetail> weeklyPypeDetails = await db.Set<WeeklyPypeDetail>().Where(s => s.NounLabel == noun.NounLabel).ToListAsync();
+                
+                if (!weeklyPypeDetails.IsNullOrEmpty())
+                {
+                    allChartData.Add(weeklyPypeDetails);
+                }
             }
 
             return allChartData;
