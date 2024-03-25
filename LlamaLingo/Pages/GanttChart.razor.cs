@@ -29,11 +29,11 @@ namespace LlamaLingo.Pages
 
 		protected override async System.Threading.Tasks.Task OnInitializedAsync()
 		{
-            if(SelectedPod.CurrentPod != null)
+            if(SelectedInfo.CurrentPod != null)
             {
                 try
                 {
-                    ganttTaskList = await BuildGanttTree(SelectedPod.CurrentPod.PodId);
+                    ganttTaskList = await BuildGanttTree(SelectedInfo.CurrentPod.PodId);
 
                     ProjectName = ganttTaskList.First().ProjectName;
                 }

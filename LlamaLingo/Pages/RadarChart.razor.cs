@@ -18,11 +18,11 @@ namespace LlamaLingo.Pages
 
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
-            if (SelectedPod.CurrentPod != null)
+            if (SelectedInfo.CurrentPod != null)
             {
                 try
                 {
-                    weeklyPypeDetails = await BuildRadarChart(SelectedPod.CurrentPod.PodId);
+                    weeklyPypeDetails = await BuildRadarChart(SelectedInfo.CurrentPod.PodId);
 
                     //ProjectName = ganttTaskList.First().ProjectName;
                 }

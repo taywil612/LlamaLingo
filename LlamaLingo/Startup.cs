@@ -28,7 +28,7 @@ namespace LlamaLingo
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.AddScoped<SelectedPod>();
+            services.AddScoped<SelectedInfo>();
 
             // Register Syncfusion services
             services.AddSyncfusionBlazor();

@@ -47,7 +47,9 @@ namespace LlamaLingo.Pages
 
 		public async void ChangePerson(Syncfusion.Blazor.DropDowns.ChangeEventArgs<string, Person> args)
 		{
-			SelectedPod.CurrentPod = null;
+			SelectedInfo.CurrentPerson = args.ItemData;
+
+			SelectedInfo.CurrentPod = null;
 
 			EnablePodDropDown = false;
 
@@ -67,7 +69,7 @@ namespace LlamaLingo.Pages
 
 		public void ChangePod(Syncfusion.Blazor.DropDowns.ChangeEventArgs<string, Pod> args)
 		{
-			SelectedPod.CurrentPod = args.ItemData;
+			SelectedInfo.CurrentPod = args.ItemData;
 		}
 	}
 }

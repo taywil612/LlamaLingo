@@ -3,34 +3,191 @@
 @using Microsoft.EntityFrameworkCore
 @using Syncfusion.Blazor.DropDowns
 @inject LlamaLingo.Models.DbContext db;
-@inject SelectedPod SelectedPod;
+@inject SelectedInfo SelectedInfo;
 
-<div class="page-heading">
-    <h3 class="header">Llama Lingo</h3>
-    <div class="dropdown">
-        <p>ID #: </p>
-        <SfDropDownList TItem="Person" TValue="string" PopupHeight="230px" Placeholder="Select..." DataSource="@people" AllowFiltering="true">
-            <DropDownListEvents TItem="Person" TValue="string" ValueChange="ChangePerson" />
-            <DropDownListFieldSettings Text="PersonId" Value="PersonId" />
-        </SfDropDownList>
-    </div>
-    <div class="dropdown">
-        <p>POD #: </p>
-        <SfDropDownList Enabled="@EnablePodDropDown" TItem="Pod" TValue="string" PopupHeight="230px" Placeholder="Select..." DataSource="@pods" AllowFiltering="true">
-            <DropDownListEvents TItem="Pod" TValue="string" ValueChange="ChangePod" />
-            <DropDownListFieldSettings Text="PodId" Value="PodId" />
-        </SfDropDownList>
+<div class="content-box">
+	<div class="menu-page">
+		<div class="start-menu">
+            <div class="dropdown-container">
+				<div class="dropdown">
+                    <p>ID #: </p> 
+					<SfDropDownList TItem="Person" TValue="string" PopupHeight="230px" Placeholder="@(SelectedInfo.CurrentPerson == null ? "Select..." : SelectedInfo.CurrentPerson.PersonId.ToString())" DataSource="@people" AllowFiltering="true" Width="auto">
+						<DropDownListEvents TItem="Person" TValue="string" ValueChange="ChangePerson" />
+						<DropDownListFieldSettings Text="PersonId" Value="PersonId" />
+					</SfDropDownList>
+				</div>
+				<div class="dropdown">
+					<p>POD #: </p>
+                    <SfDropDownList Enabled="@EnablePodDropDown" TItem="Pod" TValue="string" PopupHeight="230px" Placeholder="@(SelectedInfo.CurrentPod == null ? "Select..." : SelectedInfo.CurrentPod.PodId.ToString())" DataSource="@pods" AllowFiltering="true" Width="auto">
+						<DropDownListEvents TItem="Pod" TValue="string" ValueChange="ChangePod" />
+						<DropDownListFieldSettings Text="PodId" Value="PodId" />
+					</SfDropDownList>
+				</div>
+			</div>
+
+			<div class="community-panel">
+				<div class="image-container">
+                    @if (SelectedInfo.CurrentPod != null)
+                    {
+                        <img src="@SelectedInfo.CurrentPod?.PodUrlBase" alt="pod_image">
+                    }
+				</div>
+			</div>
+
+			<button class="community-button"></button>
+
+			<div class="message-panel">
+                @if (SelectedInfo.CurrentPod != null)
+                {
+                    <h3>Welcome to @SelectedInfo.CurrentPod?.PodDescription</h3>
+                }
+			</div>
+
+			<div class="side-button-container">
+				<button class="side-button memo-button"></button>
+				<button class="side-button chat-button"></button>
+			</div>
+
+			<div class="footer-button-container">
+				<button class="footer-button start-menu-button"></button>
+				<button class="footer-button video-button"></button>
+				<button class="footer-button audio-button"></button>
+				<button class="footer-button project-button"></button>
+			</div>
+		</div>
     </div>
 </div>
 
-<br/>
+<style>
+    .start-menu{
+        position: relative;
+        top: -87px;
+    }
 
-<div class="">
-    <p>@SelectedPod.CurrentPod?.PodId</p>
-    <p>@SelectedPod.CurrentPod?.PodLabel</p>
-    <p>@SelectedPod.CurrentPod?.PodDescription</p>
-    <p>@SelectedPod.CurrentPod?.PodUrlBase</p>
-</div>
+    .dropdown-container{
+        position: relative;
+        top: 108px;
+        left: 52px;
+    }
 
+    .dropdown{
+        position: relative;
+        margin-bottom: 10px;
+    }
 
+    .dropdown p{
+        display: inline;
+    }
 
+    .community-panel{
+        width: 273px;
+        height: 322px;
+        border-radius: 10px;
+        position: relative;
+        top: 191px;
+        left: 54px;
+    }
+
+    .image-container{
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    .community-button{
+        width: 234px;
+        height: 62px;
+        border-radius: 10px;
+        position: relative;
+        top: 202px;
+        left: 73px;
+    }
+
+    .message-panel{
+        width: 618px;
+        height: 319px;
+        border-radius: 5px;
+        position: relative;
+        top: -206px;
+        left: 352px;
+        padding: 10px;
+        color: black;
+    }
+
+    .side-button-container{
+        position: relative;
+        top: -319px;
+    }
+
+    .side-button{
+        width: 232px;
+        height: 95px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .memo-button{
+		top: -309px;
+		left: 1060px;
+    }
+
+    .chat-button{
+        top: -189px;
+        left: 824px;
+    }
+
+    .footer-button-container{
+        position: relative;
+        top: -416px;
+        left: 375px;
+    }
+
+    .footer-button{
+        width: 183px;
+        height: 80px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .start-menu-button{
+        top: 270px;
+        left: -290px;
+    }
+
+    .video-button{
+        top: 274px;
+        left: -247px;
+    }
+
+    .audio-button{
+        top: 274px;
+        left: -204px;
+    }
+
+    .project-button{
+        top: 274px;
+        left: -160px;
+    }
+
+    .community-button, .side-button, .footer-button{
+        opacity: 0%;
+    }
+
+    .menu-page{
+        background: url(../images/UIpanels/Llama.png)no-repeat;
+    }
+
+    .content {
+        background-color: #0e7742;
+    }
+
+    .content-box{
+        height: 799px;
+        width: 1399px;
+        max-width: 1399px;
+        max-height: 799px;
+        border-radius: unset;
+        overflow: hidden;
+    }
+</style>
