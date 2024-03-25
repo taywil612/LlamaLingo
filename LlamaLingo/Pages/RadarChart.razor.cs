@@ -1,9 +1,64 @@
+using LlamaLingo.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Syncfusion.Blazor.Gantt;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LlamaLingo.Pages
 {
     public partial class RadarChart
     {
+		private bool IsLoading { get; set; } = true;
+
+		private List<List<WeeklyPypeDetail>> weeklyPypeDetails;
+
+        public List<Noun> nouns;
+
+        protected override async System.Threading.Tasks.Task OnInitializedAsync()
+        {
+            if (SelectedPod.CurrentPod != null)
+            {
+                try
+                {
+                    weeklyPypeDetails = await BuildRadarChart(SelectedPod.CurrentPod.PodId);
+
+                    //ProjectName = ganttTaskList.First().ProjectName;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+            else
+            {
+                weeklyPypeDetails = new List<List<WeeklyPypeDetail>>();
+            }
+
+			IsLoading = false;
+        }
+
+        public async System.Threading.Tasks.Task<List<List<WeeklyPypeDetail>>> BuildRadarChart(int podID)
+        {
+            //Create a list containing all of the data to build the Radar Chart.
+            List<List<WeeklyPypeDetail>> allChartData = new List<List<WeeklyPypeDetail>>();
+            
+            nouns = await db.Set<Noun>().Where(s => s.PodIdFk == podID).ToListAsync();
+
+            foreach(Noun noun in nouns)
+            {
+                List<WeeklyPypeDetail> weeklyPypeDetails = await db.Set<WeeklyPypeDetail>().Where(s => s.NounLabel == noun.NounLabel).ToListAsync();
+                
+                if (!weeklyPypeDetails.IsNullOrEmpty())
+                {
+                    allChartData.Add(weeklyPypeDetails);
+                }
+            }
+
+            return allChartData;
+        }
+
         public class PolarLineChartData
         {
             public string xValue { get; set; }

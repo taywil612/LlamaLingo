@@ -1,11 +1,12 @@
 ﻿@inherits LayoutComponentBase
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Navigations
+@inject IJSRuntime JSRuntime
 
 <PageTitle>LlamaLingo</PageTitle>
 
 @* Create the sidebar for the chat. *@
-<SfSidebar ID="Chatbar" Type="SidebarType.Auto" Position="SidebarPosition.Right" Width="100%" @ref="Chat" @bind-IsOpen="ChatbarToggle" ZIndex="1200">
+<SfSidebar ID="Chatbar" CloseOnDocumentClick="false" Type="SidebarType.Auto" Position="SidebarPosition.Right" Width="100%" @ref="Chat" @bind-IsOpen="ChatbarToggle" ZIndex="1200">
     <ChildContent>
         <div class="sidebar" style="position:fixed;z-index:1200; width: 100%;">
             <div class="shadow topnav navbar navbar-dark">
@@ -28,7 +29,7 @@
 }
 
 @* Create the sidebar for the navigation menu. *@
-<SfSidebar ID="Sidebar" Type="SidebarType.Auto" Width="300px" DockSize="65px" Position="SidebarPosition.Left" EnableDock="true" @ref="Sidebar" IsOpen="@SidebarToggle" ZIndex="1199">
+<SfSidebar ID="Sidebar" Type="SidebarType.Over" Width="300px" DockSize="65px" Position="SidebarPosition.Left" EnableDock="true" @ref="Sidebar" IsOpen="@SidebarToggle" ZIndex="1199">
     <ChildContent>
         <div class="sidebar" style="position:fixed;z-index:1200;">
             <div class="shadow topnav navbar navbar-dark">
@@ -42,19 +43,22 @@
 </SfSidebar>
 
 @* 
-    The content below will be pushed by sidebar. 
+    The content below will be pushed by the chat sidebar. 
 *@
 
 @* Create the page content. *@
 <div class="page-content e-main-content">
 	<div class="main">
         @* Create the top-row navigation bar. *@
-        <div class="shadow top-row px-4" style="z-index: 1111; overflow-x: auto; overflow-y: hidden;">
-            <a href="/RadarChart">RadarChart</a>
-            <a href="/GanttChart">GanttChart</a>
-            <a href="/color-chart">Jay's ColorChart</a>
-            <a href="/color-table">Jay's ColorTable</a>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <div class="shadow top-row px-4" style="z-index: 1111; overflow-x: auto;">
+            <div class="links-container">
+                <a href="/Instruction_Manual">Instruction Manual</a>
+                <a href="/RadarChart">Radar Chart</a>
+			    <a href="/GanttChart">Gantt Chart</a>
+                <a href="/color-chart">ColorChart</a>
+                <a href="/color-table">ColorTable</a>
+			    <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+			</div>
 		</div>
         <div class="content">
             @* Display the content from other pages. *@
@@ -73,15 +77,22 @@
         height: 100%;
     }
 
-    /* Styling the chat button */
+    /* Styling the chat fab */
 	.e-fab.e-btn.e-fab-bottom {
 		z-index: 1198;
 	}
 
-    .e-btn.e-primary, .e-css.e-btn.e-primary {
-        background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-        border-color: #251354;
-        color: #fff;
+    .e-fab.e-btn:hover {
+        transform: scale(1.25);
+    }
+
+    .e-btn.e-primary, .e-css.e-btn.e-primary, .e-fab.e-btn:hover, .e-fab.e-btn:active, .e-fab.e-btn:focus {
+        background: none;
+        background-image: var(--background-gradient);
+        border: none;
+		color: #fff;
+		transition-duration: .60s;
+		transition-property: transform;
     }
 
     /* Sidebar styles */
@@ -153,13 +164,6 @@
 		height: 100%;
 	}
 
-    /* Styling the separator*/
-    .e-sidebar.e-dock.e-close .separator {
-        opacity: 0.14;
-        width: 45px;
-        margin: 0px 1rem 5px 0.5rem;
-    }
-
     .e-sidebar.e-dock.e-close .oi.oi-home {
         margin-left: -1px;
     }
@@ -207,9 +211,14 @@
     }
 
     .e-sidebar {
-        background: #2d323e;
         overflow: hidden;
     }
     /* end of sidebar styles */
+
+    .links-container{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+    }
 
 </style>

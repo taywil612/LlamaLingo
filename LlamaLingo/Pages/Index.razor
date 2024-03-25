@@ -1,47 +1,36 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.Http
+@using Microsoft.EntityFrameworkCore
+@using Syncfusion.Blazor.DropDowns
+@inject LlamaLingo.Models.DbContext db;
+@inject SelectedPod SelectedPod;
 
-@* Commented everything out for now because chat can now be accessed through the chat sidebar. *@
-@* This could turn into a homepage in the future.*@
-
-@* @inject NavigationManager NavigationManager
-@implements IAsyncDisposable
-
-<div class="container overflow-auto shadow-sm p-3 mb-3 bg-white rounded" style="height: 75vh;">
-    @if (!userMessages.Any())
-    {
-        <p>No messages yet, start chatting!</p>
-    }
-
-    @foreach(var userMessage in userMessages)
-    {
-        <div class="row mb-3 d-flex @(userMessage.CurrentUser ? "justify-content-end" : "" )">
-            <div class="card shadow @(userMessage.CurrentUser ? "color-green mr-5" : "ml-5" )" style="width: 18rem;">
-                <div class="card-header">
-                   @(userMessage.CurrentUser ? "You" : userMessage.Username)
-                </div>
-                <ul class="list-group list-group-flush">
-                            <li class="list-group-item@(userMessage.CurrentUser ? "color-green" :  "") p-3 list-unstyled">@userMessage.Message</li>
-                </ul>
-                <div class="card-footer">
-                        <span class="small">@userMessage.DataSent.ToString("h:mmtt | MMM dd")</span>
-                </div>
-            </div>
-        </div>
-    }
+<div class="page-heading">
+    <h3 class="header">Llama Lingo</h3>
+    <div class="dropdown">
+        <p>ID #: </p>
+        <SfDropDownList TItem="Person" TValue="string" PopupHeight="230px" Placeholder="Select..." DataSource="@people" AllowFiltering="true">
+            <DropDownListEvents TItem="Person" TValue="string" ValueChange="ChangePerson" />
+            <DropDownListFieldSettings Text="PersonId" Value="PersonId" />
+        </SfDropDownList>
+    </div>
+    <div class="dropdown">
+        <p>POD #: </p>
+        <SfDropDownList Enabled="@EnablePodDropDown" TItem="Pod" TValue="string" PopupHeight="230px" Placeholder="Select..." DataSource="@pods" AllowFiltering="true">
+            <DropDownListEvents TItem="Pod" TValue="string" ValueChange="ChangePod" />
+            <DropDownListFieldSettings Text="PodId" Value="PodId" />
+        </SfDropDownList>
+    </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-3">
-            <input @bind="usernameInput" type="text" class="form-control" placeholder="Your name" readonly="@isUserReadonly"/>
-        </div>
-        <div class="col-6">
-            <textarea @bind="messageInput" class="form-control no-resize" placeholder="Start typing..." rows="1"></textarea>
-        </div>
-        <div class="col-3">
-            <button type="button" @onclick="Send" disabled="@(!IsConnected)" class="btn btn-primary">Send</button>
-        </div>
-    </div>
-</div> *@
+<br/>
+
+<div class="">
+    <p>@SelectedPod.CurrentPod?.PodId</p>
+    <p>@SelectedPod.CurrentPod?.PodLabel</p>
+    <p>@SelectedPod.CurrentPod?.PodDescription</p>
+    <p>@SelectedPod.CurrentPod?.PodUrlBase</p>
+</div>
+
 
 

@@ -5,12 +5,12 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Jamie\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\JXEli\.nuget\packages\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.8.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\Jamie\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\JXEli\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)syncfusion.blazor.core\23.1.43\buildTransitive\Syncfusion.Blazor.Core.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.core\23.1.43\buildTransitive\Syncfusion.Blazor.Core.props')" />
@@ -28,7 +28,10 @@
     <Import Project="$(NuGetPackageRoot)syncfusion.blazor.grid\23.1.43\buildTransitive\Syncfusion.Blazor.Grid.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.grid\23.1.43\buildTransitive\Syncfusion.Blazor.Grid.props')" />
     <Import Project="$(NuGetPackageRoot)syncfusion.blazor.treegrid\23.1.43\buildTransitive\Syncfusion.Blazor.TreeGrid.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.treegrid\23.1.43\buildTransitive\Syncfusion.Blazor.TreeGrid.props')" />
     <Import Project="$(NuGetPackageRoot)syncfusion.blazor.themes\23.1.43\buildTransitive\Syncfusion.Blazor.Themes.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.themes\23.1.43\buildTransitive\Syncfusion.Blazor.Themes.props')" />
+    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.inplaceeditor\23.1.43\buildTransitive\Syncfusion.Blazor.InPlaceEditor.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.inplaceeditor\23.1.43\buildTransitive\Syncfusion.Blazor.InPlaceEditor.props')" />
+    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.sfpdfviewer\23.1.43\buildTransitive\Syncfusion.Blazor.SfPdfViewer.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.sfpdfviewer\23.1.43\buildTransitive\Syncfusion.Blazor.SfPdfViewer.props')" />
     <Import Project="$(NuGetPackageRoot)syncfusion.blazor.richtexteditor\23.1.43\buildTransitive\Syncfusion.Blazor.RichTextEditor.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.richtexteditor\23.1.43\buildTransitive\Syncfusion.Blazor.RichTextEditor.props')" />
+    <Import Project="$(NuGetPackageRoot)syncfusion.blazor.pdfviewer\23.1.43\buildTransitive\Syncfusion.Blazor.PdfViewer.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.pdfviewer\23.1.43\buildTransitive\Syncfusion.Blazor.PdfViewer.props')" />
     <Import Project="$(NuGetPackageRoot)syncfusion.blazor.layouts\23.1.43\buildTransitive\Syncfusion.Blazor.Layouts.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.layouts\23.1.43\buildTransitive\Syncfusion.Blazor.Layouts.props')" />
     <Import Project="$(NuGetPackageRoot)syncfusion.blazor.gantt\23.1.43\buildTransitive\Syncfusion.Blazor.Gantt.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.gantt\23.1.43\buildTransitive\Syncfusion.Blazor.Gantt.props')" />
     <Import Project="$(NuGetPackageRoot)syncfusion.blazor.charts\23.1.43\buildTransitive\Syncfusion.Blazor.Charts.props" Condition="Exists('$(NuGetPackageRoot)syncfusion.blazor.charts\23.1.43\buildTransitive\Syncfusion.Blazor.Charts.props')" />
@@ -36,6 +39,8 @@
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design\7.0.13\build\net6.0\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design\7.0.13\build\net6.0\Microsoft.EntityFrameworkCore.Design.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\Jamie\.nuget\packages\microsoft.entityframeworkcore.tools\7.0.13</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgSyncfusion_Shared_Base Condition=" '$(PkgSyncfusion_Shared_Base)' == '' ">C:\Users\JXEli\.nuget\packages\syncfusion.shared.base\23.1.43</PkgSyncfusion_Shared_Base>
+    <PkgSyncfusion_PdfViewer_Windows Condition=" '$(PkgSyncfusion_PdfViewer_Windows)' == '' ">C:\Users\JXEli\.nuget\packages\syncfusion.pdfviewer.windows\23.1.43</PkgSyncfusion_PdfViewer_Windows>
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\JXEli\.nuget\packages\microsoft.entityframeworkcore.tools\7.0.13</PkgMicrosoft_EntityFrameworkCore_Tools>
   </PropertyGroup>
 </Project>

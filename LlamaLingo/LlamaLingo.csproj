@@ -12,7 +12,11 @@
     <Content Include="Shared\ChatMenu.razor.css" />
   </ItemGroup>
 
-  <ItemGroup>    <PackageReference Include="Syncfusion.Blazor.Layouts" Version="23.1.43" />
+  <ItemGroup>    <PackageReference Include="Syncfusion.Blazor.SfPdfViewer" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.Blazor.Notifications" Version="23.1.43" />    <PackageReference Include="Syncfusion.Blazor.PdfViewer" Version="23.1.43" />    <PackageReference Include="Syncfusion.Blazor.PdfViewerServer.Windows" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.Blazor.Spinner" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.Blazor.Grid" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.Blazor.Layouts" Version="23.1.43" />
     <PackageReference Include="Syncfusion.Blazor.Gantt" Version="23.1.43" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.13">
@@ -27,10 +31,12 @@
     <PackageReference Include="Syncfusion.Blazor.Charts" Version="23.1.43" />
     <PackageReference Include="Syncfusion.Blazor.Navigations" Version="23.1.43" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.PdfViewer.Windows" Version="23.1.43" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="wwwroot\images\pdf\" />
   </ItemGroup>
 
 </Project>
