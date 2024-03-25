@@ -77,18 +77,17 @@ namespace LlamaLingo.Pages
         public void ChangePod(Syncfusion.Blazor.DropDowns.ChangeEventArgs<string, Pod> args)
         {
             SelectedInfo.CurrentPod = args.ItemData;
+
+            ResetInfo();
         }
 
         public void UpdateInfo()
         {
-            if(SelectedInfo.CurrentPod != null)
-            {
-                CurrentPod = "POD#: " + SelectedInfo.CurrentPod.PodId;
-                CurrentId = "ID#: " + SelectedInfo.CurrentPerson.PersonId;
-                CurrentRole = "ROLE: " + SelectedInfo.CurrentPerson.PersonRole;
-
-                CurrentInfo = "Currently Selected: " + CurrentPod + " | " + CurrentId + " | " + CurrentRole;
-            }    
+            CurrentPod = "POD#: " + SelectedInfo.CurrentPod?.PodId;
+            CurrentId = "ID#: " + SelectedInfo.CurrentPerson?.PersonId;
+            CurrentRole = "ROLE: " + SelectedInfo.CurrentPerson?.PersonRole;
+            
+            CurrentInfo = "Currently Selected: " + CurrentPod + " | " + CurrentId + " | " + CurrentRole;          
         }
 
         public void ResetInfo()
@@ -96,6 +95,8 @@ namespace LlamaLingo.Pages
             CurrentPod = null;
             CurrentId = null;
             CurrentRole = null;
+
+            CurrentInfo = null;
         }
     }
 }
