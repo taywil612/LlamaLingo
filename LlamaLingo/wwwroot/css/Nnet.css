@@ -1,7 +1,7 @@
 /* Styling use case menus */
 .menu-page, .component-page {
-    width: 1920px;
-    height: 1080px;
+    width: 100%;
+    height: 100%;
     background-size: contain;
     background: url(../images/BG/Role_BG.png)no-repeat;
     background-position: left 0px top 0px;
@@ -81,7 +81,7 @@
     left: 420px;
     color: blanchedalmond;
     width: 570px;
-    height: 880px;
+    height: 650px;
     font-size: x-large;
     text-overflow: ellipsis;
     /* Required for text-overflow to do anything */
@@ -95,7 +95,7 @@
     left: 400px;
     color: blanchedalmond;
     width: 540px;
-    height: 700px;
+    height: 650px;
     margin: 44px;
     font-size: x-large;
     text-overflow: ellipsis;

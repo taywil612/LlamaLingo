@@ -46,7 +46,7 @@ namespace LlamaLingo.Pages
             
             nouns = await db.Set<Noun>().Where(s => s.PodIdFk == podID).ToListAsync();
 
-            foreach(Noun noun in nouns)
+			foreach (Noun noun in nouns)
             {
                 List<WeeklyPypeDetail> weeklyPypeDetails = await db.Set<WeeklyPypeDetail>().Where(s => s.NounLabel == noun.NounLabel).ToListAsync();
                 

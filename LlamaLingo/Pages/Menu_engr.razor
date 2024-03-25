@@ -3,7 +3,7 @@
 @inject NavigationManager _nav
 @layout MainLayout
 
-<div class="page-heading">
+@* <div class="page-heading">
 	<div class="header-info">
 		<div class="page-info">
 			<h3 class="header">Engineer</h3>
@@ -14,35 +14,34 @@
 		</div>
 	</div>
 </div>
+ *@
 
-<div class="content-box shadow" style="overflow: hidden !important">
-	<div class="content-box">
-		<div class="menu-page">
-			<!-- ************************************************************************************ -->
-			<!-- ******************************** DISPLAY PANELS ************************************ -->
-			<!-- ************************************************************************************ -->
+<div class="content-box">
+	<div class="menu-page">
+		<!-- ************************************************************************************ -->
+		<!-- ******************************** DISPLAY PANELS ************************************ -->
+		<!-- ************************************************************************************ -->
 
-			<div class="titlebanner">
-				<img src="images/UIpanels/UseCase_engr.png" />
-			</div>
+		<div class="titlebanner">
+			<img src="images/UIpanels/UseCase_engr.png" />
+		</div>
 
-			<!-- ************************************************************************************ -->
-			<!-- *************************** GOAL   TASK   NOVA ***************************** .dbo ** -->
-			<!-- ************************************************************************************ -->
+		<!-- ************************************************************************************ -->
+		<!-- *************************** GOAL   TASK   NOVA ***************************** .dbo ** -->
+		<!-- ************************************************************************************ -->
 
-			<div class="button-container">
-				<button class="buttonMenu01" @onclick="@(()=>_nav.NavigateTo("/Noun?pod="+pod+"&pid="+pid))">
-					<!-- Goal (place a text button label here) -->
-				</button>
+		<div class="button-container">
+			<button class="buttonMenu01" @onclick="@(()=>_nav.NavigateTo("/Noun?pod="+pod+"&pid="+pid))">
+				<!-- Goal (place a text button label here) -->
+			</button>
 
-				<button class="buttonMenu02" @onclick="@(()=>_nav.NavigateTo("/Verb?pod="+pod+"&pid="+pid))">
-					<!-- Goal (place a text button label here) -->
-				</button>
+			<button class="buttonMenu02" @onclick="@(()=>_nav.NavigateTo("/Verb?pod="+pod+"&pid="+pid))">
+				<!-- Goal (place a text button label here) -->
+			</button>
 
-				<button class="buttonMenu03" @onclick="@(()=>_nav.NavigateTo("/Nova?pod="+pod+"&pid="+pid))">
-					<!-- Goal (place a text button label here) -->
-				</button>
-			</div>
+			<button class="buttonMenu03" @onclick="@(()=>_nav.NavigateTo("/Nova?pod="+pod+"&pid="+pid))">
+				<!-- Goal (place a text button label here) -->
+			</button>
 		</div>
 	</div>
 </div>
@@ -59,6 +58,19 @@
 
 	.buttonMenu03 {
 		background-image: url("images/buttons/btn_luster_NOVA.png");
+	}
+
+	.content {
+		background-color: black;
+	}
+
+	.content-box {
+		height: 1080px;
+		width: 1920px;
+		max-width: 1920px;
+		max-height: 1080px;
+		border-radius: unset;
+		overflow: hidden;
 	}
 
 </style>

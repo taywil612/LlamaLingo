@@ -3,7 +3,7 @@
 @inject NavigationManager _nav
 @layout MainLayout
 
-<div class="page-heading">
+@* <div class="page-heading">
 	<div class="header-info">
 		<div class="page-info">
 			<h3 class="header">Noun-Object-Verb Associations</h3>
@@ -13,305 +13,316 @@
 			<p class="subtitle">POD Locked: #@pod</p>
 		</div>
 	</div>
-</div>
+</div> *@
 
-<div class="content-box shadow" style="overflow: hidden !important">
-	<div class="content-box">
-		<div class="component-page">
-			<style>
-				.component-page {
-					background: url(images/BG/background_acad.png)no-repeat;
+<div class="content-box">
+	<div class="component-page">
+		<style>
+			.component-page {
+				background: url(images/BG/background_acad.png)no-repeat;
+			}
+
+			.nova {
+				position: relative;
+				top: -55px;
+			}
+
+			.nova button {
+				padding: 0;
+				margin: 0;
+				width: 200px;
+				height: 100px;
+				text-align: center;
+				top: 100px;
+				color: black;
+				background-color: pink;
+				border-radius: 24px;
+				position: absolute;
+				left: 210px;
+				opacity: 0%;
+				transition-duration: .60s;
+			}
+
+			.buttonA {
+				background-image: url("images/buttons/btnArtifactA.png");
+				background-size: cover;
+				box-shadow: 0 30px 60px rgba(0,0,0,.5);
+			}
+
+				.buttonA:hover {
+					box-shadow: 0 5px 10px rgba(0,0,0,.5);
+					transform: scale(.95);
 				}
 
-				.nova {
-					position: relative;
-					top: -55px;
-				}
+			boxCRUD {
+				padding: 0;
+				margin: 0;
+				width: 1000px;
+				height: 100px;
+				text-align: right;
+				top: 90px;
+				left: 820px;
+				color: #FF0000;
+				position: absolute;
+				opacity: 75%;
+				background-image: url("images/GUI/DC_GUI_user_Direction.png");
+				background-size: cover;
+			}
 
-				.nova button {
-					padding: 0;
-					margin: 0;
-					width: 200px;
-					height: 100px;
-					text-align: center;
-					top: 100px;
-					color: black;
-					background-color: pink;
-					border-radius: 24px;
-					position: absolute;
-					left: 210px;
-					opacity: 0%;
-					transition-duration: .60s;
-				}
+			boxbuttons {
+				padding: 0;
+				margin: 0;
+				width: 900px;
+				height: 240px;
+				text-align: right;
+				top: 75px;
+				left: 630px;
+				color: #FF0000;
+				position: absolute;
+				opacity: 100%;
+				background-image: url("images/GUI/DC_GUI_user_Question.png");
+				background-size: cover;
+			}
 
-				.buttonA {
-					background-image: url("images/buttons/btnArtifactA.png");
-					background-size: cover;
-					box-shadow: 0 30px 60px rgba(0,0,0,.5);
-				}
+			.exhibitPanel {
+				position: absolute;
+				top: 370px;
+				left: 500px;
+				color: blanchedalmond;
+				width: 540px;
+				font-size: x-large;
+				text-overflow: ellipsis;
+				/* Required for text-overflow to do anything */
+				white-space: nowrap;
+				overflow: hidden;
+			}
 
-					.buttonA:hover {
-						box-shadow: 0 5px 10px rgba(0,0,0,.5);
-						transform: scale(.95);
-					}
+			.exhibitInfo {
+				position: absolute;
+				top: 350px;
+				left: 600px;
+				color: blanchedalmond;
+				width: 540px;
+				height: 700px;
+				font-size: x-large;
+				text-overflow: ellipsis;
+				/* Required for text-overflow to do anything */
+				white-space: nowrap;
+				overflow: hidden;
+			}
 
-				boxCRUD {
-					padding: 0;
-					margin: 0;
-					width: 1000px;
-					height: 100px;
-					text-align: right;
-					top: 90px;
-					left: 820px;
-					color: #FF0000;
-					position: absolute;
-					opacity: 75%;
-					background-image: url("images/GUI/DC_GUI_user_Direction.png");
-					background-size: cover;
-				}
+			.tableList {
+				position: absolute;
+				width: 180px;
+				height: 63px;
+			}
 
-				boxbuttons {
-					padding: 0;
-					margin: 0;
-					width: 900px;
-					height: 240px;
-					text-align: right;
-					top: 75px;
-					left: 630px;
-					color: #FF0000;
-					position: absolute;
-					opacity: 100%;
-					background-image: url("images/GUI/DC_GUI_user_Question.png");
-					background-size: cover;
-				}
+			.content {
+				background-color: #6f6f59;
+			}
 
-				.exhibitPanel {
-					position: absolute;
-					top: 370px;
-					left: 500px;
-					color: blanchedalmond;
-					width: 540px;
-					font-size: x-large;
-					text-overflow: ellipsis;
-					/* Required for text-overflow to do anything */
-					white-space: nowrap;
-					overflow: hidden;
-				}
+			.content-box {
+				height: 1080px;
+				width: 1920px;
+				max-width: 1920px;
+				max-height: 1080px;
+				border-radius: unset;
+				overflow: hidden;
+			}
+		</style>
 
-				.exhibitInfo {
-					position: absolute;
-					top: 350px;
-					left: 600px;
-					color: blanchedalmond;
-					width: 540px;
-					height: 700px;
-					font-size: x-large;
-					text-overflow: ellipsis;
-					/* Required for text-overflow to do anything */
-					white-space: nowrap;
-					overflow: hidden;
-				}
-
-				.tableList {
-					position: absolute;
-					width: 180px;
-					height: 63px;
-				}
-			</style>
-
-			<div class="nova">
-			<select class="tableList" style="
-				top: 300px;
-				left: 612px;
-			" @bind=subjectFilter>
-				<option value="****">****</option>
-				@foreach (var pype in pypes)
-				{
-					if (pype.PypeId == "NOUN" && pype.PodIdFk == pod)
-					{
-						<option value="@pype.PypeType">@pype.PypeType</option>
-					}
-				}
-			</select>
-			<select class="tableList" style="
-				top: 300px;
-				left: 869px;
-			" @bind=actionFilter>
-				<option value="****">****</option>
-				@foreach (var pype in pypes)
-				{
-					if (pype.PypeId == "VERB" && pype.PodIdFk == pod)
-					{
-						<option value="@pype.PypeType">@pype.PypeType</option>
-					}
-				}
-			</select>
-			<select class="tableList" style="
-				top: 300px;
-				left: 1127px;
-			" @bind=objectFilter>
-				<option value="****">****</option>
-				@foreach (var pype in pypes)
-				{
-					if (pype.PypeId == "NOUN" && pype.PodIdFk == pod)
-					{
-						<option value="@pype.PypeType">@pype.PypeType</option>
-					}
-				}
-			</select>
-
-			<form>
-				@*SubjectAction subject*@
-				<select class="tableList" style="
-					top: 438px;
-					left: 612px;
-				" @bind=subject required>
-					@foreach (var subject in subjects)
-					{
-						<option value="@subject.NounId"> @subject.NounLabel</option>
-					}
-				</select>
-				@*SubjectAction action*@
-				<select class="tableList" style="
-					top: 438px;
-					left: 869px;
-				" @bind=action required>
-					@foreach (var action in actions)
-					{
-						<option value="@action.VerbId"> @action.VerbLabel</option>
-					}
-				</select>
-				<button type="submit" style="
-					position: absolute;
-					top: 418px;
-					left:113px;
-					width:359px;
-					height:106px;
-					border-radius:8px;
-					"/>
-			</form>
-
-			<form>
-			@*ActionObject action*@
-				<select class="tableList" style="
-					top: 575px;
-					left: 869px;
-				" @bind=action required>
-					@foreach (var action in actions)
-					{
-						<option value="@action.VerbId"> @action.VerbLabel</option>
-					}
-				</select>
-			@*ActionObject object*@
-				<select class="tableList" style="
-					top: 575px;
-					left: 1127px;
-				" @bind=obj required>
-					@foreach (var obj in objects)
-					{
-						<option value="@obj.NounId"> @obj.NounLabel</option>
-					}
-				</select>
-					<button type="submit" style="
-					position: absolute;
-					top: 553px;
-					left:1447px;
-					width:359px;
-					height:106px;
-					border-radius:8px;
-					"/>
-			</form>
-
-			<form onsubmit="@(()=>_nav.NavigateTo("/Lascaux?pod="+pod+"&filterType=Subject&id="+subject+"&prevPage=Nova&pid="+pid))">
-				@*Subject*@
-				<select class="tableList" style="
-					top: 713px;
-					left: 612px;
-				" @bind=subject required>
-					@foreach (var subject in subjects)
-					{
-						<option value="@subject.NounId"> @subject.NounLabel</option>
-					}
-				</select>
-				<button type="submit" style="
-					position: absolute;
-					top: 692px;
-					left:113px;
-					width:359px;
-					height:106px;
-					border-radius:8px;
-					"/>
-			</form>
-
-			<form onsubmit="@(()=>_nav.NavigateTo("/Lascaux?pod="+pod+"&filterType=Action&id="+action+"&prevPage=Nova&pid="+pid))">
-				@*Action*@
-				<select class="tableList" style="
-					top: 846px;
-					left: 869px;
-				" @bind=action required>
-					@foreach (var action in actions)
-					{
-						<option value="@action.VerbId"> @action.VerbLabel</option>
-					}
-				</select>
-				<button type="submit" style="
-					position: absolute;
-					top: 824px;
-					left:1447px;
-					width:359px;
-					height:106px;
-					border-radius:8px;
-					"/>
-			</form>
-
-			<form onsubmit="@(()=>_nav.NavigateTo("/Lascaux?pod="+pod+"&filterType=Object&id="+obj+"&prevPage=Nova&pid="+pid))">
-				@*Object*@
-				<select class="tableList" style="
-				top: 982px;
-				left: 1127px;
-				" @bind=obj required>
-					@foreach (var obj in objects)
-					{
-						<option value="@obj.NounId"> @obj.NounLabel</option>
-					}
-				</select>
-				<button type="submit" style="
-					position: absolute;
-					top: 962px;
-					left:113px;
-					width:359px;
-					height:106px;
-					border-radius:8px;
-					"/>
-			</form>
-
-			@*@if (subject != 0 && action != 0 && obj != 0)
+		<div class="nova">
+		<select class="tableList" style="
+			top: 300px;
+			left: 612px;
+		" @bind=subjectFilter>
+			<option value="****">****</option>
+			@foreach (var pype in pypes)
 			{
-				<form @onsubmit=OnCreate>
-					<button type="submit" style="
-					position: absolute;
-					top: 907px;
-					left:1446px;
-					width:362px;
-					height:106px;
-					background-color:yellow;
-					border-radius:8px;
-					">
-						NOVA Create
-					</button>
-				</form>
-			}*@
+				if (pype.PypeId == "NOUN" && pype.PodIdFk == pod)
+				{
+					<option value="@pype.PypeType">@pype.PypeType</option>
+				}
+			}
+		</select>
+		<select class="tableList" style="
+			top: 300px;
+			left: 869px;
+		" @bind=actionFilter>
+			<option value="****">****</option>
+			@foreach (var pype in pypes)
+			{
+				if (pype.PypeId == "VERB" && pype.PodIdFk == pod)
+				{
+					<option value="@pype.PypeType">@pype.PypeType</option>
+				}
+			}
+		</select>
+		<select class="tableList" style="
+			top: 300px;
+			left: 1127px;
+		" @bind=objectFilter>
+			<option value="****">****</option>
+			@foreach (var pype in pypes)
+			{
+				if (pype.PypeId == "NOUN" && pype.PodIdFk == pod)
+				{
+					<option value="@pype.PypeType">@pype.PypeType</option>
+				}
+			}
+		</select>
 
-			@*<jukebox>
-				<div>
+		<form>
+			@*SubjectAction subject*@
+			<select class="tableList" style="
+				top: 438px;
+				left: 612px;
+			" @bind=subject required>
+				@foreach (var subject in subjects)
+				{
+					<option value="@subject.NounId"> @subject.NounLabel</option>
+				}
+			</select>
+			@*SubjectAction action*@
+			<select class="tableList" style="
+				top: 438px;
+				left: 869px;
+			" @bind=action required>
+				@foreach (var action in actions)
+				{
+					<option value="@action.VerbId"> @action.VerbLabel</option>
+				}
+			</select>
+			<button type="submit" style="
+				position: absolute;
+				top: 418px;
+				left:113px;
+				width:359px;
+				height:106px;
+				border-radius:8px;
+				"/>
+		</form>
 
-					<audio controls="controls">
-						<source src="/images/Audio/curatorintrojazz.mp3" />
-					</audio>
+		<form>
+		@*ActionObject action*@
+			<select class="tableList" style="
+				top: 575px;
+				left: 869px;
+			" @bind=action required>
+				@foreach (var action in actions)
+				{
+					<option value="@action.VerbId"> @action.VerbLabel</option>
+				}
+			</select>
+		@*ActionObject object*@
+			<select class="tableList" style="
+				top: 575px;
+				left: 1127px;
+			" @bind=obj required>
+				@foreach (var obj in objects)
+				{
+					<option value="@obj.NounId"> @obj.NounLabel</option>
+				}
+			</select>
+				<button type="submit" style="
+				position: absolute;
+				top: 553px;
+				left:1447px;
+				width:359px;
+				height:106px;
+				border-radius:8px;
+				"/>
+		</form>
 
-				</div>
-				</jukebox>*@
+		<form onsubmit="@(()=>_nav.NavigateTo("/Lascaux?pod="+pod+"&filterType=Subject&id="+subject+"&prevPage=Nova&pid="+pid))">
+			@*Subject*@
+			<select class="tableList" style="
+				top: 713px;
+				left: 612px;
+			" @bind=subject required>
+				@foreach (var subject in subjects)
+				{
+					<option value="@subject.NounId"> @subject.NounLabel</option>
+				}
+			</select>
+			<button type="submit" style="
+				position: absolute;
+				top: 692px;
+				left:113px;
+				width:359px;
+				height:106px;
+				border-radius:8px;
+				"/>
+		</form>
+
+		<form onsubmit="@(()=>_nav.NavigateTo("/Lascaux?pod="+pod+"&filterType=Action&id="+action+"&prevPage=Nova&pid="+pid))">
+			@*Action*@
+			<select class="tableList" style="
+				top: 846px;
+				left: 869px;
+			" @bind=action required>
+				@foreach (var action in actions)
+				{
+					<option value="@action.VerbId"> @action.VerbLabel</option>
+				}
+			</select>
+			<button type="submit" style="
+				position: absolute;
+				top: 824px;
+				left:1447px;
+				width:359px;
+				height:106px;
+				border-radius:8px;
+				"/>
+		</form>
+
+		<form onsubmit="@(()=>_nav.NavigateTo("/Lascaux?pod="+pod+"&filterType=Object&id="+obj+"&prevPage=Nova&pid="+pid))">
+			@*Object*@
+			<select class="tableList" style="
+			top: 982px;
+			left: 1127px;
+			" @bind=obj required>
+				@foreach (var obj in objects)
+				{
+					<option value="@obj.NounId"> @obj.NounLabel</option>
+				}
+			</select>
+			<button type="submit" style="
+				position: absolute;
+				top: 962px;
+				left:113px;
+				width:359px;
+				height:106px;
+				border-radius:8px;
+				"/>
+		</form>
+
+		@*@if (subject != 0 && action != 0 && obj != 0)
+		{
+			<form @onsubmit=OnCreate>
+				<button type="submit" style="
+				position: absolute;
+				top: 907px;
+				left:1446px;
+				width:362px;
+				height:106px;
+				background-color:yellow;
+				border-radius:8px;
+				">
+					NOVA Create
+				</button>
+			</form>
+		}*@
+
+		@*<jukebox>
+			<div>
+
+				<audio controls="controls">
+					<source src="/images/Audio/curatorintrojazz.mp3" />
+				</audio>
+
 			</div>
+			</jukebox>*@
 		</div>
 	</div>
 </div>
