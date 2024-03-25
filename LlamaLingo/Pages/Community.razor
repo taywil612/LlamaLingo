@@ -1,0 +1,97 @@
+﻿@page "/Community"
+@using Microsoft.AspNetCore.Http
+@using Microsoft.EntityFrameworkCore
+@using Syncfusion.Blazor.DropDowns
+@inject LlamaLingo.Models.DbContext db;
+@inject SelectedInfo SelectedInfo;
+
+<div class="content-box">
+    <div class="menu-page">
+        <div class="start-menu">
+            <div class="dropdown-container">
+                <div class="dropdown id-dropdown">
+                    <SfDropDownList TItem="Person" TValue="string" PopupHeight="230px" Placeholder="Select an ID #..." DataSource="@people" AllowFiltering="true" Width="470px">
+                        <DropDownListEvents TItem="Person" TValue="string" ValueChange="ChangePerson" />
+                        <DropDownListFieldSettings Text="PersonId" Value="PersonId" />
+                    </SfDropDownList>
+                </div>
+                <div class="dropdown">
+                    <SfDropDownList Enabled="@EnablePodDropDown" TItem="Pod" TValue="string" PopupHeight="230px" Placeholder="Select a POD #..." DataSource="@pods" AllowFiltering="true" Width="470px">
+                        <DropDownListEvents TItem="Pod" TValue="string" ValueChange="ChangePod" />
+                        <DropDownListFieldSettings Text="PodId" Value="PodId" />
+                    </SfDropDownList>
+                </div>
+            </div>
+
+            <div class="info-panel">
+				<h4>@CurrentInfo</h4>
+            </div>
+
+            <button class="return-button" @onclick="UpdateInfo"></button>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .start-menu {
+        position: relative;
+        top: -87px;
+    }
+
+    .dropdown-container {
+        position: relative;
+        top: 360px;
+        left: 53px;
+    }
+
+    .dropdown {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+        .dropdown .e-input-group, .e-input-group.e-control-wrapper{
+            height: 61px;
+        }
+
+    .info-panel {
+        width: 574px;
+        height: 42px;
+        position: relative;
+        top: 480px;
+        left: 8px;
+        overflow: auto hidden;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .return-button {
+        width: 393px;
+        height: 81px;
+        border-radius: 10px;
+        position: relative;
+        top: 558px;
+        left: 91px;
+    }
+
+    .return-button{
+        opacity: 0%;
+    }
+
+    .menu-page {
+        background: url(../images/UIpanels/Community.png)no-repeat;
+    }
+
+    .content {
+        background-color: #444444;
+    }
+
+    .content-box {
+        height: 799px;
+        width: 1399px;
+        max-width: 1399px;
+        max-height: 799px;
+        border-radius: unset;
+        overflow: hidden;
+    }
+</style>

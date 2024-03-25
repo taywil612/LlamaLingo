@@ -4,27 +4,11 @@
 @using Syncfusion.Blazor.DropDowns
 @inject LlamaLingo.Models.DbContext db;
 @inject SelectedInfo SelectedInfo;
+@inject NavigationManager _nav
 
 <div class="content-box">
 	<div class="menu-page">
 		<div class="start-menu">
-            <div class="dropdown-container">
-				<div class="dropdown">
-                    <p>ID #: </p> 
-					<SfDropDownList TItem="Person" TValue="string" PopupHeight="230px" Placeholder="@(SelectedInfo.CurrentPerson == null ? "Select..." : SelectedInfo.CurrentPerson.PersonId.ToString())" DataSource="@people" AllowFiltering="true" Width="auto">
-						<DropDownListEvents TItem="Person" TValue="string" ValueChange="ChangePerson" />
-						<DropDownListFieldSettings Text="PersonId" Value="PersonId" />
-					</SfDropDownList>
-				</div>
-				<div class="dropdown">
-					<p>POD #: </p>
-                    <SfDropDownList Enabled="@EnablePodDropDown" TItem="Pod" TValue="string" PopupHeight="230px" Placeholder="@(SelectedInfo.CurrentPod == null ? "Select..." : SelectedInfo.CurrentPod.PodId.ToString())" DataSource="@pods" AllowFiltering="true" Width="auto">
-						<DropDownListEvents TItem="Pod" TValue="string" ValueChange="ChangePod" />
-						<DropDownListFieldSettings Text="PodId" Value="PodId" />
-					</SfDropDownList>
-				</div>
-			</div>
-
 			<div class="community-panel">
 				<div class="image-container">
                     @if (SelectedInfo.CurrentPod != null)
@@ -34,7 +18,7 @@
 				</div>
 			</div>
 
-			<button class="community-button"></button>
+			<button class="community-button" @onclick="@(()=>_nav.NavigateTo("/Community"))"></button>
 
 			<div class="message-panel">
                 @if (SelectedInfo.CurrentPod != null)
@@ -44,7 +28,7 @@
 			</div>
 
 			<div class="side-button-container">
-				<button class="side-button memo-button"></button>
+				<button class="side-button memo-button" ></button>
 				<button class="side-button chat-button"></button>
 			</div>
 
@@ -61,7 +45,6 @@
 <style>
     .start-menu{
         position: relative;
-        top: -87px;
     }
 
     .dropdown-container{
@@ -77,6 +60,10 @@
 
     .dropdown p{
         display: inline;
+    }
+
+    .dropdown-container div:first-child{
+        left: 18px;
     }
 
     .community-panel{
@@ -113,6 +100,7 @@
         left: 352px;
         padding: 10px;
         color: black;
+        overflow: auto;
     }
 
     .side-button-container{
