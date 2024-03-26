@@ -34,9 +34,9 @@
 
 			<div class="footer-button-container">
                 <button class="footer-button start-menu-button" @onclick="@(()=>_nav.NavigateTo(Page))"></button>
-				<button class="footer-button video-button"></button>
-				<button class="footer-button audio-button"></button>
-				<button class="footer-button project-button"></button>
+                <button class="footer-button video-button" @onclick="@(()=>_nav.NavigateTo("/Video"))"></button>
+                <button class="footer-button audio-button" @onclick="@(()=>_nav.NavigateTo("/Audio"))"></button>
+                <button class="footer-button project-button" @onclick="@(()=>_nav.NavigateTo("/Instruction_Manual?pod="+pod+"&pid="+pid))"></button>
 			</div>
 		</div>
     </div>

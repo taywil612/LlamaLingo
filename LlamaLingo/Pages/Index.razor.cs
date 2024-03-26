@@ -1,4 +1,5 @@
 using LlamaLingo.Models;
+using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.JSInterop;
 using Syncfusion.Blazor.Data;
@@ -8,13 +9,24 @@ using System.Linq;
 
 namespace LlamaLingo.Pages
 {
-	public partial class Index
+    public partial class Index
+
     {
 #nullable enable
 
-        private string? Page {  get; set; }
+        private string? Page { get; set; }
 
-        protected override void OnInitialized()
+        
+        [Parameter]
+        [SupplyParameterFromQuery]
+        public int? pod { get; set; }
+
+        [Parameter]
+        [SupplyParameterFromQuery]
+        public int? pid { get; set; }
+
+
+    protected override void OnInitialized()
         {
             try
             {
@@ -48,5 +60,6 @@ namespace LlamaLingo.Pages
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
+
     }
 }

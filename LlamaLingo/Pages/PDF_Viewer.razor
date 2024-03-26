@@ -1,14 +1,60 @@
 ﻿@page "/Instruction_Manual"
+
 @using Syncfusion.Blazor.PdfViewer
 @using Syncfusion.Blazor.PdfViewerServer
+@inject LlamaLingo.Models.DbContext db;
+@inject SelectedInfo SelectedInfo;
 
 <div class="page-heading">
-	<h3 class="header">PDF Viewer</h3>
-	<p class="subtitle"><a href="">Home</a> / PDF Viewer</p>
+	<h3 class="header">Instruction Manual</h3>
+    <p class="subtitle"><a href="">Home</a> / Instruction Manual</p>
 </div>
 
 <div class="content-box shadow">
-	<SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath Height="100%" Width="100%"></SfPdfViewerServer>
+
+    @if (SelectedInfo.CurrentPod != null)
+    {
+        if (SelectedInfo.CurrentPod.PodId == 1)
+        {
+            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath1 Height="100%" Width="100%"></SfPdfViewerServer>
+        }
+        else if (SelectedInfo.CurrentPod.PodId == 2)
+        {
+            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath2 Height="100%" Width="100%"></SfPdfViewerServer>
+        }
+        else if (SelectedInfo.CurrentPod.PodId == 3)
+        {
+            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath3 Height="100%" Width="100%"></SfPdfViewerServer>
+        }
+        else if (SelectedInfo.CurrentPod.PodId == 4)
+        {
+            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath Height="100%" Width="100%"></SfPdfViewerServer>
+        }
+        else if (SelectedInfo.CurrentPod.PodId == 5)
+        {
+            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath Height="100%" Width="100%"></SfPdfViewerServer>
+        }
+        else if (SelectedInfo.CurrentPod.PodId == 6)
+        {
+            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath6 Height="100%" Width="100%"></SfPdfViewerServer>
+        }
+        else if (SelectedInfo.CurrentPod.PodId == 15)
+        {
+            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath15 Height="100%" Width="100%"></SfPdfViewerServer>
+        }
+        else
+        {
+            // Default case when PodId is not given or doesn't match any condition
+            <p>No PDF Viewer available for the selected PodId.</p>
+        }
+    }
+    else
+    {
+        // Handle case where SelectedInfo.CurrentPod is null
+        <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPathDefault Height="100%" Width="100%"></SfPdfViewerServer>
+    }
+
+	
 </div>
 
 <style>
