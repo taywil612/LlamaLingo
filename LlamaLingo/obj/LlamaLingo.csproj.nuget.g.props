@@ -42,5 +42,6 @@
     <PkgSyncfusion_Shared_Base Condition=" '$(PkgSyncfusion_Shared_Base)' == '' ">C:\Users\JXEli\.nuget\packages\syncfusion.shared.base\23.1.43</PkgSyncfusion_Shared_Base>
     <PkgSyncfusion_PdfViewer_Windows Condition=" '$(PkgSyncfusion_PdfViewer_Windows)' == '' ">C:\Users\JXEli\.nuget\packages\syncfusion.pdfviewer.windows\23.1.43</PkgSyncfusion_PdfViewer_Windows>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\JXEli\.nuget\packages\microsoft.entityframeworkcore.tools\7.0.13</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\JXEli\.nuget\packages\microsoft.codeanalysis.analyzers\2.9.3</PkgMicrosoft_CodeAnalysis_Analyzers>
   </PropertyGroup>
 </Project>

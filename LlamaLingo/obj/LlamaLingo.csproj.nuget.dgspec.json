@@ -40,6 +40,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "BoldReports.Net.Core": {
+              "target": "Package",
+              "version": "[5.4.34, )"
+            },
             "Microsoft.AspNetCore.SignalR.Client": {
               "target": "Package",
               "version": "[7.0.13, )"
