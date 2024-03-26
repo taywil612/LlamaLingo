@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace LlamaLingo.Models;
 
@@ -91,7 +94,10 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=llamalingo.database.windows.net;Database=LlamaLingoDB;User=LlamaLingoLogin;Password=UMDLlamaLingo4444");
+        IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
+		string connectionString = config.GetConnectionString("DatabaseConnection");
+
+		optionsBuilder.UseSqlServer(connectionString);
     }
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)

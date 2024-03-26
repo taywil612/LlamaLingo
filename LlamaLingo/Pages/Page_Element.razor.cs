@@ -5,20 +5,23 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Security.Claims;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace LlamaLingo.Pages
 {
     public partial class Page_Element
     {
-		//[Parameter]
-		//[SupplyParameterFromQuery]
-		//public int? pod { get; set; }
+        //[Parameter]
+        //[SupplyParameterFromQuery]
+        //public int? pod { get; set; }
 
-		//[Parameter]
-		//[SupplyParameterFromQuery]
-		//public int? pid { get; set; }
+        //[Parameter]
+        //[SupplyParameterFromQuery]
+        //public int? pid { get; set; }
 
-		private readonly string sqlServerconnectionString = "Server=tcp:llamalingo.database.windows.net,1433;Initial Catalog=LlamaLingoDB;Persist Security Info=False;User ID=LlamaLingoLogin;Password=UMDLlamaLingo4444;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        private static readonly IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
+        private readonly string sqlServerconnectionString = config.GetConnectionString("DatabaseConnection");
+        
         public bool showCreate = false;
         public bool showModify = false;
         public bool showDelete = false;

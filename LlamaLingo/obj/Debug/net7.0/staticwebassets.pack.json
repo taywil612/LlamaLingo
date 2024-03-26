@@ -409,6 +409,30 @@
       "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions Manual.pdf"
     },
     {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV1.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV15.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV15.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV2.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV3.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV3.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV6.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV6.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions Manual_Default.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions Manual_Default.pdf"
+    },
+    {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\functions.js",
       "PackagePath": "staticwebassets\\scripts\\functions.js"
     },

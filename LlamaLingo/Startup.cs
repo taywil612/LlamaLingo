@@ -40,7 +40,8 @@ namespace LlamaLingo
 
             services.AddDbContext<LlamaLingo.Models.DbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                string connectionString = Configuration.GetConnectionString("DatabaseConnection");
+                options.UseSqlServer(connectionString);
             });
         }
 

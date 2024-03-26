@@ -1,6 +1,7 @@
 using LlamaLingo.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,8 +17,9 @@ namespace LlamaLingo.Pages
 		[SupplyParameterFromQuery]
 		public int? pid { get; set; }
 
-		private readonly string sqlServerconnectionString = "Server=tcp:llamalingo.database.windows.net,1433;Initial Catalog=LlamaLingoDB;Persist Security Info=False;User ID=LlamaLingoLogin;Password=UMDLlamaLingo4444;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
+        private static readonly IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
+        private readonly string sqlServerconnectionString = config.GetConnectionString("DatabaseConnection");
+        
 		public int id = 0;
 		public string description = "Description of Nova";
 		public string type = "test";
