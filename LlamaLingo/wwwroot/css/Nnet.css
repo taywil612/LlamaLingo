@@ -21,18 +21,20 @@
 .button-container button {
     padding: 0;
     margin: 0;
-    width: 280px;
-    height: 120px;
+    /*width: 280px;
+    height: 120px;*/
     text-align: center;
     color: black;
-    background-color: pink;
+    background-color: black;
     border-radius: 24px;
     position: absolute;
     opacity: 100%;
-    border-radius: 8px;
+    border-radius: 4px;
     transition-duration: .60s;
 }
 
+/*Legacy Code*/
+/*
 .buttonMenu01 {
     top: 375px;
     left: 320px;
@@ -74,6 +76,164 @@
         box-shadow: 0 5px 10px rgba(0,0,0,.5);
         transform: scale(.85);
     }
+    */
+
+/*New Buttons*/
+/*Goal*/
+.buttonMenu01 {
+    top: 400px;
+    left: 865px;
+    background-image: url("images/buttons/Btn_Goal_6.png");
+    width: 200px;
+    height: 95px;
+    background-size: cover;
+}
+
+    .buttonMenu01:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+
+/*Task*/
+.buttonMenu02 {
+    top: 600px;
+    left: 865px;
+    background-image: url("../images/buttons/Btn_Task_3.png");
+    background-size: cover;
+    width: 200px;
+    height: 95px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .buttonMenu02:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+
+/*NOVA*/
+.buttonMenu03 {
+    top: 800px;
+    left: 865px;
+    background-image: url("../images/buttons/Btn_Nova_3.png");
+    background-size: cover;
+    width: 200px;
+    height: 95px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .buttonMenu03:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+/*New Content Below This Line*/
+/*Radar Chart*/
+.buttonMenu04 {
+    top: 375px;
+    left: 300px;
+    background-image: url("Btn_Radar_Chart_2.png");
+    background-size: cover;
+    width: 325px;
+    height: 100px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .buttonMenu04:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+/*Gantt Chart*/
+.buttonMenu05 {
+    top: 545px;
+    left: 300px;
+    background-image: url("images/buttons/Btn_Gantt_Chart_2.png");
+    background-size: cover;
+    width: 330px;
+    height: 100px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .buttonMenu05:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+}
+
+/*Color Chart*/
+.buttonMenu06 {
+    top: 720px;
+    left: 310px;
+    background-image: url("images/buttons/Btn_Color_Chart_2.png");
+    background-size: cover;
+    width: 305px;
+    height: 95px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+    .buttonMenu06:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+}
+
+/*Color Table*/
+.buttonMenu07 {
+    top: 895px;
+    left: 315px;
+    background-image: url("images/buttons/Btn_Color_Table_2.png");
+    background-size: cover;
+    width: 300px;
+    height: 90px;
+}
+
+    .buttonMenu07:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+}
+
+/*About*/
+.buttonMenu08 {
+    top: 650px;
+    left: 1370px;
+    background-image: url("images/buttons/Btn_About_2.png");
+    background-size: cover;
+    width: 200px;
+    height: 90px;
+}
+
+    .buttonMenu08:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+}
+
+/*Things below this line are simply icons, not buttons*/
+/*Tables*/
+.buttonMenu09 {
+    background-image: url("images/buttons/Icon_Tables.png");
+    background-size: 149px 55px;
+    background-position: 550px 530px;
+    width: 149px;
+    height: 49px;
+}
+
+/*Process*/
+.buttonMenu010 {
+    background-image: url("images/buttons/Icon_Process.png");
+    background-size: 168px 55px;
+    background-position: 550px 530px;
+    width: 168px;
+    height: 49px;
+}
+
+/*Reports*/
+.buttonMenu11 {
+    background-image: url("images/buttons/Icon_Reports.png");
+    background-size: 169px 55px;
+    background-position: 550px 530px;
+    width: 169px;
+    height: 49px;
+}
 
 .exhibitPanel {
     position: absolute;
