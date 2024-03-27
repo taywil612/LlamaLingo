@@ -9,125 +9,127 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LlamaLingo
 build_property.RootNamespace = LlamaLingo
-build_property.ProjectDir = C:\CIS4851\LlamaLingo\LlamaLingo\
+build_property.ProjectDir = C:\Users\JXEli\Documents\GitHub\LlamaLingo\LlamaLingo\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\CIS4851\LlamaLingo\LlamaLingo
+build_property.MSBuildProjectDirectory = C:\Users\JXEli\Documents\GitHub\LlamaLingo\LlamaLingo
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/App.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/ColorChart.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/ColorChart.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sb3JDaGFydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/ColorTable.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/ColorTable.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sb3JUYWJsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Community.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Community.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tbXVuaXR5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Dashboard.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Dashboard.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/GanttChart.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/GanttChart.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FudHRDaGFydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Index.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Media_Audio.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Media_Audio.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVkaWFfQXVkaW8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Media_Video.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Media_Video.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVkaWFfVmlkZW8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Menu_acad.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Menu_acad.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudV9hY2FkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Menu_admn.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Menu_admn.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudV9hZG1uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Menu_ainn.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Menu_ainn.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudV9haW5uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Menu_engr.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Menu_engr.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudV9lbmdyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Menu_user.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Menu_user.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudV91c2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Menu_xprt.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Menu_xprt.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudV94cHJ0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Page_Element.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Page_Element.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZV9FbGVtZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Page_Lascaux.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Page_Lascaux.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZV9MYXNjYXV4LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Page_Noun.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Page_Noun.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZV9Ob3VuLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Page_Nova.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Page_Nova.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZV9Ob3ZhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Page_Verb.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Page_Verb.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZV9WZXJiLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/PDF_Viewer.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/PDF_Viewer.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUERGX1ZpZXdlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/RadarChart.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/RadarChart.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmFkYXJDaGFydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/_Imports.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Shared/ChatMenu.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Shared/ChatMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENoYXRNZW51LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-w1qp062h67
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Shared/MainLayout.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ev0ybvepx7
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Shared/NavMenu.razor]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-fcj46uwyos
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/Error.cshtml]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/_Host.cshtml]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CIS4851/LlamaLingo/LlamaLingo/Pages/_Layout.cshtml]
+[C:/Users/JXEli/Documents/GitHub/LlamaLingo/LlamaLingo/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
