@@ -245,6 +245,14 @@
       "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Audio.png"
     },
     {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Chat.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Chat.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Community.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Community.png"
+    },
+    {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Goal.png",
       "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Goal.png"
     },
@@ -255,6 +263,10 @@
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Guru.png",
       "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Guru.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Memo.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Memo.png"
     },
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_NOVA.png",

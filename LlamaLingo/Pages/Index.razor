@@ -4,7 +4,8 @@
 @using Syncfusion.Blazor.DropDowns
 @inject LlamaLingo.Models.DbContext db;
 @inject SelectedInfo SelectedInfo;
-@inject NavigationManager _nav
+@inject NavigationManager _nav;
+@layout MainLayout
 
 <div class="content-box">
 	<div class="menu-page">
@@ -29,8 +30,8 @@
 			</div>
 
 			<div class="side-button-container">
-				<button class="side-button memo-button" ></button>
-				<button class="side-button chat-button"></button>
+				<button class="side-button memo-button"></button>
+                <button class="side-button chat-button" ></button>
 			</div>
 
 			<div class="footer-button-container">
@@ -76,6 +77,7 @@
         position: relative;
         top: 202px;
         left: 73px;
+        background-image: url("../images/buttons/Btn_Luster_Community.png")
     }
 
     .message-panel{
@@ -103,13 +105,15 @@
     }
 
     .memo-button{
-		top: -309px;
-		left: 1060px;
+		top: -310px;
+		left: 1059px;
+        background-image: url("../images/buttons/Btn_Luster_Memo.png")
     }
 
     .chat-button{
-        top: -189px;
-        left: 824px;
+        top: -191px;
+        left: 823px;
+        background-image: url("../images/buttons/Btn_Luster_Chat.png")
     }
 
     .footer-button-container{
@@ -126,27 +130,40 @@
     }
 
     .start-menu-button{
-        top: 270px;
+        top: 268px;
         left: -290px;
     }
 
+    .video-button, .audio-button, .project-button{
+        top: 272px;
+    }
+
     .video-button{
-        top: 274px;
         left: -247px;
+        background-image: url("../images/buttons/Btn_Luster_Video.png")
     }
 
     .audio-button{
-        top: 274px;
         left: -204px;
+        background-image: url("../images/buttons/Btn_Luster_Audio.png")
     }
 
     .project-button{
-        top: 274px;
         left: -160px;
+        background-image: url("../images/buttons/Btn_Luster_PDF.png")
     }
 
-    .community-button, .side-button, .footer-button{
-        opacity: 0%;
+    .community-button:hover, .side-button:hover, .footer-button:hover{
+		transform: scale(0.95);
+	}
+
+	.community-button, .side-button, .footer-button {
+        background-color: black;
+        transition-property: transform;
+		transition-duration: .60s;
+		box-shadow: 0 30px 60px rgba(0,0,0,.5);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
     }
 
     .menu-page{

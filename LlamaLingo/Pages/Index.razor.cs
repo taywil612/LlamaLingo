@@ -1,11 +1,8 @@
+using BoldReports.RDL.DOM;
 using LlamaLingo.Models;
+using LlamaLingo.Shared;
 using Microsoft.AspNetCore.Components;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.JSInterop;
-using Syncfusion.Blazor.Data;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace LlamaLingo.Pages
 {
@@ -25,8 +22,7 @@ namespace LlamaLingo.Pages
         [SupplyParameterFromQuery]
         public int? pid { get; set; }
 
-
-    protected override void OnInitialized()
+        protected override void OnInitialized()
         {
             try
             {
@@ -60,6 +56,5 @@ namespace LlamaLingo.Pages
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
-
-    }
+	}
 }
