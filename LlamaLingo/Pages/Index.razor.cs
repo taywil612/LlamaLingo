@@ -12,15 +12,7 @@ namespace LlamaLingo.Pages
 #nullable enable
 
         private string? Page { get; set; }
-
-        
-        [Parameter]
-        [SupplyParameterFromQuery]
-        public int? pod { get; set; }
-
-        [Parameter]
-        [SupplyParameterFromQuery]
-        public int? pid { get; set; }
+        private bool RoleSet { get; set; } = false;
 
         protected override void OnInitialized()
         {
@@ -30,22 +22,28 @@ namespace LlamaLingo.Pages
                 {
                     case "admn":
                         Page = "/Administration";
+                        RoleSet = true;
                         break;
                     case "engr":
                         Page = "/Engineer";
-                        break;
+						RoleSet = true;
+						break;
                     case "xprt":
                         Page = "/Expert";
-                        break;
+						RoleSet = true;
+						break;
                     case "user":
                         Page = "/User";
-                        break;
+						RoleSet = true;
+						break;
                     case "acad":
                         Page = "/Academy";
-                        break;
+						RoleSet = true;
+						break;
                     case "nnai":
                         Page = "/Nnet";
-                        break;
+						RoleSet = true;
+						break;
                     default:
                         Page = "/";
                         break;

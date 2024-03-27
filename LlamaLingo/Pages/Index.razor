@@ -35,10 +35,10 @@
 			</div>
 
 			<div class="footer-button-container">
-                <button class="footer-button start-menu-button" @onclick="@(()=>_nav.NavigateTo(Page))"></button>
+                <button class="footer-button start-menu-button" disabled="@(!RoleSet)" @onclick="@(()=>_nav.NavigateTo(Page))" style="@(!RoleSet ? "background-color: #6c757d9c; background-blend-mode: color-burn; transform: unset;" : "")"></button>
                 <button class="footer-button video-button" @onclick="@(()=>_nav.NavigateTo("/Video"))"></button>
                 <button class="footer-button audio-button" @onclick="@(()=>_nav.NavigateTo("/Audio"))"></button>
-                <button class="footer-button project-button" @onclick="@(()=>_nav.NavigateTo("/Instruction_Manual?pod="+pod+"&pid="+pid))"></button>
+                <button class="footer-button project-button" @onclick="@(()=>_nav.NavigateTo("/Instruction_Manual"))"></button>
 			</div>
 		</div>
     </div>
@@ -130,8 +130,9 @@
     }
 
     .start-menu-button{
-        top: 268px;
+        top: 269px;
         left: -290px;
+		background-image: url("../images/buttons/Btn_Luster_Start.png");
     }
 
     .video-button, .audio-button, .project-button{
@@ -149,7 +150,7 @@
     }
 
     .project-button{
-        left: -160px;
+        left: -161px;
         background-image: url("../images/buttons/Btn_Luster_PDF.png")
     }
 

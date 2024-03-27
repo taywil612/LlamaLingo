@@ -22,7 +22,9 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 
 	public virtual DbSet<CfgGanttWork> CfgGanttWorks { get; set; }
 
-	public virtual DbSet<ColorTest> ColorTests { get; set; }
+	public virtual DbSet<Cwhat> Cwhats { get; set; }
+
+	public virtual DbSet<DupHerc> DupHercs { get; set; }
 
 	public virtual DbSet<Element> Elements { get; set; }
 
@@ -45,6 +47,8 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 	public virtual DbSet<Location> Locations { get; set; }
 
 	public virtual DbSet<Logue> Logues { get; set; }
+
+	public virtual DbSet<NetCommand> NetCommands { get; set; }
 
 	public virtual DbSet<Noun> Nouns { get; set; }
 
@@ -71,6 +75,10 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 	public virtual DbSet<RuleVn> RuleVns { get; set; }
 
 	public virtual DbSet<RuleVnConcat> RuleVnConcats { get; set; }
+
+	public virtual DbSet<SynNoun> SynNouns { get; set; }
+
+	public virtual DbSet<SynVerb> SynVerbs { get; set; }
 
 	public virtual DbSet<SyncGantt> SyncGantts { get; set; }
 
@@ -188,23 +196,65 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 			entity.Property(e => e.TaskType)
 				.IsRequired()
 				.HasMaxLength(4)
-				.IsFixedLength();
+				.IsUnicode(false);
 		});
 
-		modelBuilder.Entity<ColorTest>(entity =>
+		modelBuilder.Entity<Cwhat>(entity =>
 		{
-			entity.ToTable("ColorTest");
+			entity.HasKey(e => e.Id).HasName("PK_ColorInfoDummy");
 
-			entity.Property(e => e.Id).HasColumnName("id");
-			entity.Property(e => e.BluStr).HasColumnName("bluStr");
-			entity.Property(e => e.Color)
-				.IsRequired()
+			entity.ToTable("CWhat");
+
+			entity.Property(e => e.Id)
+				.ValueGeneratedNever()
+				.HasColumnName("id");
+			entity.Property(e => e.Obj).HasColumnName("obj");
+			entity.Property(e => e.Title)
 				.HasMaxLength(10)
 				.IsFixedLength()
-				.HasColumnName("color");
-			entity.Property(e => e.GrnStr).HasColumnName("grnStr");
-			entity.Property(e => e.RedStr).HasColumnName("redStr");
-			entity.Property(e => e.YlwStr).HasColumnName("ylwStr");
+				.HasColumnName("title");
+		});
+
+		modelBuilder.Entity<DupHerc>(entity =>
+		{
+			entity
+				.HasNoKey()
+				.ToView("Dup_Herc");
+
+			entity.Property(e => e.NounIdFk).HasColumnName("Noun_ID_FK");
+			entity.Property(e => e.NovaIdFk).HasColumnName("NOVA_ID_FK");
+			entity.Property(e => e.PersonIdFk).HasColumnName("Person_ID_FK");
+			entity.Property(e => e.PodIdFk).HasColumnName("POD_ID_FK");
+			entity.Property(e => e.TaskDescription)
+				.IsRequired()
+				.HasMaxLength(255)
+				.HasColumnName("Task_description");
+			entity.Property(e => e.TaskDuration).HasColumnName("Task_duration");
+			entity.Property(e => e.TaskEntryDate).HasColumnName("Task_entry_date");
+			entity.Property(e => e.TaskFinishDate).HasColumnName("Task_finish_date");
+			entity.Property(e => e.TaskId)
+				.ValueGeneratedOnAdd()
+				.HasColumnName("Task_ID");
+			entity.Property(e => e.TaskLabel32)
+				.IsRequired()
+				.HasMaxLength(32)
+				.IsFixedLength()
+				.HasColumnName("Task_label32");
+			entity.Property(e => e.TaskLevel).HasColumnName("Task_level");
+			entity.Property(e => e.TaskParent).HasColumnName("Task_parent");
+			entity.Property(e => e.TaskPrevious).HasColumnName("Task_previous");
+			entity.Property(e => e.TaskSeq).HasColumnName("Task_seq");
+			entity.Property(e => e.TaskStartDate).HasColumnName("Task_start_date");
+			entity.Property(e => e.TaskStatus)
+				.IsRequired()
+				.HasMaxLength(1)
+				.IsFixedLength()
+				.HasColumnName("Task_status");
+			entity.Property(e => e.TaskType)
+				.IsRequired()
+				.HasMaxLength(4)
+				.IsFixedLength()
+				.HasColumnName("Task_type");
 		});
 
 		modelBuilder.Entity<Element>(entity =>
@@ -598,6 +648,42 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 			entity.Property(e => e.NovaIdFk)
 				.HasDefaultValueSql("((1))")
 				.HasColumnName("NOVA_ID_FK");
+		});
+
+		modelBuilder.Entity<NetCommand>(entity =>
+		{
+			entity.HasKey(e => new { e.PersonIdFk, e.NetDateTime, e.NetCommand1 });
+
+			entity.ToTable("Net__command");
+
+			entity.Property(e => e.PersonIdFk).HasColumnName("Person_ID_FK");
+			entity.Property(e => e.NetDateTime).HasColumnName("Net_date_time");
+			entity.Property(e => e.NetCommand1)
+				.HasMaxLength(64)
+				.HasDefaultValueSql("(N'sp_do_this_command')")
+				.HasColumnName("Net_command");
+			entity.Property(e => e.NetLabel16)
+				.IsRequired()
+				.HasMaxLength(16)
+				.HasDefaultValueSql("(N'Command')")
+				.IsFixedLength()
+				.HasColumnName("Net_label16");
+			entity.Property(e => e.NetLog).HasColumnName("Net_log");
+			entity.Property(e => e.NetPriority)
+				.HasDefaultValueSql("((4))")
+				.HasColumnName("Net_priority");
+			entity.Property(e => e.NetStatus)
+				.IsRequired()
+				.HasMaxLength(1)
+				.HasDefaultValueSql("(N'A')")
+				.IsFixedLength()
+				.HasColumnName("Net_status");
+			entity.Property(e => e.NetType)
+				.IsRequired()
+				.HasMaxLength(4)
+				.HasDefaultValueSql("(N'EXEC')")
+				.IsFixedLength()
+				.HasColumnName("Net_type");
 		});
 
 		modelBuilder.Entity<Noun>(entity =>
@@ -1088,6 +1174,54 @@ public partial class DbContext : Microsoft.EntityFrameworkCore.DbContext
 				.HasMaxLength(16)
 				.IsFixedLength()
 				.HasColumnName("VV");
+		});
+
+		modelBuilder.Entity<SynNoun>(entity =>
+		{
+			entity.HasKey(e => e.SynNId).HasName("PK_Syn_n");
+
+			entity.ToTable("Syn_noun");
+
+			entity.Property(e => e.SynNId)
+				.HasMaxLength(16)
+				.IsFixedLength()
+				.HasColumnName("Syn_N_ID");
+			entity.Property(e => e.PodIdFk)
+				.HasDefaultValueSql("((3))")
+				.HasColumnName("POD_ID_FK");
+			entity.Property(e => e.SynNReplace)
+				.IsRequired()
+				.HasMaxLength(16)
+				.HasDefaultValueSql("(N'Replaced')")
+				.IsFixedLength()
+				.HasColumnName("Syn_N_replace");
+			entity.Property(e => e.SynNSet)
+				.HasDefaultValueSql("((1))")
+				.HasColumnName("Syn_N_set");
+		});
+
+		modelBuilder.Entity<SynVerb>(entity =>
+		{
+			entity.HasKey(e => e.SynVId).HasName("PK_Syn_V");
+
+			entity.ToTable("Syn_verb");
+
+			entity.Property(e => e.SynVId)
+				.HasMaxLength(16)
+				.IsFixedLength()
+				.HasColumnName("Syn_V_ID");
+			entity.Property(e => e.PodIdFk)
+				.HasDefaultValueSql("((3))")
+				.HasColumnName("POD_ID_FK");
+			entity.Property(e => e.SynVReplace)
+				.IsRequired()
+				.HasMaxLength(16)
+				.HasDefaultValueSql("(N'Replaced')")
+				.IsFixedLength()
+				.HasColumnName("Syn_V_replace");
+			entity.Property(e => e.SynVSet)
+				.HasDefaultValueSql("((1))")
+				.HasColumnName("Syn_V_set");
 		});
 
 		modelBuilder.Entity<SyncGantt>(entity =>

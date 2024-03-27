@@ -293,6 +293,10 @@
       "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Report.png"
     },
     {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Start.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Start.png"
+    },
+    {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Task.png",
       "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Task.png"
     },
