@@ -55,13 +55,6 @@ namespace LlamaLingo.Pages
             foreach (var task in allTasks)
             {
                 task.SubTasks =  allTasks.Where(s => s.Parentid == task.Id && s.Id != s.Parentid).ToList();
-
-				//Set random values for testing purposes.
-				// {
-				task.Duration = "1";
-                
-                task.Progress = "1";
-                // }
             }
 
             //Create a list of only parent tasks.
