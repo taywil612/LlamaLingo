@@ -11,9 +11,11 @@ namespace LlamaLingo.Pages
 	public partial class GanttChart
     {
         private bool IsLoading { get; set; } = true;
-        private string ProjectName { get; set; } = "";
+		private string ProjectName { get; set; } = "";
+		private DateTime ProjectStartDate { get; set; }
+		private DateTime ProjectEndDate { get; set; }
 
-        private string DurationUnit { get; set; } = "minutes";
+		private string DurationUnit { get; set; } = "minutes";
 
         private List<GanttTaskLoad> ganttTaskList;
 
@@ -35,9 +37,11 @@ namespace LlamaLingo.Pages
                 {
                     ganttTaskList = await BuildGanttTree(SelectedInfo.CurrentPod.PodId);
 
-                    ProjectName = ganttTaskList.First().ProjectName;
-                }
-                catch(Exception ex)
+					ProjectName = ganttTaskList.First().ProjectName;
+					ProjectStartDate = ganttTaskList.First().BaselineStartDate;
+					ProjectEndDate = ganttTaskList.First().BaselineEndDate;
+				}
+				catch (Exception ex)
                 {
 				    Console.WriteLine($"Error: {ex.Message}");
 			    }
@@ -55,6 +59,11 @@ namespace LlamaLingo.Pages
             foreach (var task in allTasks)
             {
                 task.SubTasks =  allTasks.Where(s => s.Parentid == task.Id && s.Id != s.Parentid).ToList();
+
+                if(task.Id.ToString() == task.Predecessor)
+                {
+                    task.Predecessor = "";
+                }
             }
 
             //Create a list of only parent tasks.

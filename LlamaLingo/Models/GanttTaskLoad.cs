@@ -36,5 +36,6 @@ public partial class GanttTaskLoad
     public string IsExpand { get; set; }
 
     public string DurationUnits { get; set; }
+
 	public List<GanttTaskLoad> SubTasks { get; set; }
 }
