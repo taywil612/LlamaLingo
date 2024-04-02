@@ -33,51 +33,6 @@
     transition-duration: .60s;
 }
 
-/*Legacy Code*/
-/*
-.buttonMenu01 {
-    top: 375px;
-    left: 320px;
-    background-image: url("../images/buttons/btn_luster_Person.png");
-    background-size: cover;
-    margin: 10px;
-    box-shadow: 0 30px 60px rgba(0,0,0,.5);
-}
-
-    .buttonMenu01:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
-
-.buttonMenu02 {
-    top: 545px;
-    left: 320px;
-    background-image: url("../images/buttons/btn_luster_Report.png");
-    background-size: cover;
-    margin: 10px;
-    box-shadow: 0 30px 60px rgba(0,0,0,.5);
-}
-
-    .buttonMenu02:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
-
-.buttonMenu03 {
-    top: 715px;
-    left: 320px;
-    background-image: url("../images/buttons/btn_luster_NOVA.png");
-    background-size: cover;
-    margin: 10px;
-    box-shadow: 0 30px 60px rgba(0,0,0,.5);
-}
-
-    .buttonMenu03:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
-    */
-
 /*New Buttons*/
 /*Goal*/
 .buttonMenu01 {
@@ -133,7 +88,7 @@
 .buttonMenu04 {
     top: 375px;
     left: 300px;
-    background-image: url("Btn_Radar_Chart_2.png");
+    background-image: url("../images/buttons/Btn_Radar_Chart_2.png");
     background-size: cover;
     width: 325px;
     height: 100px;
