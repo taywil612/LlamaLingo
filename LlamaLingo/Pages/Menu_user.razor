@@ -41,29 +41,39 @@
 				<!-- NOVA (place a text button label here) -->
 			</button>
 
-			<button class="buttonMenu04" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
+			<!-- Radar_Chart -->
+			<button class="buttonMenu04" @onclick="@(()=>_nav.NavigateTo("/RadarChart?pod="+pod+"&pid="+pid))">
 			</button>
 
-			<button class="buttonMenu05" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
+			<!-- Gantt_Chart -->
+			<button class="buttonMenu05" @onclick="@(()=>_nav.NavigateTo("/GanttChart?pod="+pod+"&pid="+pid))">
 			</button>
 
-			<button class="buttonMenu06" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
+			<!-- Color_Chart -->
+			<button class="buttonMenu06" @onclick="@(()=>_nav.NavigateTo("/color-chart?pod="+pod+"&pid="+pid))">
 			</button>
 
-			<button class="buttonMenu07" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
+			<!-- Color_Table -->
+			<button class="buttonMenu07" @onclick="@(()=>_nav.NavigateTo("/color-table?pod="+pod+"&pid="+pid))">
 			</button>
 
-			<button class="buttonMenu08" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
+			<!-- About -->
+			<button class="buttonMenu08" onclick="window.location.href='https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-8.0'">
 			</button>
 
-			<button class="buttonMenu09" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
+
+			<!-- Tables 
+			<button class="buttonMenu09" @onclick="@(()=>_nav.NavigateTo("/Tables?pod="+pod+"&pid="+pid))">
 			</button>
 
-			<button class="buttonMenu10" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
+			Process 
+			<button class="buttonMenu10" @onclick="@(()=>_nav.NavigateTo("/Process?pod="+pod+"&pid="+pid))">
 			</button>
 
-			<button class="buttonMenu11" @onclick="@(()=>_nav.NavigateTo("/Task?pod="+pod+"&pid="+pid))">
+			Reports 
+			<button class="buttonMenu11" @onclick="@(()=>_nav.NavigateTo("/Reports?pod="+pod+"&pid="+pid))">
 			</button>
+			-->
 		</div>
 	</div>
 </div>
@@ -104,6 +114,7 @@
 		background-image: url("images/buttons/Btn_About_2.png");
 	}
 
+	/*
 	.buttonMenu09 {
 		background-image: url("images/buttons/Icon_Tables.png");
 	}
@@ -115,6 +126,7 @@
 	.buttonMenu11 {
 		background-image: url("images/buttons/Icon_Reports.png");
 	}
+	*/
 
 	.content {
 		background-color: black;
