@@ -49,6 +49,20 @@
         transform: scale(.85);
     }
 
+.fixedButton01 {
+    top: 400px;
+    left: 865px;
+    background-image: url("images/buttons/Btn_Luster_Noun.png");
+    width: 200px;
+    height: 95px;
+    background-size: cover;
+}
+
+    .buttonMenu01:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
 
 /*Task*/
 .buttonMenu02 {
