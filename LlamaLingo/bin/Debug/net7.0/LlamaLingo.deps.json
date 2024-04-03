@@ -9,6 +9,7 @@
       "LlamaLingo/1.0.0": {
         "dependencies": {
           "BoldReports.Net.Core": "5.4.34",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "7.0.13",
           "Microsoft.AspNetCore.SignalR.Client": "7.0.13",
           "Microsoft.EntityFrameworkCore.Design": "7.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
@@ -216,7 +217,32 @@
           }
         }
       },
+      "Microsoft.AspNetCore.JsonPatch/7.0.13": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.JsonPatch.dll": {
+            "assemblyVersion": "7.0.13.0",
+            "fileVersion": "7.0.1323.52007"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Metadata/7.0.0": {},
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/7.0.13": {
+        "dependencies": {
+          "Microsoft.AspNetCore.JsonPatch": "7.0.13",
+          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {
+            "assemblyVersion": "7.0.13.0",
+            "fileVersion": "7.0.1323.52007"
+          }
+        }
+      },
       "Microsoft.AspNetCore.SignalR.Client/7.0.13": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Connections.Client": "7.0.13",
@@ -386,7 +412,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {},
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/5.1.1": {
         "dependencies": {
           "Azure.Identity": "1.7.0",
@@ -671,7 +697,7 @@
       },
       "Microsoft.IdentityModel.Tokens/6.24.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.7.0",
           "Microsoft.IdentityModel.Logging": "6.24.0",
           "System.Security.Cryptography.Cng": "5.0.0"
         },
@@ -786,6 +812,17 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
             "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.22727"
           }
         }
       },
@@ -2339,12 +2376,26 @@
       "path": "microsoft.aspnetcore.http.connections.common/7.0.13",
       "hashPath": "microsoft.aspnetcore.http.connections.common.7.0.13.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.JsonPatch/7.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oam3X5j6/6/H4m11MddKNFimiCuwQfYYZR5WG05/knDpb1FJ778Oe8wthHiohJn0Rimq3qdDOlCjPOhHgrriaA==",
+      "path": "microsoft.aspnetcore.jsonpatch/7.0.13",
+      "hashPath": "microsoft.aspnetcore.jsonpatch.7.0.13.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Metadata/7.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ut2azlKz7BQpCKu6AiwKEjMHpRWoD4qu2Ff/n6KagjFsyDAfZY7lgYJ158vr4O0jXet6pV1uF1q3jmXvki0OlA==",
       "path": "microsoft.aspnetcore.metadata/7.0.0",
       "hashPath": "microsoft.aspnetcore.metadata.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/7.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qozh8YD6VmLxaYlGWwCKz4ZiO8uZFBm9of8DspzEpoJ2PT9WyE1YCErJLa2JNbIcIUZqhr8fVR6cqYs7p43JKA==",
+      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/7.0.13",
+      "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.7.0.13.nupkg.sha512"
     },
     "Microsoft.AspNetCore.SignalR.Client/7.0.13": {
       "type": "package",
@@ -2402,12 +2453,12 @@
       "path": "microsoft.codeanalysis.visualbasic/3.3.0",
       "hashPath": "microsoft.codeanalysis.visualbasic.3.3.0.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.5.0": {
+    "Microsoft.CSharp/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
-      "path": "microsoft.csharp/4.5.0",
-      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/5.1.1": {
       "type": "package",
@@ -2681,6 +2732,13 @@
       "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
     "runtime.linux-arm.runtime.native.System.IO.Ports/7.0.0": {
       "type": "package",
