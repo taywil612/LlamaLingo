@@ -50,7 +50,7 @@ namespace LlamaLingo
         {
             //Register Syncfusion license
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cWWBCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdgWH5ecXVcRmlZU011W0Q=");
-
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -71,7 +71,8 @@ namespace LlamaLingo
             {
                 endpoints.MapBlazorHub();
                 endpoints.MapHub<ChatHub>("/chathub");
-                endpoints.MapFallbackToPage("/_Host");
+                endpoints.MapFallbackToPage("/_Host"); 
+                endpoints.MapControllers(); //For report controller module
             });
         }
     }
