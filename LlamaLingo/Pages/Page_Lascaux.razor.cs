@@ -29,8 +29,6 @@ namespace LlamaLingo.Pages
 		private List<NovaLascaux> novas = new List<NovaLascaux>();
 		public NovaLascaux novaLasc = new NovaLascaux();
 
-
-
         private static readonly IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
         private readonly string sqlServerconnectionString = config.GetConnectionString("DatabaseConnection");
 
@@ -183,18 +181,18 @@ namespace LlamaLingo.Pages
 
 		protected override void OnInitialized()   // Override the OnInitialized method
 		{
-			if (filterType != "Nova")
-			{
-				Read();
-				if (novas.Any())
-				{
-					selectedId = novas[0].NovaId;
-				}
-			}
-			else
-			{
-				setNovaLasc();
-			}
+			//if (filterType != "Nova")
+			//{
+			//	Read();
+			//	if (novas.Any())
+			//	{
+			//		selectedId = novas[0].NovaId;
+			//	}
+			//}
+			//else
+			//{
+			//	setNovaLasc();
+			//}
 		}
 	}
 	//testing

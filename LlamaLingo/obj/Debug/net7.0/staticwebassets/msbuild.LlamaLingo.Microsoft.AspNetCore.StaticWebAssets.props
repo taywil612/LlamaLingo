@@ -96,6 +96,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_4be3859e-e790-401c-9ccb-f328101cdb50\designer_4be3859e-e790-401c-9ccb-f328101cdb50_setting.txt))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_61539540-6406-4837-82c4-d10b73d154d9\designer_61539540-6406-4837-82c4-d10b73d154d9_setting.txt))">
+      <SourceType>Package</SourceType>
+      <SourceId>LlamaLingo</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/LlamaLingo</BasePath>
+      <RelativePath>Cache/designer_61539540-6406-4837-82c4-d10b73d154d9/designer_61539540-6406-4837-82c4-d10b73d154d9_setting.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_61539540-6406-4837-82c4-d10b73d154d9\designer_61539540-6406-4837-82c4-d10b73d154d9_setting.txt))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_64d06cc9-d2c5-4474-a1c5-30ac8cdaa883\designer_64d06cc9-d2c5-4474-a1c5-30ac8cdaa883_setting.txt))">
       <SourceType>Package</SourceType>
       <SourceId>LlamaLingo</SourceId>
@@ -160,6 +176,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_923566c0-f115-47cb-ab17-7830c8f37054\designer_923566c0-f115-47cb-ab17-7830c8f37054_setting.txt))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_9b0762e5-f39d-43d5-af92-f918786be428\designer_9b0762e5-f39d-43d5-af92-f918786be428_setting.txt))">
+      <SourceType>Package</SourceType>
+      <SourceId>LlamaLingo</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/LlamaLingo</BasePath>
+      <RelativePath>Cache/designer_9b0762e5-f39d-43d5-af92-f918786be428/designer_9b0762e5-f39d-43d5-af92-f918786be428_setting.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_9b0762e5-f39d-43d5-af92-f918786be428\designer_9b0762e5-f39d-43d5-af92-f918786be428_setting.txt))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_aa63c0ee-0f39-447a-b666-9626557aab95\designer_aa63c0ee-0f39-447a-b666-9626557aab95_setting.txt))">
       <SourceType>Package</SourceType>
       <SourceId>LlamaLingo</SourceId>
@@ -175,6 +207,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_aa63c0ee-0f39-447a-b666-9626557aab95\designer_aa63c0ee-0f39-447a-b666-9626557aab95_setting.txt))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_bd9176ce-09f4-477a-8cc6-d9be0eaa01db\designer_bd9176ce-09f4-477a-8cc6-d9be0eaa01db_setting.txt))">
+      <SourceType>Package</SourceType>
+      <SourceId>LlamaLingo</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/LlamaLingo</BasePath>
+      <RelativePath>Cache/designer_bd9176ce-09f4-477a-8cc6-d9be0eaa01db/designer_bd9176ce-09f4-477a-8cc6-d9be0eaa01db_setting.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_bd9176ce-09f4-477a-8cc6-d9be0eaa01db\designer_bd9176ce-09f4-477a-8cc6-d9be0eaa01db_setting.txt))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_be87a1c6-2206-4648-b833-75effce80103\designer_be87a1c6-2206-4648-b833-75effce80103_setting.txt))">
       <SourceType>Package</SourceType>
@@ -207,6 +255,54 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_bfbe70cd-2790-4078-93c1-9a4f940a5ff2\designer_bfbe70cd-2790-4078-93c1-9a4f940a5ff2_setting.txt))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a\designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a_setting.txt))">
+      <SourceType>Package</SourceType>
+      <SourceId>LlamaLingo</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/LlamaLingo</BasePath>
+      <RelativePath>Cache/designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a/designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a_setting.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a\designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a_setting.txt))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c\designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c_setting.txt))">
+      <SourceType>Package</SourceType>
+      <SourceId>LlamaLingo</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/LlamaLingo</BasePath>
+      <RelativePath>Cache/designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c/designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c_setting.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c\designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c_setting.txt))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_ecbda819-421a-4eb0-9125-d5fc3efc864f\designer_ecbda819-421a-4eb0-9125-d5fc3efc864f_setting.txt))">
+      <SourceType>Package</SourceType>
+      <SourceId>LlamaLingo</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/LlamaLingo</BasePath>
+      <RelativePath>Cache/designer_ecbda819-421a-4eb0-9125-d5fc3efc864f/designer_ecbda819-421a-4eb0-9125-d5fc3efc864f_setting.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_ecbda819-421a-4eb0-9125-d5fc3efc864f\designer_ecbda819-421a-4eb0-9125-d5fc3efc864f_setting.txt))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Cache\designer_fd9cd71f-9db8-4332-a500-0d67865499bb\designer_fd9cd71f-9db8-4332-a500-0d67865499bb_setting.txt))">
       <SourceType>Package</SourceType>

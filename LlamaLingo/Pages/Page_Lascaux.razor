@@ -41,6 +41,21 @@
 				transition-duration: .60s;
 			}
 
+			.content {
+				background-color: black;
+			}
+
+			.content-box {
+				background-color: black;
+				height: 901px;
+				width: 1431px;
+				max-width: 1431px;
+				max-height: 901px;
+				border-radius: unset;
+				overflow: hidden;
+				border: none;
+			}
+
 			.buttonA {
 				background-image: url("Images/buttons/btnArtifactA.png");
 				background-size: cover;
@@ -137,17 +152,17 @@
 
 
 		<h4 style="
-				color: darkgray;
-				top: 36px;
-				left: 1070px;
-				position: absolute">
+				color: white;
+				top: 136px;
+				left: 1128px;
+				position: absolute;">
 			P.O.D.# @pod
 		</h4>
 		<h4 style="
-				color: darkgray;
-				top: 67px;
-				left: 1070px;
-				position: absolute">
+				color: white;
+				top: 99px;
+				left: 1128px;
+				position: absolute;">
 			Person ID: @pid
 		</h4>
 
@@ -162,8 +177,8 @@
 		@if (filterType != "Nova")
 		{
 			<select style="
-				top: 122px;
-				left: 1130px;
+				top: 142px;
+				left: 1290px;
 				position: absolute" @bind=selectedId>
 				@foreach (var nova in novas)
 				{
@@ -222,35 +237,35 @@
 		<!-- ************************************************************************************ -->
 
 		<button style="
-				width:150px;
-				height:60px;
-				top:660px;
-				left:40px;
-				background-color:white;
+				width: 150px;
+				height: 60px;
+				top: 828px;
+				left: 98px;
+				background-color: white;
 				opacity: 20%;
-				border-radius:8px;"
+				border-radius: 8px;"
 				@onclick="GoToPreviousNova">	
 		</button>
 
 		<button style="
-				width:150px;
-				height:60px;
-				top:660px;
-				left:1210px;
-				background-color:white;
+				width: 150px;
+				height: 60px;
+				top: 834px;
+				left: 1175px;
+				background-color: white;
 				opacity: 20%;
-				border-radius:8px;"
+				border-radius: 8px;"
 				@onclick="GoToNextNova">	
 		</button>
 
 		<button style="
-				width:80px;
-				height:40px;
-				top:580px;
-				left:1180px;
-				background-color:white;
-				opacity: 20%;
-				border-radius:8px;"
+				width: 80px;
+				height: 40px;
+				top: 199px;
+				left: 1209px;
+				background-color: white;
+				opacity: 50%;
+				border-radius: 8px;"
 				@onclick="@(() => _nav.NavigateTo("/"+prevPage+"?pod="+pod+"&pid="+pid))">
 			Return
 		</button>
