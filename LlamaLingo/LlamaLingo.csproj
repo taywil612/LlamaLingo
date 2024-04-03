@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Page_Noun_Branched.razor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Page_Noun_Branched.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Shared\ChatMenu.razor.css" />
   </ItemGroup>
 
