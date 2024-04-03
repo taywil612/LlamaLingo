@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj": {}
+    "D:\\TGC\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj": {
+    "D:\\TGC\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
+        "projectUniqueName": "D:\\TGC\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
         "projectName": "LlamaLingo",
-        "projectPath": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
-        "packagesPath": "C:\\Users\\JXEli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\obj\\",
+        "projectPath": "D:\\TGC\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
+        "packagesPath": "C:\\Users\\chanc\\.nuget\\packages\\",
+        "outputPath": "D:\\TGC\\GitHub\\LlamaLingo\\LlamaLingo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JXEli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
