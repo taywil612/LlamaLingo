@@ -32,6 +32,35 @@
     border-radius: 4px;
     transition-duration: .60s;
 }
+/*-----Hotfixes-----*/
+
+
+/*Noun button on the Academy page*/
+.fixedButton01 {
+    top: 400px;
+    left: 865px;
+    background-image: url("images/buttons/Btn_Luster_Noun.png");
+    width: 200px;
+    height: 95px;
+    background-size: cover;
+}
+
+    .fixedButton01:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+/*Report button on the Neural Net page*/
+.fixedButton02 {
+    top: 400px;
+    left: 865px;
+    background-image: url("images/buttons/Btn_Luster_Report.png");
+    width: 200px;
+    height: 95px;
+    background-size: cover;
+}
+
+/*-----Start Private User-----*/
 
 /*New Buttons*/
 /*Goal*/
@@ -49,19 +78,10 @@
         transform: scale(.85);
     }
 
-.fixedButton01 {
-    top: 400px;
-    left: 865px;
-    background-image: url("images/buttons/Btn_Luster_Noun.png");
-    width: 200px;
-    height: 95px;
-    background-size: cover;
+    .fixedButton02:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transform: scale(.85);
 }
-
-    .buttonMenu01:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
 
 
 /*Task*/
