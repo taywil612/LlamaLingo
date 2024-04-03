@@ -72,7 +72,7 @@ namespace LlamaLingo
                 endpoints.MapBlazorHub();
                 endpoints.MapHub<ChatHub>("/chathub");
                 endpoints.MapFallbackToPage("/_Host");
-                endpoints.MapControllers();  //For report controller module
+                endpoints.MapControllers(); //For report controller module
             });
         }
     }

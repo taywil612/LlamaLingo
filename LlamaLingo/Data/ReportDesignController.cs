@@ -1,24 +1,22 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.IO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BoldReports.Web.ReportViewer;
 using Microsoft.AspNetCore.Hosting;
 using BoldReports.Web.ReportDesigner;
 using Microsoft.Extensions.Caching.Memory;
+using System.Collections.Generic;
+using System;
+using System.IO;
 
 namespace LlamaLingo.Data
 {
     [Route("api/{controller}/{action}/{id?}")]
-    public class ReportDesignController : ControllerBase, IReportDesignerController
+    public class BoldReportsAPIController : ControllerBase, IReportDesignerController
     {
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;
         private IWebHostEnvironment _hostingEnvironment;
 
-        public ReportDesignController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, IWebHostEnvironment hostingEnvironment)
+        public BoldReportsAPIController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, IWebHostEnvironment hostingEnvironment)
         {
             _cache = memoryCache;
             _hostingEnvironment = hostingEnvironment;
