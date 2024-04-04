@@ -75,6 +75,24 @@
         transform: scale(.85);
     }
 
+
+
+/*Report Button in Academy*/
+.buttonMenu09 {
+    top: 545px;
+    left: 1340px;
+    background-image: url("images/buttons/Btn_About_2.png");
+    background-size: cover;
+    width: 200px;
+    height: 90px;
+}
+
+    .buttonMenu09:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
+
 .exhibitPanel {
     position: absolute;
     top: 370px;

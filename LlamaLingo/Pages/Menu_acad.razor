@@ -39,6 +39,12 @@
 			<button class="buttonMenu03" @onclick="@(()=>_nav.NavigateTo("/Nova?pod="+pod+"&pid="+pid))">
 				<!-- Goal (place a text button label here) -->
 			</button>
+
+			<!-- Report button -->
+			<button class="buttonMenu09" @onclick="@(()=>_nav.NavigateTo("/Report?pod="+pod+"&pid="+pid))">
+				<!-- Goal (place a text button label here) -->
+			</button>
+
 		</div>
 	</div>
 </div>
@@ -54,6 +60,10 @@
 
 	.buttonMenu03 {
 		background-image: url("images/buttons/btn_luster_NOVA.png");
+	}
+
+	.buttonMenu09 {
+		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Report.png?sp=r&st=2024-04-04T01:21:36Z&se=2025-04-04T09:21:36Z&spr=https&sv=2022-11-02&sr=b&sig=qYbDus%2BUlsDw9meV3hUEynWbjTIfZu6S6CmKeKazeJM%3D");
 	}
 
 	.content {
