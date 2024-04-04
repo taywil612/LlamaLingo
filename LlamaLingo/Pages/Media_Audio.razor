@@ -1,20 +1,21 @@
 ﻿@page "/Audio"
 @layout MainLayout
 
-@* <div class="page-heading">
+
+<div class="page-heading">
 	<h3 class="header">Demonstration Jukebox Audio</h3>
 	<p class="subtitle"><a href="">Home</a> / Audio</p>
-</div> *@
+</div>
 
 <div class="content-box shadow" style="overflow: hidden !important">
 	<div class="content-box">
 		<div class="media-page">
 			<div>
 				<audio controls="controls">
-					<source src="https://llamalingostorage.blob.core.windows.net/images/Blobs/Audio/Ripingtons.mp3?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D">
+					<source src="/Blobs/Audio/Ripingtons.mp3">
 				</audio>
 			</div>
-			
+
 			<a href="https://radio.garden/listen/heavy1/rH122vcl">
 				<button style="
 		position: relative;
@@ -35,24 +36,22 @@
 
 <style>
 	.media-page {
-		background: url("https://llamalingostorage.blob.core.windows.net/images/images/BG/BG_Audio.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D") no-repeat;
+		background: url(images/BG/BG_Audio.png) no-repeat;
+		background-size: 1200px 800px;
 		opacity: 100%;
 		color: white;
-		height: 799px;
-		width: 1199px;
+		height: 800px;
+		width: 1200px;
 	}
 
 	.content {
-		background-color: #824425;
+		padding: 30px 30px 70px 30px;
 	}
 
 	.content-box {
-		height: 799px;
-		width: 1199px;
-		max-width: 1199px;
-		max-height: 799px;
-		border-radius: unset;
-		overflow: hidden;
+		height: 100%;
+		min-height: 400px;
+		overflow: auto;
+		border-radius: 20px;
 	}
-
 </style>

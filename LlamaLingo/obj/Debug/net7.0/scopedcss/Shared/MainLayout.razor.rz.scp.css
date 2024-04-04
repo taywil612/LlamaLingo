@@ -21,7 +21,7 @@
     width: 24px;
     height: 24px;
     margin-left: 30px;
-    background-image: url("../css/ToggleButton.png");
+    background-image: url('images/ToggleButton.png');
     transform: scale(0.75);
     transform-origin: left;
     color: #ffffff;

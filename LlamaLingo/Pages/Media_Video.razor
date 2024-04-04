@@ -1,23 +1,23 @@
 ﻿@page "/Video"
 @layout MainLayout
 
-@* <div class="page-heading">
+<div class="page-heading">
 	<h3 class="header">Sample Video</h3>
 	<p class="subtitle"><a href="">Home</a> / Video</p>
 </div>
- *@
+
 <div class="content-box shadow" style="overflow: hidden !important">
 	<div class="content-box">
 		<div class="media-page">
 			<div>
 				<video controls="controls" width="800">
-					<source src="https://llamalingostorage.blob.core.windows.net/images/Blobs/Video/Rain.mp4?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D">
+					<source src="/Blobs/Video/Rain.mp4">
 				</video>
 			</div>
-			
+
 			<div>
 				<video controls="controls" width="800">
-					<source src="https://llamalingostorage.blob.core.windows.net/images/Blobs/Video/Starry_Night.mp4?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D">
+					<source src="Blobs/Video/Starry_Night.mp4">
 				</video>
 			</div>
 		</div>
@@ -26,13 +26,12 @@
 
 <style>
 	.media-page {
-		background: url("https://llamalingostorage.blob.core.windows.net/images/images/BG/menu_blank.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")no-repeat;
-		width: 1920px;
-		height: 1080px;
+		background-color: darkred;
+		color: black;
 	}
 
 	.backimg {
-		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/BG/BoatParty.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
+		background-image: url(images/BG/BoatParty.png);
 		opacity: 50%;
 		width: 50%;
 		height: 50%;
@@ -40,15 +39,13 @@
 	}
 
 	.content {
-		background-color: #343132;
+		padding: 30px 30px 70px 30px;
 	}
 
 	.content-box {
-		height: 1080px;
-		width: 1920px;
-		max-width: 1920px;
-		max-height: 1080px;
-		border-radius: unset;
-		overflow: hidden;
+		height: 100%;
+		min-height: 400px;
+		overflow: auto;
+		border-radius: 20px;
 	}
 </style>

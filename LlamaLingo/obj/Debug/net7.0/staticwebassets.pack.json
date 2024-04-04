@@ -5,20 +5,32 @@
       "PackagePath": "staticwebassets\\LlamaLingo.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_0b4609bd-6c93-4809-8ea5-15b5f98fcc12\\designer_0b4609bd-6c93-4809-8ea5-15b5f98fcc12_setting.txt",
-      "PackagePath": "staticwebassets\\Cache\\designer_0b4609bd-6c93-4809-8ea5-15b5f98fcc12\\designer_0b4609bd-6c93-4809-8ea5-15b5f98fcc12_setting.txt"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Blobs\\Audio\\Ripingtons.mp3",
+      "PackagePath": "staticwebassets\\Blobs\\Audio\\Ripingtons.mp3"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Blobs\\BG\\Starry.jpg",
+      "PackagePath": "staticwebassets\\Blobs\\BG\\Starry.jpg"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Blobs\\Video\\Rain.mp4",
+      "PackagePath": "staticwebassets\\Blobs\\Video\\Rain.mp4"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Blobs\\Video\\Starry_Night.mp4",
+      "PackagePath": "staticwebassets\\Blobs\\Video\\Starry_Night.mp4"
     },
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_13f553f6-1e98-43a2-86a8-5e6de3fad32f\\designer_13f553f6-1e98-43a2-86a8-5e6de3fad32f_setting.txt",
       "PackagePath": "staticwebassets\\Cache\\designer_13f553f6-1e98-43a2-86a8-5e6de3fad32f\\designer_13f553f6-1e98-43a2-86a8-5e6de3fad32f_setting.txt"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_213a6577-604c-413a-9bd6-5306fabf3f33\\designer_213a6577-604c-413a-9bd6-5306fabf3f33_setting.txt",
-      "PackagePath": "staticwebassets\\Cache\\designer_213a6577-604c-413a-9bd6-5306fabf3f33\\designer_213a6577-604c-413a-9bd6-5306fabf3f33_setting.txt"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_154edea2-106f-424e-afd3-26b8fe32cea0\\designer_154edea2-106f-424e-afd3-26b8fe32cea0_setting.txt",
+      "PackagePath": "staticwebassets\\Cache\\designer_154edea2-106f-424e-afd3-26b8fe32cea0\\designer_154edea2-106f-424e-afd3-26b8fe32cea0_setting.txt"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_21735522-98a9-422c-ab3b-54bd76de0359\\designer_21735522-98a9-422c-ab3b-54bd76de0359_setting.txt",
-      "PackagePath": "staticwebassets\\Cache\\designer_21735522-98a9-422c-ab3b-54bd76de0359\\designer_21735522-98a9-422c-ab3b-54bd76de0359_setting.txt"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_213a6577-604c-413a-9bd6-5306fabf3f33\\designer_213a6577-604c-413a-9bd6-5306fabf3f33_setting.txt",
+      "PackagePath": "staticwebassets\\Cache\\designer_213a6577-604c-413a-9bd6-5306fabf3f33\\designer_213a6577-604c-413a-9bd6-5306fabf3f33_setting.txt"
     },
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_40442ad1-2bf6-41ba-b593-c0ea1613da50\\designer_40442ad1-2bf6-41ba-b593-c0ea1613da50_setting.txt",
@@ -69,20 +81,12 @@
       "PackagePath": "staticwebassets\\Cache\\designer_949380b0-895c-4e4b-a38a-d06ed18ad61a\\designer_949380b0-895c-4e4b-a38a-d06ed18ad61a_setting.txt"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_95642c8c-44f9-4f89-8abe-5b4a3ff90bed\\designer_95642c8c-44f9-4f89-8abe-5b4a3ff90bed_setting.txt",
-      "PackagePath": "staticwebassets\\Cache\\designer_95642c8c-44f9-4f89-8abe-5b4a3ff90bed\\designer_95642c8c-44f9-4f89-8abe-5b4a3ff90bed_setting.txt"
-    },
-    {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_9b0762e5-f39d-43d5-af92-f918786be428\\designer_9b0762e5-f39d-43d5-af92-f918786be428_setting.txt",
       "PackagePath": "staticwebassets\\Cache\\designer_9b0762e5-f39d-43d5-af92-f918786be428\\designer_9b0762e5-f39d-43d5-af92-f918786be428_setting.txt"
     },
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_9d0ffcf0-aa34-40c2-b140-e92ad0ab08b5\\designer_9d0ffcf0-aa34-40c2-b140-e92ad0ab08b5_setting.txt",
       "PackagePath": "staticwebassets\\Cache\\designer_9d0ffcf0-aa34-40c2-b140-e92ad0ab08b5\\designer_9d0ffcf0-aa34-40c2-b140-e92ad0ab08b5_setting.txt"
-    },
-    {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_a11d9204-c3c6-4dab-b25f-adce82a39e76\\designer_a11d9204-c3c6-4dab-b25f-adce82a39e76_setting.txt",
-      "PackagePath": "staticwebassets\\Cache\\designer_a11d9204-c3c6-4dab-b25f-adce82a39e76\\designer_a11d9204-c3c6-4dab-b25f-adce82a39e76_setting.txt"
     },
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_aa63c0ee-0f39-447a-b666-9626557aab95\\designer_aa63c0ee-0f39-447a-b666-9626557aab95_setting.txt",
@@ -109,8 +113,16 @@
       "PackagePath": "staticwebassets\\Cache\\designer_bfbe70cd-2790-4078-93c1-9a4f940a5ff2\\designer_bfbe70cd-2790-4078-93c1-9a4f940a5ff2_setting.txt"
     },
     {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_c14f5f9f-4aa8-4bce-867e-de4529ab67bb\\designer_c14f5f9f-4aa8-4bce-867e-de4529ab67bb_setting.txt",
+      "PackagePath": "staticwebassets\\Cache\\designer_c14f5f9f-4aa8-4bce-867e-de4529ab67bb\\designer_c14f5f9f-4aa8-4bce-867e-de4529ab67bb_setting.txt"
+    },
+    {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a\\designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a_setting.txt",
       "PackagePath": "staticwebassets\\Cache\\designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a\\designer_c3eeeddc-da26-41a7-a574-c2500fe03d8a_setting.txt"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_d0d45c14-ef15-438e-87ae-70c584c8c951\\designer_d0d45c14-ef15-438e-87ae-70c584c8c951_setting.txt",
+      "PackagePath": "staticwebassets\\Cache\\designer_d0d45c14-ef15-438e-87ae-70c584c8c951\\designer_d0d45c14-ef15-438e-87ae-70c584c8c951_setting.txt"
     },
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c\\designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c_setting.txt",
@@ -135,10 +147,6 @@
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\css\\Nnet.css",
       "PackagePath": "staticwebassets\\css\\Nnet.css"
-    },
-    {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\css\\ToggleButton.png",
-      "PackagePath": "staticwebassets\\css\\ToggleButton.png"
     },
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
@@ -213,40 +221,400 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\pdf\\Azure Server Project Audit.pdf",
-      "PackagePath": "staticwebassets\\pdf\\Azure Server Project Audit.pdf"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\BGDC_User_Interview.png",
+      "PackagePath": "staticwebassets\\images\\BG\\BGDC_User_Interview.png"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\pdf\\Gantt Progress Categories.pdf",
-      "PackagePath": "staticwebassets\\pdf\\Gantt Progress Categories.pdf"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\BGLP_User_Week.png",
+      "PackagePath": "staticwebassets\\images\\BG\\BGLP_User_Week.png"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\pdf\\LlamaLingo Parsing Instructions Manual.pdf",
-      "PackagePath": "staticwebassets\\pdf\\LlamaLingo Parsing Instructions Manual.pdf"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\BG_Audio.png",
+      "PackagePath": "staticwebassets\\images\\BG\\BG_Audio.png"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\pdf\\LlamaLingo Parsing Instructions ManualV1.pdf",
-      "PackagePath": "staticwebassets\\pdf\\LlamaLingo Parsing Instructions ManualV1.pdf"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\Custom_Page.png",
+      "PackagePath": "staticwebassets\\images\\BG\\Custom_Page.png"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\pdf\\LlamaLingo Parsing Instructions ManualV15.pdf",
-      "PackagePath": "staticwebassets\\pdf\\LlamaLingo Parsing Instructions ManualV15.pdf"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\Lascaux.png",
+      "PackagePath": "staticwebassets\\images\\BG\\Lascaux.png"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\pdf\\LlamaLingo Parsing Instructions ManualV2.pdf",
-      "PackagePath": "staticwebassets\\pdf\\LlamaLingo Parsing Instructions ManualV2.pdf"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\Lascaux_noun.png",
+      "PackagePath": "staticwebassets\\images\\BG\\Lascaux_noun.png"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\pdf\\LlamaLingo Parsing Instructions ManualV3.pdf",
-      "PackagePath": "staticwebassets\\pdf\\LlamaLingo Parsing Instructions ManualV3.pdf"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\Lascaux_verb.png",
+      "PackagePath": "staticwebassets\\images\\BG\\Lascaux_verb.png"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\pdf\\LlamaLingo Parsing Instructions ManualV6.pdf",
-      "PackagePath": "staticwebassets\\pdf\\LlamaLingo Parsing Instructions ManualV6.pdf"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\Menu_Deco_cave.png",
+      "PackagePath": "staticwebassets\\images\\BG\\Menu_Deco_cave.png"
     },
     {
-      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\pdf\\LlamaLingo Parsing Instructions Manual_Default.pdf",
-      "PackagePath": "staticwebassets\\pdf\\LlamaLingo Parsing Instructions Manual_Default.pdf"
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\Menu_Task.png",
+      "PackagePath": "staticwebassets\\images\\BG\\Menu_Task.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\Role_BG.png",
+      "PackagePath": "staticwebassets\\images\\BG\\Role_BG.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\background_acad.png",
+      "PackagePath": "staticwebassets\\images\\BG\\background_acad.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\menu_Goal.png",
+      "PackagePath": "staticwebassets\\images\\BG\\menu_Goal.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\BG\\menu_blank.png",
+      "PackagePath": "staticwebassets\\images\\BG\\menu_blank.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\ToggleButton.png",
+      "PackagePath": "staticwebassets\\images\\ToggleButton.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\Community.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\Community.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\Llama.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\Llama.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\Panel_Commit.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\Panel_Commit.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\Panel_Commit_add.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\Panel_Commit_add.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\Panel_Fluer.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\Panel_Fluer.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\Panel_Marque.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\Panel_Marque.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\Panel_filter.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\Panel_filter.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\Table_GOALS.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\Table_GOALS.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\UseCase_acad.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\UseCase_acad.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\UseCase_admn.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\UseCase_admn.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\UseCase_ainn.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\UseCase_ainn.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\UseCase_engr.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\UseCase_engr.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\UseCase_user.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\UseCase_user.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\UseCase_xprt.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\UseCase_xprt.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\shadow_black.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\shadow_black.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\shadow_white.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\shadow_white.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\UIpanels\\toggle.png",
+      "PackagePath": "staticwebassets\\images\\UIpanels\\toggle.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_About.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_About.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Color_Chart.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Color_Chart.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Color_Table.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Color_Table.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Gantt_Chart.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Gantt_Chart.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Goal_2.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Goal_2.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Audio.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Audio.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Chat.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Chat.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Community.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Community.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Goal.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Goal.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Guide.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Guide.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Guru.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Guru.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Memo.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Memo.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_NOVA.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_NOVA.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Noun.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Noun.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_PDF.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_PDF.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Person.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Person.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Questions.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Questions.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Report.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Report.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Start.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Start.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Task.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Task.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Verb.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Verb.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Luster_Video.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Luster_Video.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Nova_2.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Nova_2.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Radar_Chart.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Radar_Chart.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Btn_Task_2.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Btn_Task_2.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Button_A.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Button_A.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Button_C.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Button_C.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Button_D.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Button_D.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Button_L.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Button_L.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_Program.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_Program.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_account.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_account.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_audio.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_audio.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_brand.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_brand.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_city.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_city.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_element.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_element.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_faction.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_faction.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_interview.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_interview.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_location.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_location.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_skill.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_skill.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Buttons_luster_work.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Buttons_luster_work.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Goal_Add.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Goal_Add.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Goal_Change.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Goal_Change.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Goal_Delete.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Goal_Delete.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Goal_List.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Goal_List.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Icon_Process.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Icon_Process.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Icon_Reports.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Icon_Reports.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Icon_Tables.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Icon_Tables.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\Table_GOALS.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\Table_GOALS.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btnArtifactA.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btnArtifactA.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btnArtifactC.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btnArtifactC.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btnArtifactD.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btnArtifactD.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btnArtifactL.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btnArtifactL.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btnArtifact_Audio.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btnArtifact_Audio.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btnJulian5.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btnJulian5.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btnJulian6.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btnJulian6.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btn_add.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btn_add.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btn_change.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btn_change.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btn_delete.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btn_delete.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\buttons\\btn_list.png",
+      "PackagePath": "staticwebassets\\images\\buttons\\btn_list.png"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\Azure Server Project Audit.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\Azure Server Project Audit.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\Gantt Progress Categories.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\Gantt Progress Categories.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions Manual.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions Manual.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV1.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV15.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV15.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV2.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV3.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV3.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions ManualV6.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions ManualV6.pdf"
+    },
+    {
+      "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\images\\pdf\\LlamaLingo Parsing Instructions Manual_Default.pdf",
+      "PackagePath": "staticwebassets\\images\\pdf\\LlamaLingo Parsing Instructions Manual_Default.pdf"
     },
     {
       "Id": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\scripts\\boldreports-interop.js",
