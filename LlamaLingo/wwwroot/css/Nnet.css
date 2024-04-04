@@ -3,7 +3,7 @@
     width: 100%;
     height: 100%;
     background-size: contain;
-    background: url(../images/BG/Role_BG.png)no-repeat;
+    background: url(https://llamalingostorage.blob.core.windows.net/images/images/BG/Role_BG.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D)no-repeat;
     background-position: left 0px top 0px;
     opacity: 100%;
     color: blanchedalmond;
@@ -115,7 +115,6 @@
     position: relative;
     top: 45px;
     left: 660px;
-    /* background-image: url("../images/buttons/UseCase_admn.png"); */
     color: black;
     border-radius: 24px;
     width: 0px;
@@ -145,7 +144,7 @@
     color: #FF0000;
     position: absolute;
     opacity: 100%;
-    background-image: url("../images/GUI/DC_GUI_user_Direction.png");
+    background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/GUI/DC_GUI_user_Direction.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
     background-size: cover;
 }
 
@@ -170,47 +169,47 @@
 .component-page .buttonList {
     left: 660px;
     opacity: 90%;
-    background-image: url("../images/buttons/Button_L.png");
+    background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Button_L.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
     box-shadow: 0 30px 60px rgba(0,0,0,.5);
 }
 
-    .component-page .buttonList:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
+.component-page .buttonList:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transform: scale(.85);
+}
 
 .component-page .buttonAdd {
-    background-image: url("../images/buttons/Button_A.png");
+    background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Button_A.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
     background-size: cover;
     box-shadow: 0 30px 60px rgba(0,0,0,.5);
 }
 
-    .component-page.buttonAdd:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
+.component-page.buttonAdd:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transform: scale(.85);
+}
 
 .component-page .buttonChange {
-    background-image: url("../images/buttons/Button_C.png");
+    background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Button_C.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
     background-size: cover;
     box-shadow: 0 30px 60px rgba(0,0,0,.5);
 }
 
-    .component-page .buttonChange:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
+.component-page .buttonChange:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transform: scale(.85);
+}
 
 .component-page .buttonDelete {
-    background-image: url("../images/buttons/Button_D.png");
+    background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Button_D.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
     background-size: cover;
     box-shadow: 0 30px 60px rgba(0,0,0,.5);
 }
 
-    .component-page .buttonDelete:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
+.component-page .buttonDelete:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transform: scale(.85);
+}
 
 .component-page .Shadow {
     position: absolute;
@@ -278,15 +277,15 @@
     left: 40px;
     width: 120px;
     height: 50px;
-    background-image: url("../images/buttons/btn_change.png");
+    background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/btn_change.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
     background-size: cover;
     box-shadow: 0 30px 60px rgba(0,0,0,.5);
 }
 
-    .component-page .button-container .commitChange:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
+.component-page .button-container .commitChange:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transform: scale(.85);
+}
 
 .component-page .button-container .commitDelete {
     position: absolute;
@@ -294,15 +293,16 @@
     left: 40px;
     width: 120px;
     height: 50px;
-    background-image: url("../images/buttons/btn_delete.png");
+    background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/btn_delete.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
     background-size: cover;
     box-shadow: 0 30px 60px rgba(0,0,0,.5);
 }
 
-    .component-page .button-container .commitDelete:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
+
+.component-page .button-container .commitDelete:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transform: scale(.85);
+}
 
 .component-page .button-container .commitCreate {
     position: absolute;
@@ -310,15 +310,15 @@
     left: 40px;
     width: 120px;
     height: 50px;
-    background-image: url("../images/buttons/btn_add.png");
+    background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/btn_add.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
     background-size: cover;
     box-shadow: 0 30px 60px rgba(0,0,0,.5);
 }
 
-    .component-page .button-container .commitCreate:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
+.component-page .button-container .commitCreate:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transform: scale(.85);
+}
 
 
 .e-timeline-header-container {

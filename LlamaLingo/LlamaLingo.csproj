@@ -12,6 +12,18 @@
     <Content Include="Shared\ChatMenu.razor.css" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\pdf\Azure Server Project Audit.pdf" />
+    <None Include="wwwroot\pdf\Gantt Progress Categories.pdf" />
+    <None Include="wwwroot\pdf\LlamaLingo Parsing Instructions Manual.pdf" />
+    <None Include="wwwroot\pdf\LlamaLingo Parsing Instructions ManualV1.pdf" />
+    <None Include="wwwroot\pdf\LlamaLingo Parsing Instructions ManualV15.pdf" />
+    <None Include="wwwroot\pdf\LlamaLingo Parsing Instructions ManualV2.pdf" />
+    <None Include="wwwroot\pdf\LlamaLingo Parsing Instructions ManualV3.pdf" />
+    <None Include="wwwroot\pdf\LlamaLingo Parsing Instructions ManualV6.pdf" />
+    <None Include="wwwroot\pdf\LlamaLingo Parsing Instructions Manual_Default.pdf" />
+  </ItemGroup>
+
   <ItemGroup>    <PackageReference Include="BoldReports.Net.Core" Version="5.4.34" />    <PackageReference Include="Syncfusion.Blazor.SfPdfViewer" Version="23.1.43" />
     <PackageReference Include="Syncfusion.Blazor.Notifications" Version="23.1.43" />    <PackageReference Include="Syncfusion.Blazor.PdfViewer" Version="23.1.43" />    <PackageReference Include="Syncfusion.Blazor.PdfViewerServer.Windows" Version="23.1.43" />
     <PackageReference Include="Syncfusion.Blazor.Spinner" Version="23.1.43" />
@@ -32,10 +44,6 @@
     <PackageReference Include="Syncfusion.Blazor.Navigations" Version="23.1.43" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="23.1.43" />
     <PackageReference Include="Syncfusion.PdfViewer.Windows" Version="23.1.43" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\images\pdf\" />
   </ItemGroup>
 
 </Project>
