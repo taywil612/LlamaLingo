@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -179,20 +180,29 @@ namespace LlamaLingo.Pages
 		//*******************************************************************************
 
 
-		protected override void OnInitialized()   // Override the OnInitialized method
+		protected override System.Threading.Tasks.Task OnInitializedAsync() // Override the OnInitialized method
 		{
-			//if (filterType != "Nova")
-			//{
-			//	Read();
-			//	if (novas.Any())
-			//	{
-			//		selectedId = novas[0].NovaId;
-			//	}
-			//}
-			//else
-			//{
-			//	setNovaLasc();
-			//}
+			try
+			{
+				//if (filterType != "Nova")
+				//{
+				//	Read();
+				//	if (novas.Any())
+				//	{
+				//		selectedId = novas[0].NovaId;
+				//	}
+				//}
+				//else
+				//{
+				//	setNovaLasc();
+				//}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
+
+			return System.Threading.Tasks.Task.CompletedTask;
 		}
 	}
 	//testing
