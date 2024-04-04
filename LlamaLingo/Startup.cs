@@ -51,6 +51,9 @@ namespace LlamaLingo
             //Register Syncfusion license
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cWWBCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdgWH5ecXVcRmlZU011W0Q=");
             
+            //Register BoldReports
+            Bold.Licensing.BoldLicenseProvider.RegisterLicense("seccLofY5CmM+VFWLCjuCBHYDUtKuIewWosCl4ImZmU=");
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

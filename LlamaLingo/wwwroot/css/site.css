@@ -135,7 +135,6 @@ app {
 }
 
 .content-box {
-    background: #fff;
     height: 100%;
     min-height: 400px;
     overflow: auto;

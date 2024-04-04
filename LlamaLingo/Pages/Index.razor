@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="footer-button-container">
-                <button class="footer-button start-menu-button" disabled="@(!RoleSet)" @onclick="@(()=>_nav.NavigateTo(Page))" style="@(!RoleSet ? "background-color: #6c757d9c; background-blend-mode: color-burn; transform: unset;" : "")"></button>
+                <button class="footer-button start-menu-button" disabled="@(!RoleSet)" @onclick="@(()=>_nav.NavigateTo(Page))" style="@(!RoleSet ? "background-color: #6c757d9c; background-blend-mode: color-burn; transform: unset; border-color: black;" : "")"></button>
                 <button class="footer-button video-button" @onclick="@(()=>_nav.NavigateTo("/Video"))"></button>
                 <button class="footer-button audio-button" @onclick="@(()=>_nav.NavigateTo("/Audio"))"></button>
                 <button class="footer-button project-button" @onclick="@(()=>_nav.NavigateTo("/Instruction_Manual"))"></button>
@@ -71,12 +71,12 @@
     }
 
     .community-button{
-        width: 234px;
-        height: 62px;
+        width: 247px;
+        height: 69px;
         border-radius: 10px;
         position: relative;
-        top: 202px;
-        left: 73px;
+        top: 198px;
+        left: 65px;
 		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Community.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
     }
 
@@ -85,7 +85,7 @@
         height: 319px;
         border-radius: 5px;
         position: relative;
-        top: -206px;
+        top: -213px;
         left: 352px;
         padding: 10px;
         color: black;
@@ -98,33 +98,33 @@
     }
 
     .side-button{
-        width: 232px;
-        height: 95px;
+        width: 250px;
+        height: 105px;
         border-radius: 10px;
         position: relative;
     }
 
     .memo-button{
-		top: -310px;
-		left: 1059px;
+        top: -322px;
+        left: 1048px;
 		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Memo.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
     }
     
     .chat-button{
-        top: -191px;
-        left: 823px;
+        top: -203px;
+        left: 794px;
 		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Chat.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
     }
 
     .footer-button-container{
         position: relative;
-        top: -416px;
-        left: 375px;
+        top: -437px;
+        left: 369px;
     }
 
     .footer-button{
-        width: 183px;
-        height: 80px;
+        width: 192px;
+        height: 88px;
         border-radius: 10px;
         position: relative;
     }
@@ -136,22 +136,22 @@
     }
 
     .video-button, .audio-button, .project-button{
-        top: 272px;
+        top: 271px;
     }
 
     .video-button{
-        left: -247px;
-		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Video.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
+        left: -256px;
+        background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Video.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
     }
 
     .audio-button{
-        left: -204px;
-		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Audio.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
+        left: -221px;
+        background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Audio.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
     }
 
     .project-button{
-        left: -161px;
-		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_PDF.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
+        left: -186px;
+        background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_PDF.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
     }
 
     .community-button:hover, .side-button:hover, .footer-button:hover{

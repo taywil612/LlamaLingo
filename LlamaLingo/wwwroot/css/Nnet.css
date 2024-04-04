@@ -117,7 +117,8 @@
     left: 660px;
     color: black;
     border-radius: 24px;
-    width: 0px;
+    width: 600px;
+    height: 150px;
 }
 
 /* Styling component pages */
