@@ -2,6 +2,7 @@ using LlamaLingo.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -310,18 +311,27 @@ namespace LlamaLingo.Pages
 		}
 
 
-		protected override void OnInitialized()   // Override the OnInitialized method
+		protected override System.Threading.Tasks.Task OnInitializedAsync() // Override the OnInitialized method
 		{
-			novas = db.Novas.ToList();
-			pypes = db.Pypes.ToList();
+			try
+			{
+				novas = db.Novas.ToList();
+				pypes = db.Pypes.ToList();
 
-			subjects = db.Nouns.ToList();
-			actions = db.Verbs.ToList();
-			objects = db.Nouns.ToList();
+				subjects = db.Nouns.ToList();
+				actions = db.Verbs.ToList();
+				objects = db.Nouns.ToList();
 
-			Read("CRUD_Noun", "Subject");
-			Read("CRUD_Verb", "Action");
-			Read("CRUD_Noun", "Object");
+				Read("CRUD_Noun", "Subject");
+				Read("CRUD_Verb", "Action");
+				Read("CRUD_Noun", "Object");
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
+
+			return System.Threading.Tasks.Task.CompletedTask;
 		}
 
 	}

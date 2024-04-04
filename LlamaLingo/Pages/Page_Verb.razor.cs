@@ -4,6 +4,7 @@ using LlamaLingo.Models;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace LlamaLingo.Pages
 {
@@ -306,35 +307,44 @@ namespace LlamaLingo.Pages
             }
         }
 
-        private void PypeRead()
-        {
-            string spName = "dbo.sp_Pype_Type_Locked";
-            SqlConnection connection = new SqlConnection(sqlServerconnectionString);
-            SqlCommand cmd = new SqlCommand(spName, connection);
-            SqlParameter param1 = new SqlParameter();
-            param1.ParameterName = "@PROC_Input_Filter";
-            param1.Value = "VERB";
-            SqlParameter param2 = new SqlParameter();
-            param2.ParameterName = "@pod";
-            param2.Value = pod;
-            cmd.Parameters.Add(param1);
-            cmd.Parameters.Add(param2);
-            connection.Open();
-            cmd.CommandType = CommandType.StoredProcedure;
-            //execute the stored procedure
-            cmd.ExecuteNonQuery();
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                pypes.Add(new Pype { PypeId = reader.GetString(0), PypeType = reader.GetString(1), PypeLabel = reader.GetString(2), PypeStatus = reader.GetString(3), PypeDesc = reader.GetString(4), PypeLink = reader.GetString(5), });
-            }
-        }
+		private void PypeRead()
+		{
+			string spName = "dbo.sp_Pype_Type_Locked";
+			SqlConnection connection = new SqlConnection(sqlServerconnectionString);
+			SqlCommand cmd = new SqlCommand(spName, connection);
+			SqlParameter param1 = new SqlParameter();
+			param1.ParameterName = "@PROC_Input_Filter";
+			param1.Value = "VERB";
+			SqlParameter param2 = new SqlParameter();
+			param2.ParameterName = "@pod";
+			param2.Value = pod;
+			cmd.Parameters.Add(param1);
+			cmd.Parameters.Add(param2);
+			connection.Open();
+			cmd.CommandType = CommandType.StoredProcedure;
+			//execute the stored procedure
+			cmd.ExecuteNonQuery();
+			SqlDataReader reader = cmd.ExecuteReader();
+			while (reader.Read())
+			{
+				pypes.Add(new Pype { PypeId = reader.GetString(0), PypeType = reader.GetString(1), PypeLabel = reader.GetString(2), PypeStatus = reader.GetString(3), PypeDesc = reader.GetString(4), PypeLink = reader.GetString(5), });
+			}
+		}
 
-        protected override void OnInitialized() // Override the OnInitialized method
-        {
-            Read();
-            PypeRead();
-            DeleteRead();
-        }
-    }
+		protected override System.Threading.Tasks.Task OnInitializedAsync() // Override the OnInitialized method
+		{
+			try
+            {
+			    Read();
+                PypeRead();
+                DeleteRead();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
+
+			return System.Threading.Tasks.Task.CompletedTask;
+		}
+	}
 }

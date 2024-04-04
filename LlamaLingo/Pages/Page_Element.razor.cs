@@ -6,6 +6,7 @@ using System.Data;
 using System.Security.Claims;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace LlamaLingo.Pages
 {
@@ -238,11 +239,20 @@ namespace LlamaLingo.Pages
             //}
         }
 
-        protected override void OnInitialized() // Override the OnInitialized method
-        {
-            Read();
-            //PypeRead();
-            //DeleteRead();
-        }
-    }
+		protected override System.Threading.Tasks.Task OnInitializedAsync() // Override the OnInitialized method
+		{
+			try
+            {
+                Read();
+				//PypeRead();
+				//DeleteRead();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
+
+			return System.Threading.Tasks.Task.CompletedTask;
+		}
+	}
 }

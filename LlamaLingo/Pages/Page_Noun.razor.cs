@@ -4,6 +4,7 @@ using LlamaLingo.Models;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace LlamaLingo.Pages
 {
@@ -349,13 +350,22 @@ namespace LlamaLingo.Pages
             }
         }
 
-        //********************** Override the OnInitialized method ********************
-        //********************** ReRead lists when necessary ********************
-        protected override void OnInitialized()
-        {
-            Read();
-            PypeRead();
-            DeleteRead();
-        }
-    }
+		//********************** Override the OnInitialized method ********************
+		//********************** ReRead lists when necessary ********************
+		protected override System.Threading.Tasks.Task OnInitializedAsync() // Override the OnInitialized method
+		{
+			try
+            {
+                Read();
+                PypeRead();
+                DeleteRead();
+            }
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
+
+			return System.Threading.Tasks.Task.CompletedTask;
+		}
+	}
 }
