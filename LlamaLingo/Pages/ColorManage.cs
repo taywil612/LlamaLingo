@@ -8,100 +8,79 @@ namespace LlamaLingo.Pages
     {
         private static int currentID = 2;
 
-        private static bool isConnected = false;
+        private static bool idInitialized = false;
         private static SqlConnection conn = null;
 
         private static List<string> componentNames = new List<string>() { "Red Strength", "Green Strength", "Blue Strength" };
         public static List<int> getComponents()
         {
-            connect();
+			//List<int> output;
+			//string sql = "SELECT redStr, grnStr, bluStr from dbo.ColorTest\n" +
+			//    "WHERE id=" + currentID + ";";
+			//using (ServerInterface reader = new())
+			//{
+			//    reader.PerformQuery(sql);
+			//    if (reader.Read())
+			//    {
+			//        output = new List<int>
+			//    {
+			//        reader.GetInt32(0),
+			//        reader.GetInt32(1),
+			//        reader.GetInt32(2),
+			//    };
+			//    }
+			//    else
+			//    {
+			//        output = new List<int>
+			//    {
+			//        0, 0, 0
+			//    };
+			//    }
+			//}
+			//return output;
 
-            List<int> output;
-            String sql = "SELECT redStr, grnStr, bluStr from dbo.ColorTest\n" +
-                "WHERE id=" + currentID + ";";
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    if (reader.Read()) {
-                        output = new List<int>
-                        {
-                            reader.GetInt32(0),
-                            reader.GetInt32(1),
-                            reader.GetInt32(2),
-                        };
-                    } else
-                    {
-                        output = new List<int>
-                        {
-                            0, 0, 0
-                        };
-                    }
-				}
-            }
-            return output;
+			initializeId();
+			return getComponents(LlamaChartInterface.getIncludeColumn());
         }
 
-        public static bool setCurrentId(int id)
-        {
-            connect();
-
-			String sql = "SELECT * from dbo.ColorTest\n" +
-				"WHERE id=" + id + ";";
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
-			{
-				using (SqlDataReader reader = cmd.ExecuteReader())
-				{
-					if (reader.Read())
-					{
-                        currentID = id;
-                        return true;
-					}
-					else
-					{
-                        return false;
-					}
-				}
-			}
-        }
-
-        public static int getCurrentId()
+		public static List<int> getComponents(List<bool> includeElement)
 		{
-			return currentID;
-        }
-
-        public static List<int> getIDs()
-        {
-            connect();
-
+			initializeId();
 			List<int> output = new List<int>();
-            String sql = "SELECT id from dbo.ColorTest";
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
+			string sql = "SELECT * from dbo." + LlamaChartInterface.getDatabaseName() + "\n" +
+				"WHERE id=" + currentID + ";";
+			using (ServerInterface reader = new())
 			{
-				using (SqlDataReader reader = cmd.ExecuteReader())
-				{
-					while (reader.Read())
+				reader.PerformQuery(sql);
+                reader.Read();
+				for (int i = 0; ; i++)
+                {
+                    if (i >= includeElement.Count) break;
+                    if (includeElement[i])
                     {
-                        output.Add(reader.GetInt32(0));
+                        output.Add(reader.GetInt32(i));
                     }
-				}
+                }
 			}
-            return output;
+			return output;
 		}
 
-
-
-        public static List<string> getColors()
-        {
-			connect();
-
+		public static List<string> getComponentNames(List<bool> includeElement)
+		{
+			initializeId();
 			List<string> output = new List<string>();
-			String sql = "SELECT color from dbo.ColorTest";
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
+			string sql = "SELECT COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS\n"
+					+ "WHERE TABLE_NAME='" + LlamaChartInterface.getDatabaseName() + "';";
+			using (ServerInterface reader = new())
 			{
-				using (SqlDataReader reader = cmd.ExecuteReader())
+				reader.PerformQuery(sql);
+				for (int i = 0; reader.Read(); i++)
 				{
-					while (reader.Read())
+					if (i >= includeElement.Count)
+                    {
+                        includeElement.Add(false);
+                    }
+					if (includeElement[i])
 					{
 						output.Add(reader.GetString(0));
 					}
@@ -110,22 +89,121 @@ namespace LlamaLingo.Pages
 			return output;
 		}
 
-        public static string getThisColor()
-        {
-            connect();
-
-			String sql = "SELECT color from dbo.ColorTest\n"
-                + "WHERE id=" + currentID + ";";
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
+		public static List<string> getDatabaseComponentNames()
+		{
+			initializeId();
+			List<string> output = new List<string>();
+			string sql = "SELECT COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS\n"
+					+ "WHERE TABLE_NAME='" + LlamaChartInterface.getDatabaseName() + "';";
+			using (ServerInterface reader = new())
 			{
-				using (SqlDataReader reader = cmd.ExecuteReader())
+				reader.PerformQuery(sql);
+				for (int i = 0; reader.Read(); i++)
 				{
-					while (reader.Read())
-					{
-						return reader.GetString(0);
-					}
+				    output.Add(reader.GetString(0));
 				}
 			}
+			return output;
+		}
+
+		public static bool setCurrentId(int id)
+		{
+			initializeId();
+			string sql = "SELECT * from dbo." + LlamaChartInterface.getDatabaseName() + "\n" +
+				"WHERE id=" + id + ";";
+            using (ServerInterface reader = new ServerInterface())
+            {
+                reader.PerformQuery(sql);
+                if (reader.Read())
+                {
+                    currentID = id;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static int getCurrentId()
+		{
+			initializeId();
+			return currentID;
+        }
+
+        public static List<int> getIDs()
+		{
+			initializeId();
+			List<int> output = new List<int>();
+            string sql = "SELECT id from dbo." + LlamaChartInterface.getDatabaseName() + "";
+            using (ServerInterface reader = new ServerInterface())
+            {
+                reader.PerformQuery(sql);
+                while (reader.Read())
+                {
+                    output.Add(reader.GetInt32(0));
+                }
+            }
+            return output;
+		}
+
+
+
+        public static List<string> getColors()
+		{
+			initializeId();
+			string titleCol = "color";
+			string sql = "SELECT titleCol from dbo.ColorChartTitles\n" +
+				"WHERE tableName='" + LlamaChartInterface.getDatabaseName() + "';";
+			using (ServerInterface reader = new ServerInterface())
+			{
+				reader.PerformQuery(sql);
+				if (reader.Read())
+				{
+					titleCol = reader.GetString(0);
+				}
+			}
+
+			List<string> output = new List<string>();
+			sql = "SELECT " + titleCol + " from dbo." + LlamaChartInterface.getDatabaseName() + "";
+            using (ServerInterface reader = new ServerInterface())
+            {
+                reader.PerformQuery(sql);
+                while (reader.Read())
+                {
+                    output.Add(reader.GetString(0));
+                }
+            }
+			return output;
+		}
+
+        public static string getThisColor()
+        {
+            initializeId();
+
+            string titleCol = "color";
+            string sql = "SELECT titleCol from dbo.ColorChartTitles\n" +
+                "WHERE tableName='" + LlamaChartInterface.getDatabaseName() + "';";
+            using (ServerInterface reader = new ServerInterface())
+            {
+                reader.PerformQuery(sql);
+                if (reader.Read())
+                {
+                    titleCol = reader.GetString(0);
+                }
+            }
+
+            sql = "SELECT " + titleCol + " from dbo." + LlamaChartInterface.getDatabaseName() + "\n"
+                + "WHERE id=" + currentID + ";";
+            using (ServerInterface reader = new ServerInterface())
+            {
+                reader.PerformQuery(sql);
+                while (reader.Read())
+                {
+                    return reader.GetString(0);
+                }
+            }
             return "";
 		}
 
@@ -134,23 +212,26 @@ namespace LlamaLingo.Pages
             return componentNames;
         }
 
-        public static string connect()
+        public static string initializeId()
         {
-            if (isConnected)
+			if (idInitialized)
 			{
 				return "alreadyConnected";
 			}
 
-			SqlConnectionStringBuilder stringBuilder = new SqlConnectionStringBuilder();
-            stringBuilder.DataSource = "llamalingo.database.windows.net";
-            stringBuilder.UserID = "LlamaLingoLogin";
-            stringBuilder.Password = "UMDLlamaLingo4444";
-            stringBuilder.InitialCatalog = "LlamaLingoDB";
+			idInitialized = true;
 
-            conn = new SqlConnection(stringBuilder.ConnectionString);
-			conn.Open();
-            isConnected = true;
-            return "qepithim";
+			string sql = "SELECT MIN(id) from dbo." + LlamaChartInterface.getDatabaseName();
+			using (ServerInterface reader = new ServerInterface())
+			{
+				reader.PerformQuery(sql);
+				if (reader.Read())
+				{
+					currentID = reader.GetInt32(0);
+				}
+			}
+
+			return "qepithim";
 
 
 		}

@@ -4,9 +4,11 @@
 @inject NavigationManager NavManager;
 <!--@using Syncfusion.Blazor.Buttons;-->
 
-<PageTitle>Polar/Radar</PageTitle>
-<h2>Polar/Radar</h2>
+<PageTitle>Color Table</PageTitle>
+<h2>Color Table</h2>
 <br />
+
+<SfButton OnClick="ToColorTable">Back</SfButton>
 
 <SfNumericTextBox TValue="int?" Value=@id ShowSpinButton=false>
 	<NumericTextBoxEvents TValue="int?" ValueChange="@ValueChangeHandler"></NumericTextBoxEvents>
@@ -15,8 +17,6 @@ Your current ID is @currentId
 <SfGrid DataSource="colors"></SfGrid>
 
 @code {
-#nullable enable
-
 	public int id { get; set; }
 
 	public int currentId { get; set; }
@@ -54,17 +54,10 @@ Your current ID is @currentId
 		id = (int)args.Value;
 		Update();
 	}
+
+	public void ToColorTable()
+	{
+		NavManager.NavigateTo("/color-hub");
+
+	}
 }
-
-<style>
-	.content {
-		padding: 30px 30px 70px 30px;
-	}
-
-	.content-box {
-		height: 100%;
-		min-height: 400px;
-		overflow: auto;
-		border-radius: 20px;
-	}
-</style>

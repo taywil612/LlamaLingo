@@ -1,0 +1,140 @@
+﻿@page "/color-select"
+@using Syncfusion.Blazor.Charts;
+@using Syncfusion.Blazor.Notifications
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.DropDowns;
+@using Syncfusion.Blazor.Lists;
+@inject NavigationManager NavManager;
+
+<PageTitle>Color Select</PageTitle>
+<h2>Color Select</h2>
+<br />
+
+<SfTextBox Value="test" ValueChanged="@tableChanged">
+</SfTextBox>
+
+<SfButton OnClick="ToColorTable">Back</SfButton>
+<SfButton OnClick="NextDatapoint">Next Datapoint</SfButton>
+
+@if (false)
+{
+	<SfListView DataSource="@ChartData" ShowCheckBox=true>
+	<ListViewFieldSettings TValue="ChartDataModel" Text="name"></ListViewFieldSettings>
+</SfListView>
+}
+
+@for (int i = 0; i < ChartData.Count; i++)
+{
+	int x = i;
+	<br />
+	<input type="checkbox" checked="@ChartData[x].included" oninput="@(() => @InputTest(x))" />
+	@ChartData[x].name
+}
+
+@code {
+
+	public String title = "Ekrienne";
+
+	public class ChartDataModel
+	{
+		public string name { get; set; }
+		public bool included { get; set; }
+	}
+
+	public static List<ChartDataModel> ChartData = new List<ChartDataModel>
+	{
+	};
+
+	public static List<string> Names = new List<string> {
+		"Test",
+		"Test2",
+		"Test3"
+	};
+
+	public static List<bool> includeColumn = new List<bool>
+	{
+		false,
+		false,
+		true,
+		true,
+		false,
+		false
+	};
+
+	public void tableChanged(String newVal)
+	{
+		string sql = "SELECT TABLE_NAME from INFORMATION_SCHEMA.TABLES\n"
+					+ "WHERE TABLE_NAME='" + newVal + "';";
+		using (ServerInterface reader = new())
+		{
+			reader.PerformQuery(sql);
+			if (!reader.Read())
+			{
+				return;
+			}
+		}
+
+		LlamaChartInterface.setDatabaseName(newVal);
+
+		OnInitialized();
+	}
+
+
+
+
+	public void InputTest(int x)
+	{
+		ChartData[x].included = !ChartData[x].included;
+
+		var components = new List<bool>();
+		for (int i = 0; i < ChartData.Count; i++)
+		{
+			components.Add(ChartData[i].included);
+		}
+		LlamaChartInterface.setIncludeColumn(components);
+
+		string sql = "UPDATE ColorChartInfo "
+				+ "SET includeCol = " + (ChartData[x].included ? 1 : 0) + " "
+				+ "WHERE tableName = '" + LlamaChartInterface.getDatabaseName() + "' "
+				+ "AND colNum = " + x + ";";
+		using (ServerInterface reader = new())
+		{
+			reader.PerformQuery(sql);
+		}
+	}
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+
+		var components = LlamaChartInterface.getIncludeColumn();
+		var componentNames = ColorManage.getDatabaseComponentNames();
+		List<ChartDataModel> NewChartData = new List<ChartDataModel>();
+		for (int i = 0; i < componentNames.Count; i++)
+		{
+			bool component = (i >= components.Count ? false : components[i]);
+			NewChartData.Add(new ChartDataModel { name = componentNames[i], included = component });
+		}
+		ChartData = NewChartData;
+		//title = ColorManage.getThisColor() + " (ID " + ColorManage.getCurrentId() + ")";
+	}
+
+	public void ToColorTable()
+	{
+		// var components = new List<bool>();
+		// for (int i = 0; i < ChartData.Count; i++)
+		// {
+		// 	components.Add(ChartData[i].included);
+		// }
+		// LlamaChartInterface.setIncludeColumn(components);
+		NavManager.NavigateTo("/color-hub");
+
+	}
+
+	public void NextDatapoint()
+	{
+		ColorManage.setCurrentId(NextItem.GetNextID(ColorManage.getCurrentId()));
+		OnInitialized();
+	}
+}

@@ -6,8 +6,8 @@
 @using Syncfusion.Blazor.DropDowns;
 @inject NavigationManager NavManager;
 
-<PageTitle>Polar/Radar</PageTitle>
-<h2>Polar/Radar</h2>
+<PageTitle>Color Chart</PageTitle>
+<h2>Color Chart</h2>
 <br />
 
 <SfButton OnClick="ToColorTable">Back</SfButton>
@@ -53,41 +53,33 @@
 		"Test3"
 	};
 
+	public static List<bool> includeColumn = LlamaChartInterface.getIncludeColumn();
+
 	protected override void OnInitialized()
 	{
 		base.OnInitialized();
-		var components = ColorManage.getComponents();
-		var componentNames = ColorManage.getComponentNames();
+		includeColumn = LlamaChartInterface.getIncludeColumn();
+
+		var components = ColorManage.getComponents(includeColumn);
+		var componentNames = ColorManage.getComponentNames(includeColumn);
+		List<ChartDataModel> NewChartData = new List<ChartDataModel>();
 		for (int i = 0; i < components.Count; i++)
 		{
-			ChartData.Add(new ChartDataModel { Month = componentNames[i], Temperature = components[i] });
-			ChartData.Remove(ChartData[0]);
+			NewChartData.Add(new ChartDataModel { Month = componentNames[i], Temperature = components[i] });
 		}
+		ChartData = NewChartData;
 		title = ColorManage.getThisColor() + " (ID " + ColorManage.getCurrentId() + ")";
 	}
 
 	public void ToColorTable()
 	{
-		NavManager.NavigateTo("/color-table");
+		NavManager.NavigateTo("/color-hub");
 
 	}
 
 	public void NextDatapoint()
 	{
-		ColorManage.setCurrentId(ColorManage.getCurrentId() + 1);
+		ColorManage.setCurrentId(NextItem.GetNextID(ColorManage.getCurrentId()));
 		OnInitialized();
 	}
 }
-
-<style>
-	.content {
-		padding: 30px 30px 70px 30px;
-	}
-
-	.content-box {
-		height: 100%;
-		min-height: 400px;
-		overflow: auto;
-		border-radius: 20px;
-	}
-</style>

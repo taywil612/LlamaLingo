@@ -39,4 +39,10 @@
     <Folder Include="wwwroot\images\pdf\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Pages\NewCharts\FunnelChart.razor" />
+    <None Include="Pages\NewCharts\PieChart.razor" />
+    <None Include="Pages\NewCharts\PyramidChart.razor" />
+  </ItemGroup>
+
 </Project>
