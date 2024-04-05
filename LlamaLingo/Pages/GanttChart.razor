@@ -4,10 +4,10 @@
 @inject DbContext db;
 @inject SelectedInfo SelectedInfo;
 
-<div class="page-heading">
+@* <div class="page-heading">
 	<h3 class="header">Project: @ProjectName</h3>
 	<p class="subtitle"><a href="">Home</a> / Gantt Chart</p>
-</div>
+</div> *@
 
 <div class="content-box shadow">
 	@if (IsLoading)
@@ -69,14 +69,10 @@
 </div>
 
 <style>
-	.content {
-		padding: 30px;
-	}
-
 	.content-box {
 		height: 100%;
 		min-height: 400px;
 		overflow: auto;
-		border-radius: 20px;
+		border-radius: 0px;
 	}
 </style>
