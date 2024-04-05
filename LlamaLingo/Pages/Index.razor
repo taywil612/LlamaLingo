@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="footer-button-container">
-                <button class="footer-button start-menu-button" disabled="@(!RoleSet)" @onclick="@(()=>_nav.NavigateTo(Page))" style="@(!RoleSet ? "background-color: #6c757d9c; background-blend-mode: color-burn; transform: unset;" : "")"></button>
+                <button class="footer-button start-menu-button" disabled="@(!RoleSet)" @onclick="@(()=>_nav.NavigateTo(Page))" style="@(!RoleSet ? "background-color: #6c757d9c; background-blend-mode: color-burn; transform: unset; border-color: black;" : "")"></button>
                 <button class="footer-button video-button" @onclick="@(()=>_nav.NavigateTo("/Video"))"></button>
                 <button class="footer-button audio-button" @onclick="@(()=>_nav.NavigateTo("/Audio"))"></button>
                 <button class="footer-button project-button" @onclick="@(()=>_nav.NavigateTo("/Instruction_Manual"))"></button>
@@ -71,13 +71,13 @@
     }
 
     .community-button{
-        width: 234px;
-        height: 62px;
+        width: 247px;
+        height: 69px;
         border-radius: 10px;
         position: relative;
-        top: 202px;
-        left: 73px;
-        background-image: url("../images/buttons/Btn_Luster_Community.png")
+        top: 198px;
+        left: 65px;
+        background-image: url(../images/buttons/Btn_Luster_Community.png);
     }
 
     .message-panel{
@@ -85,7 +85,7 @@
         height: 319px;
         border-radius: 5px;
         position: relative;
-        top: -206px;
+        top: -213px;
         left: 352px;
         padding: 10px;
         color: black;
@@ -98,33 +98,33 @@
     }
 
     .side-button{
-        width: 232px;
-        height: 95px;
+        width: 250px;
+        height: 105px;
         border-radius: 10px;
         position: relative;
     }
 
     .memo-button{
-		top: -310px;
-		left: 1059px;
-        background-image: url("../images/buttons/Btn_Luster_Memo.png")
+        top: -322px;
+        left: 1048px;
+        background-image: url(../images/buttons/Btn_Luster_Memo.png);
     }
 
     .chat-button{
-        top: -191px;
-        left: 823px;
-        background-image: url("../images/buttons/Btn_Luster_Chat.png")
+        top: -203px;
+        left: 794px;
+        background-image: url(../images/buttons/Btn_Luster_Chat.png);
     }
 
     .footer-button-container{
         position: relative;
-        top: -416px;
-        left: 375px;
+        top: -437px;
+        left: 369px;
     }
 
     .footer-button{
-        width: 183px;
-        height: 80px;
+        width: 192px;
+        height: 88px;
         border-radius: 10px;
         position: relative;
     }
@@ -132,26 +132,26 @@
     .start-menu-button{
         top: 269px;
         left: -290px;
-		background-image: url("../images/buttons/Btn_Luster_Start.png");
+        background-image: url(../images/buttons/Btn_Luster_Start.png);
     }
 
     .video-button, .audio-button, .project-button{
-        top: 272px;
+        top: 271px;
     }
 
     .video-button{
-        left: -247px;
-        background-image: url("../images/buttons/Btn_Luster_Video.png")
+        left: -256px;
+        background-image: url(../images/buttons/Btn_Luster_Video.png);
     }
 
     .audio-button{
-        left: -204px;
-        background-image: url("../images/buttons/Btn_Luster_Audio.png")
+        left: -221px;
+        background-image: url(../images/buttons/Btn_Luster_Audio.png);
     }
 
     .project-button{
-        left: -161px;
-        background-image: url("../images/buttons/Btn_Luster_PDF.png")
+        left: -186px;
+        background-image: url(../images/buttons/Btn_Luster_PDF.png);
     }
 
     .community-button:hover, .side-button:hover, .footer-button:hover{

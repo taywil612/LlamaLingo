@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Pef3zb0+HdKvkqVYZMa2PdUfDzrDSAgDwF2bw/f5kmk=",
+  "Hash": "BbYPAcJ7B2zVUosW9/g1krUUMydEp/pZe1DLc53vEkI=",
   "Source": "LlamaLingo",
   "BasePath": "_content/LlamaLingo",
   "Mode": "Default",
@@ -2259,6 +2259,25 @@
       "OriginalItemSpec": "wwwroot\\Cache\\designer_f4716bac-c52b-4bd4-b2d7-07760b7c1f59\\Untitled1.rdl"
     },
     {
+      "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_fd0bd083-4bf9-44ec-aec6-90dea96835ba\\designer_fd0bd083-4bf9-44ec-aec6-90dea96835ba_setting.txt",
+      "SourceId": "LlamaLingo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\",
+      "BasePath": "_content/LlamaLingo",
+      "RelativePath": "Cache/designer_fd0bd083-4bf9-44ec-aec6-90dea96835ba/designer_fd0bd083-4bf9-44ec-aec6-90dea96835ba_setting.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Cache\\designer_fd0bd083-4bf9-44ec-aec6-90dea96835ba\\designer_fd0bd083-4bf9-44ec-aec6-90dea96835ba_setting.txt"
+    },
+    {
       "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_fd9cd71f-9db8-4332-a500-0d67865499bb\\designer_fd9cd71f-9db8-4332-a500-0d67865499bb_setting.txt",
       "SourceId": "LlamaLingo",
       "SourceType": "Discovered",
@@ -2276,6 +2295,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Cache\\designer_fd9cd71f-9db8-4332-a500-0d67865499bb\\designer_fd9cd71f-9db8-4332-a500-0d67865499bb_setting.txt"
+    },
+    {
+      "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_ff3cee17-0359-4d2a-9d83-9f788e7e6a06\\designer_ff3cee17-0359-4d2a-9d83-9f788e7e6a06_setting.txt",
+      "SourceId": "LlamaLingo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\",
+      "BasePath": "_content/LlamaLingo",
+      "RelativePath": "Cache/designer_ff3cee17-0359-4d2a-9d83-9f788e7e6a06/designer_ff3cee17-0359-4d2a-9d83-9f788e7e6a06_setting.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Cache\\designer_ff3cee17-0359-4d2a-9d83-9f788e7e6a06\\designer_ff3cee17-0359-4d2a-9d83-9f788e7e6a06_setting.txt"
     },
     {
       "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
