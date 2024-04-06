@@ -867,3 +867,4 @@ C:\CIS4851\LlamaLingo\LlamaLingo\obj\Debug\net7.0\refint\LlamaLingo.dll
 C:\CIS4851\LlamaLingo\LlamaLingo\obj\Debug\net7.0\LlamaLingo.pdb
 C:\CIS4851\LlamaLingo\LlamaLingo\obj\Debug\net7.0\LlamaLingo.genruntimeconfig.cache
 C:\CIS4851\LlamaLingo\LlamaLingo\obj\Debug\net7.0\ref\LlamaLingo.dll
+C:\Users\JXEli\Documents\GitHub\LlamaLingo\LlamaLingo\bin\Debug\net7.0\Syncfusion.Blazor.Diagram.dll

@@ -35,16 +35,16 @@
     background-size: cover;
 }
 
+    .button-container button:hover{
+        box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        transform: scale(.85);
+    }
+
 .buttonMenu01 {
     top: 375px;
     left: 320px;
     margin: 10px;
 }
-
-    .buttonMenu01:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
 
 .buttonMenu02 {
     top: 545px;
@@ -52,23 +52,11 @@
     margin: 10px;
 }
 
-    .buttonMenu02:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
-
 .buttonMenu03 {
     top: 715px;
     left: 320px;
     margin: 10px;
 }
-
-    .buttonMenu03:hover {
-        box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        transform: scale(.85);
-    }
-
-
 
 /*Report Button in Academy*/
 .buttonMenu09 {

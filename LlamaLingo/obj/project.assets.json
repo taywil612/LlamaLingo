@@ -1548,6 +1548,31 @@
           }
         }
       },
+      "Syncfusion.Blazor.Diagram/23.1.43": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Blazor.Core": "23.1.43",
+          "Syncfusion.Blazor.Data": "23.1.43",
+          "Syncfusion.Blazor.Navigations": "23.1.43",
+          "Syncfusion.Blazor.Popups": "23.1.43"
+        },
+        "compile": {
+          "lib/net7.0/Syncfusion.Blazor.Diagram.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Syncfusion.Blazor.Diagram.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Blazor.Diagram.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Syncfusion.Blazor.Diagram.props": {}
+        }
+      },
       "Syncfusion.Blazor.DropDowns/23.1.43": {
         "type": "package",
         "dependencies": {
@@ -5576,6 +5601,29 @@
         "syncfusion_logo.png"
       ]
     },
+    "Syncfusion.Blazor.Diagram/23.1.43": {
+      "sha512": "oUxNU5AAPGyiZNXvfxrRof1bAzUp7scqrrnTnQIXhRcSTVyAtCwGaHRg8ANbJNshkhBT8duHtYSJGVh7sLfAyQ==",
+      "type": "package",
+      "path": "syncfusion.blazor.diagram/23.1.43",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Syncfusion.Blazor.Diagram.props",
+        "buildMultiTargeting/Syncfusion.Blazor.Diagram.props",
+        "buildTransitive/Syncfusion.Blazor.Diagram.props",
+        "lib/net6.0/Syncfusion.Blazor.Diagram.dll",
+        "lib/net6.0/Syncfusion.Blazor.Diagram.xml",
+        "lib/net7.0/Syncfusion.Blazor.Diagram.dll",
+        "lib/net7.0/Syncfusion.Blazor.Diagram.xml",
+        "staticwebassets/scripts/sf-diagramcomponent.min.js",
+        "syncfusion.blazor.diagram.23.1.43.nupkg.sha512",
+        "syncfusion.blazor.diagram.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
     "Syncfusion.Blazor.DropDowns/23.1.43": {
       "sha512": "980ooNvUhSZpphm3cAqkBkVJVac/6ShQNhZVTlEB3qS5lw4xrelXuzrnaEk/FfM+qEuCya+8MnxEBIWPUdnDNA==",
       "type": "package",
@@ -8482,6 +8530,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.13",
       "Syncfusion.Blazor.Charts >= 23.1.43",
+      "Syncfusion.Blazor.Diagram >= 23.1.43",
       "Syncfusion.Blazor.Gantt >= 23.1.43",
       "Syncfusion.Blazor.Grid >= 23.1.43",
       "Syncfusion.Blazor.Layouts >= 23.1.43",
@@ -8559,6 +8608,10 @@
             "version": "[7.0.13, )"
           },
           "Syncfusion.Blazor.Charts": {
+            "target": "Package",
+            "version": "[23.1.43, )"
+          },
+          "Syncfusion.Blazor.Diagram": {
             "target": "Package",
             "version": "[23.1.43, )"
           },

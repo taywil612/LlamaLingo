@@ -1,0 +1,263 @@
+﻿@page "/Charts"
+@using Syncfusion.Blazor.Diagram
+@using Syncfusion.Blazor.Charts
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Navigations
+@using System.Text.Json;
+@using System.IO;
+@using System.Text.Json.Serialization;
+@inject IJSRuntime JS;
+@inject DbContext db;
+@inject SelectedInfo SelectedInfo
+
+    <div class="toolbar-container">
+        <SfToolbar CssClass="template" OverflowMode=OverflowMode.Popup>
+		    <ToolbarItems>
+                <ToolbarItem Align="ItemAlign.Left" Type="ItemType.Input">
+                    <Template>
+                    </Template>
+                </ToolbarItem>
+            </ToolbarItems>
+        </SfToolbar>
+    </div>
+    <SfDiagramComponent @ref="@diagram" Height="1060px" Width="100%" Nodes="@nodes" Created="OnCreated">
+        <SnapSettings Constraints="SnapConstraints.ShowLines">
+        </SnapSettings>
+        <ScrollSettings EnableAutoScroll="true">
+        </ScrollSettings>
+        <DiagramTemplates>
+            <NodeTemplate>
+                @{
+                        var id = (context as Node).ID;
+                        if (id == "pieChartNode")
+                        {
+                            <div id="pieChart" style="height:100%; width:49%; overflow:hidden;float:left;" margin="20px">
+
+								@if (weeklyPypeDetails != null && weeklyPypeDetails.Count != 0)
+								{
+									<SfAccumulationChart Title="Pie Chart" Height="430px" Width="430px" EnableAnimation="true" EnableSmartLabels="true" Theme="@Theme">
+										<AccumulationChartSeriesCollection>
+											@foreach (var item in weeklyPypeDetails)
+											{
+												<AccumulationChartSeries Type="AccumulationType.Pie" DataSource="@item" XName="ElementLabel" YName="ChartData1">
+													<AccumulationDataLabelSettings Visible="true" Name="ElementType" Position="AccumulationLabelPosition.Outside">
+														<AccumulationChartConnector Length="10%"></AccumulationChartConnector>
+														<AccumulationChartDataLabelFont Size="14px" FontFamily="Helvetica"></AccumulationChartDataLabelFont>
+													</AccumulationDataLabelSettings>
+												</AccumulationChartSeries>
+											}
+										</AccumulationChartSeriesCollection>
+										<AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+										<AccumulationChartLegendSettings Visible="true"></AccumulationChartLegendSettings>
+									</SfAccumulationChart>
+								}
+                            </div>
+                        }
+                        else if (id == "barChartNode")
+                        {
+					        <div id="barChart">
+						        @if (weeklyPypeDetails != null)
+						        {
+                                    <SfChart EnableAnimation="true" Width="512px" Height="408" Title="Bar Chart">
+                                            <ChartSeriesCollection>
+                                                <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category">
+                                                    <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+                                                    <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
+                                                </ChartPrimaryXAxis>
+                                                <ChartPrimaryYAxis LabelFormat="{value}" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
+                                                    <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
+                                                    <ChartAxisLineStyle Width="0"></ChartAxisLineStyle>
+                                                </ChartPrimaryYAxis>
+
+                                                    @foreach (var item in weeklyPypeDetails)
+                                                    {
+                                                        <ChartSeries Type="ChartSeriesType.Bar" DataSource="@item" DrawType="ChartDrawType.Line" Name="@item.First().NounLabel" XName="ElementLabel" YName="ChartData1" Width="2" ColumnSpacing="0.1"></ChartSeries>
+                                                    }
+                                            </ChartSeriesCollection>
+                                            <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+                                    </SfChart>
+                                }
+						    </div>
+                        }
+                        if (id == "pyramidChartNode")
+                        {
+                            <div class="pyramid-chart">
+								@if (weeklyPypeDetails != null && weeklyPypeDetails.Count != 0)
+								{
+                                   <SfAccumulationChart Title="Pyramid Chart" Height="408px" Width="512px" EnableAnimation="true" EnableSmartLabels="true" Theme="@Theme">
+										<AccumulationChartSeriesCollection>
+                                        @foreach (var item in weeklyPypeDetails)
+                                        {
+											<AccumulationChartSeries Type="AccumulationType.Pyramid" DataSource="@item" XName="ElementLabel" YName="ChartData1" Radius="83%" StartAngle="0" EndAngle="360" InnerRadius="50%">
+												<AccumulationDataLabelSettings Visible="true" Name="ElementType" Position="AccumulationLabelPosition.Outside">
+													<AccumulationChartConnector Length="10%"></AccumulationChartConnector>
+													<AccumulationChartDataLabelFont Size="14px" FontFamily="Roboto"></AccumulationChartDataLabelFont>
+												</AccumulationDataLabelSettings>
+											</AccumulationChartSeries>
+                                        }
+										</AccumulationChartSeriesCollection>
+										<AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+										<AccumulationChartLegendSettings Visible="true"></AccumulationChartLegendSettings>
+									</SfAccumulationChart>
+								}
+                            </div>
+                        }
+                        if(id == "funnelChartNode")
+                        {
+                            <div class="funnel-chart">
+								@if (weeklyPypeDetails != null && weeklyPypeDetails.Count != 0)
+								{
+                                    <SfAccumulationChart Title="Funnel Chart" Height="408px" Width="512px" EnableAnimation="true" EnableSmartLabels="true" Theme="@Theme">
+										<AccumulationChartSeriesCollection>
+                                        @foreach (var item in weeklyPypeDetails)
+                                        {
+											<AccumulationChartSeries Type="AccumulationType.Funnel" DataSource="@item" XName="ElementLabel" YName="ChartData1" Radius="83%" StartAngle="0" EndAngle="360" InnerRadius="50%">
+												<AccumulationDataLabelSettings Visible="true" Name="ElementType" Position="AccumulationLabelPosition.Outside">
+													<AccumulationChartConnector Length="10%"></AccumulationChartConnector>
+													<AccumulationChartDataLabelFont Size="14px" FontFamily="Roboto"></AccumulationChartDataLabelFont>
+												</AccumulationDataLabelSettings>
+											</AccumulationChartSeries>
+                                        }
+										</AccumulationChartSeriesCollection>
+										<AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+										<AccumulationChartLegendSettings Visible="true"></AccumulationChartLegendSettings>
+									</SfAccumulationChart>
+								}
+                            </div>
+                        }
+                        if(id == "radarChartNode")
+                        {
+					        <div class="radar-chart">
+						        @if (weeklyPypeDetails != null)
+						        {
+                                    <SfChart Title="Radar Chart" Width="512px" Height="408px" EnableAnimation="true" Theme="Theme.Fluent">
+                                        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+                                        <ChartSeriesCollection>
+
+                                                @foreach (var item in weeklyPypeDetails)
+                                                {
+                                                    <ChartSeries DataSource="@item" Type="ChartSeriesType.Radar" Name="@item.First().NounLabel" XName="ElementLabel" YName="ChartData1"></ChartSeries>
+                                                }
+
+                                        </ChartSeriesCollection>
+                                        <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+                                        <ChartZoomSettings EnableSelectionZooming="true"></ChartZoomSettings>
+                                    </SfChart>
+                                }
+                            </div>
+                        }
+                        if (id == "numberOfEntriesNode")
+                        {
+                            <div>
+                                <div class="e-card card">
+                                    <div class="e-card-content">
+                                        <h2 class="card-value" id="tolentries">@(weeklyPypeDetails != null ? totalEntries : "N/A")</h2>
+                                        <span class="card-text">Entries</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else if (id == "weekCountNode")
+                        {
+                            <div>
+                                <div class="e-card card">
+                                    <div class="e-card-content">
+                                        <h2 class="card-value" id="tolweeks">@(WeekIds != null ? WeekIds.Count : "N/A")</h2>
+                                        <span class="card-text">Weeks</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else if (id == "weekNode")
+                        {
+                            <div class="e-card card">
+                                <div class="e-card-content">
+                                    <h2 class="card-value" id="current-week">@(weeklyPypeDetails != null ? selectedWeek : "N/A" )</h2>
+                                    <span class="card-text">Current Week Selected</span>	
+                                    <SfDropDownList CssClass="week-dropdown" TItem="int" TValue="int" PopupHeight="230px" PopupWidth="230px" DataSource="@WeekIds" AllowFiltering="true">
+                                        <DropDownListEvents TItem="int" TValue="int" ValueChange="ChangeWeek" />
+									    <DropDownListFieldSettings Text="WeekId" Value="WeekId" />
+									</SfDropDownList>
+                                </div>
+                            </div>
+                        }
+                    }
+                </NodeTemplate>
+            </DiagramTemplates>
+        </SfDiagramComponent>
+
+<style>
+    #swLNI_content .e-accumulationchart{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #barChart text, #pieChart text, .funnel-chart text, .radar-chart text, .pyramid-chart text{
+        font-family: 'Helvetica' !important;
+    }
+
+    .week-dropdown {
+        width: 65px !important;
+        position: absolute !important;
+        top: 60px;
+        right: 6px;
+    }
+
+    .toolbar-container .e-btn.e-outline.e-primary, .toolbar-container .e-css.e-btn.e-outline.e-primary {
+        background: rgba(0, 0, 0, 0);
+        border: none;
+        color: #212529;
+        padding: 4px;
+        font-size: 16px;
+        min-height: 38px;
+        min-width: 38px;
+        padding: 0 8px;
+        line-height: 24px;
+        font-weight: 400;
+        border-radius: 4px;
+    }
+
+        .toolbar-container .e-btn.e-outline.e-primary:hover, .toolbar-container .e-css.e-btn.e-outline.e-primary:hover {
+            background: #5c636a;
+            border: none;
+            color: #fff;
+        }
+
+    .template .e-input-group-icon.e-search {
+        line-height: 2.2;
+    }
+
+    .tailwind .template .e-input-group-icon.e-search,
+    .tailwind-dark .template .e-input-group-icon.e-search {
+        line-height: 1;
+        padding: 4px;
+    }
+
+    .template.e-toolbar .e-toolbar-pop .e-pv-comment-icon,
+    .template.e-toolbar .e-toolbar-pop .e-annotation-edit {
+        padding-top: 4px !important;
+    }
+
+    .fluent .template .e-input-group:not(.e-success):not(.e-warning):not(.e-error),
+    .fluent .template .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) {
+        border-color: #c8c6c4;
+    }
+
+    .template.e-toolbar .total-page {
+        padding-left: 4px;
+        cursor: default;
+        font-size: 14px;
+    }
+
+    .template.e-toolbar .e-toolbar-pop {
+        overflow: auto;
+    }
+
+        .template.e-toolbar .e-toolbar-pop .page-count,
+        .template.e-toolbar .e-toolbar-pop .selection-tool,
+        .template.e-toolbar .e-toolbar-pop .pan-mode,
+        .template.e-toolbar .e-toolbar-pop .percentage {
+            display: none;
+        }
+</style>

@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[23.1.43, )"
             },
+            "Syncfusion.Blazor.Diagram": {
+              "target": "Package",
+              "version": "[23.1.43, )"
+            },
             "Syncfusion.Blazor.Gantt": {
               "target": "Package",
               "version": "[23.1.43, )"

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nV2MAi/+gp4N3vuivA1lKx/s/P8N2EyMJADfKDMHraEVaPNqlMmUOI6TVRDk76dVIBDXGByqNtZKZ17zg8OZ+g==",
+  "dgSpecHash": "e4eCAcYzSLkwk0729smKh/ljdcs1yFRVFAGq0HVJXNORJ9uWbQgJ2eJbQKIp32D8wfuZLnay4pEwXgYxUi2QZg==",
   "success": true,
   "projectFilePath": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\LlamaLingo.csproj",
   "expectedPackageFiles": [
@@ -90,6 +90,7 @@
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.core\\23.1.43\\syncfusion.blazor.core.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.data\\23.1.43\\syncfusion.blazor.data.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.datavizcommon\\23.1.43\\syncfusion.blazor.datavizcommon.23.1.43.nupkg.sha512",
+    "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.diagram\\23.1.43\\syncfusion.blazor.diagram.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.dropdowns\\23.1.43\\syncfusion.blazor.dropdowns.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.gantt\\23.1.43\\syncfusion.blazor.gantt.23.1.43.nupkg.sha512",
     "C:\\Users\\JXEli\\.nuget\\packages\\syncfusion.blazor.grid\\23.1.43\\syncfusion.blazor.grid.23.1.43.nupkg.sha512",
