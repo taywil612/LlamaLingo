@@ -1,6 +1,8 @@
 using LlamaLingo.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,8 +18,9 @@ namespace LlamaLingo.Pages
 		[SupplyParameterFromQuery]
 		public int? pid { get; set; }
 
-		private readonly string sqlServerconnectionString = "Server=tcp:llamalingo.database.windows.net,1433;Initial Catalog=LlamaLingoDB;Persist Security Info=False;User ID=LlamaLingoLogin;Password=UMDLlamaLingo4444;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
+        private static readonly IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
+        private readonly string sqlServerconnectionString = config.GetConnectionString("DatabaseConnection");
+        
 		public int id = 0;
 		public string description = "Description of Nova";
 		public string type = "test";
@@ -308,18 +311,27 @@ namespace LlamaLingo.Pages
 		}
 
 
-		protected override void OnInitialized()   // Override the OnInitialized method
+		protected override System.Threading.Tasks.Task OnInitializedAsync() // Override the OnInitialized method
 		{
-			novas = db.Novas.ToList();
-			pypes = db.Pypes.ToList();
+			try
+			{
+				novas = db.Novas.ToList();
+				pypes = db.Pypes.ToList();
 
-			subjects = db.Nouns.ToList();
-			actions = db.Verbs.ToList();
-			objects = db.Nouns.ToList();
+				subjects = db.Nouns.ToList();
+				actions = db.Verbs.ToList();
+				objects = db.Nouns.ToList();
 
-			Read("CRUD_Noun", "Subject");
-			Read("CRUD_Verb", "Action");
-			Read("CRUD_Noun", "Object");
+				Read("CRUD_Noun", "Subject");
+				Read("CRUD_Verb", "Action");
+				Read("CRUD_Noun", "Object");
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
+
+			return System.Threading.Tasks.Task.CompletedTask;
 		}
 
 	}

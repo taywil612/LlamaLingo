@@ -11,9 +11,11 @@ namespace LlamaLingo.Pages
 	public partial class GanttChart
     {
         private bool IsLoading { get; set; } = true;
-        private string ProjectName { get; set; } = "";
+		private string ProjectName { get; set; } = "";
+		private DateTime ProjectStartDate { get; set; }
+		private DateTime ProjectEndDate { get; set; }
 
-        private string DurationUnit { get; set; } = "minutes";
+		private string DurationUnit { get; set; } = "minutes";
 
         private List<GanttTaskLoad> ganttTaskList;
 
@@ -29,15 +31,17 @@ namespace LlamaLingo.Pages
 
 		protected override async System.Threading.Tasks.Task OnInitializedAsync()
 		{
-            if(SelectedPod.CurrentPod != null)
+            if(SelectedInfo.CurrentPod != null)
             {
                 try
                 {
-                    ganttTaskList = await BuildGanttTree(SelectedPod.CurrentPod.PodId);
+                    ganttTaskList = await BuildGanttTree(SelectedInfo.CurrentPod.PodId);
 
-                    ProjectName = ganttTaskList.First().ProjectName;
-                }
-                catch(Exception ex)
+					ProjectName = ganttTaskList.First().ProjectName;
+					ProjectStartDate = ganttTaskList.First().BaselineStartDate;
+					ProjectEndDate = ganttTaskList.First().BaselineEndDate;
+				}
+				catch (Exception ex)
                 {
 				    Console.WriteLine($"Error: {ex.Message}");
 			    }
@@ -56,12 +60,10 @@ namespace LlamaLingo.Pages
             {
                 task.SubTasks =  allTasks.Where(s => s.Parentid == task.Id && s.Id != s.Parentid).ToList();
 
-				//Set random values for testing purposes.
-				// {
-				task.Duration = "1";
-                
-                task.Progress = "1";
-                // }
+                if(task.Id.ToString() == task.Predecessor)
+                {
+                    task.Predecessor = "";
+                }
             }
 
             //Create a list of only parent tasks.

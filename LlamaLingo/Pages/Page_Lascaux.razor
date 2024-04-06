@@ -3,7 +3,7 @@
 @inject NavigationManager _nav
 @layout MainLayout
 
-<div class="page-heading">
+@* <div class="page-heading">
 	<div class="header-info">
 		<div class="page-info">
 			<h3 class="header">Lascaux</h3>
@@ -14,7 +14,7 @@
 		</div>
 	</div>
 </div>
-
+ *@
 
 <div class="content-box shadow" style="overflow: hidden !important">
 	<div class="content-box">
@@ -22,7 +22,7 @@
 
 		<style>
 			.component-page {
-				background: url(images/BG/Lascaux.png)no-repeat;
+					background: url("https://llamalingostorage.blob.core.windows.net/images/images/BG/Lascaux.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")no-repeat;
 			}
 
 			.component-page button {
@@ -41,8 +41,24 @@
 				transition-duration: .60s;
 			}
 
+			.content {
+				background-color: black;
+			}
+
+			.content-box {
+				background-color: black;
+				height: 901px;
+				width: 1431px;
+				max-width: 1431px;
+				max-height: 901px;
+				border-radius: unset;
+				overflow: hidden;
+				border: none;
+			}
+
+				
 			.buttonA {
-				background-image: url("Images/buttons/btnArtifactA.png");
+				background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/btnArtifactA.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
 				background-size: cover;
 				box-shadow: 0 30px 60px rgba(0,0,0,.5);
 			}
@@ -72,10 +88,9 @@
 				color: #FF0000;
 				position: absolute;
 				opacity: 75%;
-				background-image: url("Images/GUI/DC_GUI_user_Direction.png");
+				background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/GUI/DC_GUI_user_Direction.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
 				background-size: cover;
 			}
-
 
 			boxbuttons {
 				padding: 0;
@@ -88,10 +103,11 @@
 				color: #FF0000;
 				position: absolute;
 				opacity: 100%;
-				background-image: url("Images/GUI/DC_GUI_user_Question.png");
+				background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/GUI/DC_GUI_user_Question.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
 				background-size: cover;
 			}
 
+				
 			.exhibitPanel {
 				position: absolute;
 				top: 370px;
@@ -137,17 +153,17 @@
 
 
 		<h4 style="
-				color: darkgray;
-				top: 36px;
-				left: 1070px;
-				position: absolute">
+			color: white;
+			top: 79px;
+			left: 1128px;
+			position: relative;">
 			P.O.D.# @pod
 		</h4>
 		<h4 style="
-				color: darkgray;;
-				top: 67px;
-				left: 1070px;
-				position: absolute">
+			color: white;
+			top: 8px;
+			left: 1128px;
+			position: relative;">
 			Person ID: @pid
 		</h4>
 
@@ -162,9 +178,9 @@
 		@if (filterType != "Nova")
 		{
 			<select style="
-				top: 122px;
-				left: 1130px;
-				position: absolute" @bind=selectedId>
+				top: -31px;
+				left: 1290px;
+				position: relative;" @bind=selectedId>
 				@foreach (var nova in novas)
 				{
 					<option value="@nova.NovaId"> @nova.NovaId</option>
@@ -222,35 +238,38 @@
 		<!-- ************************************************************************************ -->
 
 		<button style="
-				width:150px;
-				height:60px;
-				top:660px;
-				left:40px;
-				background-color:white;
+				width: 150px;
+				height: 60px;
+				top: 698px;
+				left: 72px;
+				background-color: white;
 				opacity: 20%;
-				border-radius:8px;"
+				border-radius: 8px;
+				position: relative;"
 				@onclick="GoToPreviousNova">	
 		</button>
 
 		<button style="
-				width:150px;
-				height:60px;
-				top:660px;
-				left:1210px;
-				background-color:white;
+				width: 150px;
+				height: 60px;
+				top: 699px;
+				left: 989px;
+				background-color: white;
 				opacity: 20%;
-				border-radius:8px;"
+				border-radius: 8px;
+				position: relative;"
 				@onclick="GoToNextNova">	
 		</button>
 
 		<button style="
-				width:80px;
-				height:40px;
-				top:580px;
-				left:1180px;
-				background-color:white;
-				opacity: 20%;
-				border-radius:8px;"
+				width: 80px;
+				height: 40px;
+				top: 36px;
+				left: 872px;
+				background-color: white;
+				opacity: 50%;
+				border-radius: 8px;
+				position: relative;"
 				@onclick="@(() => _nav.NavigateTo("/"+prevPage+"?pod="+pod+"&pid="+pid))">
 			Return
 		</button>

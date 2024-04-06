@@ -1,12 +1,13 @@
-﻿@page "/GanttChart"
+﻿@page "/Task"
+@layout MainLayout
 @using Syncfusion.Blazor.Notifications
 @inject DbContext db;
-@inject SelectedPod SelectedPod;
+@inject SelectedInfo SelectedInfo;
 
-<div class="page-heading">
+@* <div class="page-heading">
 	<h3 class="header">Project: @ProjectName</h3>
 	<p class="subtitle"><a href="">Home</a> / Gantt Chart</p>
-</div>
+</div> *@
 
 <div class="content-box shadow">
 	@if (IsLoading)
@@ -17,10 +18,61 @@
 	else
 	{
 		<SfGantt DataSource="@ganttTaskList" Height="100%" Width="100%" AllowSorting="true" AllowFiltering="true" Toolbar="@(new List<string>() { "Search", "ZoomIn","ZoomOut","ZoomToFit"})">
-			<GanttTaskFields Id="Id" Name="String" StartDate="Sdate" EndDate="Edate" Duration="Duration" DurationUnit="DurationUnits" Dependency="Predecessor" Progress="Progress" ParentID="Parentid" Child="SubTasks"></GanttTaskFields>
+			<GanttTaskFields Id="Id" Name="String" StartDate="Sdate" EndDate="Edate" Duration="Duration" DurationUnit="DurationUnits" Dependency="Predecessor" Progress="Progress" ParentID="Parentid" Notes="Notes" Child="SubTasks" BaselineStartDate="BaselineStartDate" BaselineEndDate="BaselineEndDate"></GanttTaskFields>
 			<GanttSelectionSettings Mode="Syncfusion.Blazor.Grids.SelectionMode.Both"></GanttSelectionSettings>
 			<GanttEditSettings AllowEditing="false"></GanttEditSettings>
 			<GanttSearchSettings Fields="@Searchfields"></GanttSearchSettings>
+			<GanttColumns>
+				<GanttColumn Field="Id"></GanttColumn>
+				<GanttColumn Field="String" HeaderText="Name" Width="250" ClipMode="Syncfusion.Blazor.Grids.ClipMode.EllipsisWithTooltip"></GanttColumn>
+				<GanttColumn Field="Sdate" HeaderText="Start Date"></GanttColumn>
+				<GanttColumn Field="Edate" HeaderText="End Date"></GanttColumn>
+				<GanttColumn Field="Duration" HeaderText="Duration"></GanttColumn>
+				<GanttColumn Field="Progress" HeaderText="Progress"></GanttColumn>
+				<GanttColumn Field="Predecessor" HeaderText="Dependency"></GanttColumn>
+			</GanttColumns>
+			<GanttLabelSettings LeftLabel="String" RightLabel="Notes" TValue="GanttTaskLoad"></GanttLabelSettings>
+			<GanttTemplates TValue="GanttTaskLoad">
+                <TaskbarTemplate>
+					@{
+						var task = (context as GanttTaskLoad);
+						if (task == null)
+						{
+							return;
+						}
+
+						<div class="e-gantt-child-taskbar-inner-div e-gantt-child-taskbar  " tabindex="-1">
+							<div class="e-gantt-child-progressbar-inner-div e-gantt-child-progressbar " style="border-style:solid;width:0px;height:100%;border-top-right-radius:0px;border-bottom-right-radius:0px;">
+								<span class="e-task-label" style="line-height:21px; height:22px;">@task.Progress%</span>
+							</div>
+						</div>
+					}
+                </TaskbarTemplate>
+				<ParentTaskbarTemplate>
+					@{
+						var task = (context as GanttTaskLoad);
+						if (task == null)
+						{
+							return;
+						}
+
+						<div class="e-gantt-parent-taskbar-inner-div e-row-expand e-gantt-parent-taskbar" tabindex="-1">
+							<div class="e-gantt-parent-progressbar-inner-div e-row-expand e-gantt-parent-progressbar" style="border-style:solid;width:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;height:100%;">
+								<span class="e-task-label" style="line-height:21px; height:22px;">@task.Progress%</span>
+							</div>
+						</div>
+					}
+				</ParentTaskbarTemplate>
+			</GanttTemplates>
 		</SfGantt>
 	}
 </div>
+
+<style>
+	.content-box {
+		height: 100%;
+		min-height: 400px;
+		overflow: auto;
+		border-radius: 0px;
+	}
+</style>

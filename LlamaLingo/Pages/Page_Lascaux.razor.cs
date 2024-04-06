@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -28,12 +30,10 @@ namespace LlamaLingo.Pages
 		private List<NovaLascaux> novas = new List<NovaLascaux>();
 		public NovaLascaux novaLasc = new NovaLascaux();
 
+        private static readonly IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
+        private readonly string sqlServerconnectionString = config.GetConnectionString("DatabaseConnection");
 
-
-		private readonly string sqlServerconnectionString = "Server=tcp:llamalingo.database.windows.net,1433;Initial Catalog=LlamaLingoDB;Persist Security Info=False;User ID=LlamaLingoLogin;Password=UMDLlamaLingo4444;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
-
-		private int _selectedId = 1; // user filter selection
+        private int _selectedId = 1; // user filter selection
 
 
 		public int selectedId
@@ -180,20 +180,29 @@ namespace LlamaLingo.Pages
 		//*******************************************************************************
 
 
-		protected override void OnInitialized()   // Override the OnInitialized method
+		protected override System.Threading.Tasks.Task OnInitializedAsync() // Override the OnInitialized method
 		{
-			if (filterType != "Nova")
+			try
 			{
-				Read();
-				if (novas.Any())
-				{
-					selectedId = novas[0].NovaId;
-				}
+				//if (filterType != "Nova")
+				//{
+				//	Read();
+				//	if (novas.Any())
+				//	{
+				//		selectedId = novas[0].NovaId;
+				//	}
+				//}
+				//else
+				//{
+				//	setNovaLasc();
+				//}
 			}
-			else
+			catch (Exception ex)
 			{
-				setNovaLasc();
+				Console.WriteLine($"Error: {ex.Message}");
 			}
+
+			return System.Threading.Tasks.Task.CompletedTask;
 		}
 	}
 	//testing

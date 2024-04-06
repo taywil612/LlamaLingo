@@ -3,34 +3,184 @@
 @using Microsoft.EntityFrameworkCore
 @using Syncfusion.Blazor.DropDowns
 @inject LlamaLingo.Models.DbContext db;
-@inject SelectedPod SelectedPod;
+@inject SelectedInfo SelectedInfo;
+@inject NavigationManager _nav;
+@layout MainLayout
 
-<div class="page-heading">
-    <h3 class="header">Llama Lingo</h3>
-    <div class="dropdown">
-        <p>ID #: </p>
-        <SfDropDownList TItem="Person" TValue="string" PopupHeight="230px" Placeholder="Select..." DataSource="@people" AllowFiltering="true">
-            <DropDownListEvents TItem="Person" TValue="string" ValueChange="ChangePerson" />
-            <DropDownListFieldSettings Text="PersonId" Value="PersonId" />
-        </SfDropDownList>
-    </div>
-    <div class="dropdown">
-        <p>POD #: </p>
-        <SfDropDownList Enabled="@EnablePodDropDown" TItem="Pod" TValue="string" PopupHeight="230px" Placeholder="Select..." DataSource="@pods" AllowFiltering="true">
-            <DropDownListEvents TItem="Pod" TValue="string" ValueChange="ChangePod" />
-            <DropDownListFieldSettings Text="PodId" Value="PodId" />
-        </SfDropDownList>
+<div class="content-box">
+	<div class="menu-page">
+		<div class="start-menu">
+			<div class="community-panel">
+				<div class="image-container">
+                    @if (SelectedInfo.CurrentPod != null)
+                    {
+                        <iframe src="@SelectedInfo.CurrentPod?.PodUrlBase"></iframe>
+                        @*<img src="@SelectedInfo.CurrentPod?.PodUrlBase" alt="pod_image">*@
+                    }
+				</div>
+			</div>
+
+			<button class="community-button" @onclick="@(()=>_nav.NavigateTo("/Community"))"></button>
+
+			<div class="message-panel">
+                @if (SelectedInfo.CurrentPod != null)
+                {
+                    <h3>Welcome to @SelectedInfo.CurrentPod?.PodDescription</h3>
+                }
+			</div>
+
+			<div class="side-button-container">
+				<button class="side-button memo-button"></button>
+                <button class="side-button chat-button" ></button>
+			</div>
+
+			<div class="footer-button-container">
+                <button class="footer-button start-menu-button" disabled="@(!RoleSet)" @onclick="@(()=>_nav.NavigateTo(Page))" style="@(!RoleSet ? "background-color: #6c757d9c; background-blend-mode: color-burn; transform: unset; border-color: black;" : "")"></button>
+                <button class="footer-button video-button" @onclick="@(()=>_nav.NavigateTo("/Video"))"></button>
+                <button class="footer-button audio-button" @onclick="@(()=>_nav.NavigateTo("/Audio"))"></button>
+                <button class="footer-button project-button" @onclick="@(()=>_nav.NavigateTo("/Instruction_Manual"))"></button>
+			</div>
+		</div>
     </div>
 </div>
 
-<br/>
+<style>
+    .start-menu{
+        position: relative;
+    }
 
-<div class="">
-    <p>@SelectedPod.CurrentPod?.PodId</p>
-    <p>@SelectedPod.CurrentPod?.PodLabel</p>
-    <p>@SelectedPod.CurrentPod?.PodDescription</p>
-    <p>@SelectedPod.CurrentPod?.PodUrlBase</p>
-</div>
+    .community-panel{
+        width: 273px;
+        height: 322px;
+        border-radius: 10px;
+        position: relative;
+        top: 191px;
+        left: 54px;
+    }
 
+    .image-container{
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px 5px 0px 0px;
+    }
 
+    .image-container iframe{
+        height: 100%;
+        width: 100%;
+    }
 
+    .community-button{
+        width: 247px;
+        height: 69px;
+        border-radius: 10px;
+        position: relative;
+        top: 198px;
+        left: 65px;
+		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Community.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
+    }
+
+    .message-panel{
+        width: 618px;
+        height: 319px;
+        border-radius: 5px;
+        position: relative;
+        top: -213px;
+        left: 352px;
+        padding: 10px;
+        color: black;
+        overflow: auto;
+    }
+
+    .side-button-container{
+        position: relative;
+        top: -319px;
+    }
+
+    .side-button{
+        width: 250px;
+        height: 105px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .memo-button{
+        top: -322px;
+        left: 1048px;
+		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Memo.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
+    }
+    
+    .chat-button{
+        top: -203px;
+        left: 794px;
+		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Chat.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
+    }
+
+    .footer-button-container{
+        position: relative;
+        top: -437px;
+        left: 369px;
+    }
+
+    .footer-button{
+        width: 192px;
+        height: 88px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .start-menu-button{
+        top: 269px;
+        left: -290px;
+		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Start.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
+    }
+
+    .video-button, .audio-button, .project-button{
+        top: 271px;
+    }
+
+    .video-button{
+        left: -256px;
+        background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Video.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
+    }
+
+    .audio-button{
+        left: -221px;
+        background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_Audio.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
+    }
+
+    .project-button{
+        left: -186px;
+        background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_PDF.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D")
+    }
+
+    .community-button:hover, .side-button:hover, .footer-button:hover{
+		transform: scale(0.95);
+	}
+
+	.community-button, .side-button, .footer-button {
+        background-color: black;
+        transition-property: transform;
+		transition-duration: .60s;
+		box-shadow: 0 30px 60px rgba(0,0,0,.5);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .menu-page{
+        background: url(https://llamalingostorage.blob.core.windows.net/images/images/UIpanels/Llama.png?sp=r&st=2024-04-04T01:55:59Z&se=2025-04-04T09:55:59Z&spr=https&sv=2022-11-02&sr=b&sig=mrSIEZcCWFuXIz7k2D5GU45gbmM%2BFqr9gDCvoF6QFn0%3D)no-repeat;
+    }
+
+    .content {
+        background-color: #0e7742;
+    }
+
+    .content-box{
+        height: 799px;
+        width: 1399px;
+        max-width: 1399px;
+        max-height: 799px;
+        border-radius: unset;
+        overflow: hidden;
+    }
+</style>
