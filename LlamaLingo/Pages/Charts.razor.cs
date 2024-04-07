@@ -33,9 +33,9 @@ namespace LlamaLingo.Pages
 
 		public List<Noun> nouns;
 
-		public async void getWeekIds()
+		public async void getWeekIds(int podID)
 		{
-			WeekIds = await db.Set<WeeklyPypeDetail>().Select(x => x.WeekId).Distinct().ToListAsync();
+			WeekIds = await db.Set<WeeklyPypeDetail>().Where(x=> x.Project == podID).Select(x => x.WeekId).Distinct().ToListAsync();
 
 			StateHasChanged();
 		}
@@ -88,13 +88,14 @@ namespace LlamaLingo.Pages
 			{
 				try
 				{
-					getWeekIds();
+					getWeekIds(SelectedInfo.CurrentPod.PodId);
 				}
 				catch (Exception ex)
 				{
 					Console.WriteLine($"Error: {ex.Message}");
 				}
 			}
+
 			IsLoading = false;
 
 			Node pieChartNode = new Node()

@@ -3,19 +3,6 @@
 @inject NavigationManager _nav
 @layout MainLayout
 
-@* <div class="page-heading">
-	<div class="header-info">
-		<div class="page-info">
-			<h3 class="header">Engineer</h3>
-			<p class="subtitle"><a href="">Home</a> / Engineer</p>
-		</div>
-		<div class="pod-info">
-			<p class="subtitle">POD: #@pod | Person: #@pid</p>
-		</div>
-	</div>
-</div>
- *@
-
 <div class="content-box">
 	<div class="menu-page">
 		<!-- ************************************************************************************ -->
@@ -43,6 +30,12 @@
 				<!-- Goal (place a text button label here) -->
 			</button>
 		</div>
+
+		<div class="button-container" style="top: 184px; left: 834px;">
+			<button class="buttonMenu04" @onclick="@(()=>_nav.NavigateTo("/Element"))">
+				<!-- Charts (place a text button label here) -->
+			</button>
+		</div>
 	</div>
 </div>
 
@@ -58,6 +51,10 @@
 
 	.buttonMenu03 {
 		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Btn_Luster_NOVA.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
+	}
+
+	.buttonMenu04 {
+		background-image: url("https://llamalingostorage.blob.core.windows.net/images/images/buttons/Buttons_luster_element.png?sp=r&st=2023-09-01T04:00:00Z&se=2024-05-01T04:00:00Z&spr=https&sv=2022-11-02&sr=c&sig=MzFWQg%2BrEGxisPGyf8Z0la%2FTYpWi%2F771NMJ5hD7%2Fjjg%3D");
 	}
 
 	.content {

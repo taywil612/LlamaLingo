@@ -12,11 +12,11 @@
 		<div class="start-menu">
 			<div class="community-panel">
 				<div class="image-container">
-                    @if (SelectedInfo.CurrentPod != null)
+                    @if (SelectedInfo.CurrentPod != null && Uri.TryCreate(SelectedInfo.CurrentPod.PodUrlBase, UriKind.Absolute, out Uri uriResult) && uriResult.Scheme == Uri.UriSchemeHttps)
                     {
-                        <iframe src="@SelectedInfo.CurrentPod?.PodUrlBase"></iframe>
-                        @*<img src="@SelectedInfo.CurrentPod?.PodUrlBase" alt="pod_image">*@
+                        <iframe src="@uriResult"></iframe>
                     }
+
 				</div>
 			</div>
 
