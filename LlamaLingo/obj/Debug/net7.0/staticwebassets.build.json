@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nD9Lvl+m50lnWQSIJWEl9L0k8UVPqpILywPYVcHK/dc=",
+  "Hash": "CY0H+rDC0tMykgHxf6BFNb+FQhLsUwJdrceJ5RGXdCI=",
   "Source": "LlamaLingo",
   "BasePath": "_content/LlamaLingo",
   "Mode": "Default",
@@ -2257,6 +2257,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Cache\\designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c\\designer_d6e5c51d-9d82-4688-a38c-f8d795a5101c_setting.txt"
+    },
+    {
+      "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_da32ecc9-e7ce-42df-b060-b1b0f76ebc79\\designer_da32ecc9-e7ce-42df-b060-b1b0f76ebc79_setting.txt",
+      "SourceId": "LlamaLingo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\",
+      "BasePath": "_content/LlamaLingo",
+      "RelativePath": "Cache/designer_da32ecc9-e7ce-42df-b060-b1b0f76ebc79/designer_da32ecc9-e7ce-42df-b060-b1b0f76ebc79_setting.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Cache\\designer_da32ecc9-e7ce-42df-b060-b1b0f76ebc79\\designer_da32ecc9-e7ce-42df-b060-b1b0f76ebc79_setting.txt"
     },
     {
       "Identity": "C:\\Users\\JXEli\\Documents\\GitHub\\LlamaLingo\\LlamaLingo\\wwwroot\\Cache\\designer_ecbda819-421a-4eb0-9125-d5fc3efc864f\\designer_ecbda819-421a-4eb0-9125-d5fc3efc864f_setting.txt",
