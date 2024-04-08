@@ -26,6 +26,7 @@ namespace LlamaLingo.Pages
 		}
 
 		public static void setDatabaseName(string newVal) {
+		    ColorManage.resetInitializationState();
 			databaseName = newVal;
 			IsInitialized = false;
 		}

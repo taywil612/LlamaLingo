@@ -235,5 +235,10 @@ namespace LlamaLingo.Pages
 
 
 		}
+
+		public static void resetInitializationState()
+		{
+			idInitialized = false;
+		}
     }
 }
