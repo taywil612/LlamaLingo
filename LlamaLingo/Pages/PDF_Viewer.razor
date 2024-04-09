@@ -9,54 +9,46 @@
 
 <div class="content-box shadow">
 
+    
     @if (SelectedInfo.CurrentPod != null)
     {
+        //Pdf Viewer updated so pdfs are referenced through the Azure Blob storage container "images" instead of the pdf folder in project
         if (SelectedInfo.CurrentPod.PodId == 1)
         {
-            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath1 Height="100%" Width="100%">
-                <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV1.pdf?sp=r&st=2024-04-09T17:52:30Z&se=2025-04-10T01:52:30Z&spr=https&sv=2022-11-02&sr=b&sig=GEIXiHMHdQdXHY%2FLtuddqDCoN5zoQ9qJuZ97rL%2BB1uY%3D"></iframe>
-            </SfPdfViewerServer>
+            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath1 Height="100%" Width="100%"></SfPdfViewerServer>
+            <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV1.pdf?sp=r&st=2024-04-09T17:52:30Z&se=2025-04-10T01:52:30Z&spr=https&sv=2022-11-02&sr=b&sig=GEIXiHMHdQdXHY%2FLtuddqDCoN5zoQ9qJuZ97rL%2BB1uY%3D"></iframe>
         }
         else if (SelectedInfo.CurrentPod.PodId == 2)
         {
-            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath2 Height="100%" Width="100%">
-                <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV2.pdf?sp=r&st=2024-04-09T17:51:59Z&se=2025-04-10T01:51:59Z&spr=https&sv=2022-11-02&sr=b&sig=6%2FbH5WQZj3KEbbeBAlLPYdSOeoFVIQkZ7QJ6%2FxRsA1U%3D"></iframe>
-            </SfPdfViewerServer>
+            //<SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath2 Height="100%" Width="100%"></SfPdfViewerServer>
+            <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV2.pdf?sp=r&st=2024-04-09T17:51:59Z&se=2025-04-10T01:51:59Z&spr=https&sv=2022-11-02&sr=b&sig=6%2FbH5WQZj3KEbbeBAlLPYdSOeoFVIQkZ7QJ6%2FxRsA1U%3D"></iframe>
         }
         else if (SelectedInfo.CurrentPod.PodId == 3)
         {
-            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath3 Height="100%" Width="100%">
-                <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV3.pdf?sp=r&st=2024-04-09T17:51:40Z&se=2025-04-10T01:51:40Z&spr=https&sv=2022-11-02&sr=b&sig=7Bz%2Fl8ydO5ZWNO3%2BNOAOD6zuZAbvu34AAetkg9%2FDgbM%3D"></iframe>
-            </SfPdfViewerServer>
+            //<SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath3 Height="100%" Width="100%"></SfPdfViewerServer>
+            <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV3.pdf?sp=r&st=2024-04-09T17:51:40Z&se=2025-04-10T01:51:40Z&spr=https&sv=2022-11-02&sr=b&sig=7Bz%2Fl8ydO5ZWNO3%2BNOAOD6zuZAbvu34AAetkg9%2FDgbM%3D"></iframe>
         }
         else if (SelectedInfo.CurrentPod.PodId == 4)
         {
-            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath Height="100%" Width="100%">
-                <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20Manual.pdf?sp=r&st=2024-04-09T17:51:15Z&se=2025-04-10T01:51:15Z&spr=https&sv=2022-11-02&sr=b&sig=TmpMRpphpMZHSOvcwzLn7NcfBUVWBuv32FDLItDsFC4%3D"></iframe>
-            </SfPdfViewerServer>
-           
+            //<SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath Height="100%" Width="100%"></SfPdfViewerServer>
+            <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20Manual.pdf?sp=r&st=2024-04-09T17:51:15Z&se=2025-04-10T01:51:15Z&spr=https&sv=2022-11-02&sr=b&sig=TmpMRpphpMZHSOvcwzLn7NcfBUVWBuv32FDLItDsFC4%3D"></iframe>
 
         }
         else if (SelectedInfo.CurrentPod.PodId == 5)
         {
-            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath Height="100%" Width="100%">
-                <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20Manual.pdf?sp=r&st=2024-04-09T17:51:15Z&se=2025-04-10T01:51:15Z&spr=https&sv=2022-11-02&sr=b&sig=TmpMRpphpMZHSOvcwzLn7NcfBUVWBuv32FDLItDsFC4%3D"></iframe>
-            </SfPdfViewerServer>
+            //<SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath Height="100%" Width="100%"></SfPdfViewerServer>
+            <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20Manual.pdf?sp=r&st=2024-04-09T17:51:15Z&se=2025-04-10T01:51:15Z&spr=https&sv=2022-11-02&sr=b&sig=TmpMRpphpMZHSOvcwzLn7NcfBUVWBuv32FDLItDsFC4%3D"></iframe>
             
         }
         else if (SelectedInfo.CurrentPod.PodId == 6)
         {
-            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath6 Height="100%" Width="100%">
-                <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV6.pdf?sp=r&st=2024-04-09T17:50:47Z&se=2025-04-10T01:50:47Z&spr=https&sv=2022-11-02&sr=b&sig=4O5WaEui1LyyNJ2wOrNM6SUtHGHvkjvEBL72drdAmug%3D"></iframe>
-            </SfPdfViewerServer>
-       
+            //<SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath6 Height="100%" Width="100%"></SfPdfViewerServer>
+            <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV6.pdf?sp=r&st=2024-04-09T17:50:47Z&se=2025-04-10T01:50:47Z&spr=https&sv=2022-11-02&sr=b&sig=4O5WaEui1LyyNJ2wOrNM6SUtHGHvkjvEBL72drdAmug%3D"></iframe>
         }
         else if (SelectedInfo.CurrentPod.PodId == 15)
         {
-            <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath15 Height="100%" Width="100%">
-                <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV15.pdf?sp=r&st=2024-04-09T17:49:17Z&se=2025-04-10T01:49:17Z&spr=https&sv=2022-11-02&sr=b&sig=kIAs2bAIAYN0uGR8yfPc6o34ADLJCU4HWG3rQC8o9Cw%3D"></iframe>
-            </SfPdfViewerServer>
-           
+            //<SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPath15 Height="100%" Width="100%"></SfPdfViewerServer>
+            <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20ManualV15.pdf?sp=r&st=2024-04-09T17:49:17Z&se=2025-04-10T01:49:17Z&spr=https&sv=2022-11-02&sr=b&sig=kIAs2bAIAYN0uGR8yfPc6o34ADLJCU4HWG3rQC8o9Cw%3D"></iframe>
         }
         else
         {
@@ -67,9 +59,8 @@
     else
     {
         // Handle case where SelectedInfo.CurrentPod is null
-        <SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPathDefault  Height=" 100%" Width="100%">
-            <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20Manual_Default.pdf?sp=r&st=2024-04-09T04:06:49Z&se=2025-04-09T12:06:49Z&spr=https&sv=2022-11-02&sr=b&sig=zBN1DUFKEFISTHhhOERwx25gIDV1K5Lgthu61GuJ8Bs%3D"></iframe>
-        </SfPdfViewerServer>
+        //<SfPdfViewerServer EnableDesktopMode="true" DocumentPath=@DocumentPathDefault  Height=" 100%" Width="100%"></SfPdfViewerServer>
+        <iframe src="https://llamalingostorage.blob.core.windows.net/images/images/pdf/LlamaLingo%20Parsing%20Instructions%20Manual_Default.pdf?sp=r&st=2024-04-09T04:06:49Z&se=2025-04-09T12:06:49Z&spr=https&sv=2022-11-02&sr=b&sig=zBN1DUFKEFISTHhhOERwx25gIDV1K5Lgthu61GuJ8Bs%3D"></iframe>
        }
 
 	
